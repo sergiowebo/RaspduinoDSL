@@ -7,6 +7,7 @@ import com.google.common.collect.Iterables;
 import com.google.inject.Inject;
 import es.usj.raspduino.generator.Util;
 import es.usj.raspduino.generator.arduino.MainArduino;
+import es.usj.raspduino.generator.raspberrypi.MainRaspberrypi;
 import es.usj.raspduino.raspduinoDSL.Model;
 import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.ecore.EObject;
@@ -41,6 +42,8 @@ public class RaspduinoDSLGenerator implements IGenerator {
           String _hardware_1 = e.getHardware();
           boolean _equals_1 = _hardware_1.equals("Raspberry Pi");
           if (_equals_1) {
+            MainRaspberrypi _mainRaspberrypi = new MainRaspberrypi();
+            _mainRaspberrypi.generateMainCode(e, this.util);
           }
         }
       }

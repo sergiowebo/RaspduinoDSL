@@ -32,6 +32,114 @@ public interface RaspduinoDSLFactory extends EFactory
   Model createModel();
 
   /**
+   * Returns a new object of class '<em>Abstract Device</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Abstract Device</em>'.
+   * @generated
+   */
+  AbstractDevice createAbstractDevice();
+
+  /**
+   * Returns a new object of class '<em>Sensor</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Sensor</em>'.
+   * @generated
+   */
+  Sensor createSensor();
+
+  /**
+   * Returns a new object of class '<em>Actuator</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Actuator</em>'.
+   * @generated
+   */
+  Actuator createActuator();
+
+  /**
+   * Returns a new object of class '<em>Event Handler</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Event Handler</em>'.
+   * @generated
+   */
+  EventHandler createEventHandler();
+
+  /**
+   * Returns a new object of class '<em>Change Actuator</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Change Actuator</em>'.
+   * @generated
+   */
+  ChangeActuator createChangeActuator();
+
+  /**
+   * Returns a new object of class '<em>Sensor Listener</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Sensor Listener</em>'.
+   * @generated
+   */
+  SensorListener createSensorListener();
+
+  /**
+   * Returns a new object of class '<em>Precondition</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Precondition</em>'.
+   * @generated
+   */
+  Precondition createPrecondition();
+
+  /**
+   * Returns a new object of class '<em>Precondition1</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Precondition1</em>'.
+   * @generated
+   */
+  Precondition1 createPrecondition1();
+
+  /**
+   * Returns a new object of class '<em>Empty Precondition</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Empty Precondition</em>'.
+   * @generated
+   */
+  EmptyPrecondition createEmptyPrecondition();
+
+  /**
+   * Returns a new object of class '<em>Sensor Value Precondition</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Sensor Value Precondition</em>'.
+   * @generated
+   */
+  SensorValuePrecondition createSensorValuePrecondition();
+
+  /**
+   * Returns a new object of class '<em>Timer</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Timer</em>'.
+   * @generated
+   */
+  Timer createTimer();
+
+  /**
+   * Returns a new object of class '<em>Alarm</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Alarm</em>'.
+   * @generated
+   */
+  Alarm createAlarm();
+
+  /**
    * Returns the package supported by this factory.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

@@ -3,6 +3,92 @@ grammar es.usj.raspduino.RaspduinoDSL with org.eclipse.xtext.common.Terminals
 generate raspduinoDSL "http://www.usj.es/raspduino/RaspduinoDSL"
 
 Model:
+	// Nombre y plataforma que utilizaremos
 	'Sketch:' name=ID
 	'Hardware:' hardware=('Arduino UNO' | 'Raspberry Pi') //Se podran añadir mas plataformas ARDUINO MEGA, NANO, etc.
+	
+	// Sensores y actuadores que utilizaremos para nuestro diseño
+	(devices+= AbstractDevice)*
+	
+	// Definicion de tareas o eventos
+	(eventHandlers+=EventHandler)*
+	
+	// Definicion de las condiciones para ejecutar una tarea
+	(sensorListeners+=SensorListener)*
+	
+	// Definicion de las condiciones para ejecutar una tarea
+	(timers+=Timer)*
+	
+	// Definicion de las condiciones para ejecutar una tarea
+	(alarms+=Alarm)*
+	
+	// TODO: En caso de conflicto definimos quien tiene preferencia, lo que indican los sensores o lo programado
+	'Concurrency Priority:' priority=('SENSOR'|'SCHEDULED')
 ;
+
+	// Definicion de los sensore y actuadores SENSOR:INPUT ACUATOR:OUTPUT
+	AbstractDevice:
+		Sensor | Actuator
+	;
+	Sensor:
+		'Sensor' name=ID 'pin' pin=STRING (analog?='analog')? ';'
+	;
+	Actuator:
+		'Actuator' name=ID 'pin' pin=STRING ';' 
+	;
+	
+	// Definimos que acciones realizaran los actuadores en cada tarea
+	EventHandler:
+		'EventHandler' name=ID 
+		(changeActuators += ChangeActuator)*
+		';'
+	;
+	ChangeActuator:
+		actuator=[Actuator] ':' ActuatorState=('On' | 'Off' )  // Añadir mas opciones como Blink(tiempo)
+	;
+	
+	// Definimos las condiciones de los SensorListeners
+	SensorListener:
+		'SensorListener' sensor=[Sensor]
+		'if' (type='BETWEEN' l=INT 'AND' h=INT)  //'if' (type='CHANGE' | type='RISING' | type='FALLING' | type='BETWEEN' l=INT 'AND' h=INT) 
+		'call' eventHandler=[EventHandler]
+		';'
+	;
+
+	// Condiciones establecidas para los valores
+		Precondition:
+			 pre1=Precondition1 op=('&&'|'||') pre=Precondition | pre1=Precondition1
+		;
+		Precondition1:
+			(pre=SensorValuePrecondition | pre=EmptyPrecondition)
+		;
+		EmptyPrecondition:
+			name=ID
+		;
+		SensorValuePrecondition:
+			sensor=[Sensor] cond=('==' | '<=' | '>=' | '!=') value=PossibleValues 
+		;
+		PossibleValues:
+			DOUBLE | INT
+		;
+		terminal DOUBLE: // TODO no se porque no me ha dejado poner el double
+			INT'.'INT
+		;
+	
+	// Acciones programadas para realizarse cada X segundos, o a determinadas horas del dia.
+	Timer:
+		'action' eventHandler=[EventHandler]
+		'repeat' repeattype = ('ONCE'|'EVERY')
+		'seconds:' timerSecs = INT
+		';'
+	;
+	
+	Alarm:
+		'action' eventHandler=[EventHandler]
+		'repeat' repeattype = ('EVERY DAY'|'EVERY MONDAY'|'EVERY TUESDAY'|'EVERY WEDNESDAY'
+								|'EVERY THURSDAY'|'EVERY FRIDAY'|'EVERY SATURDAY'|'EVERY SUNDAY')
+		'hours:' timerHours = INT
+		'minutes:' timerMinutes = INT
+		';'
+	;
+		

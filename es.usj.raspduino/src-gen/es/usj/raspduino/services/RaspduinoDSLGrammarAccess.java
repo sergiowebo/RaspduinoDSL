@@ -29,16 +29,45 @@ public class RaspduinoDSLGrammarAccess extends AbstractGrammarElementFinder {
 		private final Alternatives cHardwareAlternatives_3_0 = (Alternatives)cHardwareAssignment_3.eContents().get(0);
 		private final Keyword cHardwareArduinoUNOKeyword_3_0_0 = (Keyword)cHardwareAlternatives_3_0.eContents().get(0);
 		private final Keyword cHardwareRaspberryPiKeyword_3_0_1 = (Keyword)cHardwareAlternatives_3_0.eContents().get(1);
+		private final Assignment cDevicesAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cDevicesAbstractDeviceParserRuleCall_4_0 = (RuleCall)cDevicesAssignment_4.eContents().get(0);
+		private final Assignment cEventHandlersAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cEventHandlersEventHandlerParserRuleCall_5_0 = (RuleCall)cEventHandlersAssignment_5.eContents().get(0);
+		private final Assignment cSensorListenersAssignment_6 = (Assignment)cGroup.eContents().get(6);
+		private final RuleCall cSensorListenersSensorListenerParserRuleCall_6_0 = (RuleCall)cSensorListenersAssignment_6.eContents().get(0);
+		private final Assignment cTimersAssignment_7 = (Assignment)cGroup.eContents().get(7);
+		private final RuleCall cTimersTimerParserRuleCall_7_0 = (RuleCall)cTimersAssignment_7.eContents().get(0);
+		private final Assignment cAlarmsAssignment_8 = (Assignment)cGroup.eContents().get(8);
+		private final RuleCall cAlarmsAlarmParserRuleCall_8_0 = (RuleCall)cAlarmsAssignment_8.eContents().get(0);
+		private final Keyword cConcurrencyPriorityKeyword_9 = (Keyword)cGroup.eContents().get(9);
+		private final Assignment cPriorityAssignment_10 = (Assignment)cGroup.eContents().get(10);
+		private final Alternatives cPriorityAlternatives_10_0 = (Alternatives)cPriorityAssignment_10.eContents().get(0);
+		private final Keyword cPrioritySENSORKeyword_10_0_0 = (Keyword)cPriorityAlternatives_10_0.eContents().get(0);
+		private final Keyword cPrioritySCHEDULEDKeyword_10_0_1 = (Keyword)cPriorityAlternatives_10_0.eContents().get(1);
 		
-		//Model:
+		//Model: // Nombre y plataforma que utilizaremos
 		//	"Sketch:" name=ID "Hardware:" hardware=("Arduino UNO" //Se podran añadir mas plataformas ARDUINO MEGA, NANO, etc.
-		//	| "Raspberry Pi");
+		//	| "Raspberry Pi") // Sensores y actuadores que utilizaremos para nuestro diseño
+		//	devices+=AbstractDevice* // Definicion de tareas o eventos
+		//	eventHandlers+=EventHandler* // Definicion de las condiciones para ejecutar una tarea
+		//	sensorListeners+=SensorListener* // Definicion de las condiciones para ejecutar una tarea
+		//	timers+=Timer* // Definicion de las condiciones para ejecutar una tarea
+		//	alarms+=Alarm* // TODO: En caso de conflicto definimos quien tiene preferencia, lo que indican los sensores o lo programado
+		//	"Concurrency Priority:" priority=("SENSOR" | "SCHEDULED");
 		public ParserRule getRule() { return rule; }
 
+		//// Nombre y plataforma que utilizaremos
 		//"Sketch:" name=ID "Hardware:" hardware=("Arduino UNO" //Se podran añadir mas plataformas ARDUINO MEGA, NANO, etc.
-		//| "Raspberry Pi")
+		//| "Raspberry Pi") // Sensores y actuadores que utilizaremos para nuestro diseño
+		//devices+=AbstractDevice* // Definicion de tareas o eventos
+		//eventHandlers+=EventHandler* // Definicion de las condiciones para ejecutar una tarea
+		//sensorListeners+=SensorListener* // Definicion de las condiciones para ejecutar una tarea
+		//timers+=Timer* // Definicion de las condiciones para ejecutar una tarea
+		//alarms+=Alarm* // TODO: En caso de conflicto definimos quien tiene preferencia, lo que indican los sensores o lo programado
+		//"Concurrency Priority:" priority=("SENSOR" | "SCHEDULED")
 		public Group getGroup() { return cGroup; }
 
+		//// Nombre y plataforma que utilizaremos
 		//"Sketch:"
 		public Keyword getSketchKeyword_0() { return cSketchKeyword_0; }
 
@@ -64,10 +93,699 @@ public class RaspduinoDSLGrammarAccess extends AbstractGrammarElementFinder {
 
 		//"Raspberry Pi"
 		public Keyword getHardwareRaspberryPiKeyword_3_0_1() { return cHardwareRaspberryPiKeyword_3_0_1; }
+
+		//devices+=AbstractDevice*
+		public Assignment getDevicesAssignment_4() { return cDevicesAssignment_4; }
+
+		//AbstractDevice
+		public RuleCall getDevicesAbstractDeviceParserRuleCall_4_0() { return cDevicesAbstractDeviceParserRuleCall_4_0; }
+
+		//eventHandlers+=EventHandler*
+		public Assignment getEventHandlersAssignment_5() { return cEventHandlersAssignment_5; }
+
+		//EventHandler
+		public RuleCall getEventHandlersEventHandlerParserRuleCall_5_0() { return cEventHandlersEventHandlerParserRuleCall_5_0; }
+
+		//sensorListeners+=SensorListener*
+		public Assignment getSensorListenersAssignment_6() { return cSensorListenersAssignment_6; }
+
+		//SensorListener
+		public RuleCall getSensorListenersSensorListenerParserRuleCall_6_0() { return cSensorListenersSensorListenerParserRuleCall_6_0; }
+
+		//timers+=Timer*
+		public Assignment getTimersAssignment_7() { return cTimersAssignment_7; }
+
+		//Timer
+		public RuleCall getTimersTimerParserRuleCall_7_0() { return cTimersTimerParserRuleCall_7_0; }
+
+		//alarms+=Alarm*
+		public Assignment getAlarmsAssignment_8() { return cAlarmsAssignment_8; }
+
+		//Alarm
+		public RuleCall getAlarmsAlarmParserRuleCall_8_0() { return cAlarmsAlarmParserRuleCall_8_0; }
+
+		//// TODO: En caso de conflicto definimos quien tiene preferencia, lo que indican los sensores o lo programado
+		//"Concurrency Priority:"
+		public Keyword getConcurrencyPriorityKeyword_9() { return cConcurrencyPriorityKeyword_9; }
+
+		//priority=("SENSOR" | "SCHEDULED")
+		public Assignment getPriorityAssignment_10() { return cPriorityAssignment_10; }
+
+		//"SENSOR" | "SCHEDULED"
+		public Alternatives getPriorityAlternatives_10_0() { return cPriorityAlternatives_10_0; }
+
+		//"SENSOR"
+		public Keyword getPrioritySENSORKeyword_10_0_0() { return cPrioritySENSORKeyword_10_0_0; }
+
+		//"SCHEDULED"
+		public Keyword getPrioritySCHEDULEDKeyword_10_0_1() { return cPrioritySCHEDULEDKeyword_10_0_1; }
+	}
+
+	public class AbstractDeviceElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "AbstractDevice");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cSensorParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cActuatorParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		
+		//// Definicion de los sensore y actuadores SENSOR:INPUT ACUATOR:OUTPUT
+		//AbstractDevice:
+		//	Sensor | Actuator;
+		public ParserRule getRule() { return rule; }
+
+		//Sensor | Actuator
+		public Alternatives getAlternatives() { return cAlternatives; }
+
+		//Sensor
+		public RuleCall getSensorParserRuleCall_0() { return cSensorParserRuleCall_0; }
+
+		//Actuator
+		public RuleCall getActuatorParserRuleCall_1() { return cActuatorParserRuleCall_1; }
+	}
+
+	public class SensorElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Sensor");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cSensorKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Keyword cPinKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cPinAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cPinSTRINGTerminalRuleCall_3_0 = (RuleCall)cPinAssignment_3.eContents().get(0);
+		private final Assignment cAnalogAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final Keyword cAnalogAnalogKeyword_4_0 = (Keyword)cAnalogAssignment_4.eContents().get(0);
+		private final Keyword cSemicolonKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		
+		//Sensor:
+		//	"Sensor" name=ID "pin" pin=STRING analog?="analog"? ";";
+		public ParserRule getRule() { return rule; }
+
+		//"Sensor" name=ID "pin" pin=STRING analog?="analog"? ";"
+		public Group getGroup() { return cGroup; }
+
+		//"Sensor"
+		public Keyword getSensorKeyword_0() { return cSensorKeyword_0; }
+
+		//name=ID
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
+
+		//"pin"
+		public Keyword getPinKeyword_2() { return cPinKeyword_2; }
+
+		//pin=STRING
+		public Assignment getPinAssignment_3() { return cPinAssignment_3; }
+
+		//STRING
+		public RuleCall getPinSTRINGTerminalRuleCall_3_0() { return cPinSTRINGTerminalRuleCall_3_0; }
+
+		//analog?="analog"?
+		public Assignment getAnalogAssignment_4() { return cAnalogAssignment_4; }
+
+		//"analog"
+		public Keyword getAnalogAnalogKeyword_4_0() { return cAnalogAnalogKeyword_4_0; }
+
+		//";"
+		public Keyword getSemicolonKeyword_5() { return cSemicolonKeyword_5; }
+	}
+
+	public class ActuatorElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Actuator");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cActuatorKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Keyword cPinKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cPinAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cPinSTRINGTerminalRuleCall_3_0 = (RuleCall)cPinAssignment_3.eContents().get(0);
+		private final Keyword cSemicolonKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		
+		//Actuator:
+		//	"Actuator" name=ID "pin" pin=STRING ";";
+		public ParserRule getRule() { return rule; }
+
+		//"Actuator" name=ID "pin" pin=STRING ";"
+		public Group getGroup() { return cGroup; }
+
+		//"Actuator"
+		public Keyword getActuatorKeyword_0() { return cActuatorKeyword_0; }
+
+		//name=ID
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
+
+		//"pin"
+		public Keyword getPinKeyword_2() { return cPinKeyword_2; }
+
+		//pin=STRING
+		public Assignment getPinAssignment_3() { return cPinAssignment_3; }
+
+		//STRING
+		public RuleCall getPinSTRINGTerminalRuleCall_3_0() { return cPinSTRINGTerminalRuleCall_3_0; }
+
+		//";"
+		public Keyword getSemicolonKeyword_4() { return cSemicolonKeyword_4; }
+	}
+
+	public class EventHandlerElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "EventHandler");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cEventHandlerKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Assignment cChangeActuatorsAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cChangeActuatorsChangeActuatorParserRuleCall_2_0 = (RuleCall)cChangeActuatorsAssignment_2.eContents().get(0);
+		private final Keyword cSemicolonKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		
+		//// Definimos que acciones realizaran los actuadores en cada tarea
+		//EventHandler:
+		//	"EventHandler" name=ID changeActuators+=ChangeActuator* ";";
+		public ParserRule getRule() { return rule; }
+
+		//"EventHandler" name=ID changeActuators+=ChangeActuator* ";"
+		public Group getGroup() { return cGroup; }
+
+		//"EventHandler"
+		public Keyword getEventHandlerKeyword_0() { return cEventHandlerKeyword_0; }
+
+		//name=ID
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
+
+		//changeActuators+=ChangeActuator*
+		public Assignment getChangeActuatorsAssignment_2() { return cChangeActuatorsAssignment_2; }
+
+		//ChangeActuator
+		public RuleCall getChangeActuatorsChangeActuatorParserRuleCall_2_0() { return cChangeActuatorsChangeActuatorParserRuleCall_2_0; }
+
+		//";"
+		public Keyword getSemicolonKeyword_3() { return cSemicolonKeyword_3; }
+	}
+
+	public class ChangeActuatorElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ChangeActuator");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cActuatorAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final CrossReference cActuatorActuatorCrossReference_0_0 = (CrossReference)cActuatorAssignment_0.eContents().get(0);
+		private final RuleCall cActuatorActuatorIDTerminalRuleCall_0_0_1 = (RuleCall)cActuatorActuatorCrossReference_0_0.eContents().get(1);
+		private final Keyword cColonKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cActuatorStateAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final Alternatives cActuatorStateAlternatives_2_0 = (Alternatives)cActuatorStateAssignment_2.eContents().get(0);
+		private final Keyword cActuatorStateOnKeyword_2_0_0 = (Keyword)cActuatorStateAlternatives_2_0.eContents().get(0);
+		private final Keyword cActuatorStateOffKeyword_2_0_1 = (Keyword)cActuatorStateAlternatives_2_0.eContents().get(1);
+		
+		//ChangeActuator:
+		//	actuator=[Actuator] ":" ActuatorState=("On" // Añadir mas opciones como Blink(tiempo)
+		//	| "Off");
+		public ParserRule getRule() { return rule; }
+
+		//actuator=[Actuator] ":" ActuatorState=("On" // Añadir mas opciones como Blink(tiempo)
+		//| "Off")
+		public Group getGroup() { return cGroup; }
+
+		//actuator=[Actuator]
+		public Assignment getActuatorAssignment_0() { return cActuatorAssignment_0; }
+
+		//[Actuator]
+		public CrossReference getActuatorActuatorCrossReference_0_0() { return cActuatorActuatorCrossReference_0_0; }
+
+		//ID
+		public RuleCall getActuatorActuatorIDTerminalRuleCall_0_0_1() { return cActuatorActuatorIDTerminalRuleCall_0_0_1; }
+
+		//":"
+		public Keyword getColonKeyword_1() { return cColonKeyword_1; }
+
+		//ActuatorState=("On" // Añadir mas opciones como Blink(tiempo)
+		//| "Off")
+		public Assignment getActuatorStateAssignment_2() { return cActuatorStateAssignment_2; }
+
+		//"On" // Añadir mas opciones como Blink(tiempo)
+		//| "Off"
+		public Alternatives getActuatorStateAlternatives_2_0() { return cActuatorStateAlternatives_2_0; }
+
+		//"On"
+		public Keyword getActuatorStateOnKeyword_2_0_0() { return cActuatorStateOnKeyword_2_0_0; }
+
+		//"Off"
+		public Keyword getActuatorStateOffKeyword_2_0_1() { return cActuatorStateOffKeyword_2_0_1; }
+	}
+
+	public class SensorListenerElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "SensorListener");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cSensorListenerKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cSensorAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final CrossReference cSensorSensorCrossReference_1_0 = (CrossReference)cSensorAssignment_1.eContents().get(0);
+		private final RuleCall cSensorSensorIDTerminalRuleCall_1_0_1 = (RuleCall)cSensorSensorCrossReference_1_0.eContents().get(1);
+		private final Keyword cIfKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
+		private final Assignment cTypeAssignment_3_0 = (Assignment)cGroup_3.eContents().get(0);
+		private final Keyword cTypeBETWEENKeyword_3_0_0 = (Keyword)cTypeAssignment_3_0.eContents().get(0);
+		private final Assignment cLAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
+		private final RuleCall cLINTTerminalRuleCall_3_1_0 = (RuleCall)cLAssignment_3_1.eContents().get(0);
+		private final Keyword cANDKeyword_3_2 = (Keyword)cGroup_3.eContents().get(2);
+		private final Assignment cHAssignment_3_3 = (Assignment)cGroup_3.eContents().get(3);
+		private final RuleCall cHINTTerminalRuleCall_3_3_0 = (RuleCall)cHAssignment_3_3.eContents().get(0);
+		private final Keyword cCallKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Assignment cEventHandlerAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final CrossReference cEventHandlerEventHandlerCrossReference_5_0 = (CrossReference)cEventHandlerAssignment_5.eContents().get(0);
+		private final RuleCall cEventHandlerEventHandlerIDTerminalRuleCall_5_0_1 = (RuleCall)cEventHandlerEventHandlerCrossReference_5_0.eContents().get(1);
+		private final Keyword cSemicolonKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		
+		//// Definimos las condiciones de los SensorListeners
+		//SensorListener:
+		//	"SensorListener" sensor=[Sensor] "if" (type="BETWEEN" l=INT "AND" h=INT) //'if' (type='CHANGE' | type='RISING' | type='FALLING' | type='BETWEEN' l=INT 'AND' h=INT) 
+		//	"call" eventHandler=[EventHandler] ";";
+		public ParserRule getRule() { return rule; }
+
+		//"SensorListener" sensor=[Sensor] "if" (type="BETWEEN" l=INT "AND" h=INT) //'if' (type='CHANGE' | type='RISING' | type='FALLING' | type='BETWEEN' l=INT 'AND' h=INT) 
+		//"call" eventHandler=[EventHandler] ";"
+		public Group getGroup() { return cGroup; }
+
+		//"SensorListener"
+		public Keyword getSensorListenerKeyword_0() { return cSensorListenerKeyword_0; }
+
+		//sensor=[Sensor]
+		public Assignment getSensorAssignment_1() { return cSensorAssignment_1; }
+
+		//[Sensor]
+		public CrossReference getSensorSensorCrossReference_1_0() { return cSensorSensorCrossReference_1_0; }
+
+		//ID
+		public RuleCall getSensorSensorIDTerminalRuleCall_1_0_1() { return cSensorSensorIDTerminalRuleCall_1_0_1; }
+
+		//"if"
+		public Keyword getIfKeyword_2() { return cIfKeyword_2; }
+
+		//type="BETWEEN" l=INT "AND" h=INT
+		public Group getGroup_3() { return cGroup_3; }
+
+		//type="BETWEEN"
+		public Assignment getTypeAssignment_3_0() { return cTypeAssignment_3_0; }
+
+		//"BETWEEN"
+		public Keyword getTypeBETWEENKeyword_3_0_0() { return cTypeBETWEENKeyword_3_0_0; }
+
+		//l=INT
+		public Assignment getLAssignment_3_1() { return cLAssignment_3_1; }
+
+		//INT
+		public RuleCall getLINTTerminalRuleCall_3_1_0() { return cLINTTerminalRuleCall_3_1_0; }
+
+		//"AND"
+		public Keyword getANDKeyword_3_2() { return cANDKeyword_3_2; }
+
+		//h=INT
+		public Assignment getHAssignment_3_3() { return cHAssignment_3_3; }
+
+		//INT
+		public RuleCall getHINTTerminalRuleCall_3_3_0() { return cHINTTerminalRuleCall_3_3_0; }
+
+		//"call"
+		public Keyword getCallKeyword_4() { return cCallKeyword_4; }
+
+		//eventHandler=[EventHandler]
+		public Assignment getEventHandlerAssignment_5() { return cEventHandlerAssignment_5; }
+
+		//[EventHandler]
+		public CrossReference getEventHandlerEventHandlerCrossReference_5_0() { return cEventHandlerEventHandlerCrossReference_5_0; }
+
+		//ID
+		public RuleCall getEventHandlerEventHandlerIDTerminalRuleCall_5_0_1() { return cEventHandlerEventHandlerIDTerminalRuleCall_5_0_1; }
+
+		//";"
+		public Keyword getSemicolonKeyword_6() { return cSemicolonKeyword_6; }
+	}
+
+	public class PreconditionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Precondition");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
+		private final Assignment cPre1Assignment_0_0 = (Assignment)cGroup_0.eContents().get(0);
+		private final RuleCall cPre1Precondition1ParserRuleCall_0_0_0 = (RuleCall)cPre1Assignment_0_0.eContents().get(0);
+		private final Assignment cOpAssignment_0_1 = (Assignment)cGroup_0.eContents().get(1);
+		private final Alternatives cOpAlternatives_0_1_0 = (Alternatives)cOpAssignment_0_1.eContents().get(0);
+		private final Keyword cOpAmpersandAmpersandKeyword_0_1_0_0 = (Keyword)cOpAlternatives_0_1_0.eContents().get(0);
+		private final Keyword cOpVerticalLineVerticalLineKeyword_0_1_0_1 = (Keyword)cOpAlternatives_0_1_0.eContents().get(1);
+		private final Assignment cPreAssignment_0_2 = (Assignment)cGroup_0.eContents().get(2);
+		private final RuleCall cPrePreconditionParserRuleCall_0_2_0 = (RuleCall)cPreAssignment_0_2.eContents().get(0);
+		private final Assignment cPre1Assignment_1 = (Assignment)cAlternatives.eContents().get(1);
+		private final RuleCall cPre1Precondition1ParserRuleCall_1_0 = (RuleCall)cPre1Assignment_1.eContents().get(0);
+		
+		//// Condiciones establecidas para los valores
+		//Precondition:
+		//	pre1=Precondition1 op=("&&" | "||") pre=Precondition | pre1=Precondition1;
+		public ParserRule getRule() { return rule; }
+
+		//pre1=Precondition1 op=("&&" | "||") pre=Precondition | pre1=Precondition1
+		public Alternatives getAlternatives() { return cAlternatives; }
+
+		//pre1=Precondition1 op=("&&" | "||") pre=Precondition
+		public Group getGroup_0() { return cGroup_0; }
+
+		//pre1=Precondition1
+		public Assignment getPre1Assignment_0_0() { return cPre1Assignment_0_0; }
+
+		//Precondition1
+		public RuleCall getPre1Precondition1ParserRuleCall_0_0_0() { return cPre1Precondition1ParserRuleCall_0_0_0; }
+
+		//op=("&&" | "||")
+		public Assignment getOpAssignment_0_1() { return cOpAssignment_0_1; }
+
+		//"&&" | "||"
+		public Alternatives getOpAlternatives_0_1_0() { return cOpAlternatives_0_1_0; }
+
+		//"&&"
+		public Keyword getOpAmpersandAmpersandKeyword_0_1_0_0() { return cOpAmpersandAmpersandKeyword_0_1_0_0; }
+
+		//"||"
+		public Keyword getOpVerticalLineVerticalLineKeyword_0_1_0_1() { return cOpVerticalLineVerticalLineKeyword_0_1_0_1; }
+
+		//pre=Precondition
+		public Assignment getPreAssignment_0_2() { return cPreAssignment_0_2; }
+
+		//Precondition
+		public RuleCall getPrePreconditionParserRuleCall_0_2_0() { return cPrePreconditionParserRuleCall_0_2_0; }
+
+		//pre1=Precondition1
+		public Assignment getPre1Assignment_1() { return cPre1Assignment_1; }
+
+		//Precondition1
+		public RuleCall getPre1Precondition1ParserRuleCall_1_0() { return cPre1Precondition1ParserRuleCall_1_0; }
+	}
+
+	public class Precondition1Elements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Precondition1");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final Assignment cPreAssignment_0 = (Assignment)cAlternatives.eContents().get(0);
+		private final RuleCall cPreSensorValuePreconditionParserRuleCall_0_0 = (RuleCall)cPreAssignment_0.eContents().get(0);
+		private final Assignment cPreAssignment_1 = (Assignment)cAlternatives.eContents().get(1);
+		private final RuleCall cPreEmptyPreconditionParserRuleCall_1_0 = (RuleCall)cPreAssignment_1.eContents().get(0);
+		
+		//Precondition1:
+		//	pre=SensorValuePrecondition | pre=EmptyPrecondition;
+		public ParserRule getRule() { return rule; }
+
+		//pre=SensorValuePrecondition | pre=EmptyPrecondition
+		public Alternatives getAlternatives() { return cAlternatives; }
+
+		//pre=SensorValuePrecondition
+		public Assignment getPreAssignment_0() { return cPreAssignment_0; }
+
+		//SensorValuePrecondition
+		public RuleCall getPreSensorValuePreconditionParserRuleCall_0_0() { return cPreSensorValuePreconditionParserRuleCall_0_0; }
+
+		//pre=EmptyPrecondition
+		public Assignment getPreAssignment_1() { return cPreAssignment_1; }
+
+		//EmptyPrecondition
+		public RuleCall getPreEmptyPreconditionParserRuleCall_1_0() { return cPreEmptyPreconditionParserRuleCall_1_0; }
+	}
+
+	public class EmptyPreconditionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "EmptyPrecondition");
+		private final Assignment cNameAssignment = (Assignment)rule.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_0 = (RuleCall)cNameAssignment.eContents().get(0);
+		
+		//EmptyPrecondition:
+		//	name=ID;
+		public ParserRule getRule() { return rule; }
+
+		//name=ID
+		public Assignment getNameAssignment() { return cNameAssignment; }
+
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_0() { return cNameIDTerminalRuleCall_0; }
+	}
+
+	public class SensorValuePreconditionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "SensorValuePrecondition");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cSensorAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final CrossReference cSensorSensorCrossReference_0_0 = (CrossReference)cSensorAssignment_0.eContents().get(0);
+		private final RuleCall cSensorSensorIDTerminalRuleCall_0_0_1 = (RuleCall)cSensorSensorCrossReference_0_0.eContents().get(1);
+		private final Assignment cCondAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final Alternatives cCondAlternatives_1_0 = (Alternatives)cCondAssignment_1.eContents().get(0);
+		private final Keyword cCondEqualsSignEqualsSignKeyword_1_0_0 = (Keyword)cCondAlternatives_1_0.eContents().get(0);
+		private final Keyword cCondLessThanSignEqualsSignKeyword_1_0_1 = (Keyword)cCondAlternatives_1_0.eContents().get(1);
+		private final Keyword cCondGreaterThanSignEqualsSignKeyword_1_0_2 = (Keyword)cCondAlternatives_1_0.eContents().get(2);
+		private final Keyword cCondExclamationMarkEqualsSignKeyword_1_0_3 = (Keyword)cCondAlternatives_1_0.eContents().get(3);
+		private final Assignment cValueAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cValuePossibleValuesParserRuleCall_2_0 = (RuleCall)cValueAssignment_2.eContents().get(0);
+		
+		//SensorValuePrecondition:
+		//	sensor=[Sensor] cond=("==" | "<=" | ">=" | "!=") value=PossibleValues;
+		public ParserRule getRule() { return rule; }
+
+		//sensor=[Sensor] cond=("==" | "<=" | ">=" | "!=") value=PossibleValues
+		public Group getGroup() { return cGroup; }
+
+		//sensor=[Sensor]
+		public Assignment getSensorAssignment_0() { return cSensorAssignment_0; }
+
+		//[Sensor]
+		public CrossReference getSensorSensorCrossReference_0_0() { return cSensorSensorCrossReference_0_0; }
+
+		//ID
+		public RuleCall getSensorSensorIDTerminalRuleCall_0_0_1() { return cSensorSensorIDTerminalRuleCall_0_0_1; }
+
+		//cond=("==" | "<=" | ">=" | "!=")
+		public Assignment getCondAssignment_1() { return cCondAssignment_1; }
+
+		//"==" | "<=" | ">=" | "!="
+		public Alternatives getCondAlternatives_1_0() { return cCondAlternatives_1_0; }
+
+		//"=="
+		public Keyword getCondEqualsSignEqualsSignKeyword_1_0_0() { return cCondEqualsSignEqualsSignKeyword_1_0_0; }
+
+		//"<="
+		public Keyword getCondLessThanSignEqualsSignKeyword_1_0_1() { return cCondLessThanSignEqualsSignKeyword_1_0_1; }
+
+		//">="
+		public Keyword getCondGreaterThanSignEqualsSignKeyword_1_0_2() { return cCondGreaterThanSignEqualsSignKeyword_1_0_2; }
+
+		//"!="
+		public Keyword getCondExclamationMarkEqualsSignKeyword_1_0_3() { return cCondExclamationMarkEqualsSignKeyword_1_0_3; }
+
+		//value=PossibleValues
+		public Assignment getValueAssignment_2() { return cValueAssignment_2; }
+
+		//PossibleValues
+		public RuleCall getValuePossibleValuesParserRuleCall_2_0() { return cValuePossibleValuesParserRuleCall_2_0; }
+	}
+
+	public class PossibleValuesElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "PossibleValues");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cDOUBLETerminalRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cINTTerminalRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		
+		//PossibleValues:
+		//	DOUBLE | INT;
+		public ParserRule getRule() { return rule; }
+
+		//DOUBLE | INT
+		public Alternatives getAlternatives() { return cAlternatives; }
+
+		//DOUBLE
+		public RuleCall getDOUBLETerminalRuleCall_0() { return cDOUBLETerminalRuleCall_0; }
+
+		//INT
+		public RuleCall getINTTerminalRuleCall_1() { return cINTTerminalRuleCall_1; }
+	}
+
+	public class TimerElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Timer");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cActionKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cEventHandlerAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final CrossReference cEventHandlerEventHandlerCrossReference_1_0 = (CrossReference)cEventHandlerAssignment_1.eContents().get(0);
+		private final RuleCall cEventHandlerEventHandlerIDTerminalRuleCall_1_0_1 = (RuleCall)cEventHandlerEventHandlerCrossReference_1_0.eContents().get(1);
+		private final Keyword cRepeatKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cRepeattypeAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final Alternatives cRepeattypeAlternatives_3_0 = (Alternatives)cRepeattypeAssignment_3.eContents().get(0);
+		private final Keyword cRepeattypeONCEKeyword_3_0_0 = (Keyword)cRepeattypeAlternatives_3_0.eContents().get(0);
+		private final Keyword cRepeattypeEVERYKeyword_3_0_1 = (Keyword)cRepeattypeAlternatives_3_0.eContents().get(1);
+		private final Keyword cSecondsKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Assignment cTimerSecsAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cTimerSecsINTTerminalRuleCall_5_0 = (RuleCall)cTimerSecsAssignment_5.eContents().get(0);
+		private final Keyword cSemicolonKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		
+		//// Acciones programadas para realizarse cada X segundos, o a determinadas horas del dia.
+		//Timer:
+		//	"action" eventHandler=[EventHandler] "repeat" repeattype=("ONCE" | "EVERY") "seconds:" timerSecs=INT ";";
+		public ParserRule getRule() { return rule; }
+
+		//"action" eventHandler=[EventHandler] "repeat" repeattype=("ONCE" | "EVERY") "seconds:" timerSecs=INT ";"
+		public Group getGroup() { return cGroup; }
+
+		//"action"
+		public Keyword getActionKeyword_0() { return cActionKeyword_0; }
+
+		//eventHandler=[EventHandler]
+		public Assignment getEventHandlerAssignment_1() { return cEventHandlerAssignment_1; }
+
+		//[EventHandler]
+		public CrossReference getEventHandlerEventHandlerCrossReference_1_0() { return cEventHandlerEventHandlerCrossReference_1_0; }
+
+		//ID
+		public RuleCall getEventHandlerEventHandlerIDTerminalRuleCall_1_0_1() { return cEventHandlerEventHandlerIDTerminalRuleCall_1_0_1; }
+
+		//"repeat"
+		public Keyword getRepeatKeyword_2() { return cRepeatKeyword_2; }
+
+		//repeattype=("ONCE" | "EVERY")
+		public Assignment getRepeattypeAssignment_3() { return cRepeattypeAssignment_3; }
+
+		//"ONCE" | "EVERY"
+		public Alternatives getRepeattypeAlternatives_3_0() { return cRepeattypeAlternatives_3_0; }
+
+		//"ONCE"
+		public Keyword getRepeattypeONCEKeyword_3_0_0() { return cRepeattypeONCEKeyword_3_0_0; }
+
+		//"EVERY"
+		public Keyword getRepeattypeEVERYKeyword_3_0_1() { return cRepeattypeEVERYKeyword_3_0_1; }
+
+		//"seconds:"
+		public Keyword getSecondsKeyword_4() { return cSecondsKeyword_4; }
+
+		//timerSecs=INT
+		public Assignment getTimerSecsAssignment_5() { return cTimerSecsAssignment_5; }
+
+		//INT
+		public RuleCall getTimerSecsINTTerminalRuleCall_5_0() { return cTimerSecsINTTerminalRuleCall_5_0; }
+
+		//";"
+		public Keyword getSemicolonKeyword_6() { return cSemicolonKeyword_6; }
+	}
+
+	public class AlarmElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Alarm");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cActionKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cEventHandlerAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final CrossReference cEventHandlerEventHandlerCrossReference_1_0 = (CrossReference)cEventHandlerAssignment_1.eContents().get(0);
+		private final RuleCall cEventHandlerEventHandlerIDTerminalRuleCall_1_0_1 = (RuleCall)cEventHandlerEventHandlerCrossReference_1_0.eContents().get(1);
+		private final Keyword cRepeatKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cRepeattypeAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final Alternatives cRepeattypeAlternatives_3_0 = (Alternatives)cRepeattypeAssignment_3.eContents().get(0);
+		private final Keyword cRepeattypeEVERYDAYKeyword_3_0_0 = (Keyword)cRepeattypeAlternatives_3_0.eContents().get(0);
+		private final Keyword cRepeattypeEVERYMONDAYKeyword_3_0_1 = (Keyword)cRepeattypeAlternatives_3_0.eContents().get(1);
+		private final Keyword cRepeattypeEVERYTUESDAYKeyword_3_0_2 = (Keyword)cRepeattypeAlternatives_3_0.eContents().get(2);
+		private final Keyword cRepeattypeEVERYWEDNESDAYKeyword_3_0_3 = (Keyword)cRepeattypeAlternatives_3_0.eContents().get(3);
+		private final Keyword cRepeattypeEVERYTHURSDAYKeyword_3_0_4 = (Keyword)cRepeattypeAlternatives_3_0.eContents().get(4);
+		private final Keyword cRepeattypeEVERYFRIDAYKeyword_3_0_5 = (Keyword)cRepeattypeAlternatives_3_0.eContents().get(5);
+		private final Keyword cRepeattypeEVERYSATURDAYKeyword_3_0_6 = (Keyword)cRepeattypeAlternatives_3_0.eContents().get(6);
+		private final Keyword cRepeattypeEVERYSUNDAYKeyword_3_0_7 = (Keyword)cRepeattypeAlternatives_3_0.eContents().get(7);
+		private final Keyword cHoursKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Assignment cTimerHoursAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cTimerHoursINTTerminalRuleCall_5_0 = (RuleCall)cTimerHoursAssignment_5.eContents().get(0);
+		private final Keyword cMinutesKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		private final Assignment cTimerMinutesAssignment_7 = (Assignment)cGroup.eContents().get(7);
+		private final RuleCall cTimerMinutesINTTerminalRuleCall_7_0 = (RuleCall)cTimerMinutesAssignment_7.eContents().get(0);
+		private final Keyword cSemicolonKeyword_8 = (Keyword)cGroup.eContents().get(8);
+		
+		//Alarm:
+		//	"action" eventHandler=[EventHandler] "repeat" repeattype=("EVERY DAY" | "EVERY MONDAY" | "EVERY TUESDAY" |
+		//	"EVERY WEDNESDAY" | "EVERY THURSDAY" | "EVERY FRIDAY" | "EVERY SATURDAY" | "EVERY SUNDAY") "hours:" timerHours=INT
+		//	"minutes:" timerMinutes=INT ";";
+		public ParserRule getRule() { return rule; }
+
+		//"action" eventHandler=[EventHandler] "repeat" repeattype=("EVERY DAY" | "EVERY MONDAY" | "EVERY TUESDAY" |
+		//"EVERY WEDNESDAY" | "EVERY THURSDAY" | "EVERY FRIDAY" | "EVERY SATURDAY" | "EVERY SUNDAY") "hours:" timerHours=INT
+		//"minutes:" timerMinutes=INT ";"
+		public Group getGroup() { return cGroup; }
+
+		//"action"
+		public Keyword getActionKeyword_0() { return cActionKeyword_0; }
+
+		//eventHandler=[EventHandler]
+		public Assignment getEventHandlerAssignment_1() { return cEventHandlerAssignment_1; }
+
+		//[EventHandler]
+		public CrossReference getEventHandlerEventHandlerCrossReference_1_0() { return cEventHandlerEventHandlerCrossReference_1_0; }
+
+		//ID
+		public RuleCall getEventHandlerEventHandlerIDTerminalRuleCall_1_0_1() { return cEventHandlerEventHandlerIDTerminalRuleCall_1_0_1; }
+
+		//"repeat"
+		public Keyword getRepeatKeyword_2() { return cRepeatKeyword_2; }
+
+		//repeattype=("EVERY DAY" | "EVERY MONDAY" | "EVERY TUESDAY" | "EVERY WEDNESDAY" | "EVERY THURSDAY" | "EVERY FRIDAY" |
+		//"EVERY SATURDAY" | "EVERY SUNDAY")
+		public Assignment getRepeattypeAssignment_3() { return cRepeattypeAssignment_3; }
+
+		//"EVERY DAY" | "EVERY MONDAY" | "EVERY TUESDAY" | "EVERY WEDNESDAY" | "EVERY THURSDAY" | "EVERY FRIDAY" |
+		//"EVERY SATURDAY" | "EVERY SUNDAY"
+		public Alternatives getRepeattypeAlternatives_3_0() { return cRepeattypeAlternatives_3_0; }
+
+		//"EVERY DAY"
+		public Keyword getRepeattypeEVERYDAYKeyword_3_0_0() { return cRepeattypeEVERYDAYKeyword_3_0_0; }
+
+		//"EVERY MONDAY"
+		public Keyword getRepeattypeEVERYMONDAYKeyword_3_0_1() { return cRepeattypeEVERYMONDAYKeyword_3_0_1; }
+
+		//"EVERY TUESDAY"
+		public Keyword getRepeattypeEVERYTUESDAYKeyword_3_0_2() { return cRepeattypeEVERYTUESDAYKeyword_3_0_2; }
+
+		//"EVERY WEDNESDAY"
+		public Keyword getRepeattypeEVERYWEDNESDAYKeyword_3_0_3() { return cRepeattypeEVERYWEDNESDAYKeyword_3_0_3; }
+
+		//"EVERY THURSDAY"
+		public Keyword getRepeattypeEVERYTHURSDAYKeyword_3_0_4() { return cRepeattypeEVERYTHURSDAYKeyword_3_0_4; }
+
+		//"EVERY FRIDAY"
+		public Keyword getRepeattypeEVERYFRIDAYKeyword_3_0_5() { return cRepeattypeEVERYFRIDAYKeyword_3_0_5; }
+
+		//"EVERY SATURDAY"
+		public Keyword getRepeattypeEVERYSATURDAYKeyword_3_0_6() { return cRepeattypeEVERYSATURDAYKeyword_3_0_6; }
+
+		//"EVERY SUNDAY"
+		public Keyword getRepeattypeEVERYSUNDAYKeyword_3_0_7() { return cRepeattypeEVERYSUNDAYKeyword_3_0_7; }
+
+		//"hours:"
+		public Keyword getHoursKeyword_4() { return cHoursKeyword_4; }
+
+		//timerHours=INT
+		public Assignment getTimerHoursAssignment_5() { return cTimerHoursAssignment_5; }
+
+		//INT
+		public RuleCall getTimerHoursINTTerminalRuleCall_5_0() { return cTimerHoursINTTerminalRuleCall_5_0; }
+
+		//"minutes:"
+		public Keyword getMinutesKeyword_6() { return cMinutesKeyword_6; }
+
+		//timerMinutes=INT
+		public Assignment getTimerMinutesAssignment_7() { return cTimerMinutesAssignment_7; }
+
+		//INT
+		public RuleCall getTimerMinutesINTTerminalRuleCall_7_0() { return cTimerMinutesINTTerminalRuleCall_7_0; }
+
+		//";"
+		public Keyword getSemicolonKeyword_8() { return cSemicolonKeyword_8; }
 	}
 	
 	
 	private ModelElements pModel;
+	private AbstractDeviceElements pAbstractDevice;
+	private SensorElements pSensor;
+	private ActuatorElements pActuator;
+	private EventHandlerElements pEventHandler;
+	private ChangeActuatorElements pChangeActuator;
+	private SensorListenerElements pSensorListener;
+	private PreconditionElements pPrecondition;
+	private Precondition1Elements pPrecondition1;
+	private EmptyPreconditionElements pEmptyPrecondition;
+	private SensorValuePreconditionElements pSensorValuePrecondition;
+	private PossibleValuesElements pPossibleValues;
+	private TerminalRule tDOUBLE;
+	private TimerElements pTimer;
+	private AlarmElements pAlarm;
 	
 	private final Grammar grammar;
 
@@ -107,15 +825,167 @@ public class RaspduinoDSLGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	
-	//Model:
+	//Model: // Nombre y plataforma que utilizaremos
 	//	"Sketch:" name=ID "Hardware:" hardware=("Arduino UNO" //Se podran añadir mas plataformas ARDUINO MEGA, NANO, etc.
-	//	| "Raspberry Pi");
+	//	| "Raspberry Pi") // Sensores y actuadores que utilizaremos para nuestro diseño
+	//	devices+=AbstractDevice* // Definicion de tareas o eventos
+	//	eventHandlers+=EventHandler* // Definicion de las condiciones para ejecutar una tarea
+	//	sensorListeners+=SensorListener* // Definicion de las condiciones para ejecutar una tarea
+	//	timers+=Timer* // Definicion de las condiciones para ejecutar una tarea
+	//	alarms+=Alarm* // TODO: En caso de conflicto definimos quien tiene preferencia, lo que indican los sensores o lo programado
+	//	"Concurrency Priority:" priority=("SENSOR" | "SCHEDULED");
 	public ModelElements getModelAccess() {
 		return (pModel != null) ? pModel : (pModel = new ModelElements());
 	}
 	
 	public ParserRule getModelRule() {
 		return getModelAccess().getRule();
+	}
+
+	//// Definicion de los sensore y actuadores SENSOR:INPUT ACUATOR:OUTPUT
+	//AbstractDevice:
+	//	Sensor | Actuator;
+	public AbstractDeviceElements getAbstractDeviceAccess() {
+		return (pAbstractDevice != null) ? pAbstractDevice : (pAbstractDevice = new AbstractDeviceElements());
+	}
+	
+	public ParserRule getAbstractDeviceRule() {
+		return getAbstractDeviceAccess().getRule();
+	}
+
+	//Sensor:
+	//	"Sensor" name=ID "pin" pin=STRING analog?="analog"? ";";
+	public SensorElements getSensorAccess() {
+		return (pSensor != null) ? pSensor : (pSensor = new SensorElements());
+	}
+	
+	public ParserRule getSensorRule() {
+		return getSensorAccess().getRule();
+	}
+
+	//Actuator:
+	//	"Actuator" name=ID "pin" pin=STRING ";";
+	public ActuatorElements getActuatorAccess() {
+		return (pActuator != null) ? pActuator : (pActuator = new ActuatorElements());
+	}
+	
+	public ParserRule getActuatorRule() {
+		return getActuatorAccess().getRule();
+	}
+
+	//// Definimos que acciones realizaran los actuadores en cada tarea
+	//EventHandler:
+	//	"EventHandler" name=ID changeActuators+=ChangeActuator* ";";
+	public EventHandlerElements getEventHandlerAccess() {
+		return (pEventHandler != null) ? pEventHandler : (pEventHandler = new EventHandlerElements());
+	}
+	
+	public ParserRule getEventHandlerRule() {
+		return getEventHandlerAccess().getRule();
+	}
+
+	//ChangeActuator:
+	//	actuator=[Actuator] ":" ActuatorState=("On" // Añadir mas opciones como Blink(tiempo)
+	//	| "Off");
+	public ChangeActuatorElements getChangeActuatorAccess() {
+		return (pChangeActuator != null) ? pChangeActuator : (pChangeActuator = new ChangeActuatorElements());
+	}
+	
+	public ParserRule getChangeActuatorRule() {
+		return getChangeActuatorAccess().getRule();
+	}
+
+	//// Definimos las condiciones de los SensorListeners
+	//SensorListener:
+	//	"SensorListener" sensor=[Sensor] "if" (type="BETWEEN" l=INT "AND" h=INT) //'if' (type='CHANGE' | type='RISING' | type='FALLING' | type='BETWEEN' l=INT 'AND' h=INT) 
+	//	"call" eventHandler=[EventHandler] ";";
+	public SensorListenerElements getSensorListenerAccess() {
+		return (pSensorListener != null) ? pSensorListener : (pSensorListener = new SensorListenerElements());
+	}
+	
+	public ParserRule getSensorListenerRule() {
+		return getSensorListenerAccess().getRule();
+	}
+
+	//// Condiciones establecidas para los valores
+	//Precondition:
+	//	pre1=Precondition1 op=("&&" | "||") pre=Precondition | pre1=Precondition1;
+	public PreconditionElements getPreconditionAccess() {
+		return (pPrecondition != null) ? pPrecondition : (pPrecondition = new PreconditionElements());
+	}
+	
+	public ParserRule getPreconditionRule() {
+		return getPreconditionAccess().getRule();
+	}
+
+	//Precondition1:
+	//	pre=SensorValuePrecondition | pre=EmptyPrecondition;
+	public Precondition1Elements getPrecondition1Access() {
+		return (pPrecondition1 != null) ? pPrecondition1 : (pPrecondition1 = new Precondition1Elements());
+	}
+	
+	public ParserRule getPrecondition1Rule() {
+		return getPrecondition1Access().getRule();
+	}
+
+	//EmptyPrecondition:
+	//	name=ID;
+	public EmptyPreconditionElements getEmptyPreconditionAccess() {
+		return (pEmptyPrecondition != null) ? pEmptyPrecondition : (pEmptyPrecondition = new EmptyPreconditionElements());
+	}
+	
+	public ParserRule getEmptyPreconditionRule() {
+		return getEmptyPreconditionAccess().getRule();
+	}
+
+	//SensorValuePrecondition:
+	//	sensor=[Sensor] cond=("==" | "<=" | ">=" | "!=") value=PossibleValues;
+	public SensorValuePreconditionElements getSensorValuePreconditionAccess() {
+		return (pSensorValuePrecondition != null) ? pSensorValuePrecondition : (pSensorValuePrecondition = new SensorValuePreconditionElements());
+	}
+	
+	public ParserRule getSensorValuePreconditionRule() {
+		return getSensorValuePreconditionAccess().getRule();
+	}
+
+	//PossibleValues:
+	//	DOUBLE | INT;
+	public PossibleValuesElements getPossibleValuesAccess() {
+		return (pPossibleValues != null) ? pPossibleValues : (pPossibleValues = new PossibleValuesElements());
+	}
+	
+	public ParserRule getPossibleValuesRule() {
+		return getPossibleValuesAccess().getRule();
+	}
+
+	//// TODO no se porque no me ha dejado poner el double
+	//terminal DOUBLE:
+	//	INT "." INT;
+	public TerminalRule getDOUBLERule() {
+		return (tDOUBLE != null) ? tDOUBLE : (tDOUBLE = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "DOUBLE"));
+	} 
+
+	//// Acciones programadas para realizarse cada X segundos, o a determinadas horas del dia.
+	//Timer:
+	//	"action" eventHandler=[EventHandler] "repeat" repeattype=("ONCE" | "EVERY") "seconds:" timerSecs=INT ";";
+	public TimerElements getTimerAccess() {
+		return (pTimer != null) ? pTimer : (pTimer = new TimerElements());
+	}
+	
+	public ParserRule getTimerRule() {
+		return getTimerAccess().getRule();
+	}
+
+	//Alarm:
+	//	"action" eventHandler=[EventHandler] "repeat" repeattype=("EVERY DAY" | "EVERY MONDAY" | "EVERY TUESDAY" |
+	//	"EVERY WEDNESDAY" | "EVERY THURSDAY" | "EVERY FRIDAY" | "EVERY SATURDAY" | "EVERY SUNDAY") "hours:" timerHours=INT
+	//	"minutes:" timerMinutes=INT ";";
+	public AlarmElements getAlarmAccess() {
+		return (pAlarm != null) ? pAlarm : (pAlarm = new AlarmElements());
+	}
+	
+	public ParserRule getAlarmRule() {
+		return getAlarmAccess().getRule();
 	}
 
 	//terminal ID:

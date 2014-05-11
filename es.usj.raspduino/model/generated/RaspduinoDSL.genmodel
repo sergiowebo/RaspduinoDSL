@@ -10,6 +10,62 @@
     <genClasses ecoreClass="RaspduinoDSL.ecore#//Model">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RaspduinoDSL.ecore#//Model/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RaspduinoDSL.ecore#//Model/hardware"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RaspduinoDSL.ecore#//Model/devices"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RaspduinoDSL.ecore#//Model/eventHandlers"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RaspduinoDSL.ecore#//Model/sensorListeners"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RaspduinoDSL.ecore#//Model/timers"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RaspduinoDSL.ecore#//Model/alarms"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RaspduinoDSL.ecore#//Model/priority"/>
+    </genClasses>
+    <genClasses ecoreClass="RaspduinoDSL.ecore#//AbstractDevice">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RaspduinoDSL.ecore#//AbstractDevice/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RaspduinoDSL.ecore#//AbstractDevice/pin"/>
+    </genClasses>
+    <genClasses ecoreClass="RaspduinoDSL.ecore#//Sensor">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RaspduinoDSL.ecore#//Sensor/analog"/>
+    </genClasses>
+    <genClasses ecoreClass="RaspduinoDSL.ecore#//Actuator"/>
+    <genClasses ecoreClass="RaspduinoDSL.ecore#//EventHandler">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RaspduinoDSL.ecore#//EventHandler/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RaspduinoDSL.ecore#//EventHandler/changeActuators"/>
+    </genClasses>
+    <genClasses ecoreClass="RaspduinoDSL.ecore#//ChangeActuator">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference RaspduinoDSL.ecore#//ChangeActuator/actuator"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RaspduinoDSL.ecore#//ChangeActuator/ActuatorState"/>
+    </genClasses>
+    <genClasses ecoreClass="RaspduinoDSL.ecore#//SensorListener">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference RaspduinoDSL.ecore#//SensorListener/sensor"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RaspduinoDSL.ecore#//SensorListener/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RaspduinoDSL.ecore#//SensorListener/l"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RaspduinoDSL.ecore#//SensorListener/h"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference RaspduinoDSL.ecore#//SensorListener/eventHandler"/>
+    </genClasses>
+    <genClasses ecoreClass="RaspduinoDSL.ecore#//Precondition">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RaspduinoDSL.ecore#//Precondition/pre1"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RaspduinoDSL.ecore#//Precondition/op"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RaspduinoDSL.ecore#//Precondition/pre"/>
+    </genClasses>
+    <genClasses ecoreClass="RaspduinoDSL.ecore#//Precondition1">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RaspduinoDSL.ecore#//Precondition1/pre"/>
+    </genClasses>
+    <genClasses ecoreClass="RaspduinoDSL.ecore#//EmptyPrecondition">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RaspduinoDSL.ecore#//EmptyPrecondition/name"/>
+    </genClasses>
+    <genClasses ecoreClass="RaspduinoDSL.ecore#//SensorValuePrecondition">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference RaspduinoDSL.ecore#//SensorValuePrecondition/sensor"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RaspduinoDSL.ecore#//SensorValuePrecondition/cond"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RaspduinoDSL.ecore#//SensorValuePrecondition/value"/>
+    </genClasses>
+    <genClasses ecoreClass="RaspduinoDSL.ecore#//Timer">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference RaspduinoDSL.ecore#//Timer/eventHandler"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RaspduinoDSL.ecore#//Timer/repeattype"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RaspduinoDSL.ecore#//Timer/timerSecs"/>
+    </genClasses>
+    <genClasses ecoreClass="RaspduinoDSL.ecore#//Alarm">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference RaspduinoDSL.ecore#//Alarm/eventHandler"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RaspduinoDSL.ecore#//Alarm/repeattype"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RaspduinoDSL.ecore#//Alarm/timerHours"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RaspduinoDSL.ecore#//Alarm/timerMinutes"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

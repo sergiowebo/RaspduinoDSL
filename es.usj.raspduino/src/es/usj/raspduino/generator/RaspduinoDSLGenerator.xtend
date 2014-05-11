@@ -9,6 +9,7 @@ import org.eclipse.xtext.generator.IFileSystemAccess
 import es.usj.raspduino.raspduinoDSL.Model
 import com.google.inject.Inject
 import es.usj.raspduino.generator.arduino.MainArduino
+import es.usj.raspduino.generator.raspberrypi.MainRaspberrypi
 
 /**
  * Generates code from your model files on save.
@@ -25,7 +26,7 @@ class RaspduinoDSLGenerator implements IGenerator {
 	 		if(e.hardware.equals("Arduino UNO")){
 				new MainArduino().generateMainCode(e,util);
 			} else if(e.hardware.equals("Raspberry Pi")){
-				//TODO:
+				new MainRaspberrypi().generateMainCode(e,util);
 			}	
  	 	}
 	}
