@@ -1,0 +1,8 @@
+grammar es.usj.raspduino.RaspduinoDSL with org.eclipse.xtext.common.Terminals
+
+generate raspduinoDSL "http://www.usj.es/raspduino/RaspduinoDSL"
+
+Model:
+	'Sketch:' name=ID
+	'Hardware:' hardware=('Arduino UNO' | 'Raspberry Pi') //Se podran añadir mas plataformas ARDUINO MEGA, NANO, etc.
+;

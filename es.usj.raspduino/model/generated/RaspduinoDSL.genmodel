@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/es.usj.raspduino/src-gen" editDirectory="/es.usj.raspduino.edit/src"
+    editorDirectory="/es.usj.raspduino.editor/src" modelPluginID="es.usj.raspduino"
+    forceOverwrite="true" modelName="RaspduinoDSL" updateClasspath="false" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    complianceLevel="5.0" copyrightFields="false" editPluginID="es.usj.raspduino.edit"
+    editorPluginID="es.usj.raspduino.editor" runtimeVersion="2.9">
+  <genPackages prefix="RaspduinoDSL" basePackage="es.usj.raspduino" disposableProviderFactory="true"
+      fileExtensions="raspduino" ecorePackage="RaspduinoDSL.ecore#/">
+    <genClasses ecoreClass="RaspduinoDSL.ecore#//Model">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RaspduinoDSL.ecore#//Model/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RaspduinoDSL.ecore#//Model/hardware"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>
