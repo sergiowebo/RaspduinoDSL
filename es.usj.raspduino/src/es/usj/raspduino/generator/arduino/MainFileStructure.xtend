@@ -7,23 +7,20 @@ import es.usj.raspduino.raspduinoDSL.Actuator
 import org.eclipse.emf.common.util.EList
 import es.usj.raspduino.raspduinoDSL.AbstractDevice
 import es.usj.raspduino.raspduinoDSL.SensorListener
+import es.usj.raspduino.raspduinoDSL.Timer
+import es.usj.raspduino.raspduinoDSL.Alarm
 
 class MainFileStructure {
+	
 	def generateMainCode(Model model, Util util){
-		
-		// String donde iremos generando el codigo
-		var String code = "";
-		
-		// Variables temporales
+		var String code = ""; // String donde iremos generando el codigo
 		var boolean firstOccurrence = true; // Para que no se repitan los include en el codigo principal
-		
 		var Sensor sensor;
 		var Actuator actuator;
-		var EList<AbstractDevice> list = model.devices;
-
+		var Timer timer;
 		
 		// Declaramos los INCLUDES del codigo
-		firstOccurrence=true
+		firstOccurrence = true
 		for(AbstractDevice dev:model.devices){
 			if(firstOccurrence && dev.eClass.name.equals("Sensor")){
 				 code=code+"#include \"Sensor.h\" \n"
@@ -32,7 +29,7 @@ class MainFileStructure {
 		}
 		
 		// Si hay actuadores generamos las librerias de actuadores
-		firstOccurrence=true
+		firstOccurrence = true
 		for(AbstractDevice dev:model.devices)
 			if(firstOccurrence && dev.eClass.name.equals("Actuator")){
 				 code=code+"#include \"Actuator.h\" \n"
@@ -44,36 +41,43 @@ class MainFileStructure {
 			code=code+"#include \"EventHandler.h\" \n"
 		}
 		
+		// Si hay timers o alarms generamos las librerias
+		firstOccurrence = true
+		for(Timer dev:model.timers)
+			firstOccurrence = false
+				code=code+"#include \"Time.h\" \n"
+				code=code+"#include \"TimeAlarms.h\" \n"
+				
+		if (firstOccurrence)
+			for(Alarm dev:model.alarms)
+				firstOccurrence = false
+				code=code+"#include \"Time.h\" \n"
+				code=code+"#include \"TimeAlarms.h\" \n"
+		
 		// Declaramos las variables que se utilizaran
 		code = code + "\n"
-		for(AbstractDevice dev:list){
+		for(AbstractDevice dev:model.devices){
 			if(dev.eClass.name.equals("Sensor")){
 				sensor = dev as Sensor;
-				code = code + "Sensor " + sensor.name + "(" + calcPinNumber(sensor.pin)
-
-				if(sensor.analog){
-					code=code+", true);\n";
-				}else{
-					code=code+", false);\n";
-				}
-								
+				code = code + "Sensor " + sensor.name + "(" + calcPinNumber(sensor.pin)				
 			}else if(dev.eClass.name.equals("Actuator")){
 				actuator = dev as Actuator;
 				code=code+"Actuator " + actuator.name + "(" + calcPinNumber(actuator.pin) + ");\n"				
 			}
 		}
 		 
-		// Declaramos el setup() donde inicializamos las variables
+		// Inicio SETUP
 		code = code + "\n"
 		code = code + "void setup(){\n"
-			// Si utilizamos algun sensor o la libreria de alarmas algo tendremos que poner
-			// Dentro del setup metemos la inicializacion de los valores temporales de los sensores
-			/*for(AbstractDevice dev:s.devices){
-				if(dev.eClass.name.equals("Sensor")){
-					sensor = dev as Sensor
-					code = code + "	" +sensor.name + ".setTempValue("+ sensor.name + ".getValue()" + ");\n"
-				}
-			}*/
+		code = code + "	Serial.begin(9600);\n"
+		
+		// Añadimos los timers programados
+		for(Timer dev:model.timers)
+			timer = dev as Timer;
+			code = code + "	" + "Alarm.timerOnce(" + timer.timerSecs + ", " + timer.eventHandler + ")";
+		
+		
+		// Fin del SETUP
 		code = code + "}\n\n"
 		  
 		// INICIO del LOOP()
@@ -99,7 +103,6 @@ class MainFileStructure {
 		 
 		 // FIN del LOOP
 		 code = code + "}\n"
-
 				
 		// Generamos el archivo
 		util.genFile(model.name,"h",code)

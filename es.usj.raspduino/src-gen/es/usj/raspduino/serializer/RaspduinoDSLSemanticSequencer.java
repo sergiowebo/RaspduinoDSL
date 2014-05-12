@@ -200,7 +200,7 @@ public class RaspduinoDSLSemanticSequencer extends AbstractDelegatingSemanticSeq
 	 *         sensorListeners+=SensorListener* 
 	 *         timers+=Timer* 
 	 *         alarms+=Alarm* 
-	 *         (priority='SENSOR' | priority='SCHEDULED')
+	 *         (priority='SENSOR' | priority='SCHEDULED')*
 	 *     )
 	 */
 	protected void sequence_Model(EObject context, Model semanticObject) {
@@ -265,10 +265,20 @@ public class RaspduinoDSLSemanticSequencer extends AbstractDelegatingSemanticSeq
 	
 	/**
 	 * Constraint:
-	 *     (name=ID pin=STRING analog?='analog'?)
+	 *     (name=ID pin=STRING)
 	 */
 	protected void sequence_Sensor(EObject context, Sensor semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, RaspduinoDSLPackage.Literals.ABSTRACT_DEVICE__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, RaspduinoDSLPackage.Literals.ABSTRACT_DEVICE__NAME));
+			if(transientValues.isValueTransient(semanticObject, RaspduinoDSLPackage.Literals.ABSTRACT_DEVICE__PIN) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, RaspduinoDSLPackage.Literals.ABSTRACT_DEVICE__PIN));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getSensorAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getSensorAccess().getPinSTRINGTerminalRuleCall_3_0(), semanticObject.getPin());
+		feeder.finish();
 	}
 	
 	

@@ -15,7 +15,6 @@ T__51=51
 T__16=16
 T__52=52
 T__15=15
-T__53=53
 T__18=18
 T__17=17
 T__12=12
@@ -51,7 +50,6 @@ RULE_WS=10
 'EVERY SUNDAY'=33
 'Raspberry Pi'=13
 '>='=22
-'analog'=52
 '=='=20
 'Sensor'=37
 'hours:'=50
@@ -66,7 +64,7 @@ RULE_WS=10
 '&&'=18
 'SENSOR'=14
 'EVERY WEDNESDAY'=29
-';'=39
+';'=41
 'On'=16
 'EVERY'=25
 'Arduino UNO'=12
@@ -76,12 +74,12 @@ RULE_WS=10
 'EVERY SATURDAY'=32
 'Concurrency Priority:'=36
 'minutes:'=51
-'BETWEEN'=53
+'BETWEEN'=52
 'action'=47
-'Actuator'=40
+'Actuator'=39
 'ONCE'=24
 'EVERY DAY'=26
-'EventHandler'=41
+'EventHandler'=40
 '<='=21
 '!='=23
 'if'=44

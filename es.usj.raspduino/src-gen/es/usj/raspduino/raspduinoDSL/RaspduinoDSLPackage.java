@@ -213,22 +213,13 @@ public interface RaspduinoDSLPackage extends EPackage
   int SENSOR__PIN = ABSTRACT_DEVICE__PIN;
 
   /**
-   * The feature id for the '<em><b>Analog</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SENSOR__ANALOG = ABSTRACT_DEVICE_FEATURE_COUNT + 0;
-
-  /**
    * The number of structural features of the '<em>Sensor</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SENSOR_FEATURE_COUNT = ABSTRACT_DEVICE_FEATURE_COUNT + 1;
+  int SENSOR_FEATURE_COUNT = ABSTRACT_DEVICE_FEATURE_COUNT + 0;
 
   /**
    * The meta object id for the '{@link es.usj.raspduino.raspduinoDSL.impl.ActuatorImpl <em>Actuator</em>}' class.
@@ -796,17 +787,6 @@ public interface RaspduinoDSLPackage extends EPackage
   EClass getSensor();
 
   /**
-   * Returns the meta object for the attribute '{@link es.usj.raspduino.raspduinoDSL.Sensor#isAnalog <em>Analog</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Analog</em>'.
-   * @see es.usj.raspduino.raspduinoDSL.Sensor#isAnalog()
-   * @see #getSensor()
-   * @generated
-   */
-  EAttribute getSensor_Analog();
-
-  /**
    * Returns the meta object for class '{@link es.usj.raspduino.raspduinoDSL.Actuator <em>Actuator</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1302,14 +1282,6 @@ public interface RaspduinoDSLPackage extends EPackage
      * @generated
      */
     EClass SENSOR = eINSTANCE.getSensor();
-
-    /**
-     * The meta object literal for the '<em><b>Analog</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute SENSOR__ANALOG = eINSTANCE.getSensor_Analog();
 
     /**
      * The meta object literal for the '{@link es.usj.raspduino.raspduinoDSL.impl.ActuatorImpl <em>Actuator</em>}' class.

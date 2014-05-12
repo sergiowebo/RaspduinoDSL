@@ -15,7 +15,6 @@ T__51=51
 T__16=16
 T__52=52
 T__15=15
-T__53=53
 T__18=18
 T__17=17
 T__12=12
@@ -48,45 +47,44 @@ T__37=37
 T__38=38
 T__39=39
 RULE_WS=10
-'EVERY SUNDAY'=51
+'EVERY SUNDAY'=50
 'Raspberry Pi'=15
-'>='=37
-'analog'=21
-'=='=35
+'>='=36
+'=='=34
 'Sensor'=19
-'hours:'=52
+'hours:'=51
 'SCHEDULED'=18
-'call'=32
-'Off'=27
-'||'=34
+'call'=31
+'Off'=26
+'||'=33
 'Hardware:'=13
 'Sketch:'=12
-'SensorListener'=28
-'repeat'=40
+'SensorListener'=27
+'repeat'=39
 'SENSOR'=17
-'&&'=33
-'EVERY WEDNESDAY'=47
-';'=22
-'EVERY'=42
-'On'=26
+'&&'=32
+'EVERY WEDNESDAY'=46
+';'=23
+'EVERY'=41
+'On'=25
 'Arduino UNO'=14
-'EVERY FRIDAY'=49
-'EVERY THURSDAY'=48
-'AND'=31
-'EVERY SATURDAY'=50
+'EVERY FRIDAY'=48
+'EVERY THURSDAY'=47
+'AND'=30
+'EVERY SATURDAY'=49
 'Concurrency Priority:'=16
-'minutes:'=53
-'ONCE'=41
-'action'=39
-'Actuator'=23
-'BETWEEN'=30
-'EVERY DAY'=44
-'<='=36
-'EventHandler'=24
-'!='=38
-'EVERY TUESDAY'=46
-'if'=29
-':'=25
+'minutes:'=52
+'ONCE'=40
+'action'=38
+'Actuator'=21
+'BETWEEN'=29
+'EVERY DAY'=43
+'EventHandler'=22
+'<='=35
+'!='=37
+'EVERY TUESDAY'=45
+'if'=28
+':'=24
 'pin'=20
-'seconds:'=43
-'EVERY MONDAY'=45
+'seconds:'=42
+'EVERY MONDAY'=44

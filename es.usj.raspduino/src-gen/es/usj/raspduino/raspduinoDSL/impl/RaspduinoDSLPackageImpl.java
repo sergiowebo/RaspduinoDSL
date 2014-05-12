@@ -322,16 +322,6 @@ public class RaspduinoDSLPackageImpl extends EPackageImpl implements RaspduinoDS
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getSensor_Analog()
-  {
-    return (EAttribute)sensorEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EClass getActuator()
   {
     return actuatorEClass;
@@ -712,7 +702,6 @@ public class RaspduinoDSLPackageImpl extends EPackageImpl implements RaspduinoDS
     createEAttribute(abstractDeviceEClass, ABSTRACT_DEVICE__PIN);
 
     sensorEClass = createEClass(SENSOR);
-    createEAttribute(sensorEClass, SENSOR__ANALOG);
 
     actuatorEClass = createEClass(ACTUATOR);
 
@@ -807,7 +796,6 @@ public class RaspduinoDSLPackageImpl extends EPackageImpl implements RaspduinoDS
     initEAttribute(getAbstractDevice_Pin(), ecorePackage.getEString(), "pin", null, 0, 1, AbstractDevice.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(sensorEClass, Sensor.class, "Sensor", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getSensor_Analog(), ecorePackage.getEBoolean(), "analog", null, 0, 1, Sensor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(actuatorEClass, Actuator.class, "Actuator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

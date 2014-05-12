@@ -23,7 +23,7 @@ Model:
 	(alarms+=Alarm)*
 	
 	// TODO: En caso de conflicto definimos quien tiene preferencia, lo que indican los sensores o lo programado
-	'Concurrency Priority:' priority=('SENSOR'|'SCHEDULED')
+	('Concurrency Priority:' priority=('SENSOR'|'SCHEDULED'))*
 ;
 
 	// Definicion de los sensore y actuadores SENSOR:INPUT ACUATOR:OUTPUT
@@ -31,10 +31,10 @@ Model:
 		Sensor | Actuator
 	;
 	Sensor:
-		'Sensor' name=ID 'pin' pin=STRING (analog?='analog')? ';'
+		'Sensor' name=ID 'pin' pin=STRING //(analog?='analog')? ';'
 	;
 	Actuator:
-		'Actuator' name=ID 'pin' pin=STRING ';' 
+		'Actuator' name=ID 'pin' pin=STRING 
 	;
 	
 	// Definimos que acciones realizaran los actuadores en cada tarea
@@ -52,7 +52,6 @@ Model:
 		'SensorListener' sensor=[Sensor]
 		'if' (type='BETWEEN' l=INT 'AND' h=INT)  //'if' (type='CHANGE' | type='RISING' | type='FALLING' | type='BETWEEN' l=INT 'AND' h=INT) 
 		'call' eventHandler=[EventHandler]
-		';'
 	;
 
 	// Condiciones establecidas para los valores
@@ -78,9 +77,8 @@ Model:
 	// Acciones programadas para realizarse cada X segundos, o a determinadas horas del dia.
 	Timer:
 		'action' eventHandler=[EventHandler]
-		'repeat' repeattype = ('ONCE'|'EVERY')
+		'repeat' repeattype = ('ONCE')
 		'seconds:' timerSecs = INT
-		';'
 	;
 	
 	Alarm:
@@ -89,6 +87,5 @@ Model:
 								|'EVERY THURSDAY'|'EVERY FRIDAY'|'EVERY SATURDAY'|'EVERY SUNDAY')
 		'hours:' timerHours = INT
 		'minutes:' timerMinutes = INT
-		';'
 	;
 		

@@ -38,7 +38,7 @@ public class RaspduinoDSLParser extends AbstractContentAssistParser {
 				private static final long serialVersionUID = 1L;
 				{
 					put(grammarAccess.getModelAccess().getHardwareAlternatives_3_0(), "rule__Model__HardwareAlternatives_3_0");
-					put(grammarAccess.getModelAccess().getPriorityAlternatives_10_0(), "rule__Model__PriorityAlternatives_10_0");
+					put(grammarAccess.getModelAccess().getPriorityAlternatives_9_1_0(), "rule__Model__PriorityAlternatives_9_1_0");
 					put(grammarAccess.getAbstractDeviceAccess().getAlternatives(), "rule__AbstractDevice__Alternatives");
 					put(grammarAccess.getChangeActuatorAccess().getActuatorStateAlternatives_2_0(), "rule__ChangeActuator__ActuatorStateAlternatives_2_0");
 					put(grammarAccess.getPreconditionAccess().getAlternatives(), "rule__Precondition__Alternatives");
@@ -49,6 +49,7 @@ public class RaspduinoDSLParser extends AbstractContentAssistParser {
 					put(grammarAccess.getTimerAccess().getRepeattypeAlternatives_3_0(), "rule__Timer__RepeattypeAlternatives_3_0");
 					put(grammarAccess.getAlarmAccess().getRepeattypeAlternatives_3_0(), "rule__Alarm__RepeattypeAlternatives_3_0");
 					put(grammarAccess.getModelAccess().getGroup(), "rule__Model__Group__0");
+					put(grammarAccess.getModelAccess().getGroup_9(), "rule__Model__Group_9__0");
 					put(grammarAccess.getSensorAccess().getGroup(), "rule__Sensor__Group__0");
 					put(grammarAccess.getActuatorAccess().getGroup(), "rule__Actuator__Group__0");
 					put(grammarAccess.getEventHandlerAccess().getGroup(), "rule__EventHandler__Group__0");
@@ -66,10 +67,9 @@ public class RaspduinoDSLParser extends AbstractContentAssistParser {
 					put(grammarAccess.getModelAccess().getSensorListenersAssignment_6(), "rule__Model__SensorListenersAssignment_6");
 					put(grammarAccess.getModelAccess().getTimersAssignment_7(), "rule__Model__TimersAssignment_7");
 					put(grammarAccess.getModelAccess().getAlarmsAssignment_8(), "rule__Model__AlarmsAssignment_8");
-					put(grammarAccess.getModelAccess().getPriorityAssignment_10(), "rule__Model__PriorityAssignment_10");
+					put(grammarAccess.getModelAccess().getPriorityAssignment_9_1(), "rule__Model__PriorityAssignment_9_1");
 					put(grammarAccess.getSensorAccess().getNameAssignment_1(), "rule__Sensor__NameAssignment_1");
 					put(grammarAccess.getSensorAccess().getPinAssignment_3(), "rule__Sensor__PinAssignment_3");
-					put(grammarAccess.getSensorAccess().getAnalogAssignment_4(), "rule__Sensor__AnalogAssignment_4");
 					put(grammarAccess.getActuatorAccess().getNameAssignment_1(), "rule__Actuator__NameAssignment_1");
 					put(grammarAccess.getActuatorAccess().getPinAssignment_3(), "rule__Actuator__PinAssignment_3");
 					put(grammarAccess.getEventHandlerAccess().getNameAssignment_1(), "rule__EventHandler__NameAssignment_1");

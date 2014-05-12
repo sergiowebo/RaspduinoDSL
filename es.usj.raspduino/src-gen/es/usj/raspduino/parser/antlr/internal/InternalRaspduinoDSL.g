@@ -223,16 +223,16 @@ ruleModel returns [EObject current=null]
 	    }
 
 )
-)*	otherlv_9='Concurrency Priority:' 
+)*(	otherlv_9='Concurrency Priority:' 
     {
-    	newLeafNode(otherlv_9, grammarAccess.getModelAccess().getConcurrencyPriorityKeyword_9());
+    	newLeafNode(otherlv_9, grammarAccess.getModelAccess().getConcurrencyPriorityKeyword_9_0());
     }
 (
 (
 (
 		lv_priority_10_1=	'SENSOR' 
     {
-        newLeafNode(lv_priority_10_1, grammarAccess.getModelAccess().getPrioritySENSORKeyword_10_0_0());
+        newLeafNode(lv_priority_10_1, grammarAccess.getModelAccess().getPrioritySENSORKeyword_9_1_0_0());
     }
  
 	    {
@@ -244,7 +244,7 @@ ruleModel returns [EObject current=null]
 
     |		lv_priority_10_2=	'SCHEDULED' 
     {
-        newLeafNode(lv_priority_10_2, grammarAccess.getModelAccess().getPrioritySCHEDULEDKeyword_10_0_1());
+        newLeafNode(lv_priority_10_2, grammarAccess.getModelAccess().getPrioritySCHEDULEDKeyword_9_1_0_1());
     }
  
 	    {
@@ -257,7 +257,7 @@ ruleModel returns [EObject current=null]
 )
 
 )
-))
+))*)
 ;
 
 
@@ -362,26 +362,7 @@ ruleSensor returns [EObject current=null]
 	    }
 
 )
-)(
-(
-		lv_analog_4_0=	'analog' 
-    {
-        newLeafNode(lv_analog_4_0, grammarAccess.getSensorAccess().getAnalogAnalogKeyword_4_0());
-    }
- 
-	    {
-	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getSensorRule());
-	        }
-       		setWithLastConsumed($current, "analog", true, "analog");
-	    }
-
-)
-)?	otherlv_5=';' 
-    {
-    	newLeafNode(otherlv_5, grammarAccess.getSensorAccess().getSemicolonKeyword_5());
-    }
-)
+))
 ;
 
 
@@ -446,11 +427,7 @@ ruleActuator returns [EObject current=null]
 	    }
 
 )
-)	otherlv_4=';' 
-    {
-    	newLeafNode(otherlv_4, grammarAccess.getActuatorAccess().getSemicolonKeyword_4());
-    }
-)
+))
 ;
 
 
@@ -697,11 +674,7 @@ ruleSensorListener returns [EObject current=null]
 	}
 
 )
-)	otherlv_9=';' 
-    {
-    	newLeafNode(otherlv_9, grammarAccess.getSensorListenerAccess().getSemicolonKeyword_6());
-    }
-)
+))
 ;
 
 
@@ -1140,11 +1113,7 @@ ruleTimer returns [EObject current=null]
 	    }
 
 )
-)	otherlv_6=';' 
-    {
-    	newLeafNode(otherlv_6, grammarAccess.getTimerAccess().getSemicolonKeyword_6());
-    }
-)
+))
 ;
 
 
@@ -1332,11 +1301,7 @@ ruleAlarm returns [EObject current=null]
 	    }
 
 )
-)	otherlv_8=';' 
-    {
-    	newLeafNode(otherlv_8, grammarAccess.getAlarmAccess().getSemicolonKeyword_8());
-    }
-)
+))
 ;
 
 

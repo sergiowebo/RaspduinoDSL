@@ -21,9 +21,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RaspduinoDSL.ecore#//AbstractDevice/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RaspduinoDSL.ecore#//AbstractDevice/pin"/>
     </genClasses>
-    <genClasses ecoreClass="RaspduinoDSL.ecore#//Sensor">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RaspduinoDSL.ecore#//Sensor/analog"/>
-    </genClasses>
+    <genClasses ecoreClass="RaspduinoDSL.ecore#//Sensor"/>
     <genClasses ecoreClass="RaspduinoDSL.ecore#//Actuator"/>
     <genClasses ecoreClass="RaspduinoDSL.ecore#//EventHandler">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RaspduinoDSL.ecore#//EventHandler/name"/>

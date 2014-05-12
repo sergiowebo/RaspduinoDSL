@@ -39,11 +39,12 @@ public class RaspduinoDSLGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cTimersTimerParserRuleCall_7_0 = (RuleCall)cTimersAssignment_7.eContents().get(0);
 		private final Assignment cAlarmsAssignment_8 = (Assignment)cGroup.eContents().get(8);
 		private final RuleCall cAlarmsAlarmParserRuleCall_8_0 = (RuleCall)cAlarmsAssignment_8.eContents().get(0);
-		private final Keyword cConcurrencyPriorityKeyword_9 = (Keyword)cGroup.eContents().get(9);
-		private final Assignment cPriorityAssignment_10 = (Assignment)cGroup.eContents().get(10);
-		private final Alternatives cPriorityAlternatives_10_0 = (Alternatives)cPriorityAssignment_10.eContents().get(0);
-		private final Keyword cPrioritySENSORKeyword_10_0_0 = (Keyword)cPriorityAlternatives_10_0.eContents().get(0);
-		private final Keyword cPrioritySCHEDULEDKeyword_10_0_1 = (Keyword)cPriorityAlternatives_10_0.eContents().get(1);
+		private final Group cGroup_9 = (Group)cGroup.eContents().get(9);
+		private final Keyword cConcurrencyPriorityKeyword_9_0 = (Keyword)cGroup_9.eContents().get(0);
+		private final Assignment cPriorityAssignment_9_1 = (Assignment)cGroup_9.eContents().get(1);
+		private final Alternatives cPriorityAlternatives_9_1_0 = (Alternatives)cPriorityAssignment_9_1.eContents().get(0);
+		private final Keyword cPrioritySENSORKeyword_9_1_0_0 = (Keyword)cPriorityAlternatives_9_1_0.eContents().get(0);
+		private final Keyword cPrioritySCHEDULEDKeyword_9_1_0_1 = (Keyword)cPriorityAlternatives_9_1_0.eContents().get(1);
 		
 		//Model: // Nombre y plataforma que utilizaremos
 		//	"Sketch:" name=ID "Hardware:" hardware=("Arduino UNO" //Se podran añadir mas plataformas ARDUINO MEGA, NANO, etc.
@@ -53,7 +54,7 @@ public class RaspduinoDSLGrammarAccess extends AbstractGrammarElementFinder {
 		//	sensorListeners+=SensorListener* // Definicion de las condiciones para ejecutar una tarea
 		//	timers+=Timer* // Definicion de las condiciones para ejecutar una tarea
 		//	alarms+=Alarm* // TODO: En caso de conflicto definimos quien tiene preferencia, lo que indican los sensores o lo programado
-		//	"Concurrency Priority:" priority=("SENSOR" | "SCHEDULED");
+		//	("Concurrency Priority:" priority=("SENSOR" | "SCHEDULED"))*;
 		public ParserRule getRule() { return rule; }
 
 		//// Nombre y plataforma que utilizaremos
@@ -64,7 +65,7 @@ public class RaspduinoDSLGrammarAccess extends AbstractGrammarElementFinder {
 		//sensorListeners+=SensorListener* // Definicion de las condiciones para ejecutar una tarea
 		//timers+=Timer* // Definicion de las condiciones para ejecutar una tarea
 		//alarms+=Alarm* // TODO: En caso de conflicto definimos quien tiene preferencia, lo que indican los sensores o lo programado
-		//"Concurrency Priority:" priority=("SENSOR" | "SCHEDULED")
+		//("Concurrency Priority:" priority=("SENSOR" | "SCHEDULED"))*
 		public Group getGroup() { return cGroup; }
 
 		//// Nombre y plataforma que utilizaremos
@@ -124,21 +125,23 @@ public class RaspduinoDSLGrammarAccess extends AbstractGrammarElementFinder {
 		//Alarm
 		public RuleCall getAlarmsAlarmParserRuleCall_8_0() { return cAlarmsAlarmParserRuleCall_8_0; }
 
-		//// TODO: En caso de conflicto definimos quien tiene preferencia, lo que indican los sensores o lo programado
+		//("Concurrency Priority:" priority=("SENSOR" | "SCHEDULED"))*
+		public Group getGroup_9() { return cGroup_9; }
+
 		//"Concurrency Priority:"
-		public Keyword getConcurrencyPriorityKeyword_9() { return cConcurrencyPriorityKeyword_9; }
+		public Keyword getConcurrencyPriorityKeyword_9_0() { return cConcurrencyPriorityKeyword_9_0; }
 
 		//priority=("SENSOR" | "SCHEDULED")
-		public Assignment getPriorityAssignment_10() { return cPriorityAssignment_10; }
+		public Assignment getPriorityAssignment_9_1() { return cPriorityAssignment_9_1; }
 
 		//"SENSOR" | "SCHEDULED"
-		public Alternatives getPriorityAlternatives_10_0() { return cPriorityAlternatives_10_0; }
+		public Alternatives getPriorityAlternatives_9_1_0() { return cPriorityAlternatives_9_1_0; }
 
 		//"SENSOR"
-		public Keyword getPrioritySENSORKeyword_10_0_0() { return cPrioritySENSORKeyword_10_0_0; }
+		public Keyword getPrioritySENSORKeyword_9_1_0_0() { return cPrioritySENSORKeyword_9_1_0_0; }
 
 		//"SCHEDULED"
-		public Keyword getPrioritySCHEDULEDKeyword_10_0_1() { return cPrioritySCHEDULEDKeyword_10_0_1; }
+		public Keyword getPrioritySCHEDULEDKeyword_9_1_0_1() { return cPrioritySCHEDULEDKeyword_9_1_0_1; }
 	}
 
 	public class AbstractDeviceElements extends AbstractParserRuleElementFinder {
@@ -171,15 +174,14 @@ public class RaspduinoDSLGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cPinKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Assignment cPinAssignment_3 = (Assignment)cGroup.eContents().get(3);
 		private final RuleCall cPinSTRINGTerminalRuleCall_3_0 = (RuleCall)cPinAssignment_3.eContents().get(0);
-		private final Assignment cAnalogAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final Keyword cAnalogAnalogKeyword_4_0 = (Keyword)cAnalogAssignment_4.eContents().get(0);
-		private final Keyword cSemicolonKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		
 		//Sensor:
-		//	"Sensor" name=ID "pin" pin=STRING analog?="analog"? ";";
+		//	"Sensor" name=ID "pin" pin= //(analog?='analog')? ';'
+		//	STRING;
 		public ParserRule getRule() { return rule; }
 
-		//"Sensor" name=ID "pin" pin=STRING analog?="analog"? ";"
+		//"Sensor" name=ID "pin" pin= //(analog?='analog')? ';'
+		//STRING
 		public Group getGroup() { return cGroup; }
 
 		//"Sensor"
@@ -194,20 +196,13 @@ public class RaspduinoDSLGrammarAccess extends AbstractGrammarElementFinder {
 		//"pin"
 		public Keyword getPinKeyword_2() { return cPinKeyword_2; }
 
-		//pin=STRING
+		//pin= //(analog?='analog')? ';'
+		//STRING
 		public Assignment getPinAssignment_3() { return cPinAssignment_3; }
 
+		////(analog?='analog')? ';'
 		//STRING
 		public RuleCall getPinSTRINGTerminalRuleCall_3_0() { return cPinSTRINGTerminalRuleCall_3_0; }
-
-		//analog?="analog"?
-		public Assignment getAnalogAssignment_4() { return cAnalogAssignment_4; }
-
-		//"analog"
-		public Keyword getAnalogAnalogKeyword_4_0() { return cAnalogAnalogKeyword_4_0; }
-
-		//";"
-		public Keyword getSemicolonKeyword_5() { return cSemicolonKeyword_5; }
 	}
 
 	public class ActuatorElements extends AbstractParserRuleElementFinder {
@@ -219,13 +214,12 @@ public class RaspduinoDSLGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cPinKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Assignment cPinAssignment_3 = (Assignment)cGroup.eContents().get(3);
 		private final RuleCall cPinSTRINGTerminalRuleCall_3_0 = (RuleCall)cPinAssignment_3.eContents().get(0);
-		private final Keyword cSemicolonKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
 		//Actuator:
-		//	"Actuator" name=ID "pin" pin=STRING ";";
+		//	"Actuator" name=ID "pin" pin=STRING;
 		public ParserRule getRule() { return rule; }
 
-		//"Actuator" name=ID "pin" pin=STRING ";"
+		//"Actuator" name=ID "pin" pin=STRING
 		public Group getGroup() { return cGroup; }
 
 		//"Actuator"
@@ -245,9 +239,6 @@ public class RaspduinoDSLGrammarAccess extends AbstractGrammarElementFinder {
 
 		//STRING
 		public RuleCall getPinSTRINGTerminalRuleCall_3_0() { return cPinSTRINGTerminalRuleCall_3_0; }
-
-		//";"
-		public Keyword getSemicolonKeyword_4() { return cSemicolonKeyword_4; }
 	}
 
 	public class EventHandlerElements extends AbstractParserRuleElementFinder {
@@ -355,16 +346,15 @@ public class RaspduinoDSLGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cEventHandlerAssignment_5 = (Assignment)cGroup.eContents().get(5);
 		private final CrossReference cEventHandlerEventHandlerCrossReference_5_0 = (CrossReference)cEventHandlerAssignment_5.eContents().get(0);
 		private final RuleCall cEventHandlerEventHandlerIDTerminalRuleCall_5_0_1 = (RuleCall)cEventHandlerEventHandlerCrossReference_5_0.eContents().get(1);
-		private final Keyword cSemicolonKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		
 		//// Definimos las condiciones de los SensorListeners
 		//SensorListener:
 		//	"SensorListener" sensor=[Sensor] "if" (type="BETWEEN" l=INT "AND" h=INT) //'if' (type='CHANGE' | type='RISING' | type='FALLING' | type='BETWEEN' l=INT 'AND' h=INT) 
-		//	"call" eventHandler=[EventHandler] ";";
+		//	"call" eventHandler=[EventHandler];
 		public ParserRule getRule() { return rule; }
 
 		//"SensorListener" sensor=[Sensor] "if" (type="BETWEEN" l=INT "AND" h=INT) //'if' (type='CHANGE' | type='RISING' | type='FALLING' | type='BETWEEN' l=INT 'AND' h=INT) 
-		//"call" eventHandler=[EventHandler] ";"
+		//"call" eventHandler=[EventHandler]
 		public Group getGroup() { return cGroup; }
 
 		//"SensorListener"
@@ -417,9 +407,6 @@ public class RaspduinoDSLGrammarAccess extends AbstractGrammarElementFinder {
 
 		//ID
 		public RuleCall getEventHandlerEventHandlerIDTerminalRuleCall_5_0_1() { return cEventHandlerEventHandlerIDTerminalRuleCall_5_0_1; }
-
-		//";"
-		public Keyword getSemicolonKeyword_6() { return cSemicolonKeyword_6; }
 	}
 
 	public class PreconditionElements extends AbstractParserRuleElementFinder {
@@ -614,14 +601,13 @@ public class RaspduinoDSLGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cSecondsKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		private final Assignment cTimerSecsAssignment_5 = (Assignment)cGroup.eContents().get(5);
 		private final RuleCall cTimerSecsINTTerminalRuleCall_5_0 = (RuleCall)cTimerSecsAssignment_5.eContents().get(0);
-		private final Keyword cSemicolonKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		
 		//// Acciones programadas para realizarse cada X segundos, o a determinadas horas del dia.
 		//Timer:
-		//	"action" eventHandler=[EventHandler] "repeat" repeattype=("ONCE" | "EVERY") "seconds:" timerSecs=INT ";";
+		//	"action" eventHandler=[EventHandler] "repeat" repeattype=("ONCE" | "EVERY") "seconds:" timerSecs=INT;
 		public ParserRule getRule() { return rule; }
 
-		//"action" eventHandler=[EventHandler] "repeat" repeattype=("ONCE" | "EVERY") "seconds:" timerSecs=INT ";"
+		//"action" eventHandler=[EventHandler] "repeat" repeattype=("ONCE" | "EVERY") "seconds:" timerSecs=INT
 		public Group getGroup() { return cGroup; }
 
 		//"action"
@@ -659,9 +645,6 @@ public class RaspduinoDSLGrammarAccess extends AbstractGrammarElementFinder {
 
 		//INT
 		public RuleCall getTimerSecsINTTerminalRuleCall_5_0() { return cTimerSecsINTTerminalRuleCall_5_0; }
-
-		//";"
-		public Keyword getSemicolonKeyword_6() { return cSemicolonKeyword_6; }
 	}
 
 	public class AlarmElements extends AbstractParserRuleElementFinder {
@@ -688,17 +671,16 @@ public class RaspduinoDSLGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cMinutesKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		private final Assignment cTimerMinutesAssignment_7 = (Assignment)cGroup.eContents().get(7);
 		private final RuleCall cTimerMinutesINTTerminalRuleCall_7_0 = (RuleCall)cTimerMinutesAssignment_7.eContents().get(0);
-		private final Keyword cSemicolonKeyword_8 = (Keyword)cGroup.eContents().get(8);
 		
 		//Alarm:
 		//	"action" eventHandler=[EventHandler] "repeat" repeattype=("EVERY DAY" | "EVERY MONDAY" | "EVERY TUESDAY" |
 		//	"EVERY WEDNESDAY" | "EVERY THURSDAY" | "EVERY FRIDAY" | "EVERY SATURDAY" | "EVERY SUNDAY") "hours:" timerHours=INT
-		//	"minutes:" timerMinutes=INT ";";
+		//	"minutes:" timerMinutes=INT;
 		public ParserRule getRule() { return rule; }
 
 		//"action" eventHandler=[EventHandler] "repeat" repeattype=("EVERY DAY" | "EVERY MONDAY" | "EVERY TUESDAY" |
 		//"EVERY WEDNESDAY" | "EVERY THURSDAY" | "EVERY FRIDAY" | "EVERY SATURDAY" | "EVERY SUNDAY") "hours:" timerHours=INT
-		//"minutes:" timerMinutes=INT ";"
+		//"minutes:" timerMinutes=INT
 		public Group getGroup() { return cGroup; }
 
 		//"action"
@@ -765,9 +747,6 @@ public class RaspduinoDSLGrammarAccess extends AbstractGrammarElementFinder {
 
 		//INT
 		public RuleCall getTimerMinutesINTTerminalRuleCall_7_0() { return cTimerMinutesINTTerminalRuleCall_7_0; }
-
-		//";"
-		public Keyword getSemicolonKeyword_8() { return cSemicolonKeyword_8; }
 	}
 	
 	
@@ -833,7 +812,7 @@ public class RaspduinoDSLGrammarAccess extends AbstractGrammarElementFinder {
 	//	sensorListeners+=SensorListener* // Definicion de las condiciones para ejecutar una tarea
 	//	timers+=Timer* // Definicion de las condiciones para ejecutar una tarea
 	//	alarms+=Alarm* // TODO: En caso de conflicto definimos quien tiene preferencia, lo que indican los sensores o lo programado
-	//	"Concurrency Priority:" priority=("SENSOR" | "SCHEDULED");
+	//	("Concurrency Priority:" priority=("SENSOR" | "SCHEDULED"))*;
 	public ModelElements getModelAccess() {
 		return (pModel != null) ? pModel : (pModel = new ModelElements());
 	}
@@ -854,7 +833,8 @@ public class RaspduinoDSLGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Sensor:
-	//	"Sensor" name=ID "pin" pin=STRING analog?="analog"? ";";
+	//	"Sensor" name=ID "pin" pin= //(analog?='analog')? ';'
+	//	STRING;
 	public SensorElements getSensorAccess() {
 		return (pSensor != null) ? pSensor : (pSensor = new SensorElements());
 	}
@@ -864,7 +844,7 @@ public class RaspduinoDSLGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Actuator:
-	//	"Actuator" name=ID "pin" pin=STRING ";";
+	//	"Actuator" name=ID "pin" pin=STRING;
 	public ActuatorElements getActuatorAccess() {
 		return (pActuator != null) ? pActuator : (pActuator = new ActuatorElements());
 	}
@@ -898,7 +878,7 @@ public class RaspduinoDSLGrammarAccess extends AbstractGrammarElementFinder {
 	//// Definimos las condiciones de los SensorListeners
 	//SensorListener:
 	//	"SensorListener" sensor=[Sensor] "if" (type="BETWEEN" l=INT "AND" h=INT) //'if' (type='CHANGE' | type='RISING' | type='FALLING' | type='BETWEEN' l=INT 'AND' h=INT) 
-	//	"call" eventHandler=[EventHandler] ";";
+	//	"call" eventHandler=[EventHandler];
 	public SensorListenerElements getSensorListenerAccess() {
 		return (pSensorListener != null) ? pSensorListener : (pSensorListener = new SensorListenerElements());
 	}
@@ -967,7 +947,7 @@ public class RaspduinoDSLGrammarAccess extends AbstractGrammarElementFinder {
 
 	//// Acciones programadas para realizarse cada X segundos, o a determinadas horas del dia.
 	//Timer:
-	//	"action" eventHandler=[EventHandler] "repeat" repeattype=("ONCE" | "EVERY") "seconds:" timerSecs=INT ";";
+	//	"action" eventHandler=[EventHandler] "repeat" repeattype=("ONCE" | "EVERY") "seconds:" timerSecs=INT;
 	public TimerElements getTimerAccess() {
 		return (pTimer != null) ? pTimer : (pTimer = new TimerElements());
 	}
@@ -979,7 +959,7 @@ public class RaspduinoDSLGrammarAccess extends AbstractGrammarElementFinder {
 	//Alarm:
 	//	"action" eventHandler=[EventHandler] "repeat" repeattype=("EVERY DAY" | "EVERY MONDAY" | "EVERY TUESDAY" |
 	//	"EVERY WEDNESDAY" | "EVERY THURSDAY" | "EVERY FRIDAY" | "EVERY SATURDAY" | "EVERY SUNDAY") "hours:" timerHours=INT
-	//	"minutes:" timerMinutes=INT ";";
+	//	"minutes:" timerMinutes=INT;
 	public AlarmElements getAlarmAccess() {
 		return (pAlarm != null) ? pAlarm : (pAlarm = new AlarmElements());
 	}
