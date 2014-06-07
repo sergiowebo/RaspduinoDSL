@@ -43,6 +43,12 @@ public class ParserTest {
   }
   
   @Test
+  public void generateArduinoStructure() {
+    throw new Error("Unresolved compilation problems:"
+      + "\nThe method assertCompilesTo is undefined for the type ParserTest");
+  }
+  
+  @Test
   public void generateRaspberryFile() {
     try {
       final Model model = this.parser.parse(

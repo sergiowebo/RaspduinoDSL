@@ -3,7 +3,6 @@
 package es.usj.raspduino.raspduinoDSL.impl;
 
 import es.usj.raspduino.raspduinoDSL.AbstractDevice;
-import es.usj.raspduino.raspduinoDSL.Alarm;
 import es.usj.raspduino.raspduinoDSL.EventHandler;
 import es.usj.raspduino.raspduinoDSL.Model;
 import es.usj.raspduino.raspduinoDSL.RaspduinoDSLPackage;
@@ -39,8 +38,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link es.usj.raspduino.raspduinoDSL.impl.ModelImpl#getEventHandlers <em>Event Handlers</em>}</li>
  *   <li>{@link es.usj.raspduino.raspduinoDSL.impl.ModelImpl#getSensorListeners <em>Sensor Listeners</em>}</li>
  *   <li>{@link es.usj.raspduino.raspduinoDSL.impl.ModelImpl#getTimers <em>Timers</em>}</li>
- *   <li>{@link es.usj.raspduino.raspduinoDSL.impl.ModelImpl#getAlarms <em>Alarms</em>}</li>
- *   <li>{@link es.usj.raspduino.raspduinoDSL.impl.ModelImpl#getPriority <em>Priority</em>}</li>
  * </ul>
  * </p>
  *
@@ -127,36 +124,6 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
    * @ordered
    */
   protected EList<Timer> timers;
-
-  /**
-   * The cached value of the '{@link #getAlarms() <em>Alarms</em>}' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getAlarms()
-   * @generated
-   * @ordered
-   */
-  protected EList<Alarm> alarms;
-
-  /**
-   * The default value of the '{@link #getPriority() <em>Priority</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getPriority()
-   * @generated
-   * @ordered
-   */
-  protected static final String PRIORITY_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getPriority() <em>Priority</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getPriority()
-   * @generated
-   * @ordered
-   */
-  protected String priority = PRIORITY_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -286,43 +253,6 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Alarm> getAlarms()
-  {
-    if (alarms == null)
-    {
-      alarms = new EObjectContainmentEList<Alarm>(Alarm.class, this, RaspduinoDSLPackage.MODEL__ALARMS);
-    }
-    return alarms;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public String getPriority()
-  {
-    return priority;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setPriority(String newPriority)
-  {
-    String oldPriority = priority;
-    priority = newPriority;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, RaspduinoDSLPackage.MODEL__PRIORITY, oldPriority, priority));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
@@ -336,8 +266,6 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
         return ((InternalEList<?>)getSensorListeners()).basicRemove(otherEnd, msgs);
       case RaspduinoDSLPackage.MODEL__TIMERS:
         return ((InternalEList<?>)getTimers()).basicRemove(otherEnd, msgs);
-      case RaspduinoDSLPackage.MODEL__ALARMS:
-        return ((InternalEList<?>)getAlarms()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -364,10 +292,6 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
         return getSensorListeners();
       case RaspduinoDSLPackage.MODEL__TIMERS:
         return getTimers();
-      case RaspduinoDSLPackage.MODEL__ALARMS:
-        return getAlarms();
-      case RaspduinoDSLPackage.MODEL__PRIORITY:
-        return getPriority();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -405,13 +329,6 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
         getTimers().clear();
         getTimers().addAll((Collection<? extends Timer>)newValue);
         return;
-      case RaspduinoDSLPackage.MODEL__ALARMS:
-        getAlarms().clear();
-        getAlarms().addAll((Collection<? extends Alarm>)newValue);
-        return;
-      case RaspduinoDSLPackage.MODEL__PRIORITY:
-        setPriority((String)newValue);
-        return;
     }
     super.eSet(featureID, newValue);
   }
@@ -444,12 +361,6 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
       case RaspduinoDSLPackage.MODEL__TIMERS:
         getTimers().clear();
         return;
-      case RaspduinoDSLPackage.MODEL__ALARMS:
-        getAlarms().clear();
-        return;
-      case RaspduinoDSLPackage.MODEL__PRIORITY:
-        setPriority(PRIORITY_EDEFAULT);
-        return;
     }
     super.eUnset(featureID);
   }
@@ -476,10 +387,6 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
         return sensorListeners != null && !sensorListeners.isEmpty();
       case RaspduinoDSLPackage.MODEL__TIMERS:
         return timers != null && !timers.isEmpty();
-      case RaspduinoDSLPackage.MODEL__ALARMS:
-        return alarms != null && !alarms.isEmpty();
-      case RaspduinoDSLPackage.MODEL__PRIORITY:
-        return PRIORITY_EDEFAULT == null ? priority != null : !PRIORITY_EDEFAULT.equals(priority);
     }
     return super.eIsSet(featureID);
   }
@@ -499,8 +406,6 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
     result.append(name);
     result.append(", hardware: ");
     result.append(hardware);
-    result.append(", priority: ");
-    result.append(priority);
     result.append(')');
     return result.toString();
   }

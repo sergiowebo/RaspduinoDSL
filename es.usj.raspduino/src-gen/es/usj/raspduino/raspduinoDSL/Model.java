@@ -20,8 +20,6 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link es.usj.raspduino.raspduinoDSL.Model#getEventHandlers <em>Event Handlers</em>}</li>
  *   <li>{@link es.usj.raspduino.raspduinoDSL.Model#getSensorListeners <em>Sensor Listeners</em>}</li>
  *   <li>{@link es.usj.raspduino.raspduinoDSL.Model#getTimers <em>Timers</em>}</li>
- *   <li>{@link es.usj.raspduino.raspduinoDSL.Model#getAlarms <em>Alarms</em>}</li>
- *   <li>{@link es.usj.raspduino.raspduinoDSL.Model#getPriority <em>Priority</em>}</li>
  * </ul>
  * </p>
  *
@@ -146,47 +144,5 @@ public interface Model extends EObject
    * @generated
    */
   EList<Timer> getTimers();
-
-  /**
-   * Returns the value of the '<em><b>Alarms</b></em>' containment reference list.
-   * The list contents are of type {@link es.usj.raspduino.raspduinoDSL.Alarm}.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Alarms</em>' containment reference list isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Alarms</em>' containment reference list.
-   * @see es.usj.raspduino.raspduinoDSL.RaspduinoDSLPackage#getModel_Alarms()
-   * @model containment="true"
-   * @generated
-   */
-  EList<Alarm> getAlarms();
-
-  /**
-   * Returns the value of the '<em><b>Priority</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Priority</em>' attribute isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Priority</em>' attribute.
-   * @see #setPriority(String)
-   * @see es.usj.raspduino.raspduinoDSL.RaspduinoDSLPackage#getModel_Priority()
-   * @model
-   * @generated
-   */
-  String getPriority();
-
-  /**
-   * Sets the value of the '{@link es.usj.raspduino.raspduinoDSL.Model#getPriority <em>Priority</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Priority</em>' attribute.
-   * @see #getPriority()
-   * @generated
-   */
-  void setPriority(String value);
 
 } // Model

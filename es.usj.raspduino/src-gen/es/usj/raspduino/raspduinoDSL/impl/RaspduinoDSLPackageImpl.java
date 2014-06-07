@@ -4,18 +4,13 @@ package es.usj.raspduino.raspduinoDSL.impl;
 
 import es.usj.raspduino.raspduinoDSL.AbstractDevice;
 import es.usj.raspduino.raspduinoDSL.Actuator;
-import es.usj.raspduino.raspduinoDSL.Alarm;
 import es.usj.raspduino.raspduinoDSL.ChangeActuator;
-import es.usj.raspduino.raspduinoDSL.EmptyPrecondition;
 import es.usj.raspduino.raspduinoDSL.EventHandler;
 import es.usj.raspduino.raspduinoDSL.Model;
-import es.usj.raspduino.raspduinoDSL.Precondition;
-import es.usj.raspduino.raspduinoDSL.Precondition1;
 import es.usj.raspduino.raspduinoDSL.RaspduinoDSLFactory;
 import es.usj.raspduino.raspduinoDSL.RaspduinoDSLPackage;
 import es.usj.raspduino.raspduinoDSL.Sensor;
 import es.usj.raspduino.raspduinoDSL.SensorListener;
-import es.usj.raspduino.raspduinoDSL.SensorValuePrecondition;
 import es.usj.raspduino.raspduinoDSL.Timer;
 
 import org.eclipse.emf.ecore.EAttribute;
@@ -87,42 +82,7 @@ public class RaspduinoDSLPackageImpl extends EPackageImpl implements RaspduinoDS
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass preconditionEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass precondition1EClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass emptyPreconditionEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass sensorValuePreconditionEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   private EClass timerEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass alarmEClass = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -255,26 +215,6 @@ public class RaspduinoDSLPackageImpl extends EPackageImpl implements RaspduinoDS
   public EReference getModel_Timers()
   {
     return (EReference)modelEClass.getEStructuralFeatures().get(5);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getModel_Alarms()
-  {
-    return (EReference)modelEClass.getEStructuralFeatures().get(6);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getModel_Priority()
-  {
-    return (EAttribute)modelEClass.getEStructuralFeatures().get(7);
   }
 
   /**
@@ -452,126 +392,6 @@ public class RaspduinoDSLPackageImpl extends EPackageImpl implements RaspduinoDS
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getPrecondition()
-  {
-    return preconditionEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getPrecondition_Pre1()
-  {
-    return (EReference)preconditionEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getPrecondition_Op()
-  {
-    return (EAttribute)preconditionEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getPrecondition_Pre()
-  {
-    return (EReference)preconditionEClass.getEStructuralFeatures().get(2);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getPrecondition1()
-  {
-    return precondition1EClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getPrecondition1_Pre()
-  {
-    return (EReference)precondition1EClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getEmptyPrecondition()
-  {
-    return emptyPreconditionEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getEmptyPrecondition_Name()
-  {
-    return (EAttribute)emptyPreconditionEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getSensorValuePrecondition()
-  {
-    return sensorValuePreconditionEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getSensorValuePrecondition_Sensor()
-  {
-    return (EReference)sensorValuePreconditionEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getSensorValuePrecondition_Cond()
-  {
-    return (EAttribute)sensorValuePreconditionEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getSensorValuePrecondition_Value()
-  {
-    return (EAttribute)sensorValuePreconditionEClass.getEStructuralFeatures().get(2);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EClass getTimer()
   {
     return timerEClass;
@@ -612,56 +432,6 @@ public class RaspduinoDSLPackageImpl extends EPackageImpl implements RaspduinoDS
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getAlarm()
-  {
-    return alarmEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getAlarm_EventHandler()
-  {
-    return (EReference)alarmEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getAlarm_Repeattype()
-  {
-    return (EAttribute)alarmEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getAlarm_TimerHours()
-  {
-    return (EAttribute)alarmEClass.getEStructuralFeatures().get(2);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getAlarm_TimerMinutes()
-  {
-    return (EAttribute)alarmEClass.getEStructuralFeatures().get(3);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public RaspduinoDSLFactory getRaspduinoDSLFactory()
   {
     return (RaspduinoDSLFactory)getEFactoryInstance();
@@ -694,8 +464,6 @@ public class RaspduinoDSLPackageImpl extends EPackageImpl implements RaspduinoDS
     createEReference(modelEClass, MODEL__EVENT_HANDLERS);
     createEReference(modelEClass, MODEL__SENSOR_LISTENERS);
     createEReference(modelEClass, MODEL__TIMERS);
-    createEReference(modelEClass, MODEL__ALARMS);
-    createEAttribute(modelEClass, MODEL__PRIORITY);
 
     abstractDeviceEClass = createEClass(ABSTRACT_DEVICE);
     createEAttribute(abstractDeviceEClass, ABSTRACT_DEVICE__NAME);
@@ -720,32 +488,10 @@ public class RaspduinoDSLPackageImpl extends EPackageImpl implements RaspduinoDS
     createEAttribute(sensorListenerEClass, SENSOR_LISTENER__H);
     createEReference(sensorListenerEClass, SENSOR_LISTENER__EVENT_HANDLER);
 
-    preconditionEClass = createEClass(PRECONDITION);
-    createEReference(preconditionEClass, PRECONDITION__PRE1);
-    createEAttribute(preconditionEClass, PRECONDITION__OP);
-    createEReference(preconditionEClass, PRECONDITION__PRE);
-
-    precondition1EClass = createEClass(PRECONDITION1);
-    createEReference(precondition1EClass, PRECONDITION1__PRE);
-
-    emptyPreconditionEClass = createEClass(EMPTY_PRECONDITION);
-    createEAttribute(emptyPreconditionEClass, EMPTY_PRECONDITION__NAME);
-
-    sensorValuePreconditionEClass = createEClass(SENSOR_VALUE_PRECONDITION);
-    createEReference(sensorValuePreconditionEClass, SENSOR_VALUE_PRECONDITION__SENSOR);
-    createEAttribute(sensorValuePreconditionEClass, SENSOR_VALUE_PRECONDITION__COND);
-    createEAttribute(sensorValuePreconditionEClass, SENSOR_VALUE_PRECONDITION__VALUE);
-
     timerEClass = createEClass(TIMER);
     createEReference(timerEClass, TIMER__EVENT_HANDLER);
     createEAttribute(timerEClass, TIMER__REPEATTYPE);
     createEAttribute(timerEClass, TIMER__TIMER_SECS);
-
-    alarmEClass = createEClass(ALARM);
-    createEReference(alarmEClass, ALARM__EVENT_HANDLER);
-    createEAttribute(alarmEClass, ALARM__REPEATTYPE);
-    createEAttribute(alarmEClass, ALARM__TIMER_HOURS);
-    createEAttribute(alarmEClass, ALARM__TIMER_MINUTES);
   }
 
   /**
@@ -788,8 +534,6 @@ public class RaspduinoDSLPackageImpl extends EPackageImpl implements RaspduinoDS
     initEReference(getModel_EventHandlers(), this.getEventHandler(), null, "eventHandlers", null, 0, -1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getModel_SensorListeners(), this.getSensorListener(), null, "sensorListeners", null, 0, -1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getModel_Timers(), this.getTimer(), null, "timers", null, 0, -1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getModel_Alarms(), this.getAlarm(), null, "alarms", null, 0, -1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getModel_Priority(), ecorePackage.getEString(), "priority", null, 0, 1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(abstractDeviceEClass, AbstractDevice.class, "AbstractDevice", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getAbstractDevice_Name(), ecorePackage.getEString(), "name", null, 0, 1, AbstractDevice.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -814,32 +558,10 @@ public class RaspduinoDSLPackageImpl extends EPackageImpl implements RaspduinoDS
     initEAttribute(getSensorListener_H(), ecorePackage.getEInt(), "h", null, 0, 1, SensorListener.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getSensorListener_EventHandler(), this.getEventHandler(), null, "eventHandler", null, 0, 1, SensorListener.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(preconditionEClass, Precondition.class, "Precondition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getPrecondition_Pre1(), this.getPrecondition1(), null, "pre1", null, 0, 1, Precondition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getPrecondition_Op(), ecorePackage.getEString(), "op", null, 0, 1, Precondition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getPrecondition_Pre(), this.getPrecondition(), null, "pre", null, 0, 1, Precondition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(precondition1EClass, Precondition1.class, "Precondition1", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getPrecondition1_Pre(), ecorePackage.getEObject(), null, "pre", null, 0, 1, Precondition1.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(emptyPreconditionEClass, EmptyPrecondition.class, "EmptyPrecondition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getEmptyPrecondition_Name(), ecorePackage.getEString(), "name", null, 0, 1, EmptyPrecondition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(sensorValuePreconditionEClass, SensorValuePrecondition.class, "SensorValuePrecondition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getSensorValuePrecondition_Sensor(), this.getSensor(), null, "sensor", null, 0, 1, SensorValuePrecondition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getSensorValuePrecondition_Cond(), ecorePackage.getEString(), "cond", null, 0, 1, SensorValuePrecondition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getSensorValuePrecondition_Value(), ecorePackage.getEString(), "value", null, 0, 1, SensorValuePrecondition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
     initEClass(timerEClass, Timer.class, "Timer", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getTimer_EventHandler(), this.getEventHandler(), null, "eventHandler", null, 0, 1, Timer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getTimer_Repeattype(), ecorePackage.getEString(), "repeattype", null, 0, 1, Timer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getTimer_TimerSecs(), ecorePackage.getEInt(), "timerSecs", null, 0, 1, Timer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(alarmEClass, Alarm.class, "Alarm", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getAlarm_EventHandler(), this.getEventHandler(), null, "eventHandler", null, 0, 1, Alarm.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getAlarm_Repeattype(), ecorePackage.getEString(), "repeattype", null, 0, 1, Alarm.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getAlarm_TimerHours(), ecorePackage.getEInt(), "timerHours", null, 0, 1, Alarm.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getAlarm_TimerMinutes(), ecorePackage.getEInt(), "timerMinutes", null, 0, 1, Alarm.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);

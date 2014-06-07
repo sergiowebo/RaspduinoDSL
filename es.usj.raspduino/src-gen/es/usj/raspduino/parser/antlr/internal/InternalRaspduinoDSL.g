@@ -205,59 +205,7 @@ ruleModel returns [EObject current=null]
 	    }
 
 )
-)*(
-(
-		{ 
-	        newCompositeNode(grammarAccess.getModelAccess().getAlarmsAlarmParserRuleCall_8_0()); 
-	    }
-		lv_alarms_8_0=ruleAlarm		{
-	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getModelRule());
-	        }
-       		add(
-       			$current, 
-       			"alarms",
-        		lv_alarms_8_0, 
-        		"Alarm");
-	        afterParserOrEnumRuleCall();
-	    }
-
-)
-)*(	otherlv_9='Concurrency Priority:' 
-    {
-    	newLeafNode(otherlv_9, grammarAccess.getModelAccess().getConcurrencyPriorityKeyword_9_0());
-    }
-(
-(
-(
-		lv_priority_10_1=	'SENSOR' 
-    {
-        newLeafNode(lv_priority_10_1, grammarAccess.getModelAccess().getPrioritySENSORKeyword_9_1_0_0());
-    }
- 
-	    {
-	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getModelRule());
-	        }
-       		setWithLastConsumed($current, "priority", lv_priority_10_1, null);
-	    }
-
-    |		lv_priority_10_2=	'SCHEDULED' 
-    {
-        newLeafNode(lv_priority_10_2, grammarAccess.getModelAccess().getPrioritySCHEDULEDKeyword_9_1_0_1());
-    }
- 
-	    {
-	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getModelRule());
-	        }
-       		setWithLastConsumed($current, "priority", lv_priority_10_2, null);
-	    }
-
-)
-
-)
-))*)
+)*)
 ;
 
 
@@ -557,6 +505,18 @@ ruleChangeActuator returns [EObject current=null]
        		setWithLastConsumed($current, "ActuatorState", lv_ActuatorState_2_2, null);
 	    }
 
+    |		lv_ActuatorState_2_3=	'Toggle' 
+    {
+        newLeafNode(lv_ActuatorState_2_3, grammarAccess.getChangeActuatorAccess().getActuatorStateToggleKeyword_2_0_2());
+    }
+ 
+	    {
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getChangeActuatorRule());
+	        }
+       		setWithLastConsumed($current, "ActuatorState", lv_ActuatorState_2_3, null);
+	    }
+
 )
 
 )
@@ -604,24 +564,56 @@ ruleSensorListener returns [EObject current=null]
     }
 ((
 (
-		lv_type_3_0=	'BETWEEN' 
+		lv_type_3_0=	'ON' 
     {
-        newLeafNode(lv_type_3_0, grammarAccess.getSensorListenerAccess().getTypeBETWEENKeyword_3_0_0());
+        newLeafNode(lv_type_3_0, grammarAccess.getSensorListenerAccess().getTypeONKeyword_3_0_0());
     }
  
 	    {
 	        if ($current==null) {
 	            $current = createModelElement(grammarAccess.getSensorListenerRule());
 	        }
-       		setWithLastConsumed($current, "type", lv_type_3_0, "BETWEEN");
+       		setWithLastConsumed($current, "type", lv_type_3_0, "ON");
+	    }
+
+)
+)
+    |(
+(
+		lv_type_4_0=	'OFF' 
+    {
+        newLeafNode(lv_type_4_0, grammarAccess.getSensorListenerAccess().getTypeOFFKeyword_3_1_0());
+    }
+ 
+	    {
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getSensorListenerRule());
+	        }
+       		setWithLastConsumed($current, "type", lv_type_4_0, "OFF");
+	    }
+
+)
+)
+    |((
+(
+		lv_type_5_0=	'BETWEEN' 
+    {
+        newLeafNode(lv_type_5_0, grammarAccess.getSensorListenerAccess().getTypeBETWEENKeyword_3_2_0_0());
+    }
+ 
+	    {
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getSensorListenerRule());
+	        }
+       		setWithLastConsumed($current, "type", lv_type_5_0, "BETWEEN");
 	    }
 
 )
 )(
 (
-		lv_l_4_0=RULE_INT
+		lv_l_6_0=RULE_INT
 		{
-			newLeafNode(lv_l_4_0, grammarAccess.getSensorListenerAccess().getLINTTerminalRuleCall_3_1_0()); 
+			newLeafNode(lv_l_6_0, grammarAccess.getSensorListenerAccess().getLINTTerminalRuleCall_3_2_1_0()); 
 		}
 		{
 	        if ($current==null) {
@@ -630,20 +622,20 @@ ruleSensorListener returns [EObject current=null]
        		setWithLastConsumed(
        			$current, 
        			"l",
-        		lv_l_4_0, 
+        		lv_l_6_0, 
         		"INT");
 	    }
 
 )
-)	otherlv_5='AND' 
+)	otherlv_7='AND' 
     {
-    	newLeafNode(otherlv_5, grammarAccess.getSensorListenerAccess().getANDKeyword_3_2());
+    	newLeafNode(otherlv_7, grammarAccess.getSensorListenerAccess().getANDKeyword_3_2_2());
     }
 (
 (
-		lv_h_6_0=RULE_INT
+		lv_h_8_0=RULE_INT
 		{
-			newLeafNode(lv_h_6_0, grammarAccess.getSensorListenerAccess().getHINTTerminalRuleCall_3_3_0()); 
+			newLeafNode(lv_h_8_0, grammarAccess.getSensorListenerAccess().getHINTTerminalRuleCall_3_2_3_0()); 
 		}
 		{
 	        if ($current==null) {
@@ -652,14 +644,14 @@ ruleSensorListener returns [EObject current=null]
        		setWithLastConsumed(
        			$current, 
        			"h",
-        		lv_h_6_0, 
+        		lv_h_8_0, 
         		"INT");
 	    }
 
 )
-))	otherlv_7='call' 
+)))	otherlv_9='call' 
     {
-    	newLeafNode(otherlv_7, grammarAccess.getSensorListenerAccess().getCallKeyword_4());
+    	newLeafNode(otherlv_9, grammarAccess.getSensorListenerAccess().getCallKeyword_4());
     }
 (
 (
@@ -668,359 +660,14 @@ ruleSensorListener returns [EObject current=null]
 	            $current = createModelElement(grammarAccess.getSensorListenerRule());
 	        }
         }
-	otherlv_8=RULE_ID
+	otherlv_10=RULE_ID
 	{
-		newLeafNode(otherlv_8, grammarAccess.getSensorListenerAccess().getEventHandlerEventHandlerCrossReference_5_0()); 
+		newLeafNode(otherlv_10, grammarAccess.getSensorListenerAccess().getEventHandlerEventHandlerCrossReference_5_0()); 
 	}
 
 )
 ))
 ;
-
-
-
-
-
-// Entry rule entryRulePrecondition
-entryRulePrecondition returns [EObject current=null] 
-	:
-	{ newCompositeNode(grammarAccess.getPreconditionRule()); }
-	 iv_rulePrecondition=rulePrecondition 
-	 { $current=$iv_rulePrecondition.current; } 
-	 EOF 
-;
-
-// Rule Precondition
-rulePrecondition returns [EObject current=null] 
-    @init { enterRule(); 
-    }
-    @after { leaveRule(); }:
-(((
-(
-		{ 
-	        newCompositeNode(grammarAccess.getPreconditionAccess().getPre1Precondition1ParserRuleCall_0_0_0()); 
-	    }
-		lv_pre1_0_0=rulePrecondition1		{
-	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getPreconditionRule());
-	        }
-       		set(
-       			$current, 
-       			"pre1",
-        		lv_pre1_0_0, 
-        		"Precondition1");
-	        afterParserOrEnumRuleCall();
-	    }
-
-)
-)(
-(
-(
-		lv_op_1_1=	'&&' 
-    {
-        newLeafNode(lv_op_1_1, grammarAccess.getPreconditionAccess().getOpAmpersandAmpersandKeyword_0_1_0_0());
-    }
- 
-	    {
-	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getPreconditionRule());
-	        }
-       		setWithLastConsumed($current, "op", lv_op_1_1, null);
-	    }
-
-    |		lv_op_1_2=	'||' 
-    {
-        newLeafNode(lv_op_1_2, grammarAccess.getPreconditionAccess().getOpVerticalLineVerticalLineKeyword_0_1_0_1());
-    }
- 
-	    {
-	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getPreconditionRule());
-	        }
-       		setWithLastConsumed($current, "op", lv_op_1_2, null);
-	    }
-
-)
-
-)
-)(
-(
-		{ 
-	        newCompositeNode(grammarAccess.getPreconditionAccess().getPrePreconditionParserRuleCall_0_2_0()); 
-	    }
-		lv_pre_2_0=rulePrecondition		{
-	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getPreconditionRule());
-	        }
-       		set(
-       			$current, 
-       			"pre",
-        		lv_pre_2_0, 
-        		"Precondition");
-	        afterParserOrEnumRuleCall();
-	    }
-
-)
-))
-    |(
-(
-		{ 
-	        newCompositeNode(grammarAccess.getPreconditionAccess().getPre1Precondition1ParserRuleCall_1_0()); 
-	    }
-		lv_pre1_3_0=rulePrecondition1		{
-	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getPreconditionRule());
-	        }
-       		set(
-       			$current, 
-       			"pre1",
-        		lv_pre1_3_0, 
-        		"Precondition1");
-	        afterParserOrEnumRuleCall();
-	    }
-
-)
-))
-;
-
-
-
-
-
-// Entry rule entryRulePrecondition1
-entryRulePrecondition1 returns [EObject current=null] 
-	:
-	{ newCompositeNode(grammarAccess.getPrecondition1Rule()); }
-	 iv_rulePrecondition1=rulePrecondition1 
-	 { $current=$iv_rulePrecondition1.current; } 
-	 EOF 
-;
-
-// Rule Precondition1
-rulePrecondition1 returns [EObject current=null] 
-    @init { enterRule(); 
-    }
-    @after { leaveRule(); }:
-((
-(
-		{ 
-	        newCompositeNode(grammarAccess.getPrecondition1Access().getPreSensorValuePreconditionParserRuleCall_0_0()); 
-	    }
-		lv_pre_0_0=ruleSensorValuePrecondition		{
-	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getPrecondition1Rule());
-	        }
-       		set(
-       			$current, 
-       			"pre",
-        		lv_pre_0_0, 
-        		"SensorValuePrecondition");
-	        afterParserOrEnumRuleCall();
-	    }
-
-)
-)
-    |(
-(
-		{ 
-	        newCompositeNode(grammarAccess.getPrecondition1Access().getPreEmptyPreconditionParserRuleCall_1_0()); 
-	    }
-		lv_pre_1_0=ruleEmptyPrecondition		{
-	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getPrecondition1Rule());
-	        }
-       		set(
-       			$current, 
-       			"pre",
-        		lv_pre_1_0, 
-        		"EmptyPrecondition");
-	        afterParserOrEnumRuleCall();
-	    }
-
-)
-))
-;
-
-
-
-
-
-// Entry rule entryRuleEmptyPrecondition
-entryRuleEmptyPrecondition returns [EObject current=null] 
-	:
-	{ newCompositeNode(grammarAccess.getEmptyPreconditionRule()); }
-	 iv_ruleEmptyPrecondition=ruleEmptyPrecondition 
-	 { $current=$iv_ruleEmptyPrecondition.current; } 
-	 EOF 
-;
-
-// Rule EmptyPrecondition
-ruleEmptyPrecondition returns [EObject current=null] 
-    @init { enterRule(); 
-    }
-    @after { leaveRule(); }:
-(
-(
-		lv_name_0_0=RULE_ID
-		{
-			newLeafNode(lv_name_0_0, grammarAccess.getEmptyPreconditionAccess().getNameIDTerminalRuleCall_0()); 
-		}
-		{
-	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getEmptyPreconditionRule());
-	        }
-       		setWithLastConsumed(
-       			$current, 
-       			"name",
-        		lv_name_0_0, 
-        		"ID");
-	    }
-
-)
-)
-;
-
-
-
-
-
-// Entry rule entryRuleSensorValuePrecondition
-entryRuleSensorValuePrecondition returns [EObject current=null] 
-	:
-	{ newCompositeNode(grammarAccess.getSensorValuePreconditionRule()); }
-	 iv_ruleSensorValuePrecondition=ruleSensorValuePrecondition 
-	 { $current=$iv_ruleSensorValuePrecondition.current; } 
-	 EOF 
-;
-
-// Rule SensorValuePrecondition
-ruleSensorValuePrecondition returns [EObject current=null] 
-    @init { enterRule(); 
-    }
-    @after { leaveRule(); }:
-((
-(
-		{
-			if ($current==null) {
-	            $current = createModelElement(grammarAccess.getSensorValuePreconditionRule());
-	        }
-        }
-	otherlv_0=RULE_ID
-	{
-		newLeafNode(otherlv_0, grammarAccess.getSensorValuePreconditionAccess().getSensorSensorCrossReference_0_0()); 
-	}
-
-)
-)(
-(
-(
-		lv_cond_1_1=	'==' 
-    {
-        newLeafNode(lv_cond_1_1, grammarAccess.getSensorValuePreconditionAccess().getCondEqualsSignEqualsSignKeyword_1_0_0());
-    }
- 
-	    {
-	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getSensorValuePreconditionRule());
-	        }
-       		setWithLastConsumed($current, "cond", lv_cond_1_1, null);
-	    }
-
-    |		lv_cond_1_2=	'<=' 
-    {
-        newLeafNode(lv_cond_1_2, grammarAccess.getSensorValuePreconditionAccess().getCondLessThanSignEqualsSignKeyword_1_0_1());
-    }
- 
-	    {
-	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getSensorValuePreconditionRule());
-	        }
-       		setWithLastConsumed($current, "cond", lv_cond_1_2, null);
-	    }
-
-    |		lv_cond_1_3=	'>=' 
-    {
-        newLeafNode(lv_cond_1_3, grammarAccess.getSensorValuePreconditionAccess().getCondGreaterThanSignEqualsSignKeyword_1_0_2());
-    }
- 
-	    {
-	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getSensorValuePreconditionRule());
-	        }
-       		setWithLastConsumed($current, "cond", lv_cond_1_3, null);
-	    }
-
-    |		lv_cond_1_4=	'!=' 
-    {
-        newLeafNode(lv_cond_1_4, grammarAccess.getSensorValuePreconditionAccess().getCondExclamationMarkEqualsSignKeyword_1_0_3());
-    }
- 
-	    {
-	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getSensorValuePreconditionRule());
-	        }
-       		setWithLastConsumed($current, "cond", lv_cond_1_4, null);
-	    }
-
-)
-
-)
-)(
-(
-		{ 
-	        newCompositeNode(grammarAccess.getSensorValuePreconditionAccess().getValuePossibleValuesParserRuleCall_2_0()); 
-	    }
-		lv_value_2_0=rulePossibleValues		{
-	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getSensorValuePreconditionRule());
-	        }
-       		set(
-       			$current, 
-       			"value",
-        		lv_value_2_0, 
-        		"PossibleValues");
-	        afterParserOrEnumRuleCall();
-	    }
-
-)
-))
-;
-
-
-
-
-
-// Entry rule entryRulePossibleValues
-entryRulePossibleValues returns [String current=null] 
-	:
-	{ newCompositeNode(grammarAccess.getPossibleValuesRule()); } 
-	 iv_rulePossibleValues=rulePossibleValues 
-	 { $current=$iv_rulePossibleValues.current.getText(); }  
-	 EOF 
-;
-
-// Rule PossibleValues
-rulePossibleValues returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] 
-    @init { enterRule(); 
-    }
-    @after { leaveRule(); }:
-(    this_DOUBLE_0=RULE_DOUBLE    {
-		$current.merge(this_DOUBLE_0);
-    }
-
-    { 
-    newLeafNode(this_DOUBLE_0, grammarAccess.getPossibleValuesAccess().getDOUBLETerminalRuleCall_0()); 
-    }
-
-    |    this_INT_1=RULE_INT    {
-		$current.merge(this_INT_1);
-    }
-
-    { 
-    newLeafNode(this_INT_1, grammarAccess.getPossibleValuesAccess().getINTTerminalRuleCall_1()); 
-    }
-)
-    ;
 
 
 
@@ -1040,9 +687,9 @@ ruleTimer returns [EObject current=null]
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
-(	otherlv_0='action' 
+(	otherlv_0='Timer action' 
     {
-    	newLeafNode(otherlv_0, grammarAccess.getTimerAccess().getActionKeyword_0());
+    	newLeafNode(otherlv_0, grammarAccess.getTimerAccess().getTimerActionKeyword_0());
     }
 (
 (
@@ -1119,196 +766,6 @@ ruleTimer returns [EObject current=null]
 
 
 
-
-// Entry rule entryRuleAlarm
-entryRuleAlarm returns [EObject current=null] 
-	:
-	{ newCompositeNode(grammarAccess.getAlarmRule()); }
-	 iv_ruleAlarm=ruleAlarm 
-	 { $current=$iv_ruleAlarm.current; } 
-	 EOF 
-;
-
-// Rule Alarm
-ruleAlarm returns [EObject current=null] 
-    @init { enterRule(); 
-    }
-    @after { leaveRule(); }:
-(	otherlv_0='action' 
-    {
-    	newLeafNode(otherlv_0, grammarAccess.getAlarmAccess().getActionKeyword_0());
-    }
-(
-(
-		{
-			if ($current==null) {
-	            $current = createModelElement(grammarAccess.getAlarmRule());
-	        }
-        }
-	otherlv_1=RULE_ID
-	{
-		newLeafNode(otherlv_1, grammarAccess.getAlarmAccess().getEventHandlerEventHandlerCrossReference_1_0()); 
-	}
-
-)
-)	otherlv_2='repeat' 
-    {
-    	newLeafNode(otherlv_2, grammarAccess.getAlarmAccess().getRepeatKeyword_2());
-    }
-(
-(
-(
-		lv_repeattype_3_1=	'EVERY DAY' 
-    {
-        newLeafNode(lv_repeattype_3_1, grammarAccess.getAlarmAccess().getRepeattypeEVERYDAYKeyword_3_0_0());
-    }
- 
-	    {
-	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getAlarmRule());
-	        }
-       		setWithLastConsumed($current, "repeattype", lv_repeattype_3_1, null);
-	    }
-
-    |		lv_repeattype_3_2=	'EVERY MONDAY' 
-    {
-        newLeafNode(lv_repeattype_3_2, grammarAccess.getAlarmAccess().getRepeattypeEVERYMONDAYKeyword_3_0_1());
-    }
- 
-	    {
-	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getAlarmRule());
-	        }
-       		setWithLastConsumed($current, "repeattype", lv_repeattype_3_2, null);
-	    }
-
-    |		lv_repeattype_3_3=	'EVERY TUESDAY' 
-    {
-        newLeafNode(lv_repeattype_3_3, grammarAccess.getAlarmAccess().getRepeattypeEVERYTUESDAYKeyword_3_0_2());
-    }
- 
-	    {
-	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getAlarmRule());
-	        }
-       		setWithLastConsumed($current, "repeattype", lv_repeattype_3_3, null);
-	    }
-
-    |		lv_repeattype_3_4=	'EVERY WEDNESDAY' 
-    {
-        newLeafNode(lv_repeattype_3_4, grammarAccess.getAlarmAccess().getRepeattypeEVERYWEDNESDAYKeyword_3_0_3());
-    }
- 
-	    {
-	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getAlarmRule());
-	        }
-       		setWithLastConsumed($current, "repeattype", lv_repeattype_3_4, null);
-	    }
-
-    |		lv_repeattype_3_5=	'EVERY THURSDAY' 
-    {
-        newLeafNode(lv_repeattype_3_5, grammarAccess.getAlarmAccess().getRepeattypeEVERYTHURSDAYKeyword_3_0_4());
-    }
- 
-	    {
-	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getAlarmRule());
-	        }
-       		setWithLastConsumed($current, "repeattype", lv_repeattype_3_5, null);
-	    }
-
-    |		lv_repeattype_3_6=	'EVERY FRIDAY' 
-    {
-        newLeafNode(lv_repeattype_3_6, grammarAccess.getAlarmAccess().getRepeattypeEVERYFRIDAYKeyword_3_0_5());
-    }
- 
-	    {
-	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getAlarmRule());
-	        }
-       		setWithLastConsumed($current, "repeattype", lv_repeattype_3_6, null);
-	    }
-
-    |		lv_repeattype_3_7=	'EVERY SATURDAY' 
-    {
-        newLeafNode(lv_repeattype_3_7, grammarAccess.getAlarmAccess().getRepeattypeEVERYSATURDAYKeyword_3_0_6());
-    }
- 
-	    {
-	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getAlarmRule());
-	        }
-       		setWithLastConsumed($current, "repeattype", lv_repeattype_3_7, null);
-	    }
-
-    |		lv_repeattype_3_8=	'EVERY SUNDAY' 
-    {
-        newLeafNode(lv_repeattype_3_8, grammarAccess.getAlarmAccess().getRepeattypeEVERYSUNDAYKeyword_3_0_7());
-    }
- 
-	    {
-	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getAlarmRule());
-	        }
-       		setWithLastConsumed($current, "repeattype", lv_repeattype_3_8, null);
-	    }
-
-)
-
-)
-)	otherlv_4='hours:' 
-    {
-    	newLeafNode(otherlv_4, grammarAccess.getAlarmAccess().getHoursKeyword_4());
-    }
-(
-(
-		lv_timerHours_5_0=RULE_INT
-		{
-			newLeafNode(lv_timerHours_5_0, grammarAccess.getAlarmAccess().getTimerHoursINTTerminalRuleCall_5_0()); 
-		}
-		{
-	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getAlarmRule());
-	        }
-       		setWithLastConsumed(
-       			$current, 
-       			"timerHours",
-        		lv_timerHours_5_0, 
-        		"INT");
-	    }
-
-)
-)	otherlv_6='minutes:' 
-    {
-    	newLeafNode(otherlv_6, grammarAccess.getAlarmAccess().getMinutesKeyword_6());
-    }
-(
-(
-		lv_timerMinutes_7_0=RULE_INT
-		{
-			newLeafNode(lv_timerMinutes_7_0, grammarAccess.getAlarmAccess().getTimerMinutesINTTerminalRuleCall_7_0()); 
-		}
-		{
-	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getAlarmRule());
-	        }
-       		setWithLastConsumed(
-       			$current, 
-       			"timerMinutes",
-        		lv_timerMinutes_7_0, 
-        		"INT");
-	    }
-
-)
-))
-;
-
-
-
-
-
-RULE_DOUBLE : RULE_INT '.' RULE_INT;
 
 RULE_ID : '^'? ('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
 

@@ -2,31 +2,17 @@ package es.usj.raspduino.generator.arduino
 
 import es.usj.raspduino.generator.Util
 import es.usj.raspduino.raspduinoDSL.Model
-import es.usj.raspduino.raspduinoDSL.Timer
-import es.usj.raspduino.raspduinoDSL.Alarm
 
 class TimeAlarmsLibraries {
 	
 	// Procedimiento principal desde donde se llama al resto de procedimiento, uno por archivo generado.
-	def generateCode(Model model, Util util){
-		var boolean firstOccurrence = true;
-		
+	def generateCode(Model model, Util util){		
 		// Comprobamos si existen declaraciones de timer o alarms antes de generar las librerias
-		for(Timer dev:model.timers)
+		if(!model.timers.empty)
 			generateTimeH(util);
 			generateTimeCpp(util);
 			generateTimeAlarmsH(util);
 			generateTimeAlarmsCpp(util);
-			firstOccurrence = false
-		
-		if (firstOccurrence){
-			for(Alarm dev:model.alarms)
-			generateTimeH(util);
-			generateTimeCpp(util);
-			generateTimeAlarmsH(util);
-			generateTimeAlarmsCpp(util);
-			firstOccurrence = false
-		}			
 	}
 	
 	def generateTimeH(Util util){

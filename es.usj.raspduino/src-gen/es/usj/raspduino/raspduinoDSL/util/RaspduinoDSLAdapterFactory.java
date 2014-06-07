@@ -110,34 +110,9 @@ public class RaspduinoDSLAdapterFactory extends AdapterFactoryImpl
         return createSensorListenerAdapter();
       }
       @Override
-      public Adapter casePrecondition(Precondition object)
-      {
-        return createPreconditionAdapter();
-      }
-      @Override
-      public Adapter casePrecondition1(Precondition1 object)
-      {
-        return createPrecondition1Adapter();
-      }
-      @Override
-      public Adapter caseEmptyPrecondition(EmptyPrecondition object)
-      {
-        return createEmptyPreconditionAdapter();
-      }
-      @Override
-      public Adapter caseSensorValuePrecondition(SensorValuePrecondition object)
-      {
-        return createSensorValuePreconditionAdapter();
-      }
-      @Override
       public Adapter caseTimer(Timer object)
       {
         return createTimerAdapter();
-      }
-      @Override
-      public Adapter caseAlarm(Alarm object)
-      {
-        return createAlarmAdapter();
       }
       @Override
       public Adapter defaultCase(EObject object)
@@ -267,66 +242,6 @@ public class RaspduinoDSLAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link es.usj.raspduino.raspduinoDSL.Precondition <em>Precondition</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see es.usj.raspduino.raspduinoDSL.Precondition
-   * @generated
-   */
-  public Adapter createPreconditionAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link es.usj.raspduino.raspduinoDSL.Precondition1 <em>Precondition1</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see es.usj.raspduino.raspduinoDSL.Precondition1
-   * @generated
-   */
-  public Adapter createPrecondition1Adapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link es.usj.raspduino.raspduinoDSL.EmptyPrecondition <em>Empty Precondition</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see es.usj.raspduino.raspduinoDSL.EmptyPrecondition
-   * @generated
-   */
-  public Adapter createEmptyPreconditionAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link es.usj.raspduino.raspduinoDSL.SensorValuePrecondition <em>Sensor Value Precondition</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see es.usj.raspduino.raspduinoDSL.SensorValuePrecondition
-   * @generated
-   */
-  public Adapter createSensorValuePreconditionAdapter()
-  {
-    return null;
-  }
-
-  /**
    * Creates a new adapter for an object of class '{@link es.usj.raspduino.raspduinoDSL.Timer <em>Timer</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -337,21 +252,6 @@ public class RaspduinoDSLAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createTimerAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link es.usj.raspduino.raspduinoDSL.Alarm <em>Alarm</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see es.usj.raspduino.raspduinoDSL.Alarm
-   * @generated
-   */
-  public Adapter createAlarmAdapter()
   {
     return null;
   }

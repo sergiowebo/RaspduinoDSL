@@ -37,24 +37,17 @@ public class RaspduinoDSLGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cSensorListenersSensorListenerParserRuleCall_6_0 = (RuleCall)cSensorListenersAssignment_6.eContents().get(0);
 		private final Assignment cTimersAssignment_7 = (Assignment)cGroup.eContents().get(7);
 		private final RuleCall cTimersTimerParserRuleCall_7_0 = (RuleCall)cTimersAssignment_7.eContents().get(0);
-		private final Assignment cAlarmsAssignment_8 = (Assignment)cGroup.eContents().get(8);
-		private final RuleCall cAlarmsAlarmParserRuleCall_8_0 = (RuleCall)cAlarmsAssignment_8.eContents().get(0);
-		private final Group cGroup_9 = (Group)cGroup.eContents().get(9);
-		private final Keyword cConcurrencyPriorityKeyword_9_0 = (Keyword)cGroup_9.eContents().get(0);
-		private final Assignment cPriorityAssignment_9_1 = (Assignment)cGroup_9.eContents().get(1);
-		private final Alternatives cPriorityAlternatives_9_1_0 = (Alternatives)cPriorityAssignment_9_1.eContents().get(0);
-		private final Keyword cPrioritySENSORKeyword_9_1_0_0 = (Keyword)cPriorityAlternatives_9_1_0.eContents().get(0);
-		private final Keyword cPrioritySCHEDULEDKeyword_9_1_0_1 = (Keyword)cPriorityAlternatives_9_1_0.eContents().get(1);
 		
+		//// Definicion de las condiciones para ejecutar una tarea
+		/// *(alarms+=Alarm)* / // TODO: En caso de conflicto definimos quien tiene preferencia, lo que indican los sensores o lo programado
+		//// ('Concurrency Priority:' priority=('SENSOR'|'SCHEDULED'))*
 		//Model: // Nombre y plataforma que utilizaremos
 		//	"Sketch:" name=ID "Hardware:" hardware=("Arduino UNO" //Se podran añadir mas plataformas ARDUINO MEGA, NANO, etc.
 		//	| "Raspberry Pi") // Sensores y actuadores que utilizaremos para nuestro diseño
 		//	devices+=AbstractDevice* // Definicion de tareas o eventos
 		//	eventHandlers+=EventHandler* // Definicion de las condiciones para ejecutar una tarea
 		//	sensorListeners+=SensorListener* // Definicion de las condiciones para ejecutar una tarea
-		//	timers+=Timer* // Definicion de las condiciones para ejecutar una tarea
-		//	alarms+=Alarm* // TODO: En caso de conflicto definimos quien tiene preferencia, lo que indican los sensores o lo programado
-		//	("Concurrency Priority:" priority=("SENSOR" | "SCHEDULED"))*;
+		//	timers+=Timer*;
 		public ParserRule getRule() { return rule; }
 
 		//// Nombre y plataforma que utilizaremos
@@ -63,9 +56,7 @@ public class RaspduinoDSLGrammarAccess extends AbstractGrammarElementFinder {
 		//devices+=AbstractDevice* // Definicion de tareas o eventos
 		//eventHandlers+=EventHandler* // Definicion de las condiciones para ejecutar una tarea
 		//sensorListeners+=SensorListener* // Definicion de las condiciones para ejecutar una tarea
-		//timers+=Timer* // Definicion de las condiciones para ejecutar una tarea
-		//alarms+=Alarm* // TODO: En caso de conflicto definimos quien tiene preferencia, lo que indican los sensores o lo programado
-		//("Concurrency Priority:" priority=("SENSOR" | "SCHEDULED"))*
+		//timers+=Timer*
 		public Group getGroup() { return cGroup; }
 
 		//// Nombre y plataforma que utilizaremos
@@ -118,30 +109,6 @@ public class RaspduinoDSLGrammarAccess extends AbstractGrammarElementFinder {
 
 		//Timer
 		public RuleCall getTimersTimerParserRuleCall_7_0() { return cTimersTimerParserRuleCall_7_0; }
-
-		//alarms+=Alarm*
-		public Assignment getAlarmsAssignment_8() { return cAlarmsAssignment_8; }
-
-		//Alarm
-		public RuleCall getAlarmsAlarmParserRuleCall_8_0() { return cAlarmsAlarmParserRuleCall_8_0; }
-
-		//("Concurrency Priority:" priority=("SENSOR" | "SCHEDULED"))*
-		public Group getGroup_9() { return cGroup_9; }
-
-		//"Concurrency Priority:"
-		public Keyword getConcurrencyPriorityKeyword_9_0() { return cConcurrencyPriorityKeyword_9_0; }
-
-		//priority=("SENSOR" | "SCHEDULED")
-		public Assignment getPriorityAssignment_9_1() { return cPriorityAssignment_9_1; }
-
-		//"SENSOR" | "SCHEDULED"
-		public Alternatives getPriorityAlternatives_9_1_0() { return cPriorityAlternatives_9_1_0; }
-
-		//"SENSOR"
-		public Keyword getPrioritySENSORKeyword_9_1_0_0() { return cPrioritySENSORKeyword_9_1_0_0; }
-
-		//"SCHEDULED"
-		public Keyword getPrioritySCHEDULEDKeyword_9_1_0_1() { return cPrioritySCHEDULEDKeyword_9_1_0_1; }
 	}
 
 	public class AbstractDeviceElements extends AbstractParserRuleElementFinder {
@@ -289,14 +256,15 @@ public class RaspduinoDSLGrammarAccess extends AbstractGrammarElementFinder {
 		private final Alternatives cActuatorStateAlternatives_2_0 = (Alternatives)cActuatorStateAssignment_2.eContents().get(0);
 		private final Keyword cActuatorStateOnKeyword_2_0_0 = (Keyword)cActuatorStateAlternatives_2_0.eContents().get(0);
 		private final Keyword cActuatorStateOffKeyword_2_0_1 = (Keyword)cActuatorStateAlternatives_2_0.eContents().get(1);
+		private final Keyword cActuatorStateToggleKeyword_2_0_2 = (Keyword)cActuatorStateAlternatives_2_0.eContents().get(2);
 		
 		//ChangeActuator:
 		//	actuator=[Actuator] ":" ActuatorState=("On" // Añadir mas opciones como Blink(tiempo)
-		//	| "Off");
+		//	| "Off" | "Toggle");
 		public ParserRule getRule() { return rule; }
 
 		//actuator=[Actuator] ":" ActuatorState=("On" // Añadir mas opciones como Blink(tiempo)
-		//| "Off")
+		//| "Off" | "Toggle")
 		public Group getGroup() { return cGroup; }
 
 		//actuator=[Actuator]
@@ -312,11 +280,11 @@ public class RaspduinoDSLGrammarAccess extends AbstractGrammarElementFinder {
 		public Keyword getColonKeyword_1() { return cColonKeyword_1; }
 
 		//ActuatorState=("On" // Añadir mas opciones como Blink(tiempo)
-		//| "Off")
+		//| "Off" | "Toggle")
 		public Assignment getActuatorStateAssignment_2() { return cActuatorStateAssignment_2; }
 
 		//"On" // Añadir mas opciones como Blink(tiempo)
-		//| "Off"
+		//| "Off" | "Toggle"
 		public Alternatives getActuatorStateAlternatives_2_0() { return cActuatorStateAlternatives_2_0; }
 
 		//"On"
@@ -324,6 +292,9 @@ public class RaspduinoDSLGrammarAccess extends AbstractGrammarElementFinder {
 
 		//"Off"
 		public Keyword getActuatorStateOffKeyword_2_0_1() { return cActuatorStateOffKeyword_2_0_1; }
+
+		//"Toggle"
+		public Keyword getActuatorStateToggleKeyword_2_0_2() { return cActuatorStateToggleKeyword_2_0_2; }
 	}
 
 	public class SensorListenerElements extends AbstractParserRuleElementFinder {
@@ -334,14 +305,19 @@ public class RaspduinoDSLGrammarAccess extends AbstractGrammarElementFinder {
 		private final CrossReference cSensorSensorCrossReference_1_0 = (CrossReference)cSensorAssignment_1.eContents().get(0);
 		private final RuleCall cSensorSensorIDTerminalRuleCall_1_0_1 = (RuleCall)cSensorSensorCrossReference_1_0.eContents().get(1);
 		private final Keyword cIfKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
-		private final Assignment cTypeAssignment_3_0 = (Assignment)cGroup_3.eContents().get(0);
-		private final Keyword cTypeBETWEENKeyword_3_0_0 = (Keyword)cTypeAssignment_3_0.eContents().get(0);
-		private final Assignment cLAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
-		private final RuleCall cLINTTerminalRuleCall_3_1_0 = (RuleCall)cLAssignment_3_1.eContents().get(0);
-		private final Keyword cANDKeyword_3_2 = (Keyword)cGroup_3.eContents().get(2);
-		private final Assignment cHAssignment_3_3 = (Assignment)cGroup_3.eContents().get(3);
-		private final RuleCall cHINTTerminalRuleCall_3_3_0 = (RuleCall)cHAssignment_3_3.eContents().get(0);
+		private final Alternatives cAlternatives_3 = (Alternatives)cGroup.eContents().get(3);
+		private final Assignment cTypeAssignment_3_0 = (Assignment)cAlternatives_3.eContents().get(0);
+		private final Keyword cTypeONKeyword_3_0_0 = (Keyword)cTypeAssignment_3_0.eContents().get(0);
+		private final Assignment cTypeAssignment_3_1 = (Assignment)cAlternatives_3.eContents().get(1);
+		private final Keyword cTypeOFFKeyword_3_1_0 = (Keyword)cTypeAssignment_3_1.eContents().get(0);
+		private final Group cGroup_3_2 = (Group)cAlternatives_3.eContents().get(2);
+		private final Assignment cTypeAssignment_3_2_0 = (Assignment)cGroup_3_2.eContents().get(0);
+		private final Keyword cTypeBETWEENKeyword_3_2_0_0 = (Keyword)cTypeAssignment_3_2_0.eContents().get(0);
+		private final Assignment cLAssignment_3_2_1 = (Assignment)cGroup_3_2.eContents().get(1);
+		private final RuleCall cLINTTerminalRuleCall_3_2_1_0 = (RuleCall)cLAssignment_3_2_1.eContents().get(0);
+		private final Keyword cANDKeyword_3_2_2 = (Keyword)cGroup_3_2.eContents().get(2);
+		private final Assignment cHAssignment_3_2_3 = (Assignment)cGroup_3_2.eContents().get(3);
+		private final RuleCall cHINTTerminalRuleCall_3_2_3_0 = (RuleCall)cHAssignment_3_2_3.eContents().get(0);
 		private final Keyword cCallKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		private final Assignment cEventHandlerAssignment_5 = (Assignment)cGroup.eContents().get(5);
 		private final CrossReference cEventHandlerEventHandlerCrossReference_5_0 = (CrossReference)cEventHandlerAssignment_5.eContents().get(0);
@@ -349,12 +325,12 @@ public class RaspduinoDSLGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//// Definimos las condiciones de los SensorListeners
 		//SensorListener:
-		//	"SensorListener" sensor=[Sensor] "if" (type="BETWEEN" l=INT "AND" h=INT) //'if' (type='CHANGE' | type='RISING' | type='FALLING' | type='BETWEEN' l=INT 'AND' h=INT) 
-		//	"call" eventHandler=[EventHandler];
+		//	"SensorListener" sensor=[Sensor] "if" (type="ON" // Mas posibilidades (type='CHANGE' | type='RISING' | type='FALLING' ) 
+		//	| type="OFF" | type="BETWEEN" l=INT "AND" h=INT) "call" eventHandler=[EventHandler];
 		public ParserRule getRule() { return rule; }
 
-		//"SensorListener" sensor=[Sensor] "if" (type="BETWEEN" l=INT "AND" h=INT) //'if' (type='CHANGE' | type='RISING' | type='FALLING' | type='BETWEEN' l=INT 'AND' h=INT) 
-		//"call" eventHandler=[EventHandler]
+		//"SensorListener" sensor=[Sensor] "if" (type="ON" // Mas posibilidades (type='CHANGE' | type='RISING' | type='FALLING' ) 
+		//| type="OFF" | type="BETWEEN" l=INT "AND" h=INT) "call" eventHandler=[EventHandler]
 		public Group getGroup() { return cGroup; }
 
 		//"SensorListener"
@@ -372,29 +348,45 @@ public class RaspduinoDSLGrammarAccess extends AbstractGrammarElementFinder {
 		//"if"
 		public Keyword getIfKeyword_2() { return cIfKeyword_2; }
 
-		//type="BETWEEN" l=INT "AND" h=INT
-		public Group getGroup_3() { return cGroup_3; }
+		//type="ON" // Mas posibilidades (type='CHANGE' | type='RISING' | type='FALLING' ) 
+		//| type="OFF" | type="BETWEEN" l=INT "AND" h=INT
+		public Alternatives getAlternatives_3() { return cAlternatives_3; }
 
-		//type="BETWEEN"
+		//type="ON"
 		public Assignment getTypeAssignment_3_0() { return cTypeAssignment_3_0; }
 
+		//"ON"
+		public Keyword getTypeONKeyword_3_0_0() { return cTypeONKeyword_3_0_0; }
+
+		//type="OFF"
+		public Assignment getTypeAssignment_3_1() { return cTypeAssignment_3_1; }
+
+		//"OFF"
+		public Keyword getTypeOFFKeyword_3_1_0() { return cTypeOFFKeyword_3_1_0; }
+
+		//type="BETWEEN" l=INT "AND" h=INT
+		public Group getGroup_3_2() { return cGroup_3_2; }
+
+		//type="BETWEEN"
+		public Assignment getTypeAssignment_3_2_0() { return cTypeAssignment_3_2_0; }
+
 		//"BETWEEN"
-		public Keyword getTypeBETWEENKeyword_3_0_0() { return cTypeBETWEENKeyword_3_0_0; }
+		public Keyword getTypeBETWEENKeyword_3_2_0_0() { return cTypeBETWEENKeyword_3_2_0_0; }
 
 		//l=INT
-		public Assignment getLAssignment_3_1() { return cLAssignment_3_1; }
+		public Assignment getLAssignment_3_2_1() { return cLAssignment_3_2_1; }
 
 		//INT
-		public RuleCall getLINTTerminalRuleCall_3_1_0() { return cLINTTerminalRuleCall_3_1_0; }
+		public RuleCall getLINTTerminalRuleCall_3_2_1_0() { return cLINTTerminalRuleCall_3_2_1_0; }
 
 		//"AND"
-		public Keyword getANDKeyword_3_2() { return cANDKeyword_3_2; }
+		public Keyword getANDKeyword_3_2_2() { return cANDKeyword_3_2_2; }
 
 		//h=INT
-		public Assignment getHAssignment_3_3() { return cHAssignment_3_3; }
+		public Assignment getHAssignment_3_2_3() { return cHAssignment_3_2_3; }
 
 		//INT
-		public RuleCall getHINTTerminalRuleCall_3_3_0() { return cHINTTerminalRuleCall_3_3_0; }
+		public RuleCall getHINTTerminalRuleCall_3_2_3_0() { return cHINTTerminalRuleCall_3_2_3_0; }
 
 		//"call"
 		public Keyword getCallKeyword_4() { return cCallKeyword_4; }
@@ -409,187 +401,10 @@ public class RaspduinoDSLGrammarAccess extends AbstractGrammarElementFinder {
 		public RuleCall getEventHandlerEventHandlerIDTerminalRuleCall_5_0_1() { return cEventHandlerEventHandlerIDTerminalRuleCall_5_0_1; }
 	}
 
-	public class PreconditionElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Precondition");
-		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
-		private final Assignment cPre1Assignment_0_0 = (Assignment)cGroup_0.eContents().get(0);
-		private final RuleCall cPre1Precondition1ParserRuleCall_0_0_0 = (RuleCall)cPre1Assignment_0_0.eContents().get(0);
-		private final Assignment cOpAssignment_0_1 = (Assignment)cGroup_0.eContents().get(1);
-		private final Alternatives cOpAlternatives_0_1_0 = (Alternatives)cOpAssignment_0_1.eContents().get(0);
-		private final Keyword cOpAmpersandAmpersandKeyword_0_1_0_0 = (Keyword)cOpAlternatives_0_1_0.eContents().get(0);
-		private final Keyword cOpVerticalLineVerticalLineKeyword_0_1_0_1 = (Keyword)cOpAlternatives_0_1_0.eContents().get(1);
-		private final Assignment cPreAssignment_0_2 = (Assignment)cGroup_0.eContents().get(2);
-		private final RuleCall cPrePreconditionParserRuleCall_0_2_0 = (RuleCall)cPreAssignment_0_2.eContents().get(0);
-		private final Assignment cPre1Assignment_1 = (Assignment)cAlternatives.eContents().get(1);
-		private final RuleCall cPre1Precondition1ParserRuleCall_1_0 = (RuleCall)cPre1Assignment_1.eContents().get(0);
-		
-		//// Condiciones establecidas para los valores
-		//Precondition:
-		//	pre1=Precondition1 op=("&&" | "||") pre=Precondition | pre1=Precondition1;
-		public ParserRule getRule() { return rule; }
-
-		//pre1=Precondition1 op=("&&" | "||") pre=Precondition | pre1=Precondition1
-		public Alternatives getAlternatives() { return cAlternatives; }
-
-		//pre1=Precondition1 op=("&&" | "||") pre=Precondition
-		public Group getGroup_0() { return cGroup_0; }
-
-		//pre1=Precondition1
-		public Assignment getPre1Assignment_0_0() { return cPre1Assignment_0_0; }
-
-		//Precondition1
-		public RuleCall getPre1Precondition1ParserRuleCall_0_0_0() { return cPre1Precondition1ParserRuleCall_0_0_0; }
-
-		//op=("&&" | "||")
-		public Assignment getOpAssignment_0_1() { return cOpAssignment_0_1; }
-
-		//"&&" | "||"
-		public Alternatives getOpAlternatives_0_1_0() { return cOpAlternatives_0_1_0; }
-
-		//"&&"
-		public Keyword getOpAmpersandAmpersandKeyword_0_1_0_0() { return cOpAmpersandAmpersandKeyword_0_1_0_0; }
-
-		//"||"
-		public Keyword getOpVerticalLineVerticalLineKeyword_0_1_0_1() { return cOpVerticalLineVerticalLineKeyword_0_1_0_1; }
-
-		//pre=Precondition
-		public Assignment getPreAssignment_0_2() { return cPreAssignment_0_2; }
-
-		//Precondition
-		public RuleCall getPrePreconditionParserRuleCall_0_2_0() { return cPrePreconditionParserRuleCall_0_2_0; }
-
-		//pre1=Precondition1
-		public Assignment getPre1Assignment_1() { return cPre1Assignment_1; }
-
-		//Precondition1
-		public RuleCall getPre1Precondition1ParserRuleCall_1_0() { return cPre1Precondition1ParserRuleCall_1_0; }
-	}
-
-	public class Precondition1Elements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Precondition1");
-		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final Assignment cPreAssignment_0 = (Assignment)cAlternatives.eContents().get(0);
-		private final RuleCall cPreSensorValuePreconditionParserRuleCall_0_0 = (RuleCall)cPreAssignment_0.eContents().get(0);
-		private final Assignment cPreAssignment_1 = (Assignment)cAlternatives.eContents().get(1);
-		private final RuleCall cPreEmptyPreconditionParserRuleCall_1_0 = (RuleCall)cPreAssignment_1.eContents().get(0);
-		
-		//Precondition1:
-		//	pre=SensorValuePrecondition | pre=EmptyPrecondition;
-		public ParserRule getRule() { return rule; }
-
-		//pre=SensorValuePrecondition | pre=EmptyPrecondition
-		public Alternatives getAlternatives() { return cAlternatives; }
-
-		//pre=SensorValuePrecondition
-		public Assignment getPreAssignment_0() { return cPreAssignment_0; }
-
-		//SensorValuePrecondition
-		public RuleCall getPreSensorValuePreconditionParserRuleCall_0_0() { return cPreSensorValuePreconditionParserRuleCall_0_0; }
-
-		//pre=EmptyPrecondition
-		public Assignment getPreAssignment_1() { return cPreAssignment_1; }
-
-		//EmptyPrecondition
-		public RuleCall getPreEmptyPreconditionParserRuleCall_1_0() { return cPreEmptyPreconditionParserRuleCall_1_0; }
-	}
-
-	public class EmptyPreconditionElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "EmptyPrecondition");
-		private final Assignment cNameAssignment = (Assignment)rule.eContents().get(1);
-		private final RuleCall cNameIDTerminalRuleCall_0 = (RuleCall)cNameAssignment.eContents().get(0);
-		
-		//EmptyPrecondition:
-		//	name=ID;
-		public ParserRule getRule() { return rule; }
-
-		//name=ID
-		public Assignment getNameAssignment() { return cNameAssignment; }
-
-		//ID
-		public RuleCall getNameIDTerminalRuleCall_0() { return cNameIDTerminalRuleCall_0; }
-	}
-
-	public class SensorValuePreconditionElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "SensorValuePrecondition");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Assignment cSensorAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final CrossReference cSensorSensorCrossReference_0_0 = (CrossReference)cSensorAssignment_0.eContents().get(0);
-		private final RuleCall cSensorSensorIDTerminalRuleCall_0_0_1 = (RuleCall)cSensorSensorCrossReference_0_0.eContents().get(1);
-		private final Assignment cCondAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final Alternatives cCondAlternatives_1_0 = (Alternatives)cCondAssignment_1.eContents().get(0);
-		private final Keyword cCondEqualsSignEqualsSignKeyword_1_0_0 = (Keyword)cCondAlternatives_1_0.eContents().get(0);
-		private final Keyword cCondLessThanSignEqualsSignKeyword_1_0_1 = (Keyword)cCondAlternatives_1_0.eContents().get(1);
-		private final Keyword cCondGreaterThanSignEqualsSignKeyword_1_0_2 = (Keyword)cCondAlternatives_1_0.eContents().get(2);
-		private final Keyword cCondExclamationMarkEqualsSignKeyword_1_0_3 = (Keyword)cCondAlternatives_1_0.eContents().get(3);
-		private final Assignment cValueAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cValuePossibleValuesParserRuleCall_2_0 = (RuleCall)cValueAssignment_2.eContents().get(0);
-		
-		//SensorValuePrecondition:
-		//	sensor=[Sensor] cond=("==" | "<=" | ">=" | "!=") value=PossibleValues;
-		public ParserRule getRule() { return rule; }
-
-		//sensor=[Sensor] cond=("==" | "<=" | ">=" | "!=") value=PossibleValues
-		public Group getGroup() { return cGroup; }
-
-		//sensor=[Sensor]
-		public Assignment getSensorAssignment_0() { return cSensorAssignment_0; }
-
-		//[Sensor]
-		public CrossReference getSensorSensorCrossReference_0_0() { return cSensorSensorCrossReference_0_0; }
-
-		//ID
-		public RuleCall getSensorSensorIDTerminalRuleCall_0_0_1() { return cSensorSensorIDTerminalRuleCall_0_0_1; }
-
-		//cond=("==" | "<=" | ">=" | "!=")
-		public Assignment getCondAssignment_1() { return cCondAssignment_1; }
-
-		//"==" | "<=" | ">=" | "!="
-		public Alternatives getCondAlternatives_1_0() { return cCondAlternatives_1_0; }
-
-		//"=="
-		public Keyword getCondEqualsSignEqualsSignKeyword_1_0_0() { return cCondEqualsSignEqualsSignKeyword_1_0_0; }
-
-		//"<="
-		public Keyword getCondLessThanSignEqualsSignKeyword_1_0_1() { return cCondLessThanSignEqualsSignKeyword_1_0_1; }
-
-		//">="
-		public Keyword getCondGreaterThanSignEqualsSignKeyword_1_0_2() { return cCondGreaterThanSignEqualsSignKeyword_1_0_2; }
-
-		//"!="
-		public Keyword getCondExclamationMarkEqualsSignKeyword_1_0_3() { return cCondExclamationMarkEqualsSignKeyword_1_0_3; }
-
-		//value=PossibleValues
-		public Assignment getValueAssignment_2() { return cValueAssignment_2; }
-
-		//PossibleValues
-		public RuleCall getValuePossibleValuesParserRuleCall_2_0() { return cValuePossibleValuesParserRuleCall_2_0; }
-	}
-
-	public class PossibleValuesElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "PossibleValues");
-		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final RuleCall cDOUBLETerminalRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
-		private final RuleCall cINTTerminalRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
-		
-		//PossibleValues:
-		//	DOUBLE | INT;
-		public ParserRule getRule() { return rule; }
-
-		//DOUBLE | INT
-		public Alternatives getAlternatives() { return cAlternatives; }
-
-		//DOUBLE
-		public RuleCall getDOUBLETerminalRuleCall_0() { return cDOUBLETerminalRuleCall_0; }
-
-		//INT
-		public RuleCall getINTTerminalRuleCall_1() { return cINTTerminalRuleCall_1; }
-	}
-
 	public class TimerElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Timer");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cActionKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cTimerActionKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cEventHandlerAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final CrossReference cEventHandlerEventHandlerCrossReference_1_0 = (CrossReference)cEventHandlerAssignment_1.eContents().get(0);
 		private final RuleCall cEventHandlerEventHandlerIDTerminalRuleCall_1_0_1 = (RuleCall)cEventHandlerEventHandlerCrossReference_1_0.eContents().get(1);
@@ -603,15 +418,42 @@ public class RaspduinoDSLGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cTimerSecsINTTerminalRuleCall_5_0 = (RuleCall)cTimerSecsAssignment_5.eContents().get(0);
 		
 		//// Acciones programadas para realizarse cada X segundos, o a determinadas horas del dia.
-		//Timer:
-		//	"action" eventHandler=[EventHandler] "repeat" repeattype=("ONCE" | "EVERY") "seconds:" timerSecs=INT;
+		//// IDEAS PARA CONTINUAR EL DESARROLLO
+		/// *Alarm:
+		//		'action' eventHandler=[EventHandler]
+		//		'repeat' repeattype = ('EVERY DAY'|'EVERY MONDAY'|'EVERY TUESDAY'|'EVERY WEDNESDAY'
+		//								|'EVERY THURSDAY'|'EVERY FRIDAY'|'EVERY SATURDAY'|'EVERY SUNDAY')
+		//		'hours:' timerHours = INT
+		//		'minutes:' timerMinutes = INT
+		//	;* / / *
+		//	 * // Condiciones establecidas para los valores
+		//		Precondition:
+		//			 pre1=Precondition1 op=('&&'|'||') pre=Precondition | pre1=Precondition1
+		//		;
+		//		Precondition1:
+		//			(pre=SensorValuePrecondition | pre=EmptyPrecondition)
+		//		;
+		//		EmptyPrecondition:
+		//			name=ID
+		//		;
+		//		SensorValuePrecondition:
+		//			sensor=[Sensor] cond=('==' | '<=' | '>=' | '!=') value=PossibleValues 
+		//		;
+		//		PossibleValues:
+		//			DOUBLE | INT
+		//		;
+		//		terminal DOUBLE: // TODO no se porque no me ha dejado poner el double
+		//			INT'.'INT
+		//		;
+		//	 * / Timer:
+		//	"Timer action" eventHandler=[EventHandler] "repeat" repeattype=("ONCE" | "EVERY") "seconds:" timerSecs=INT;
 		public ParserRule getRule() { return rule; }
 
-		//"action" eventHandler=[EventHandler] "repeat" repeattype=("ONCE" | "EVERY") "seconds:" timerSecs=INT
+		//"Timer action" eventHandler=[EventHandler] "repeat" repeattype=("ONCE" | "EVERY") "seconds:" timerSecs=INT
 		public Group getGroup() { return cGroup; }
 
-		//"action"
-		public Keyword getActionKeyword_0() { return cActionKeyword_0; }
+		//"Timer action"
+		public Keyword getTimerActionKeyword_0() { return cTimerActionKeyword_0; }
 
 		//eventHandler=[EventHandler]
 		public Assignment getEventHandlerAssignment_1() { return cEventHandlerAssignment_1; }
@@ -646,108 +488,6 @@ public class RaspduinoDSLGrammarAccess extends AbstractGrammarElementFinder {
 		//INT
 		public RuleCall getTimerSecsINTTerminalRuleCall_5_0() { return cTimerSecsINTTerminalRuleCall_5_0; }
 	}
-
-	public class AlarmElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Alarm");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cActionKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cEventHandlerAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final CrossReference cEventHandlerEventHandlerCrossReference_1_0 = (CrossReference)cEventHandlerAssignment_1.eContents().get(0);
-		private final RuleCall cEventHandlerEventHandlerIDTerminalRuleCall_1_0_1 = (RuleCall)cEventHandlerEventHandlerCrossReference_1_0.eContents().get(1);
-		private final Keyword cRepeatKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Assignment cRepeattypeAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final Alternatives cRepeattypeAlternatives_3_0 = (Alternatives)cRepeattypeAssignment_3.eContents().get(0);
-		private final Keyword cRepeattypeEVERYDAYKeyword_3_0_0 = (Keyword)cRepeattypeAlternatives_3_0.eContents().get(0);
-		private final Keyword cRepeattypeEVERYMONDAYKeyword_3_0_1 = (Keyword)cRepeattypeAlternatives_3_0.eContents().get(1);
-		private final Keyword cRepeattypeEVERYTUESDAYKeyword_3_0_2 = (Keyword)cRepeattypeAlternatives_3_0.eContents().get(2);
-		private final Keyword cRepeattypeEVERYWEDNESDAYKeyword_3_0_3 = (Keyword)cRepeattypeAlternatives_3_0.eContents().get(3);
-		private final Keyword cRepeattypeEVERYTHURSDAYKeyword_3_0_4 = (Keyword)cRepeattypeAlternatives_3_0.eContents().get(4);
-		private final Keyword cRepeattypeEVERYFRIDAYKeyword_3_0_5 = (Keyword)cRepeattypeAlternatives_3_0.eContents().get(5);
-		private final Keyword cRepeattypeEVERYSATURDAYKeyword_3_0_6 = (Keyword)cRepeattypeAlternatives_3_0.eContents().get(6);
-		private final Keyword cRepeattypeEVERYSUNDAYKeyword_3_0_7 = (Keyword)cRepeattypeAlternatives_3_0.eContents().get(7);
-		private final Keyword cHoursKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		private final Assignment cTimerHoursAssignment_5 = (Assignment)cGroup.eContents().get(5);
-		private final RuleCall cTimerHoursINTTerminalRuleCall_5_0 = (RuleCall)cTimerHoursAssignment_5.eContents().get(0);
-		private final Keyword cMinutesKeyword_6 = (Keyword)cGroup.eContents().get(6);
-		private final Assignment cTimerMinutesAssignment_7 = (Assignment)cGroup.eContents().get(7);
-		private final RuleCall cTimerMinutesINTTerminalRuleCall_7_0 = (RuleCall)cTimerMinutesAssignment_7.eContents().get(0);
-		
-		//Alarm:
-		//	"action" eventHandler=[EventHandler] "repeat" repeattype=("EVERY DAY" | "EVERY MONDAY" | "EVERY TUESDAY" |
-		//	"EVERY WEDNESDAY" | "EVERY THURSDAY" | "EVERY FRIDAY" | "EVERY SATURDAY" | "EVERY SUNDAY") "hours:" timerHours=INT
-		//	"minutes:" timerMinutes=INT;
-		public ParserRule getRule() { return rule; }
-
-		//"action" eventHandler=[EventHandler] "repeat" repeattype=("EVERY DAY" | "EVERY MONDAY" | "EVERY TUESDAY" |
-		//"EVERY WEDNESDAY" | "EVERY THURSDAY" | "EVERY FRIDAY" | "EVERY SATURDAY" | "EVERY SUNDAY") "hours:" timerHours=INT
-		//"minutes:" timerMinutes=INT
-		public Group getGroup() { return cGroup; }
-
-		//"action"
-		public Keyword getActionKeyword_0() { return cActionKeyword_0; }
-
-		//eventHandler=[EventHandler]
-		public Assignment getEventHandlerAssignment_1() { return cEventHandlerAssignment_1; }
-
-		//[EventHandler]
-		public CrossReference getEventHandlerEventHandlerCrossReference_1_0() { return cEventHandlerEventHandlerCrossReference_1_0; }
-
-		//ID
-		public RuleCall getEventHandlerEventHandlerIDTerminalRuleCall_1_0_1() { return cEventHandlerEventHandlerIDTerminalRuleCall_1_0_1; }
-
-		//"repeat"
-		public Keyword getRepeatKeyword_2() { return cRepeatKeyword_2; }
-
-		//repeattype=("EVERY DAY" | "EVERY MONDAY" | "EVERY TUESDAY" | "EVERY WEDNESDAY" | "EVERY THURSDAY" | "EVERY FRIDAY" |
-		//"EVERY SATURDAY" | "EVERY SUNDAY")
-		public Assignment getRepeattypeAssignment_3() { return cRepeattypeAssignment_3; }
-
-		//"EVERY DAY" | "EVERY MONDAY" | "EVERY TUESDAY" | "EVERY WEDNESDAY" | "EVERY THURSDAY" | "EVERY FRIDAY" |
-		//"EVERY SATURDAY" | "EVERY SUNDAY"
-		public Alternatives getRepeattypeAlternatives_3_0() { return cRepeattypeAlternatives_3_0; }
-
-		//"EVERY DAY"
-		public Keyword getRepeattypeEVERYDAYKeyword_3_0_0() { return cRepeattypeEVERYDAYKeyword_3_0_0; }
-
-		//"EVERY MONDAY"
-		public Keyword getRepeattypeEVERYMONDAYKeyword_3_0_1() { return cRepeattypeEVERYMONDAYKeyword_3_0_1; }
-
-		//"EVERY TUESDAY"
-		public Keyword getRepeattypeEVERYTUESDAYKeyword_3_0_2() { return cRepeattypeEVERYTUESDAYKeyword_3_0_2; }
-
-		//"EVERY WEDNESDAY"
-		public Keyword getRepeattypeEVERYWEDNESDAYKeyword_3_0_3() { return cRepeattypeEVERYWEDNESDAYKeyword_3_0_3; }
-
-		//"EVERY THURSDAY"
-		public Keyword getRepeattypeEVERYTHURSDAYKeyword_3_0_4() { return cRepeattypeEVERYTHURSDAYKeyword_3_0_4; }
-
-		//"EVERY FRIDAY"
-		public Keyword getRepeattypeEVERYFRIDAYKeyword_3_0_5() { return cRepeattypeEVERYFRIDAYKeyword_3_0_5; }
-
-		//"EVERY SATURDAY"
-		public Keyword getRepeattypeEVERYSATURDAYKeyword_3_0_6() { return cRepeattypeEVERYSATURDAYKeyword_3_0_6; }
-
-		//"EVERY SUNDAY"
-		public Keyword getRepeattypeEVERYSUNDAYKeyword_3_0_7() { return cRepeattypeEVERYSUNDAYKeyword_3_0_7; }
-
-		//"hours:"
-		public Keyword getHoursKeyword_4() { return cHoursKeyword_4; }
-
-		//timerHours=INT
-		public Assignment getTimerHoursAssignment_5() { return cTimerHoursAssignment_5; }
-
-		//INT
-		public RuleCall getTimerHoursINTTerminalRuleCall_5_0() { return cTimerHoursINTTerminalRuleCall_5_0; }
-
-		//"minutes:"
-		public Keyword getMinutesKeyword_6() { return cMinutesKeyword_6; }
-
-		//timerMinutes=INT
-		public Assignment getTimerMinutesAssignment_7() { return cTimerMinutesAssignment_7; }
-
-		//INT
-		public RuleCall getTimerMinutesINTTerminalRuleCall_7_0() { return cTimerMinutesINTTerminalRuleCall_7_0; }
-	}
 	
 	
 	private ModelElements pModel;
@@ -757,14 +497,7 @@ public class RaspduinoDSLGrammarAccess extends AbstractGrammarElementFinder {
 	private EventHandlerElements pEventHandler;
 	private ChangeActuatorElements pChangeActuator;
 	private SensorListenerElements pSensorListener;
-	private PreconditionElements pPrecondition;
-	private Precondition1Elements pPrecondition1;
-	private EmptyPreconditionElements pEmptyPrecondition;
-	private SensorValuePreconditionElements pSensorValuePrecondition;
-	private PossibleValuesElements pPossibleValues;
-	private TerminalRule tDOUBLE;
 	private TimerElements pTimer;
-	private AlarmElements pAlarm;
 	
 	private final Grammar grammar;
 
@@ -804,15 +537,16 @@ public class RaspduinoDSLGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	
+	//// Definicion de las condiciones para ejecutar una tarea
+	/// *(alarms+=Alarm)* / // TODO: En caso de conflicto definimos quien tiene preferencia, lo que indican los sensores o lo programado
+	//// ('Concurrency Priority:' priority=('SENSOR'|'SCHEDULED'))*
 	//Model: // Nombre y plataforma que utilizaremos
 	//	"Sketch:" name=ID "Hardware:" hardware=("Arduino UNO" //Se podran añadir mas plataformas ARDUINO MEGA, NANO, etc.
 	//	| "Raspberry Pi") // Sensores y actuadores que utilizaremos para nuestro diseño
 	//	devices+=AbstractDevice* // Definicion de tareas o eventos
 	//	eventHandlers+=EventHandler* // Definicion de las condiciones para ejecutar una tarea
 	//	sensorListeners+=SensorListener* // Definicion de las condiciones para ejecutar una tarea
-	//	timers+=Timer* // Definicion de las condiciones para ejecutar una tarea
-	//	alarms+=Alarm* // TODO: En caso de conflicto definimos quien tiene preferencia, lo que indican los sensores o lo programado
-	//	("Concurrency Priority:" priority=("SENSOR" | "SCHEDULED"))*;
+	//	timers+=Timer*;
 	public ModelElements getModelAccess() {
 		return (pModel != null) ? pModel : (pModel = new ModelElements());
 	}
@@ -866,7 +600,7 @@ public class RaspduinoDSLGrammarAccess extends AbstractGrammarElementFinder {
 
 	//ChangeActuator:
 	//	actuator=[Actuator] ":" ActuatorState=("On" // Añadir mas opciones como Blink(tiempo)
-	//	| "Off");
+	//	| "Off" | "Toggle");
 	public ChangeActuatorElements getChangeActuatorAccess() {
 		return (pChangeActuator != null) ? pChangeActuator : (pChangeActuator = new ChangeActuatorElements());
 	}
@@ -877,8 +611,8 @@ public class RaspduinoDSLGrammarAccess extends AbstractGrammarElementFinder {
 
 	//// Definimos las condiciones de los SensorListeners
 	//SensorListener:
-	//	"SensorListener" sensor=[Sensor] "if" (type="BETWEEN" l=INT "AND" h=INT) //'if' (type='CHANGE' | type='RISING' | type='FALLING' | type='BETWEEN' l=INT 'AND' h=INT) 
-	//	"call" eventHandler=[EventHandler];
+	//	"SensorListener" sensor=[Sensor] "if" (type="ON" // Mas posibilidades (type='CHANGE' | type='RISING' | type='FALLING' ) 
+	//	| type="OFF" | type="BETWEEN" l=INT "AND" h=INT) "call" eventHandler=[EventHandler];
 	public SensorListenerElements getSensorListenerAccess() {
 		return (pSensorListener != null) ? pSensorListener : (pSensorListener = new SensorListenerElements());
 	}
@@ -887,85 +621,42 @@ public class RaspduinoDSLGrammarAccess extends AbstractGrammarElementFinder {
 		return getSensorListenerAccess().getRule();
 	}
 
-	//// Condiciones establecidas para los valores
-	//Precondition:
-	//	pre1=Precondition1 op=("&&" | "||") pre=Precondition | pre1=Precondition1;
-	public PreconditionElements getPreconditionAccess() {
-		return (pPrecondition != null) ? pPrecondition : (pPrecondition = new PreconditionElements());
-	}
-	
-	public ParserRule getPreconditionRule() {
-		return getPreconditionAccess().getRule();
-	}
-
-	//Precondition1:
-	//	pre=SensorValuePrecondition | pre=EmptyPrecondition;
-	public Precondition1Elements getPrecondition1Access() {
-		return (pPrecondition1 != null) ? pPrecondition1 : (pPrecondition1 = new Precondition1Elements());
-	}
-	
-	public ParserRule getPrecondition1Rule() {
-		return getPrecondition1Access().getRule();
-	}
-
-	//EmptyPrecondition:
-	//	name=ID;
-	public EmptyPreconditionElements getEmptyPreconditionAccess() {
-		return (pEmptyPrecondition != null) ? pEmptyPrecondition : (pEmptyPrecondition = new EmptyPreconditionElements());
-	}
-	
-	public ParserRule getEmptyPreconditionRule() {
-		return getEmptyPreconditionAccess().getRule();
-	}
-
-	//SensorValuePrecondition:
-	//	sensor=[Sensor] cond=("==" | "<=" | ">=" | "!=") value=PossibleValues;
-	public SensorValuePreconditionElements getSensorValuePreconditionAccess() {
-		return (pSensorValuePrecondition != null) ? pSensorValuePrecondition : (pSensorValuePrecondition = new SensorValuePreconditionElements());
-	}
-	
-	public ParserRule getSensorValuePreconditionRule() {
-		return getSensorValuePreconditionAccess().getRule();
-	}
-
-	//PossibleValues:
-	//	DOUBLE | INT;
-	public PossibleValuesElements getPossibleValuesAccess() {
-		return (pPossibleValues != null) ? pPossibleValues : (pPossibleValues = new PossibleValuesElements());
-	}
-	
-	public ParserRule getPossibleValuesRule() {
-		return getPossibleValuesAccess().getRule();
-	}
-
-	//// TODO no se porque no me ha dejado poner el double
-	//terminal DOUBLE:
-	//	INT "." INT;
-	public TerminalRule getDOUBLERule() {
-		return (tDOUBLE != null) ? tDOUBLE : (tDOUBLE = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "DOUBLE"));
-	} 
-
 	//// Acciones programadas para realizarse cada X segundos, o a determinadas horas del dia.
-	//Timer:
-	//	"action" eventHandler=[EventHandler] "repeat" repeattype=("ONCE" | "EVERY") "seconds:" timerSecs=INT;
+	//// IDEAS PARA CONTINUAR EL DESARROLLO
+	/// *Alarm:
+	//		'action' eventHandler=[EventHandler]
+	//		'repeat' repeattype = ('EVERY DAY'|'EVERY MONDAY'|'EVERY TUESDAY'|'EVERY WEDNESDAY'
+	//								|'EVERY THURSDAY'|'EVERY FRIDAY'|'EVERY SATURDAY'|'EVERY SUNDAY')
+	//		'hours:' timerHours = INT
+	//		'minutes:' timerMinutes = INT
+	//	;* / / *
+	//	 * // Condiciones establecidas para los valores
+	//		Precondition:
+	//			 pre1=Precondition1 op=('&&'|'||') pre=Precondition | pre1=Precondition1
+	//		;
+	//		Precondition1:
+	//			(pre=SensorValuePrecondition | pre=EmptyPrecondition)
+	//		;
+	//		EmptyPrecondition:
+	//			name=ID
+	//		;
+	//		SensorValuePrecondition:
+	//			sensor=[Sensor] cond=('==' | '<=' | '>=' | '!=') value=PossibleValues 
+	//		;
+	//		PossibleValues:
+	//			DOUBLE | INT
+	//		;
+	//		terminal DOUBLE: // TODO no se porque no me ha dejado poner el double
+	//			INT'.'INT
+	//		;
+	//	 * / Timer:
+	//	"Timer action" eventHandler=[EventHandler] "repeat" repeattype=("ONCE" | "EVERY") "seconds:" timerSecs=INT;
 	public TimerElements getTimerAccess() {
 		return (pTimer != null) ? pTimer : (pTimer = new TimerElements());
 	}
 	
 	public ParserRule getTimerRule() {
 		return getTimerAccess().getRule();
-	}
-
-	//Alarm:
-	//	"action" eventHandler=[EventHandler] "repeat" repeattype=("EVERY DAY" | "EVERY MONDAY" | "EVERY TUESDAY" |
-	//	"EVERY WEDNESDAY" | "EVERY THURSDAY" | "EVERY FRIDAY" | "EVERY SATURDAY" | "EVERY SUNDAY") "hours:" timerHours=INT
-	//	"minutes:" timerMinutes=INT;
-	public AlarmElements getAlarmAccess() {
-		return (pAlarm != null) ? pAlarm : (pAlarm = new AlarmElements());
-	}
-	
-	public ParserRule getAlarmRule() {
-		return getAlarmAccess().getRule();
 	}
 
 	//terminal ID:

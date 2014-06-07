@@ -121,31 +121,13 @@ public interface RaspduinoDSLPackage extends EPackage
   int MODEL__TIMERS = 5;
 
   /**
-   * The feature id for the '<em><b>Alarms</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MODEL__ALARMS = 6;
-
-  /**
-   * The feature id for the '<em><b>Priority</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MODEL__PRIORITY = 7;
-
-  /**
    * The number of structural features of the '<em>Model</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int MODEL_FEATURE_COUNT = 8;
+  int MODEL_FEATURE_COUNT = 6;
 
   /**
    * The meta object id for the '{@link es.usj.raspduino.raspduinoDSL.impl.AbstractDeviceImpl <em>Abstract Device</em>}' class.
@@ -397,154 +379,6 @@ public interface RaspduinoDSLPackage extends EPackage
   int SENSOR_LISTENER_FEATURE_COUNT = 5;
 
   /**
-   * The meta object id for the '{@link es.usj.raspduino.raspduinoDSL.impl.PreconditionImpl <em>Precondition</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see es.usj.raspduino.raspduinoDSL.impl.PreconditionImpl
-   * @see es.usj.raspduino.raspduinoDSL.impl.RaspduinoDSLPackageImpl#getPrecondition()
-   * @generated
-   */
-  int PRECONDITION = 7;
-
-  /**
-   * The feature id for the '<em><b>Pre1</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PRECONDITION__PRE1 = 0;
-
-  /**
-   * The feature id for the '<em><b>Op</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PRECONDITION__OP = 1;
-
-  /**
-   * The feature id for the '<em><b>Pre</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PRECONDITION__PRE = 2;
-
-  /**
-   * The number of structural features of the '<em>Precondition</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PRECONDITION_FEATURE_COUNT = 3;
-
-  /**
-   * The meta object id for the '{@link es.usj.raspduino.raspduinoDSL.impl.Precondition1Impl <em>Precondition1</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see es.usj.raspduino.raspduinoDSL.impl.Precondition1Impl
-   * @see es.usj.raspduino.raspduinoDSL.impl.RaspduinoDSLPackageImpl#getPrecondition1()
-   * @generated
-   */
-  int PRECONDITION1 = 8;
-
-  /**
-   * The feature id for the '<em><b>Pre</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PRECONDITION1__PRE = 0;
-
-  /**
-   * The number of structural features of the '<em>Precondition1</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PRECONDITION1_FEATURE_COUNT = 1;
-
-  /**
-   * The meta object id for the '{@link es.usj.raspduino.raspduinoDSL.impl.EmptyPreconditionImpl <em>Empty Precondition</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see es.usj.raspduino.raspduinoDSL.impl.EmptyPreconditionImpl
-   * @see es.usj.raspduino.raspduinoDSL.impl.RaspduinoDSLPackageImpl#getEmptyPrecondition()
-   * @generated
-   */
-  int EMPTY_PRECONDITION = 9;
-
-  /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EMPTY_PRECONDITION__NAME = 0;
-
-  /**
-   * The number of structural features of the '<em>Empty Precondition</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EMPTY_PRECONDITION_FEATURE_COUNT = 1;
-
-  /**
-   * The meta object id for the '{@link es.usj.raspduino.raspduinoDSL.impl.SensorValuePreconditionImpl <em>Sensor Value Precondition</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see es.usj.raspduino.raspduinoDSL.impl.SensorValuePreconditionImpl
-   * @see es.usj.raspduino.raspduinoDSL.impl.RaspduinoDSLPackageImpl#getSensorValuePrecondition()
-   * @generated
-   */
-  int SENSOR_VALUE_PRECONDITION = 10;
-
-  /**
-   * The feature id for the '<em><b>Sensor</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SENSOR_VALUE_PRECONDITION__SENSOR = 0;
-
-  /**
-   * The feature id for the '<em><b>Cond</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SENSOR_VALUE_PRECONDITION__COND = 1;
-
-  /**
-   * The feature id for the '<em><b>Value</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SENSOR_VALUE_PRECONDITION__VALUE = 2;
-
-  /**
-   * The number of structural features of the '<em>Sensor Value Precondition</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SENSOR_VALUE_PRECONDITION_FEATURE_COUNT = 3;
-
-  /**
    * The meta object id for the '{@link es.usj.raspduino.raspduinoDSL.impl.TimerImpl <em>Timer</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -552,7 +386,7 @@ public interface RaspduinoDSLPackage extends EPackage
    * @see es.usj.raspduino.raspduinoDSL.impl.RaspduinoDSLPackageImpl#getTimer()
    * @generated
    */
-  int TIMER = 11;
+  int TIMER = 7;
 
   /**
    * The feature id for the '<em><b>Event Handler</b></em>' reference.
@@ -589,61 +423,6 @@ public interface RaspduinoDSLPackage extends EPackage
    * @ordered
    */
   int TIMER_FEATURE_COUNT = 3;
-
-  /**
-   * The meta object id for the '{@link es.usj.raspduino.raspduinoDSL.impl.AlarmImpl <em>Alarm</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see es.usj.raspduino.raspduinoDSL.impl.AlarmImpl
-   * @see es.usj.raspduino.raspduinoDSL.impl.RaspduinoDSLPackageImpl#getAlarm()
-   * @generated
-   */
-  int ALARM = 12;
-
-  /**
-   * The feature id for the '<em><b>Event Handler</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ALARM__EVENT_HANDLER = 0;
-
-  /**
-   * The feature id for the '<em><b>Repeattype</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ALARM__REPEATTYPE = 1;
-
-  /**
-   * The feature id for the '<em><b>Timer Hours</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ALARM__TIMER_HOURS = 2;
-
-  /**
-   * The feature id for the '<em><b>Timer Minutes</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ALARM__TIMER_MINUTES = 3;
-
-  /**
-   * The number of structural features of the '<em>Alarm</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ALARM_FEATURE_COUNT = 4;
 
 
   /**
@@ -721,28 +500,6 @@ public interface RaspduinoDSLPackage extends EPackage
    * @generated
    */
   EReference getModel_Timers();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link es.usj.raspduino.raspduinoDSL.Model#getAlarms <em>Alarms</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Alarms</em>'.
-   * @see es.usj.raspduino.raspduinoDSL.Model#getAlarms()
-   * @see #getModel()
-   * @generated
-   */
-  EReference getModel_Alarms();
-
-  /**
-   * Returns the meta object for the attribute '{@link es.usj.raspduino.raspduinoDSL.Model#getPriority <em>Priority</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Priority</em>'.
-   * @see es.usj.raspduino.raspduinoDSL.Model#getPriority()
-   * @see #getModel()
-   * @generated
-   */
-  EAttribute getModel_Priority();
 
   /**
    * Returns the meta object for class '{@link es.usj.raspduino.raspduinoDSL.AbstractDevice <em>Abstract Device</em>}'.
@@ -926,134 +683,6 @@ public interface RaspduinoDSLPackage extends EPackage
   EReference getSensorListener_EventHandler();
 
   /**
-   * Returns the meta object for class '{@link es.usj.raspduino.raspduinoDSL.Precondition <em>Precondition</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Precondition</em>'.
-   * @see es.usj.raspduino.raspduinoDSL.Precondition
-   * @generated
-   */
-  EClass getPrecondition();
-
-  /**
-   * Returns the meta object for the containment reference '{@link es.usj.raspduino.raspduinoDSL.Precondition#getPre1 <em>Pre1</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Pre1</em>'.
-   * @see es.usj.raspduino.raspduinoDSL.Precondition#getPre1()
-   * @see #getPrecondition()
-   * @generated
-   */
-  EReference getPrecondition_Pre1();
-
-  /**
-   * Returns the meta object for the attribute '{@link es.usj.raspduino.raspduinoDSL.Precondition#getOp <em>Op</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Op</em>'.
-   * @see es.usj.raspduino.raspduinoDSL.Precondition#getOp()
-   * @see #getPrecondition()
-   * @generated
-   */
-  EAttribute getPrecondition_Op();
-
-  /**
-   * Returns the meta object for the containment reference '{@link es.usj.raspduino.raspduinoDSL.Precondition#getPre <em>Pre</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Pre</em>'.
-   * @see es.usj.raspduino.raspduinoDSL.Precondition#getPre()
-   * @see #getPrecondition()
-   * @generated
-   */
-  EReference getPrecondition_Pre();
-
-  /**
-   * Returns the meta object for class '{@link es.usj.raspduino.raspduinoDSL.Precondition1 <em>Precondition1</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Precondition1</em>'.
-   * @see es.usj.raspduino.raspduinoDSL.Precondition1
-   * @generated
-   */
-  EClass getPrecondition1();
-
-  /**
-   * Returns the meta object for the containment reference '{@link es.usj.raspduino.raspduinoDSL.Precondition1#getPre <em>Pre</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Pre</em>'.
-   * @see es.usj.raspduino.raspduinoDSL.Precondition1#getPre()
-   * @see #getPrecondition1()
-   * @generated
-   */
-  EReference getPrecondition1_Pre();
-
-  /**
-   * Returns the meta object for class '{@link es.usj.raspduino.raspduinoDSL.EmptyPrecondition <em>Empty Precondition</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Empty Precondition</em>'.
-   * @see es.usj.raspduino.raspduinoDSL.EmptyPrecondition
-   * @generated
-   */
-  EClass getEmptyPrecondition();
-
-  /**
-   * Returns the meta object for the attribute '{@link es.usj.raspduino.raspduinoDSL.EmptyPrecondition#getName <em>Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see es.usj.raspduino.raspduinoDSL.EmptyPrecondition#getName()
-   * @see #getEmptyPrecondition()
-   * @generated
-   */
-  EAttribute getEmptyPrecondition_Name();
-
-  /**
-   * Returns the meta object for class '{@link es.usj.raspduino.raspduinoDSL.SensorValuePrecondition <em>Sensor Value Precondition</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Sensor Value Precondition</em>'.
-   * @see es.usj.raspduino.raspduinoDSL.SensorValuePrecondition
-   * @generated
-   */
-  EClass getSensorValuePrecondition();
-
-  /**
-   * Returns the meta object for the reference '{@link es.usj.raspduino.raspduinoDSL.SensorValuePrecondition#getSensor <em>Sensor</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Sensor</em>'.
-   * @see es.usj.raspduino.raspduinoDSL.SensorValuePrecondition#getSensor()
-   * @see #getSensorValuePrecondition()
-   * @generated
-   */
-  EReference getSensorValuePrecondition_Sensor();
-
-  /**
-   * Returns the meta object for the attribute '{@link es.usj.raspduino.raspduinoDSL.SensorValuePrecondition#getCond <em>Cond</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Cond</em>'.
-   * @see es.usj.raspduino.raspduinoDSL.SensorValuePrecondition#getCond()
-   * @see #getSensorValuePrecondition()
-   * @generated
-   */
-  EAttribute getSensorValuePrecondition_Cond();
-
-  /**
-   * Returns the meta object for the attribute '{@link es.usj.raspduino.raspduinoDSL.SensorValuePrecondition#getValue <em>Value</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Value</em>'.
-   * @see es.usj.raspduino.raspduinoDSL.SensorValuePrecondition#getValue()
-   * @see #getSensorValuePrecondition()
-   * @generated
-   */
-  EAttribute getSensorValuePrecondition_Value();
-
-  /**
    * Returns the meta object for class '{@link es.usj.raspduino.raspduinoDSL.Timer <em>Timer</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1095,60 +724,6 @@ public interface RaspduinoDSLPackage extends EPackage
    * @generated
    */
   EAttribute getTimer_TimerSecs();
-
-  /**
-   * Returns the meta object for class '{@link es.usj.raspduino.raspduinoDSL.Alarm <em>Alarm</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Alarm</em>'.
-   * @see es.usj.raspduino.raspduinoDSL.Alarm
-   * @generated
-   */
-  EClass getAlarm();
-
-  /**
-   * Returns the meta object for the reference '{@link es.usj.raspduino.raspduinoDSL.Alarm#getEventHandler <em>Event Handler</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Event Handler</em>'.
-   * @see es.usj.raspduino.raspduinoDSL.Alarm#getEventHandler()
-   * @see #getAlarm()
-   * @generated
-   */
-  EReference getAlarm_EventHandler();
-
-  /**
-   * Returns the meta object for the attribute '{@link es.usj.raspduino.raspduinoDSL.Alarm#getRepeattype <em>Repeattype</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Repeattype</em>'.
-   * @see es.usj.raspduino.raspduinoDSL.Alarm#getRepeattype()
-   * @see #getAlarm()
-   * @generated
-   */
-  EAttribute getAlarm_Repeattype();
-
-  /**
-   * Returns the meta object for the attribute '{@link es.usj.raspduino.raspduinoDSL.Alarm#getTimerHours <em>Timer Hours</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Timer Hours</em>'.
-   * @see es.usj.raspduino.raspduinoDSL.Alarm#getTimerHours()
-   * @see #getAlarm()
-   * @generated
-   */
-  EAttribute getAlarm_TimerHours();
-
-  /**
-   * Returns the meta object for the attribute '{@link es.usj.raspduino.raspduinoDSL.Alarm#getTimerMinutes <em>Timer Minutes</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Timer Minutes</em>'.
-   * @see es.usj.raspduino.raspduinoDSL.Alarm#getTimerMinutes()
-   * @see #getAlarm()
-   * @generated
-   */
-  EAttribute getAlarm_TimerMinutes();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -1230,22 +805,6 @@ public interface RaspduinoDSLPackage extends EPackage
      * @generated
      */
     EReference MODEL__TIMERS = eINSTANCE.getModel_Timers();
-
-    /**
-     * The meta object literal for the '<em><b>Alarms</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference MODEL__ALARMS = eINSTANCE.getModel_Alarms();
-
-    /**
-     * The meta object literal for the '<em><b>Priority</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute MODEL__PRIORITY = eINSTANCE.getModel_Priority();
 
     /**
      * The meta object literal for the '{@link es.usj.raspduino.raspduinoDSL.impl.AbstractDeviceImpl <em>Abstract Device</em>}' class.
@@ -1396,110 +955,6 @@ public interface RaspduinoDSLPackage extends EPackage
     EReference SENSOR_LISTENER__EVENT_HANDLER = eINSTANCE.getSensorListener_EventHandler();
 
     /**
-     * The meta object literal for the '{@link es.usj.raspduino.raspduinoDSL.impl.PreconditionImpl <em>Precondition</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see es.usj.raspduino.raspduinoDSL.impl.PreconditionImpl
-     * @see es.usj.raspduino.raspduinoDSL.impl.RaspduinoDSLPackageImpl#getPrecondition()
-     * @generated
-     */
-    EClass PRECONDITION = eINSTANCE.getPrecondition();
-
-    /**
-     * The meta object literal for the '<em><b>Pre1</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference PRECONDITION__PRE1 = eINSTANCE.getPrecondition_Pre1();
-
-    /**
-     * The meta object literal for the '<em><b>Op</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute PRECONDITION__OP = eINSTANCE.getPrecondition_Op();
-
-    /**
-     * The meta object literal for the '<em><b>Pre</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference PRECONDITION__PRE = eINSTANCE.getPrecondition_Pre();
-
-    /**
-     * The meta object literal for the '{@link es.usj.raspduino.raspduinoDSL.impl.Precondition1Impl <em>Precondition1</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see es.usj.raspduino.raspduinoDSL.impl.Precondition1Impl
-     * @see es.usj.raspduino.raspduinoDSL.impl.RaspduinoDSLPackageImpl#getPrecondition1()
-     * @generated
-     */
-    EClass PRECONDITION1 = eINSTANCE.getPrecondition1();
-
-    /**
-     * The meta object literal for the '<em><b>Pre</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference PRECONDITION1__PRE = eINSTANCE.getPrecondition1_Pre();
-
-    /**
-     * The meta object literal for the '{@link es.usj.raspduino.raspduinoDSL.impl.EmptyPreconditionImpl <em>Empty Precondition</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see es.usj.raspduino.raspduinoDSL.impl.EmptyPreconditionImpl
-     * @see es.usj.raspduino.raspduinoDSL.impl.RaspduinoDSLPackageImpl#getEmptyPrecondition()
-     * @generated
-     */
-    EClass EMPTY_PRECONDITION = eINSTANCE.getEmptyPrecondition();
-
-    /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute EMPTY_PRECONDITION__NAME = eINSTANCE.getEmptyPrecondition_Name();
-
-    /**
-     * The meta object literal for the '{@link es.usj.raspduino.raspduinoDSL.impl.SensorValuePreconditionImpl <em>Sensor Value Precondition</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see es.usj.raspduino.raspduinoDSL.impl.SensorValuePreconditionImpl
-     * @see es.usj.raspduino.raspduinoDSL.impl.RaspduinoDSLPackageImpl#getSensorValuePrecondition()
-     * @generated
-     */
-    EClass SENSOR_VALUE_PRECONDITION = eINSTANCE.getSensorValuePrecondition();
-
-    /**
-     * The meta object literal for the '<em><b>Sensor</b></em>' reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference SENSOR_VALUE_PRECONDITION__SENSOR = eINSTANCE.getSensorValuePrecondition_Sensor();
-
-    /**
-     * The meta object literal for the '<em><b>Cond</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute SENSOR_VALUE_PRECONDITION__COND = eINSTANCE.getSensorValuePrecondition_Cond();
-
-    /**
-     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute SENSOR_VALUE_PRECONDITION__VALUE = eINSTANCE.getSensorValuePrecondition_Value();
-
-    /**
      * The meta object literal for the '{@link es.usj.raspduino.raspduinoDSL.impl.TimerImpl <em>Timer</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1532,48 +987,6 @@ public interface RaspduinoDSLPackage extends EPackage
      * @generated
      */
     EAttribute TIMER__TIMER_SECS = eINSTANCE.getTimer_TimerSecs();
-
-    /**
-     * The meta object literal for the '{@link es.usj.raspduino.raspduinoDSL.impl.AlarmImpl <em>Alarm</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see es.usj.raspduino.raspduinoDSL.impl.AlarmImpl
-     * @see es.usj.raspduino.raspduinoDSL.impl.RaspduinoDSLPackageImpl#getAlarm()
-     * @generated
-     */
-    EClass ALARM = eINSTANCE.getAlarm();
-
-    /**
-     * The meta object literal for the '<em><b>Event Handler</b></em>' reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference ALARM__EVENT_HANDLER = eINSTANCE.getAlarm_EventHandler();
-
-    /**
-     * The meta object literal for the '<em><b>Repeattype</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute ALARM__REPEATTYPE = eINSTANCE.getAlarm_Repeattype();
-
-    /**
-     * The meta object literal for the '<em><b>Timer Hours</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute ALARM__TIMER_HOURS = eINSTANCE.getAlarm_TimerHours();
-
-    /**
-     * The meta object literal for the '<em><b>Timer Minutes</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute ALARM__TIMER_MINUTES = eINSTANCE.getAlarm_TimerMinutes();
 
   }
 

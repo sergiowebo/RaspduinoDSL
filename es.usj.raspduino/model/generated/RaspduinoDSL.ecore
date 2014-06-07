@@ -13,9 +13,6 @@
         eType="#//SensorListener" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="timers" upperBound="-1"
         eType="#//Timer" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="alarms" upperBound="-1"
-        eType="#//Alarm" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="priority" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AbstractDevice">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -39,34 +36,9 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="h" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="eventHandler" eType="#//EventHandler"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Precondition">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="pre1" eType="#//Precondition1"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="op" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="pre" eType="#//Precondition"
-        containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Precondition1">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="pre" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject"
-        containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="EmptyPrecondition">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="SensorValuePrecondition">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="sensor" eType="#//Sensor"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="cond" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Timer">
     <eStructuralFeatures xsi:type="ecore:EReference" name="eventHandler" eType="#//EventHandler"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="repeattype" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="timerSecs" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Alarm">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="eventHandler" eType="#//EventHandler"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="repeattype" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="timerHours" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="timerMinutes" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
 </ecore:EPackage>

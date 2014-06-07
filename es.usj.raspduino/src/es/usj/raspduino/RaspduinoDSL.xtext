@@ -20,10 +20,10 @@ Model:
 	(timers+=Timer)*
 	
 	// Definicion de las condiciones para ejecutar una tarea
-	(alarms+=Alarm)*
+	/*(alarms+=Alarm)*/
 	
 	// TODO: En caso de conflicto definimos quien tiene preferencia, lo que indican los sensores o lo programado
-	('Concurrency Priority:' priority=('SENSOR'|'SCHEDULED'))*
+	// ('Concurrency Priority:' priority=('SENSOR'|'SCHEDULED'))*
 ;
 
 	// Definicion de los sensore y actuadores SENSOR:INPUT ACUATOR:OUTPUT
@@ -44,17 +44,36 @@ Model:
 		';'
 	;
 	ChangeActuator:
-		actuator=[Actuator] ':' ActuatorState=('On' | 'Off' )  // Añadir mas opciones como Blink(tiempo)
+		actuator=[Actuator] ':' ActuatorState=('On' | 'Off' | 'Toggle')  // Añadir mas opciones como Blink(tiempo)
 	;
 	
 	// Definimos las condiciones de los SensorListeners
 	SensorListener:
 		'SensorListener' sensor=[Sensor]
-		'if' (type='BETWEEN' l=INT 'AND' h=INT)  //'if' (type='CHANGE' | type='RISING' | type='FALLING' | type='BETWEEN' l=INT 'AND' h=INT) 
+		'if' (type = 'ON' | type = 'OFF'| type='BETWEEN' l=INT 'AND' h=INT)  // Mas posibilidades (type='CHANGE' | type='RISING' | type='FALLING' ) 
 		'call' eventHandler=[EventHandler]
 	;
 
-	// Condiciones establecidas para los valores
+	
+	// Acciones programadas para realizarse cada X segundos, o a determinadas horas del dia.
+	Timer:
+		'Timer action' eventHandler=[EventHandler]
+		'repeat' repeattype = ('ONCE' | 'EVERY')
+		'seconds:' timerSecs = INT
+	;
+	
+	// IDEAS PARA CONTINUAR EL DESARROLLO
+	
+	/*Alarm:
+		'action' eventHandler=[EventHandler]
+		'repeat' repeattype = ('EVERY DAY'|'EVERY MONDAY'|'EVERY TUESDAY'|'EVERY WEDNESDAY'
+								|'EVERY THURSDAY'|'EVERY FRIDAY'|'EVERY SATURDAY'|'EVERY SUNDAY')
+		'hours:' timerHours = INT
+		'minutes:' timerMinutes = INT
+	;*/
+	
+	/*
+	 * // Condiciones establecidas para los valores
 		Precondition:
 			 pre1=Precondition1 op=('&&'|'||') pre=Precondition | pre1=Precondition1
 		;
@@ -73,19 +92,5 @@ Model:
 		terminal DOUBLE: // TODO no se porque no me ha dejado poner el double
 			INT'.'INT
 		;
-	
-	// Acciones programadas para realizarse cada X segundos, o a determinadas horas del dia.
-	Timer:
-		'action' eventHandler=[EventHandler]
-		'repeat' repeattype = ('ONCE')
-		'seconds:' timerSecs = INT
-	;
-	
-	Alarm:
-		'action' eventHandler=[EventHandler]
-		'repeat' repeattype = ('EVERY DAY'|'EVERY MONDAY'|'EVERY TUESDAY'|'EVERY WEDNESDAY'
-								|'EVERY THURSDAY'|'EVERY FRIDAY'|'EVERY SATURDAY'|'EVERY SUNDAY')
-		'hours:' timerHours = INT
-		'minutes:' timerMinutes = INT
-	;
+	 */
 		

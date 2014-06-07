@@ -123,45 +123,10 @@ public class RaspduinoDSLSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case RaspduinoDSLPackage.PRECONDITION:
-      {
-        Precondition precondition = (Precondition)theEObject;
-        T result = casePrecondition(precondition);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case RaspduinoDSLPackage.PRECONDITION1:
-      {
-        Precondition1 precondition1 = (Precondition1)theEObject;
-        T result = casePrecondition1(precondition1);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case RaspduinoDSLPackage.EMPTY_PRECONDITION:
-      {
-        EmptyPrecondition emptyPrecondition = (EmptyPrecondition)theEObject;
-        T result = caseEmptyPrecondition(emptyPrecondition);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case RaspduinoDSLPackage.SENSOR_VALUE_PRECONDITION:
-      {
-        SensorValuePrecondition sensorValuePrecondition = (SensorValuePrecondition)theEObject;
-        T result = caseSensorValuePrecondition(sensorValuePrecondition);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
       case RaspduinoDSLPackage.TIMER:
       {
         Timer timer = (Timer)theEObject;
         T result = caseTimer(timer);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case RaspduinoDSLPackage.ALARM:
-      {
-        Alarm alarm = (Alarm)theEObject;
-        T result = caseAlarm(alarm);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -282,70 +247,6 @@ public class RaspduinoDSLSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Precondition</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Precondition</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T casePrecondition(Precondition object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Precondition1</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Precondition1</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T casePrecondition1(Precondition1 object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Empty Precondition</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Empty Precondition</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseEmptyPrecondition(EmptyPrecondition object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Sensor Value Precondition</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Sensor Value Precondition</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseSensorValuePrecondition(SensorValuePrecondition object)
-  {
-    return null;
-  }
-
-  /**
    * Returns the result of interpreting the object as an instance of '<em>Timer</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -357,22 +258,6 @@ public class RaspduinoDSLSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseTimer(Timer object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Alarm</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Alarm</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseAlarm(Alarm object)
   {
     return null;
   }

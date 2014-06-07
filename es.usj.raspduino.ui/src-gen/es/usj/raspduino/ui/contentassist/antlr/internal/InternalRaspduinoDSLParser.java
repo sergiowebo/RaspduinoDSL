@@ -22,9 +22,9 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalRaspduinoDSLParser extends AbstractInternalContentAssistParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_DOUBLE", "RULE_INT", "RULE_ID", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'Arduino UNO'", "'Raspberry Pi'", "'SENSOR'", "'SCHEDULED'", "'On'", "'Off'", "'&&'", "'||'", "'=='", "'<='", "'>='", "'!='", "'ONCE'", "'EVERY'", "'EVERY DAY'", "'EVERY MONDAY'", "'EVERY TUESDAY'", "'EVERY WEDNESDAY'", "'EVERY THURSDAY'", "'EVERY FRIDAY'", "'EVERY SATURDAY'", "'EVERY SUNDAY'", "'Sketch:'", "'Hardware:'", "'Concurrency Priority:'", "'Sensor'", "'pin'", "'Actuator'", "'EventHandler'", "';'", "':'", "'SensorListener'", "'if'", "'call'", "'AND'", "'action'", "'repeat'", "'seconds:'", "'hours:'", "'minutes:'", "'BETWEEN'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_STRING", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'Arduino UNO'", "'Raspberry Pi'", "'On'", "'Off'", "'Toggle'", "'ONCE'", "'EVERY'", "'Sketch:'", "'Hardware:'", "'Sensor'", "'pin'", "'Actuator'", "'EventHandler'", "';'", "':'", "'SensorListener'", "'if'", "'call'", "'AND'", "'Timer action'", "'repeat'", "'seconds:'", "'ON'", "'OFF'", "'BETWEEN'"
     };
-    public static final int RULE_ID=6;
+    public static final int RULE_ID=4;
     public static final int T__29=29;
     public static final int T__28=28;
     public static final int T__27=27;
@@ -33,47 +33,30 @@ public class InternalRaspduinoDSLParser extends AbstractInternalContentAssistPar
     public static final int T__24=24;
     public static final int T__23=23;
     public static final int T__22=22;
-    public static final int RULE_ANY_OTHER=11;
+    public static final int RULE_ANY_OTHER=10;
     public static final int T__21=21;
     public static final int T__20=20;
+    public static final int RULE_SL_COMMENT=8;
     public static final int EOF=-1;
+    public static final int RULE_ML_COMMENT=7;
+    public static final int T__30=30;
     public static final int T__19=19;
-    public static final int T__51=51;
+    public static final int T__31=31;
+    public static final int RULE_STRING=5;
+    public static final int T__32=32;
+    public static final int T__33=33;
     public static final int T__16=16;
-    public static final int T__52=52;
+    public static final int T__34=34;
     public static final int T__15=15;
+    public static final int T__35=35;
     public static final int T__18=18;
     public static final int T__17=17;
     public static final int T__12=12;
+    public static final int T__11=11;
     public static final int T__14=14;
     public static final int T__13=13;
-    public static final int RULE_INT=5;
-    public static final int T__50=50;
-    public static final int T__42=42;
-    public static final int T__43=43;
-    public static final int T__40=40;
-    public static final int T__41=41;
-    public static final int T__46=46;
-    public static final int T__47=47;
-    public static final int T__44=44;
-    public static final int T__45=45;
-    public static final int T__48=48;
-    public static final int T__49=49;
-    public static final int RULE_SL_COMMENT=9;
-    public static final int RULE_DOUBLE=4;
-    public static final int RULE_ML_COMMENT=8;
-    public static final int T__30=30;
-    public static final int T__31=31;
-    public static final int RULE_STRING=7;
-    public static final int T__32=32;
-    public static final int T__33=33;
-    public static final int T__34=34;
-    public static final int T__35=35;
-    public static final int T__36=36;
-    public static final int T__37=37;
-    public static final int T__38=38;
-    public static final int T__39=39;
-    public static final int RULE_WS=10;
+    public static final int RULE_INT=6;
+    public static final int RULE_WS=9;
 
     // delegates
     // delegators
@@ -651,406 +634,21 @@ public class InternalRaspduinoDSLParser extends AbstractInternalContentAssistPar
     // $ANTLR end "ruleSensorListener"
 
 
-    // $ANTLR start "entryRulePrecondition"
-    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:256:1: entryRulePrecondition : rulePrecondition EOF ;
-    public final void entryRulePrecondition() throws RecognitionException {
-        try {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:257:1: ( rulePrecondition EOF )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:258:1: rulePrecondition EOF
-            {
-             before(grammarAccess.getPreconditionRule()); 
-            pushFollow(FOLLOW_rulePrecondition_in_entryRulePrecondition481);
-            rulePrecondition();
-
-            state._fsp--;
-
-             after(grammarAccess.getPreconditionRule()); 
-            match(input,EOF,FOLLOW_EOF_in_entryRulePrecondition488); 
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-        }
-        return ;
-    }
-    // $ANTLR end "entryRulePrecondition"
-
-
-    // $ANTLR start "rulePrecondition"
-    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:265:1: rulePrecondition : ( ( rule__Precondition__Alternatives ) ) ;
-    public final void rulePrecondition() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:269:2: ( ( ( rule__Precondition__Alternatives ) ) )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:270:1: ( ( rule__Precondition__Alternatives ) )
-            {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:270:1: ( ( rule__Precondition__Alternatives ) )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:271:1: ( rule__Precondition__Alternatives )
-            {
-             before(grammarAccess.getPreconditionAccess().getAlternatives()); 
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:272:1: ( rule__Precondition__Alternatives )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:272:2: rule__Precondition__Alternatives
-            {
-            pushFollow(FOLLOW_rule__Precondition__Alternatives_in_rulePrecondition514);
-            rule__Precondition__Alternatives();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getPreconditionAccess().getAlternatives()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rulePrecondition"
-
-
-    // $ANTLR start "entryRulePrecondition1"
-    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:284:1: entryRulePrecondition1 : rulePrecondition1 EOF ;
-    public final void entryRulePrecondition1() throws RecognitionException {
-        try {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:285:1: ( rulePrecondition1 EOF )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:286:1: rulePrecondition1 EOF
-            {
-             before(grammarAccess.getPrecondition1Rule()); 
-            pushFollow(FOLLOW_rulePrecondition1_in_entryRulePrecondition1541);
-            rulePrecondition1();
-
-            state._fsp--;
-
-             after(grammarAccess.getPrecondition1Rule()); 
-            match(input,EOF,FOLLOW_EOF_in_entryRulePrecondition1548); 
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-        }
-        return ;
-    }
-    // $ANTLR end "entryRulePrecondition1"
-
-
-    // $ANTLR start "rulePrecondition1"
-    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:293:1: rulePrecondition1 : ( ( rule__Precondition1__Alternatives ) ) ;
-    public final void rulePrecondition1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:297:2: ( ( ( rule__Precondition1__Alternatives ) ) )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:298:1: ( ( rule__Precondition1__Alternatives ) )
-            {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:298:1: ( ( rule__Precondition1__Alternatives ) )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:299:1: ( rule__Precondition1__Alternatives )
-            {
-             before(grammarAccess.getPrecondition1Access().getAlternatives()); 
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:300:1: ( rule__Precondition1__Alternatives )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:300:2: rule__Precondition1__Alternatives
-            {
-            pushFollow(FOLLOW_rule__Precondition1__Alternatives_in_rulePrecondition1574);
-            rule__Precondition1__Alternatives();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getPrecondition1Access().getAlternatives()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rulePrecondition1"
-
-
-    // $ANTLR start "entryRuleEmptyPrecondition"
-    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:312:1: entryRuleEmptyPrecondition : ruleEmptyPrecondition EOF ;
-    public final void entryRuleEmptyPrecondition() throws RecognitionException {
-        try {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:313:1: ( ruleEmptyPrecondition EOF )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:314:1: ruleEmptyPrecondition EOF
-            {
-             before(grammarAccess.getEmptyPreconditionRule()); 
-            pushFollow(FOLLOW_ruleEmptyPrecondition_in_entryRuleEmptyPrecondition601);
-            ruleEmptyPrecondition();
-
-            state._fsp--;
-
-             after(grammarAccess.getEmptyPreconditionRule()); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleEmptyPrecondition608); 
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-        }
-        return ;
-    }
-    // $ANTLR end "entryRuleEmptyPrecondition"
-
-
-    // $ANTLR start "ruleEmptyPrecondition"
-    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:321:1: ruleEmptyPrecondition : ( ( rule__EmptyPrecondition__NameAssignment ) ) ;
-    public final void ruleEmptyPrecondition() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:325:2: ( ( ( rule__EmptyPrecondition__NameAssignment ) ) )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:326:1: ( ( rule__EmptyPrecondition__NameAssignment ) )
-            {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:326:1: ( ( rule__EmptyPrecondition__NameAssignment ) )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:327:1: ( rule__EmptyPrecondition__NameAssignment )
-            {
-             before(grammarAccess.getEmptyPreconditionAccess().getNameAssignment()); 
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:328:1: ( rule__EmptyPrecondition__NameAssignment )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:328:2: rule__EmptyPrecondition__NameAssignment
-            {
-            pushFollow(FOLLOW_rule__EmptyPrecondition__NameAssignment_in_ruleEmptyPrecondition634);
-            rule__EmptyPrecondition__NameAssignment();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getEmptyPreconditionAccess().getNameAssignment()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "ruleEmptyPrecondition"
-
-
-    // $ANTLR start "entryRuleSensorValuePrecondition"
-    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:340:1: entryRuleSensorValuePrecondition : ruleSensorValuePrecondition EOF ;
-    public final void entryRuleSensorValuePrecondition() throws RecognitionException {
-        try {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:341:1: ( ruleSensorValuePrecondition EOF )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:342:1: ruleSensorValuePrecondition EOF
-            {
-             before(grammarAccess.getSensorValuePreconditionRule()); 
-            pushFollow(FOLLOW_ruleSensorValuePrecondition_in_entryRuleSensorValuePrecondition661);
-            ruleSensorValuePrecondition();
-
-            state._fsp--;
-
-             after(grammarAccess.getSensorValuePreconditionRule()); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleSensorValuePrecondition668); 
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-        }
-        return ;
-    }
-    // $ANTLR end "entryRuleSensorValuePrecondition"
-
-
-    // $ANTLR start "ruleSensorValuePrecondition"
-    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:349:1: ruleSensorValuePrecondition : ( ( rule__SensorValuePrecondition__Group__0 ) ) ;
-    public final void ruleSensorValuePrecondition() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:353:2: ( ( ( rule__SensorValuePrecondition__Group__0 ) ) )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:354:1: ( ( rule__SensorValuePrecondition__Group__0 ) )
-            {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:354:1: ( ( rule__SensorValuePrecondition__Group__0 ) )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:355:1: ( rule__SensorValuePrecondition__Group__0 )
-            {
-             before(grammarAccess.getSensorValuePreconditionAccess().getGroup()); 
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:356:1: ( rule__SensorValuePrecondition__Group__0 )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:356:2: rule__SensorValuePrecondition__Group__0
-            {
-            pushFollow(FOLLOW_rule__SensorValuePrecondition__Group__0_in_ruleSensorValuePrecondition694);
-            rule__SensorValuePrecondition__Group__0();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getSensorValuePreconditionAccess().getGroup()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "ruleSensorValuePrecondition"
-
-
-    // $ANTLR start "entryRulePossibleValues"
-    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:368:1: entryRulePossibleValues : rulePossibleValues EOF ;
-    public final void entryRulePossibleValues() throws RecognitionException {
-        try {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:369:1: ( rulePossibleValues EOF )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:370:1: rulePossibleValues EOF
-            {
-             before(grammarAccess.getPossibleValuesRule()); 
-            pushFollow(FOLLOW_rulePossibleValues_in_entryRulePossibleValues721);
-            rulePossibleValues();
-
-            state._fsp--;
-
-             after(grammarAccess.getPossibleValuesRule()); 
-            match(input,EOF,FOLLOW_EOF_in_entryRulePossibleValues728); 
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-        }
-        return ;
-    }
-    // $ANTLR end "entryRulePossibleValues"
-
-
-    // $ANTLR start "rulePossibleValues"
-    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:377:1: rulePossibleValues : ( ( rule__PossibleValues__Alternatives ) ) ;
-    public final void rulePossibleValues() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:381:2: ( ( ( rule__PossibleValues__Alternatives ) ) )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:382:1: ( ( rule__PossibleValues__Alternatives ) )
-            {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:382:1: ( ( rule__PossibleValues__Alternatives ) )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:383:1: ( rule__PossibleValues__Alternatives )
-            {
-             before(grammarAccess.getPossibleValuesAccess().getAlternatives()); 
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:384:1: ( rule__PossibleValues__Alternatives )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:384:2: rule__PossibleValues__Alternatives
-            {
-            pushFollow(FOLLOW_rule__PossibleValues__Alternatives_in_rulePossibleValues754);
-            rule__PossibleValues__Alternatives();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getPossibleValuesAccess().getAlternatives()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rulePossibleValues"
-
-
     // $ANTLR start "entryRuleTimer"
-    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:396:1: entryRuleTimer : ruleTimer EOF ;
+    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:256:1: entryRuleTimer : ruleTimer EOF ;
     public final void entryRuleTimer() throws RecognitionException {
         try {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:397:1: ( ruleTimer EOF )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:398:1: ruleTimer EOF
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:257:1: ( ruleTimer EOF )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:258:1: ruleTimer EOF
             {
              before(grammarAccess.getTimerRule()); 
-            pushFollow(FOLLOW_ruleTimer_in_entryRuleTimer781);
+            pushFollow(FOLLOW_ruleTimer_in_entryRuleTimer481);
             ruleTimer();
 
             state._fsp--;
 
              after(grammarAccess.getTimerRule()); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleTimer788); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleTimer488); 
 
             }
 
@@ -1067,23 +665,23 @@ public class InternalRaspduinoDSLParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "ruleTimer"
-    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:405:1: ruleTimer : ( ( rule__Timer__Group__0 ) ) ;
+    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:265:1: ruleTimer : ( ( rule__Timer__Group__0 ) ) ;
     public final void ruleTimer() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:409:2: ( ( ( rule__Timer__Group__0 ) ) )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:410:1: ( ( rule__Timer__Group__0 ) )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:269:2: ( ( ( rule__Timer__Group__0 ) ) )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:270:1: ( ( rule__Timer__Group__0 ) )
             {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:410:1: ( ( rule__Timer__Group__0 ) )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:411:1: ( rule__Timer__Group__0 )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:270:1: ( ( rule__Timer__Group__0 ) )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:271:1: ( rule__Timer__Group__0 )
             {
              before(grammarAccess.getTimerAccess().getGroup()); 
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:412:1: ( rule__Timer__Group__0 )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:412:2: rule__Timer__Group__0
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:272:1: ( rule__Timer__Group__0 )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:272:2: rule__Timer__Group__0
             {
-            pushFollow(FOLLOW_rule__Timer__Group__0_in_ruleTimer814);
+            pushFollow(FOLLOW_rule__Timer__Group__0_in_ruleTimer514);
             rule__Timer__Group__0();
 
             state._fsp--;
@@ -1113,98 +711,21 @@ public class InternalRaspduinoDSLParser extends AbstractInternalContentAssistPar
     // $ANTLR end "ruleTimer"
 
 
-    // $ANTLR start "entryRuleAlarm"
-    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:424:1: entryRuleAlarm : ruleAlarm EOF ;
-    public final void entryRuleAlarm() throws RecognitionException {
-        try {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:425:1: ( ruleAlarm EOF )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:426:1: ruleAlarm EOF
-            {
-             before(grammarAccess.getAlarmRule()); 
-            pushFollow(FOLLOW_ruleAlarm_in_entryRuleAlarm841);
-            ruleAlarm();
-
-            state._fsp--;
-
-             after(grammarAccess.getAlarmRule()); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleAlarm848); 
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-        }
-        return ;
-    }
-    // $ANTLR end "entryRuleAlarm"
-
-
-    // $ANTLR start "ruleAlarm"
-    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:433:1: ruleAlarm : ( ( rule__Alarm__Group__0 ) ) ;
-    public final void ruleAlarm() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:437:2: ( ( ( rule__Alarm__Group__0 ) ) )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:438:1: ( ( rule__Alarm__Group__0 ) )
-            {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:438:1: ( ( rule__Alarm__Group__0 ) )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:439:1: ( rule__Alarm__Group__0 )
-            {
-             before(grammarAccess.getAlarmAccess().getGroup()); 
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:440:1: ( rule__Alarm__Group__0 )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:440:2: rule__Alarm__Group__0
-            {
-            pushFollow(FOLLOW_rule__Alarm__Group__0_in_ruleAlarm874);
-            rule__Alarm__Group__0();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getAlarmAccess().getGroup()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "ruleAlarm"
-
-
     // $ANTLR start "rule__Model__HardwareAlternatives_3_0"
-    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:452:1: rule__Model__HardwareAlternatives_3_0 : ( ( 'Arduino UNO' ) | ( 'Raspberry Pi' ) );
+    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:284:1: rule__Model__HardwareAlternatives_3_0 : ( ( 'Arduino UNO' ) | ( 'Raspberry Pi' ) );
     public final void rule__Model__HardwareAlternatives_3_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:456:1: ( ( 'Arduino UNO' ) | ( 'Raspberry Pi' ) )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:288:1: ( ( 'Arduino UNO' ) | ( 'Raspberry Pi' ) )
             int alt1=2;
             int LA1_0 = input.LA(1);
 
-            if ( (LA1_0==12) ) {
+            if ( (LA1_0==11) ) {
                 alt1=1;
             }
-            else if ( (LA1_0==13) ) {
+            else if ( (LA1_0==12) ) {
                 alt1=2;
             }
             else {
@@ -1215,13 +736,13 @@ public class InternalRaspduinoDSLParser extends AbstractInternalContentAssistPar
             }
             switch (alt1) {
                 case 1 :
-                    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:457:1: ( 'Arduino UNO' )
+                    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:289:1: ( 'Arduino UNO' )
                     {
-                    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:457:1: ( 'Arduino UNO' )
-                    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:458:1: 'Arduino UNO'
+                    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:289:1: ( 'Arduino UNO' )
+                    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:290:1: 'Arduino UNO'
                     {
                      before(grammarAccess.getModelAccess().getHardwareArduinoUNOKeyword_3_0_0()); 
-                    match(input,12,FOLLOW_12_in_rule__Model__HardwareAlternatives_3_0911); 
+                    match(input,11,FOLLOW_11_in_rule__Model__HardwareAlternatives_3_0551); 
                      after(grammarAccess.getModelAccess().getHardwareArduinoUNOKeyword_3_0_0()); 
 
                     }
@@ -1230,13 +751,13 @@ public class InternalRaspduinoDSLParser extends AbstractInternalContentAssistPar
                     }
                     break;
                 case 2 :
-                    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:465:6: ( 'Raspberry Pi' )
+                    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:297:6: ( 'Raspberry Pi' )
                     {
-                    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:465:6: ( 'Raspberry Pi' )
-                    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:466:1: 'Raspberry Pi'
+                    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:297:6: ( 'Raspberry Pi' )
+                    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:298:1: 'Raspberry Pi'
                     {
                      before(grammarAccess.getModelAccess().getHardwareRaspberryPiKeyword_3_0_1()); 
-                    match(input,13,FOLLOW_13_in_rule__Model__HardwareAlternatives_3_0931); 
+                    match(input,12,FOLLOW_12_in_rule__Model__HardwareAlternatives_3_0571); 
                      after(grammarAccess.getModelAccess().getHardwareRaspberryPiKeyword_3_0_1()); 
 
                     }
@@ -1261,21 +782,21 @@ public class InternalRaspduinoDSLParser extends AbstractInternalContentAssistPar
     // $ANTLR end "rule__Model__HardwareAlternatives_3_0"
 
 
-    // $ANTLR start "rule__Model__PriorityAlternatives_9_1_0"
-    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:478:1: rule__Model__PriorityAlternatives_9_1_0 : ( ( 'SENSOR' ) | ( 'SCHEDULED' ) );
-    public final void rule__Model__PriorityAlternatives_9_1_0() throws RecognitionException {
+    // $ANTLR start "rule__AbstractDevice__Alternatives"
+    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:310:1: rule__AbstractDevice__Alternatives : ( ( ruleSensor ) | ( ruleActuator ) );
+    public final void rule__AbstractDevice__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:482:1: ( ( 'SENSOR' ) | ( 'SCHEDULED' ) )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:314:1: ( ( ruleSensor ) | ( ruleActuator ) )
             int alt2=2;
             int LA2_0 = input.LA(1);
 
-            if ( (LA2_0==14) ) {
+            if ( (LA2_0==20) ) {
                 alt2=1;
             }
-            else if ( (LA2_0==15) ) {
+            else if ( (LA2_0==22) ) {
                 alt2=2;
             }
             else {
@@ -1286,84 +807,13 @@ public class InternalRaspduinoDSLParser extends AbstractInternalContentAssistPar
             }
             switch (alt2) {
                 case 1 :
-                    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:483:1: ( 'SENSOR' )
+                    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:315:1: ( ruleSensor )
                     {
-                    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:483:1: ( 'SENSOR' )
-                    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:484:1: 'SENSOR'
-                    {
-                     before(grammarAccess.getModelAccess().getPrioritySENSORKeyword_9_1_0_0()); 
-                    match(input,14,FOLLOW_14_in_rule__Model__PriorityAlternatives_9_1_0966); 
-                     after(grammarAccess.getModelAccess().getPrioritySENSORKeyword_9_1_0_0()); 
-
-                    }
-
-
-                    }
-                    break;
-                case 2 :
-                    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:491:6: ( 'SCHEDULED' )
-                    {
-                    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:491:6: ( 'SCHEDULED' )
-                    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:492:1: 'SCHEDULED'
-                    {
-                     before(grammarAccess.getModelAccess().getPrioritySCHEDULEDKeyword_9_1_0_1()); 
-                    match(input,15,FOLLOW_15_in_rule__Model__PriorityAlternatives_9_1_0986); 
-                     after(grammarAccess.getModelAccess().getPrioritySCHEDULEDKeyword_9_1_0_1()); 
-
-                    }
-
-
-                    }
-                    break;
-
-            }
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Model__PriorityAlternatives_9_1_0"
-
-
-    // $ANTLR start "rule__AbstractDevice__Alternatives"
-    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:504:1: rule__AbstractDevice__Alternatives : ( ( ruleSensor ) | ( ruleActuator ) );
-    public final void rule__AbstractDevice__Alternatives() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:508:1: ( ( ruleSensor ) | ( ruleActuator ) )
-            int alt3=2;
-            int LA3_0 = input.LA(1);
-
-            if ( (LA3_0==37) ) {
-                alt3=1;
-            }
-            else if ( (LA3_0==39) ) {
-                alt3=2;
-            }
-            else {
-                NoViableAltException nvae =
-                    new NoViableAltException("", 3, 0, input);
-
-                throw nvae;
-            }
-            switch (alt3) {
-                case 1 :
-                    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:509:1: ( ruleSensor )
-                    {
-                    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:509:1: ( ruleSensor )
-                    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:510:1: ruleSensor
+                    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:315:1: ( ruleSensor )
+                    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:316:1: ruleSensor
                     {
                      before(grammarAccess.getAbstractDeviceAccess().getSensorParserRuleCall_0()); 
-                    pushFollow(FOLLOW_ruleSensor_in_rule__AbstractDevice__Alternatives1020);
+                    pushFollow(FOLLOW_ruleSensor_in_rule__AbstractDevice__Alternatives605);
                     ruleSensor();
 
                     state._fsp--;
@@ -1376,13 +826,13 @@ public class InternalRaspduinoDSLParser extends AbstractInternalContentAssistPar
                     }
                     break;
                 case 2 :
-                    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:515:6: ( ruleActuator )
+                    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:321:6: ( ruleActuator )
                     {
-                    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:515:6: ( ruleActuator )
-                    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:516:1: ruleActuator
+                    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:321:6: ( ruleActuator )
+                    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:322:1: ruleActuator
                     {
                      before(grammarAccess.getAbstractDeviceAccess().getActuatorParserRuleCall_1()); 
-                    pushFollow(FOLLOW_ruleActuator_in_rule__AbstractDevice__Alternatives1037);
+                    pushFollow(FOLLOW_ruleActuator_in_rule__AbstractDevice__Alternatives622);
                     ruleActuator();
 
                     state._fsp--;
@@ -1412,37 +862,46 @@ public class InternalRaspduinoDSLParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__ChangeActuator__ActuatorStateAlternatives_2_0"
-    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:526:1: rule__ChangeActuator__ActuatorStateAlternatives_2_0 : ( ( 'On' ) | ( 'Off' ) );
+    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:332:1: rule__ChangeActuator__ActuatorStateAlternatives_2_0 : ( ( 'On' ) | ( 'Off' ) | ( 'Toggle' ) );
     public final void rule__ChangeActuator__ActuatorStateAlternatives_2_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:530:1: ( ( 'On' ) | ( 'Off' ) )
-            int alt4=2;
-            int LA4_0 = input.LA(1);
-
-            if ( (LA4_0==16) ) {
-                alt4=1;
-            }
-            else if ( (LA4_0==17) ) {
-                alt4=2;
-            }
-            else {
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:336:1: ( ( 'On' ) | ( 'Off' ) | ( 'Toggle' ) )
+            int alt3=3;
+            switch ( input.LA(1) ) {
+            case 13:
+                {
+                alt3=1;
+                }
+                break;
+            case 14:
+                {
+                alt3=2;
+                }
+                break;
+            case 15:
+                {
+                alt3=3;
+                }
+                break;
+            default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 4, 0, input);
+                    new NoViableAltException("", 3, 0, input);
 
                 throw nvae;
             }
-            switch (alt4) {
+
+            switch (alt3) {
                 case 1 :
-                    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:531:1: ( 'On' )
+                    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:337:1: ( 'On' )
                     {
-                    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:531:1: ( 'On' )
-                    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:532:1: 'On'
+                    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:337:1: ( 'On' )
+                    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:338:1: 'On'
                     {
                      before(grammarAccess.getChangeActuatorAccess().getActuatorStateOnKeyword_2_0_0()); 
-                    match(input,16,FOLLOW_16_in_rule__ChangeActuator__ActuatorStateAlternatives_2_01070); 
+                    match(input,13,FOLLOW_13_in_rule__ChangeActuator__ActuatorStateAlternatives_2_0655); 
                      after(grammarAccess.getChangeActuatorAccess().getActuatorStateOnKeyword_2_0_0()); 
 
                     }
@@ -1451,14 +910,29 @@ public class InternalRaspduinoDSLParser extends AbstractInternalContentAssistPar
                     }
                     break;
                 case 2 :
-                    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:539:6: ( 'Off' )
+                    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:345:6: ( 'Off' )
                     {
-                    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:539:6: ( 'Off' )
-                    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:540:1: 'Off'
+                    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:345:6: ( 'Off' )
+                    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:346:1: 'Off'
                     {
                      before(grammarAccess.getChangeActuatorAccess().getActuatorStateOffKeyword_2_0_1()); 
-                    match(input,17,FOLLOW_17_in_rule__ChangeActuator__ActuatorStateAlternatives_2_01090); 
+                    match(input,14,FOLLOW_14_in_rule__ChangeActuator__ActuatorStateAlternatives_2_0675); 
                      after(grammarAccess.getChangeActuatorAccess().getActuatorStateOffKeyword_2_0_1()); 
+
+                    }
+
+
+                    }
+                    break;
+                case 3 :
+                    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:353:6: ( 'Toggle' )
+                    {
+                    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:353:6: ( 'Toggle' )
+                    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:354:1: 'Toggle'
+                    {
+                     before(grammarAccess.getChangeActuatorAccess().getActuatorStateToggleKeyword_2_0_2()); 
+                    match(input,15,FOLLOW_15_in_rule__ChangeActuator__ActuatorStateAlternatives_2_0695); 
+                     after(grammarAccess.getChangeActuatorAccess().getActuatorStateToggleKeyword_2_0_2()); 
 
                     }
 
@@ -1482,303 +956,58 @@ public class InternalRaspduinoDSLParser extends AbstractInternalContentAssistPar
     // $ANTLR end "rule__ChangeActuator__ActuatorStateAlternatives_2_0"
 
 
-    // $ANTLR start "rule__Precondition__Alternatives"
-    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:552:1: rule__Precondition__Alternatives : ( ( ( rule__Precondition__Group_0__0 ) ) | ( ( rule__Precondition__Pre1Assignment_1 ) ) );
-    public final void rule__Precondition__Alternatives() throws RecognitionException {
+    // $ANTLR start "rule__SensorListener__Alternatives_3"
+    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:366:1: rule__SensorListener__Alternatives_3 : ( ( ( rule__SensorListener__TypeAssignment_3_0 ) ) | ( ( rule__SensorListener__TypeAssignment_3_1 ) ) | ( ( rule__SensorListener__Group_3_2__0 ) ) );
+    public final void rule__SensorListener__Alternatives_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:556:1: ( ( ( rule__Precondition__Group_0__0 ) ) | ( ( rule__Precondition__Pre1Assignment_1 ) ) )
-            int alt5=2;
-            alt5 = dfa5.predict(input);
-            switch (alt5) {
-                case 1 :
-                    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:557:1: ( ( rule__Precondition__Group_0__0 ) )
-                    {
-                    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:557:1: ( ( rule__Precondition__Group_0__0 ) )
-                    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:558:1: ( rule__Precondition__Group_0__0 )
-                    {
-                     before(grammarAccess.getPreconditionAccess().getGroup_0()); 
-                    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:559:1: ( rule__Precondition__Group_0__0 )
-                    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:559:2: rule__Precondition__Group_0__0
-                    {
-                    pushFollow(FOLLOW_rule__Precondition__Group_0__0_in_rule__Precondition__Alternatives1124);
-                    rule__Precondition__Group_0__0();
-
-                    state._fsp--;
-
-
-                    }
-
-                     after(grammarAccess.getPreconditionAccess().getGroup_0()); 
-
-                    }
-
-
-                    }
-                    break;
-                case 2 :
-                    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:563:6: ( ( rule__Precondition__Pre1Assignment_1 ) )
-                    {
-                    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:563:6: ( ( rule__Precondition__Pre1Assignment_1 ) )
-                    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:564:1: ( rule__Precondition__Pre1Assignment_1 )
-                    {
-                     before(grammarAccess.getPreconditionAccess().getPre1Assignment_1()); 
-                    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:565:1: ( rule__Precondition__Pre1Assignment_1 )
-                    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:565:2: rule__Precondition__Pre1Assignment_1
-                    {
-                    pushFollow(FOLLOW_rule__Precondition__Pre1Assignment_1_in_rule__Precondition__Alternatives1142);
-                    rule__Precondition__Pre1Assignment_1();
-
-                    state._fsp--;
-
-
-                    }
-
-                     after(grammarAccess.getPreconditionAccess().getPre1Assignment_1()); 
-
-                    }
-
-
-                    }
-                    break;
-
-            }
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Precondition__Alternatives"
-
-
-    // $ANTLR start "rule__Precondition__OpAlternatives_0_1_0"
-    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:574:1: rule__Precondition__OpAlternatives_0_1_0 : ( ( '&&' ) | ( '||' ) );
-    public final void rule__Precondition__OpAlternatives_0_1_0() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:578:1: ( ( '&&' ) | ( '||' ) )
-            int alt6=2;
-            int LA6_0 = input.LA(1);
-
-            if ( (LA6_0==18) ) {
-                alt6=1;
-            }
-            else if ( (LA6_0==19) ) {
-                alt6=2;
-            }
-            else {
-                NoViableAltException nvae =
-                    new NoViableAltException("", 6, 0, input);
-
-                throw nvae;
-            }
-            switch (alt6) {
-                case 1 :
-                    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:579:1: ( '&&' )
-                    {
-                    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:579:1: ( '&&' )
-                    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:580:1: '&&'
-                    {
-                     before(grammarAccess.getPreconditionAccess().getOpAmpersandAmpersandKeyword_0_1_0_0()); 
-                    match(input,18,FOLLOW_18_in_rule__Precondition__OpAlternatives_0_1_01176); 
-                     after(grammarAccess.getPreconditionAccess().getOpAmpersandAmpersandKeyword_0_1_0_0()); 
-
-                    }
-
-
-                    }
-                    break;
-                case 2 :
-                    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:587:6: ( '||' )
-                    {
-                    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:587:6: ( '||' )
-                    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:588:1: '||'
-                    {
-                     before(grammarAccess.getPreconditionAccess().getOpVerticalLineVerticalLineKeyword_0_1_0_1()); 
-                    match(input,19,FOLLOW_19_in_rule__Precondition__OpAlternatives_0_1_01196); 
-                     after(grammarAccess.getPreconditionAccess().getOpVerticalLineVerticalLineKeyword_0_1_0_1()); 
-
-                    }
-
-
-                    }
-                    break;
-
-            }
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Precondition__OpAlternatives_0_1_0"
-
-
-    // $ANTLR start "rule__Precondition1__Alternatives"
-    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:600:1: rule__Precondition1__Alternatives : ( ( ( rule__Precondition1__PreAssignment_0 ) ) | ( ( rule__Precondition1__PreAssignment_1 ) ) );
-    public final void rule__Precondition1__Alternatives() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:604:1: ( ( ( rule__Precondition1__PreAssignment_0 ) ) | ( ( rule__Precondition1__PreAssignment_1 ) ) )
-            int alt7=2;
-            int LA7_0 = input.LA(1);
-
-            if ( (LA7_0==RULE_ID) ) {
-                int LA7_1 = input.LA(2);
-
-                if ( (LA7_1==EOF||(LA7_1>=18 && LA7_1<=19)) ) {
-                    alt7=2;
-                }
-                else if ( ((LA7_1>=20 && LA7_1<=23)) ) {
-                    alt7=1;
-                }
-                else {
-                    NoViableAltException nvae =
-                        new NoViableAltException("", 7, 1, input);
-
-                    throw nvae;
-                }
-            }
-            else {
-                NoViableAltException nvae =
-                    new NoViableAltException("", 7, 0, input);
-
-                throw nvae;
-            }
-            switch (alt7) {
-                case 1 :
-                    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:605:1: ( ( rule__Precondition1__PreAssignment_0 ) )
-                    {
-                    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:605:1: ( ( rule__Precondition1__PreAssignment_0 ) )
-                    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:606:1: ( rule__Precondition1__PreAssignment_0 )
-                    {
-                     before(grammarAccess.getPrecondition1Access().getPreAssignment_0()); 
-                    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:607:1: ( rule__Precondition1__PreAssignment_0 )
-                    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:607:2: rule__Precondition1__PreAssignment_0
-                    {
-                    pushFollow(FOLLOW_rule__Precondition1__PreAssignment_0_in_rule__Precondition1__Alternatives1230);
-                    rule__Precondition1__PreAssignment_0();
-
-                    state._fsp--;
-
-
-                    }
-
-                     after(grammarAccess.getPrecondition1Access().getPreAssignment_0()); 
-
-                    }
-
-
-                    }
-                    break;
-                case 2 :
-                    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:611:6: ( ( rule__Precondition1__PreAssignment_1 ) )
-                    {
-                    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:611:6: ( ( rule__Precondition1__PreAssignment_1 ) )
-                    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:612:1: ( rule__Precondition1__PreAssignment_1 )
-                    {
-                     before(grammarAccess.getPrecondition1Access().getPreAssignment_1()); 
-                    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:613:1: ( rule__Precondition1__PreAssignment_1 )
-                    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:613:2: rule__Precondition1__PreAssignment_1
-                    {
-                    pushFollow(FOLLOW_rule__Precondition1__PreAssignment_1_in_rule__Precondition1__Alternatives1248);
-                    rule__Precondition1__PreAssignment_1();
-
-                    state._fsp--;
-
-
-                    }
-
-                     after(grammarAccess.getPrecondition1Access().getPreAssignment_1()); 
-
-                    }
-
-
-                    }
-                    break;
-
-            }
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Precondition1__Alternatives"
-
-
-    // $ANTLR start "rule__SensorValuePrecondition__CondAlternatives_1_0"
-    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:622:1: rule__SensorValuePrecondition__CondAlternatives_1_0 : ( ( '==' ) | ( '<=' ) | ( '>=' ) | ( '!=' ) );
-    public final void rule__SensorValuePrecondition__CondAlternatives_1_0() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:626:1: ( ( '==' ) | ( '<=' ) | ( '>=' ) | ( '!=' ) )
-            int alt8=4;
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:370:1: ( ( ( rule__SensorListener__TypeAssignment_3_0 ) ) | ( ( rule__SensorListener__TypeAssignment_3_1 ) ) | ( ( rule__SensorListener__Group_3_2__0 ) ) )
+            int alt4=3;
             switch ( input.LA(1) ) {
-            case 20:
+            case 33:
                 {
-                alt8=1;
+                alt4=1;
                 }
                 break;
-            case 21:
+            case 34:
                 {
-                alt8=2;
+                alt4=2;
                 }
                 break;
-            case 22:
+            case 35:
                 {
-                alt8=3;
-                }
-                break;
-            case 23:
-                {
-                alt8=4;
+                alt4=3;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 8, 0, input);
+                    new NoViableAltException("", 4, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt8) {
+            switch (alt4) {
                 case 1 :
-                    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:627:1: ( '==' )
+                    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:371:1: ( ( rule__SensorListener__TypeAssignment_3_0 ) )
                     {
-                    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:627:1: ( '==' )
-                    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:628:1: '=='
+                    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:371:1: ( ( rule__SensorListener__TypeAssignment_3_0 ) )
+                    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:372:1: ( rule__SensorListener__TypeAssignment_3_0 )
                     {
-                     before(grammarAccess.getSensorValuePreconditionAccess().getCondEqualsSignEqualsSignKeyword_1_0_0()); 
-                    match(input,20,FOLLOW_20_in_rule__SensorValuePrecondition__CondAlternatives_1_01282); 
-                     after(grammarAccess.getSensorValuePreconditionAccess().getCondEqualsSignEqualsSignKeyword_1_0_0()); 
+                     before(grammarAccess.getSensorListenerAccess().getTypeAssignment_3_0()); 
+                    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:373:1: ( rule__SensorListener__TypeAssignment_3_0 )
+                    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:373:2: rule__SensorListener__TypeAssignment_3_0
+                    {
+                    pushFollow(FOLLOW_rule__SensorListener__TypeAssignment_3_0_in_rule__SensorListener__Alternatives_3729);
+                    rule__SensorListener__TypeAssignment_3_0();
+
+                    state._fsp--;
+
+
+                    }
+
+                     after(grammarAccess.getSensorListenerAccess().getTypeAssignment_3_0()); 
 
                     }
 
@@ -1786,14 +1015,24 @@ public class InternalRaspduinoDSLParser extends AbstractInternalContentAssistPar
                     }
                     break;
                 case 2 :
-                    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:635:6: ( '<=' )
+                    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:377:6: ( ( rule__SensorListener__TypeAssignment_3_1 ) )
                     {
-                    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:635:6: ( '<=' )
-                    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:636:1: '<='
+                    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:377:6: ( ( rule__SensorListener__TypeAssignment_3_1 ) )
+                    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:378:1: ( rule__SensorListener__TypeAssignment_3_1 )
                     {
-                     before(grammarAccess.getSensorValuePreconditionAccess().getCondLessThanSignEqualsSignKeyword_1_0_1()); 
-                    match(input,21,FOLLOW_21_in_rule__SensorValuePrecondition__CondAlternatives_1_01302); 
-                     after(grammarAccess.getSensorValuePreconditionAccess().getCondLessThanSignEqualsSignKeyword_1_0_1()); 
+                     before(grammarAccess.getSensorListenerAccess().getTypeAssignment_3_1()); 
+                    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:379:1: ( rule__SensorListener__TypeAssignment_3_1 )
+                    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:379:2: rule__SensorListener__TypeAssignment_3_1
+                    {
+                    pushFollow(FOLLOW_rule__SensorListener__TypeAssignment_3_1_in_rule__SensorListener__Alternatives_3747);
+                    rule__SensorListener__TypeAssignment_3_1();
+
+                    state._fsp--;
+
+
+                    }
+
+                     after(grammarAccess.getSensorListenerAccess().getTypeAssignment_3_1()); 
 
                     }
 
@@ -1801,100 +1040,24 @@ public class InternalRaspduinoDSLParser extends AbstractInternalContentAssistPar
                     }
                     break;
                 case 3 :
-                    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:643:6: ( '>=' )
+                    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:383:6: ( ( rule__SensorListener__Group_3_2__0 ) )
                     {
-                    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:643:6: ( '>=' )
-                    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:644:1: '>='
+                    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:383:6: ( ( rule__SensorListener__Group_3_2__0 ) )
+                    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:384:1: ( rule__SensorListener__Group_3_2__0 )
                     {
-                     before(grammarAccess.getSensorValuePreconditionAccess().getCondGreaterThanSignEqualsSignKeyword_1_0_2()); 
-                    match(input,22,FOLLOW_22_in_rule__SensorValuePrecondition__CondAlternatives_1_01322); 
-                     after(grammarAccess.getSensorValuePreconditionAccess().getCondGreaterThanSignEqualsSignKeyword_1_0_2()); 
+                     before(grammarAccess.getSensorListenerAccess().getGroup_3_2()); 
+                    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:385:1: ( rule__SensorListener__Group_3_2__0 )
+                    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:385:2: rule__SensorListener__Group_3_2__0
+                    {
+                    pushFollow(FOLLOW_rule__SensorListener__Group_3_2__0_in_rule__SensorListener__Alternatives_3765);
+                    rule__SensorListener__Group_3_2__0();
+
+                    state._fsp--;
+
 
                     }
 
-
-                    }
-                    break;
-                case 4 :
-                    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:651:6: ( '!=' )
-                    {
-                    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:651:6: ( '!=' )
-                    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:652:1: '!='
-                    {
-                     before(grammarAccess.getSensorValuePreconditionAccess().getCondExclamationMarkEqualsSignKeyword_1_0_3()); 
-                    match(input,23,FOLLOW_23_in_rule__SensorValuePrecondition__CondAlternatives_1_01342); 
-                     after(grammarAccess.getSensorValuePreconditionAccess().getCondExclamationMarkEqualsSignKeyword_1_0_3()); 
-
-                    }
-
-
-                    }
-                    break;
-
-            }
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__SensorValuePrecondition__CondAlternatives_1_0"
-
-
-    // $ANTLR start "rule__PossibleValues__Alternatives"
-    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:664:1: rule__PossibleValues__Alternatives : ( ( RULE_DOUBLE ) | ( RULE_INT ) );
-    public final void rule__PossibleValues__Alternatives() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:668:1: ( ( RULE_DOUBLE ) | ( RULE_INT ) )
-            int alt9=2;
-            int LA9_0 = input.LA(1);
-
-            if ( (LA9_0==RULE_DOUBLE) ) {
-                alt9=1;
-            }
-            else if ( (LA9_0==RULE_INT) ) {
-                alt9=2;
-            }
-            else {
-                NoViableAltException nvae =
-                    new NoViableAltException("", 9, 0, input);
-
-                throw nvae;
-            }
-            switch (alt9) {
-                case 1 :
-                    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:669:1: ( RULE_DOUBLE )
-                    {
-                    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:669:1: ( RULE_DOUBLE )
-                    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:670:1: RULE_DOUBLE
-                    {
-                     before(grammarAccess.getPossibleValuesAccess().getDOUBLETerminalRuleCall_0()); 
-                    match(input,RULE_DOUBLE,FOLLOW_RULE_DOUBLE_in_rule__PossibleValues__Alternatives1376); 
-                     after(grammarAccess.getPossibleValuesAccess().getDOUBLETerminalRuleCall_0()); 
-
-                    }
-
-
-                    }
-                    break;
-                case 2 :
-                    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:675:6: ( RULE_INT )
-                    {
-                    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:675:6: ( RULE_INT )
-                    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:676:1: RULE_INT
-                    {
-                     before(grammarAccess.getPossibleValuesAccess().getINTTerminalRuleCall_1()); 
-                    match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__PossibleValues__Alternatives1393); 
-                     after(grammarAccess.getPossibleValuesAccess().getINTTerminalRuleCall_1()); 
+                     after(grammarAccess.getSensorListenerAccess().getGroup_3_2()); 
 
                     }
 
@@ -1915,41 +1078,41 @@ public class InternalRaspduinoDSLParser extends AbstractInternalContentAssistPar
         }
         return ;
     }
-    // $ANTLR end "rule__PossibleValues__Alternatives"
+    // $ANTLR end "rule__SensorListener__Alternatives_3"
 
 
     // $ANTLR start "rule__Timer__RepeattypeAlternatives_3_0"
-    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:686:1: rule__Timer__RepeattypeAlternatives_3_0 : ( ( 'ONCE' ) | ( 'EVERY' ) );
+    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:394:1: rule__Timer__RepeattypeAlternatives_3_0 : ( ( 'ONCE' ) | ( 'EVERY' ) );
     public final void rule__Timer__RepeattypeAlternatives_3_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:690:1: ( ( 'ONCE' ) | ( 'EVERY' ) )
-            int alt10=2;
-            int LA10_0 = input.LA(1);
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:398:1: ( ( 'ONCE' ) | ( 'EVERY' ) )
+            int alt5=2;
+            int LA5_0 = input.LA(1);
 
-            if ( (LA10_0==24) ) {
-                alt10=1;
+            if ( (LA5_0==16) ) {
+                alt5=1;
             }
-            else if ( (LA10_0==25) ) {
-                alt10=2;
+            else if ( (LA5_0==17) ) {
+                alt5=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 10, 0, input);
+                    new NoViableAltException("", 5, 0, input);
 
                 throw nvae;
             }
-            switch (alt10) {
+            switch (alt5) {
                 case 1 :
-                    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:691:1: ( 'ONCE' )
+                    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:399:1: ( 'ONCE' )
                     {
-                    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:691:1: ( 'ONCE' )
-                    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:692:1: 'ONCE'
+                    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:399:1: ( 'ONCE' )
+                    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:400:1: 'ONCE'
                     {
                      before(grammarAccess.getTimerAccess().getRepeattypeONCEKeyword_3_0_0()); 
-                    match(input,24,FOLLOW_24_in_rule__Timer__RepeattypeAlternatives_3_01426); 
+                    match(input,16,FOLLOW_16_in_rule__Timer__RepeattypeAlternatives_3_0799); 
                      after(grammarAccess.getTimerAccess().getRepeattypeONCEKeyword_3_0_0()); 
 
                     }
@@ -1958,13 +1121,13 @@ public class InternalRaspduinoDSLParser extends AbstractInternalContentAssistPar
                     }
                     break;
                 case 2 :
-                    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:699:6: ( 'EVERY' )
+                    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:407:6: ( 'EVERY' )
                     {
-                    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:699:6: ( 'EVERY' )
-                    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:700:1: 'EVERY'
+                    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:407:6: ( 'EVERY' )
+                    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:408:1: 'EVERY'
                     {
                      before(grammarAccess.getTimerAccess().getRepeattypeEVERYKeyword_3_0_1()); 
-                    match(input,25,FOLLOW_25_in_rule__Timer__RepeattypeAlternatives_3_01446); 
+                    match(input,17,FOLLOW_17_in_rule__Timer__RepeattypeAlternatives_3_0819); 
                      after(grammarAccess.getTimerAccess().getRepeattypeEVERYKeyword_3_0_1()); 
 
                     }
@@ -1989,217 +1152,22 @@ public class InternalRaspduinoDSLParser extends AbstractInternalContentAssistPar
     // $ANTLR end "rule__Timer__RepeattypeAlternatives_3_0"
 
 
-    // $ANTLR start "rule__Alarm__RepeattypeAlternatives_3_0"
-    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:712:1: rule__Alarm__RepeattypeAlternatives_3_0 : ( ( 'EVERY DAY' ) | ( 'EVERY MONDAY' ) | ( 'EVERY TUESDAY' ) | ( 'EVERY WEDNESDAY' ) | ( 'EVERY THURSDAY' ) | ( 'EVERY FRIDAY' ) | ( 'EVERY SATURDAY' ) | ( 'EVERY SUNDAY' ) );
-    public final void rule__Alarm__RepeattypeAlternatives_3_0() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:716:1: ( ( 'EVERY DAY' ) | ( 'EVERY MONDAY' ) | ( 'EVERY TUESDAY' ) | ( 'EVERY WEDNESDAY' ) | ( 'EVERY THURSDAY' ) | ( 'EVERY FRIDAY' ) | ( 'EVERY SATURDAY' ) | ( 'EVERY SUNDAY' ) )
-            int alt11=8;
-            switch ( input.LA(1) ) {
-            case 26:
-                {
-                alt11=1;
-                }
-                break;
-            case 27:
-                {
-                alt11=2;
-                }
-                break;
-            case 28:
-                {
-                alt11=3;
-                }
-                break;
-            case 29:
-                {
-                alt11=4;
-                }
-                break;
-            case 30:
-                {
-                alt11=5;
-                }
-                break;
-            case 31:
-                {
-                alt11=6;
-                }
-                break;
-            case 32:
-                {
-                alt11=7;
-                }
-                break;
-            case 33:
-                {
-                alt11=8;
-                }
-                break;
-            default:
-                NoViableAltException nvae =
-                    new NoViableAltException("", 11, 0, input);
-
-                throw nvae;
-            }
-
-            switch (alt11) {
-                case 1 :
-                    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:717:1: ( 'EVERY DAY' )
-                    {
-                    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:717:1: ( 'EVERY DAY' )
-                    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:718:1: 'EVERY DAY'
-                    {
-                     before(grammarAccess.getAlarmAccess().getRepeattypeEVERYDAYKeyword_3_0_0()); 
-                    match(input,26,FOLLOW_26_in_rule__Alarm__RepeattypeAlternatives_3_01481); 
-                     after(grammarAccess.getAlarmAccess().getRepeattypeEVERYDAYKeyword_3_0_0()); 
-
-                    }
-
-
-                    }
-                    break;
-                case 2 :
-                    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:725:6: ( 'EVERY MONDAY' )
-                    {
-                    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:725:6: ( 'EVERY MONDAY' )
-                    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:726:1: 'EVERY MONDAY'
-                    {
-                     before(grammarAccess.getAlarmAccess().getRepeattypeEVERYMONDAYKeyword_3_0_1()); 
-                    match(input,27,FOLLOW_27_in_rule__Alarm__RepeattypeAlternatives_3_01501); 
-                     after(grammarAccess.getAlarmAccess().getRepeattypeEVERYMONDAYKeyword_3_0_1()); 
-
-                    }
-
-
-                    }
-                    break;
-                case 3 :
-                    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:733:6: ( 'EVERY TUESDAY' )
-                    {
-                    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:733:6: ( 'EVERY TUESDAY' )
-                    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:734:1: 'EVERY TUESDAY'
-                    {
-                     before(grammarAccess.getAlarmAccess().getRepeattypeEVERYTUESDAYKeyword_3_0_2()); 
-                    match(input,28,FOLLOW_28_in_rule__Alarm__RepeattypeAlternatives_3_01521); 
-                     after(grammarAccess.getAlarmAccess().getRepeattypeEVERYTUESDAYKeyword_3_0_2()); 
-
-                    }
-
-
-                    }
-                    break;
-                case 4 :
-                    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:741:6: ( 'EVERY WEDNESDAY' )
-                    {
-                    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:741:6: ( 'EVERY WEDNESDAY' )
-                    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:742:1: 'EVERY WEDNESDAY'
-                    {
-                     before(grammarAccess.getAlarmAccess().getRepeattypeEVERYWEDNESDAYKeyword_3_0_3()); 
-                    match(input,29,FOLLOW_29_in_rule__Alarm__RepeattypeAlternatives_3_01541); 
-                     after(grammarAccess.getAlarmAccess().getRepeattypeEVERYWEDNESDAYKeyword_3_0_3()); 
-
-                    }
-
-
-                    }
-                    break;
-                case 5 :
-                    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:749:6: ( 'EVERY THURSDAY' )
-                    {
-                    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:749:6: ( 'EVERY THURSDAY' )
-                    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:750:1: 'EVERY THURSDAY'
-                    {
-                     before(grammarAccess.getAlarmAccess().getRepeattypeEVERYTHURSDAYKeyword_3_0_4()); 
-                    match(input,30,FOLLOW_30_in_rule__Alarm__RepeattypeAlternatives_3_01561); 
-                     after(grammarAccess.getAlarmAccess().getRepeattypeEVERYTHURSDAYKeyword_3_0_4()); 
-
-                    }
-
-
-                    }
-                    break;
-                case 6 :
-                    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:757:6: ( 'EVERY FRIDAY' )
-                    {
-                    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:757:6: ( 'EVERY FRIDAY' )
-                    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:758:1: 'EVERY FRIDAY'
-                    {
-                     before(grammarAccess.getAlarmAccess().getRepeattypeEVERYFRIDAYKeyword_3_0_5()); 
-                    match(input,31,FOLLOW_31_in_rule__Alarm__RepeattypeAlternatives_3_01581); 
-                     after(grammarAccess.getAlarmAccess().getRepeattypeEVERYFRIDAYKeyword_3_0_5()); 
-
-                    }
-
-
-                    }
-                    break;
-                case 7 :
-                    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:765:6: ( 'EVERY SATURDAY' )
-                    {
-                    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:765:6: ( 'EVERY SATURDAY' )
-                    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:766:1: 'EVERY SATURDAY'
-                    {
-                     before(grammarAccess.getAlarmAccess().getRepeattypeEVERYSATURDAYKeyword_3_0_6()); 
-                    match(input,32,FOLLOW_32_in_rule__Alarm__RepeattypeAlternatives_3_01601); 
-                     after(grammarAccess.getAlarmAccess().getRepeattypeEVERYSATURDAYKeyword_3_0_6()); 
-
-                    }
-
-
-                    }
-                    break;
-                case 8 :
-                    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:773:6: ( 'EVERY SUNDAY' )
-                    {
-                    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:773:6: ( 'EVERY SUNDAY' )
-                    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:774:1: 'EVERY SUNDAY'
-                    {
-                     before(grammarAccess.getAlarmAccess().getRepeattypeEVERYSUNDAYKeyword_3_0_7()); 
-                    match(input,33,FOLLOW_33_in_rule__Alarm__RepeattypeAlternatives_3_01621); 
-                     after(grammarAccess.getAlarmAccess().getRepeattypeEVERYSUNDAYKeyword_3_0_7()); 
-
-                    }
-
-
-                    }
-                    break;
-
-            }
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Alarm__RepeattypeAlternatives_3_0"
-
-
     // $ANTLR start "rule__Model__Group__0"
-    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:788:1: rule__Model__Group__0 : rule__Model__Group__0__Impl rule__Model__Group__1 ;
+    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:422:1: rule__Model__Group__0 : rule__Model__Group__0__Impl rule__Model__Group__1 ;
     public final void rule__Model__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:792:1: ( rule__Model__Group__0__Impl rule__Model__Group__1 )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:793:2: rule__Model__Group__0__Impl rule__Model__Group__1
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:426:1: ( rule__Model__Group__0__Impl rule__Model__Group__1 )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:427:2: rule__Model__Group__0__Impl rule__Model__Group__1
             {
-            pushFollow(FOLLOW_rule__Model__Group__0__Impl_in_rule__Model__Group__01653);
+            pushFollow(FOLLOW_rule__Model__Group__0__Impl_in_rule__Model__Group__0851);
             rule__Model__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Model__Group__1_in_rule__Model__Group__01656);
+            pushFollow(FOLLOW_rule__Model__Group__1_in_rule__Model__Group__0854);
             rule__Model__Group__1();
 
             state._fsp--;
@@ -2223,20 +1191,20 @@ public class InternalRaspduinoDSLParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Model__Group__0__Impl"
-    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:800:1: rule__Model__Group__0__Impl : ( 'Sketch:' ) ;
+    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:434:1: rule__Model__Group__0__Impl : ( 'Sketch:' ) ;
     public final void rule__Model__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:804:1: ( ( 'Sketch:' ) )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:805:1: ( 'Sketch:' )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:438:1: ( ( 'Sketch:' ) )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:439:1: ( 'Sketch:' )
             {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:805:1: ( 'Sketch:' )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:806:1: 'Sketch:'
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:439:1: ( 'Sketch:' )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:440:1: 'Sketch:'
             {
              before(grammarAccess.getModelAccess().getSketchKeyword_0()); 
-            match(input,34,FOLLOW_34_in_rule__Model__Group__0__Impl1684); 
+            match(input,18,FOLLOW_18_in_rule__Model__Group__0__Impl882); 
              after(grammarAccess.getModelAccess().getSketchKeyword_0()); 
 
             }
@@ -2260,21 +1228,21 @@ public class InternalRaspduinoDSLParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Model__Group__1"
-    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:819:1: rule__Model__Group__1 : rule__Model__Group__1__Impl rule__Model__Group__2 ;
+    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:453:1: rule__Model__Group__1 : rule__Model__Group__1__Impl rule__Model__Group__2 ;
     public final void rule__Model__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:823:1: ( rule__Model__Group__1__Impl rule__Model__Group__2 )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:824:2: rule__Model__Group__1__Impl rule__Model__Group__2
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:457:1: ( rule__Model__Group__1__Impl rule__Model__Group__2 )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:458:2: rule__Model__Group__1__Impl rule__Model__Group__2
             {
-            pushFollow(FOLLOW_rule__Model__Group__1__Impl_in_rule__Model__Group__11715);
+            pushFollow(FOLLOW_rule__Model__Group__1__Impl_in_rule__Model__Group__1913);
             rule__Model__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Model__Group__2_in_rule__Model__Group__11718);
+            pushFollow(FOLLOW_rule__Model__Group__2_in_rule__Model__Group__1916);
             rule__Model__Group__2();
 
             state._fsp--;
@@ -2298,23 +1266,23 @@ public class InternalRaspduinoDSLParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Model__Group__1__Impl"
-    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:831:1: rule__Model__Group__1__Impl : ( ( rule__Model__NameAssignment_1 ) ) ;
+    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:465:1: rule__Model__Group__1__Impl : ( ( rule__Model__NameAssignment_1 ) ) ;
     public final void rule__Model__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:835:1: ( ( ( rule__Model__NameAssignment_1 ) ) )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:836:1: ( ( rule__Model__NameAssignment_1 ) )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:469:1: ( ( ( rule__Model__NameAssignment_1 ) ) )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:470:1: ( ( rule__Model__NameAssignment_1 ) )
             {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:836:1: ( ( rule__Model__NameAssignment_1 ) )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:837:1: ( rule__Model__NameAssignment_1 )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:470:1: ( ( rule__Model__NameAssignment_1 ) )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:471:1: ( rule__Model__NameAssignment_1 )
             {
              before(grammarAccess.getModelAccess().getNameAssignment_1()); 
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:838:1: ( rule__Model__NameAssignment_1 )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:838:2: rule__Model__NameAssignment_1
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:472:1: ( rule__Model__NameAssignment_1 )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:472:2: rule__Model__NameAssignment_1
             {
-            pushFollow(FOLLOW_rule__Model__NameAssignment_1_in_rule__Model__Group__1__Impl1745);
+            pushFollow(FOLLOW_rule__Model__NameAssignment_1_in_rule__Model__Group__1__Impl943);
             rule__Model__NameAssignment_1();
 
             state._fsp--;
@@ -2345,21 +1313,21 @@ public class InternalRaspduinoDSLParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Model__Group__2"
-    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:848:1: rule__Model__Group__2 : rule__Model__Group__2__Impl rule__Model__Group__3 ;
+    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:482:1: rule__Model__Group__2 : rule__Model__Group__2__Impl rule__Model__Group__3 ;
     public final void rule__Model__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:852:1: ( rule__Model__Group__2__Impl rule__Model__Group__3 )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:853:2: rule__Model__Group__2__Impl rule__Model__Group__3
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:486:1: ( rule__Model__Group__2__Impl rule__Model__Group__3 )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:487:2: rule__Model__Group__2__Impl rule__Model__Group__3
             {
-            pushFollow(FOLLOW_rule__Model__Group__2__Impl_in_rule__Model__Group__21775);
+            pushFollow(FOLLOW_rule__Model__Group__2__Impl_in_rule__Model__Group__2973);
             rule__Model__Group__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Model__Group__3_in_rule__Model__Group__21778);
+            pushFollow(FOLLOW_rule__Model__Group__3_in_rule__Model__Group__2976);
             rule__Model__Group__3();
 
             state._fsp--;
@@ -2383,20 +1351,20 @@ public class InternalRaspduinoDSLParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Model__Group__2__Impl"
-    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:860:1: rule__Model__Group__2__Impl : ( 'Hardware:' ) ;
+    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:494:1: rule__Model__Group__2__Impl : ( 'Hardware:' ) ;
     public final void rule__Model__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:864:1: ( ( 'Hardware:' ) )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:865:1: ( 'Hardware:' )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:498:1: ( ( 'Hardware:' ) )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:499:1: ( 'Hardware:' )
             {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:865:1: ( 'Hardware:' )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:866:1: 'Hardware:'
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:499:1: ( 'Hardware:' )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:500:1: 'Hardware:'
             {
              before(grammarAccess.getModelAccess().getHardwareKeyword_2()); 
-            match(input,35,FOLLOW_35_in_rule__Model__Group__2__Impl1806); 
+            match(input,19,FOLLOW_19_in_rule__Model__Group__2__Impl1004); 
              after(grammarAccess.getModelAccess().getHardwareKeyword_2()); 
 
             }
@@ -2420,21 +1388,21 @@ public class InternalRaspduinoDSLParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Model__Group__3"
-    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:879:1: rule__Model__Group__3 : rule__Model__Group__3__Impl rule__Model__Group__4 ;
+    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:513:1: rule__Model__Group__3 : rule__Model__Group__3__Impl rule__Model__Group__4 ;
     public final void rule__Model__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:883:1: ( rule__Model__Group__3__Impl rule__Model__Group__4 )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:884:2: rule__Model__Group__3__Impl rule__Model__Group__4
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:517:1: ( rule__Model__Group__3__Impl rule__Model__Group__4 )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:518:2: rule__Model__Group__3__Impl rule__Model__Group__4
             {
-            pushFollow(FOLLOW_rule__Model__Group__3__Impl_in_rule__Model__Group__31837);
+            pushFollow(FOLLOW_rule__Model__Group__3__Impl_in_rule__Model__Group__31035);
             rule__Model__Group__3__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Model__Group__4_in_rule__Model__Group__31840);
+            pushFollow(FOLLOW_rule__Model__Group__4_in_rule__Model__Group__31038);
             rule__Model__Group__4();
 
             state._fsp--;
@@ -2458,23 +1426,23 @@ public class InternalRaspduinoDSLParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Model__Group__3__Impl"
-    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:891:1: rule__Model__Group__3__Impl : ( ( rule__Model__HardwareAssignment_3 ) ) ;
+    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:525:1: rule__Model__Group__3__Impl : ( ( rule__Model__HardwareAssignment_3 ) ) ;
     public final void rule__Model__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:895:1: ( ( ( rule__Model__HardwareAssignment_3 ) ) )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:896:1: ( ( rule__Model__HardwareAssignment_3 ) )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:529:1: ( ( ( rule__Model__HardwareAssignment_3 ) ) )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:530:1: ( ( rule__Model__HardwareAssignment_3 ) )
             {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:896:1: ( ( rule__Model__HardwareAssignment_3 ) )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:897:1: ( rule__Model__HardwareAssignment_3 )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:530:1: ( ( rule__Model__HardwareAssignment_3 ) )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:531:1: ( rule__Model__HardwareAssignment_3 )
             {
              before(grammarAccess.getModelAccess().getHardwareAssignment_3()); 
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:898:1: ( rule__Model__HardwareAssignment_3 )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:898:2: rule__Model__HardwareAssignment_3
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:532:1: ( rule__Model__HardwareAssignment_3 )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:532:2: rule__Model__HardwareAssignment_3
             {
-            pushFollow(FOLLOW_rule__Model__HardwareAssignment_3_in_rule__Model__Group__3__Impl1867);
+            pushFollow(FOLLOW_rule__Model__HardwareAssignment_3_in_rule__Model__Group__3__Impl1065);
             rule__Model__HardwareAssignment_3();
 
             state._fsp--;
@@ -2505,21 +1473,21 @@ public class InternalRaspduinoDSLParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Model__Group__4"
-    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:908:1: rule__Model__Group__4 : rule__Model__Group__4__Impl rule__Model__Group__5 ;
+    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:542:1: rule__Model__Group__4 : rule__Model__Group__4__Impl rule__Model__Group__5 ;
     public final void rule__Model__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:912:1: ( rule__Model__Group__4__Impl rule__Model__Group__5 )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:913:2: rule__Model__Group__4__Impl rule__Model__Group__5
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:546:1: ( rule__Model__Group__4__Impl rule__Model__Group__5 )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:547:2: rule__Model__Group__4__Impl rule__Model__Group__5
             {
-            pushFollow(FOLLOW_rule__Model__Group__4__Impl_in_rule__Model__Group__41897);
+            pushFollow(FOLLOW_rule__Model__Group__4__Impl_in_rule__Model__Group__41095);
             rule__Model__Group__4__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Model__Group__5_in_rule__Model__Group__41900);
+            pushFollow(FOLLOW_rule__Model__Group__5_in_rule__Model__Group__41098);
             rule__Model__Group__5();
 
             state._fsp--;
@@ -2543,35 +1511,35 @@ public class InternalRaspduinoDSLParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Model__Group__4__Impl"
-    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:920:1: rule__Model__Group__4__Impl : ( ( rule__Model__DevicesAssignment_4 )* ) ;
+    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:554:1: rule__Model__Group__4__Impl : ( ( rule__Model__DevicesAssignment_4 )* ) ;
     public final void rule__Model__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:924:1: ( ( ( rule__Model__DevicesAssignment_4 )* ) )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:925:1: ( ( rule__Model__DevicesAssignment_4 )* )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:558:1: ( ( ( rule__Model__DevicesAssignment_4 )* ) )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:559:1: ( ( rule__Model__DevicesAssignment_4 )* )
             {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:925:1: ( ( rule__Model__DevicesAssignment_4 )* )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:926:1: ( rule__Model__DevicesAssignment_4 )*
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:559:1: ( ( rule__Model__DevicesAssignment_4 )* )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:560:1: ( rule__Model__DevicesAssignment_4 )*
             {
              before(grammarAccess.getModelAccess().getDevicesAssignment_4()); 
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:927:1: ( rule__Model__DevicesAssignment_4 )*
-            loop12:
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:561:1: ( rule__Model__DevicesAssignment_4 )*
+            loop6:
             do {
-                int alt12=2;
-                int LA12_0 = input.LA(1);
+                int alt6=2;
+                int LA6_0 = input.LA(1);
 
-                if ( (LA12_0==37||LA12_0==39) ) {
-                    alt12=1;
+                if ( (LA6_0==20||LA6_0==22) ) {
+                    alt6=1;
                 }
 
 
-                switch (alt12) {
+                switch (alt6) {
             	case 1 :
-            	    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:927:2: rule__Model__DevicesAssignment_4
+            	    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:561:2: rule__Model__DevicesAssignment_4
             	    {
-            	    pushFollow(FOLLOW_rule__Model__DevicesAssignment_4_in_rule__Model__Group__4__Impl1927);
+            	    pushFollow(FOLLOW_rule__Model__DevicesAssignment_4_in_rule__Model__Group__4__Impl1125);
             	    rule__Model__DevicesAssignment_4();
 
             	    state._fsp--;
@@ -2581,7 +1549,7 @@ public class InternalRaspduinoDSLParser extends AbstractInternalContentAssistPar
             	    break;
 
             	default :
-            	    break loop12;
+            	    break loop6;
                 }
             } while (true);
 
@@ -2608,21 +1576,21 @@ public class InternalRaspduinoDSLParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Model__Group__5"
-    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:937:1: rule__Model__Group__5 : rule__Model__Group__5__Impl rule__Model__Group__6 ;
+    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:571:1: rule__Model__Group__5 : rule__Model__Group__5__Impl rule__Model__Group__6 ;
     public final void rule__Model__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:941:1: ( rule__Model__Group__5__Impl rule__Model__Group__6 )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:942:2: rule__Model__Group__5__Impl rule__Model__Group__6
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:575:1: ( rule__Model__Group__5__Impl rule__Model__Group__6 )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:576:2: rule__Model__Group__5__Impl rule__Model__Group__6
             {
-            pushFollow(FOLLOW_rule__Model__Group__5__Impl_in_rule__Model__Group__51958);
+            pushFollow(FOLLOW_rule__Model__Group__5__Impl_in_rule__Model__Group__51156);
             rule__Model__Group__5__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Model__Group__6_in_rule__Model__Group__51961);
+            pushFollow(FOLLOW_rule__Model__Group__6_in_rule__Model__Group__51159);
             rule__Model__Group__6();
 
             state._fsp--;
@@ -2646,35 +1614,35 @@ public class InternalRaspduinoDSLParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Model__Group__5__Impl"
-    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:949:1: rule__Model__Group__5__Impl : ( ( rule__Model__EventHandlersAssignment_5 )* ) ;
+    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:583:1: rule__Model__Group__5__Impl : ( ( rule__Model__EventHandlersAssignment_5 )* ) ;
     public final void rule__Model__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:953:1: ( ( ( rule__Model__EventHandlersAssignment_5 )* ) )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:954:1: ( ( rule__Model__EventHandlersAssignment_5 )* )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:587:1: ( ( ( rule__Model__EventHandlersAssignment_5 )* ) )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:588:1: ( ( rule__Model__EventHandlersAssignment_5 )* )
             {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:954:1: ( ( rule__Model__EventHandlersAssignment_5 )* )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:955:1: ( rule__Model__EventHandlersAssignment_5 )*
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:588:1: ( ( rule__Model__EventHandlersAssignment_5 )* )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:589:1: ( rule__Model__EventHandlersAssignment_5 )*
             {
              before(grammarAccess.getModelAccess().getEventHandlersAssignment_5()); 
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:956:1: ( rule__Model__EventHandlersAssignment_5 )*
-            loop13:
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:590:1: ( rule__Model__EventHandlersAssignment_5 )*
+            loop7:
             do {
-                int alt13=2;
-                int LA13_0 = input.LA(1);
+                int alt7=2;
+                int LA7_0 = input.LA(1);
 
-                if ( (LA13_0==40) ) {
-                    alt13=1;
+                if ( (LA7_0==23) ) {
+                    alt7=1;
                 }
 
 
-                switch (alt13) {
+                switch (alt7) {
             	case 1 :
-            	    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:956:2: rule__Model__EventHandlersAssignment_5
+            	    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:590:2: rule__Model__EventHandlersAssignment_5
             	    {
-            	    pushFollow(FOLLOW_rule__Model__EventHandlersAssignment_5_in_rule__Model__Group__5__Impl1988);
+            	    pushFollow(FOLLOW_rule__Model__EventHandlersAssignment_5_in_rule__Model__Group__5__Impl1186);
             	    rule__Model__EventHandlersAssignment_5();
 
             	    state._fsp--;
@@ -2684,7 +1652,7 @@ public class InternalRaspduinoDSLParser extends AbstractInternalContentAssistPar
             	    break;
 
             	default :
-            	    break loop13;
+            	    break loop7;
                 }
             } while (true);
 
@@ -2711,21 +1679,21 @@ public class InternalRaspduinoDSLParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Model__Group__6"
-    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:966:1: rule__Model__Group__6 : rule__Model__Group__6__Impl rule__Model__Group__7 ;
+    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:600:1: rule__Model__Group__6 : rule__Model__Group__6__Impl rule__Model__Group__7 ;
     public final void rule__Model__Group__6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:970:1: ( rule__Model__Group__6__Impl rule__Model__Group__7 )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:971:2: rule__Model__Group__6__Impl rule__Model__Group__7
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:604:1: ( rule__Model__Group__6__Impl rule__Model__Group__7 )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:605:2: rule__Model__Group__6__Impl rule__Model__Group__7
             {
-            pushFollow(FOLLOW_rule__Model__Group__6__Impl_in_rule__Model__Group__62019);
+            pushFollow(FOLLOW_rule__Model__Group__6__Impl_in_rule__Model__Group__61217);
             rule__Model__Group__6__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Model__Group__7_in_rule__Model__Group__62022);
+            pushFollow(FOLLOW_rule__Model__Group__7_in_rule__Model__Group__61220);
             rule__Model__Group__7();
 
             state._fsp--;
@@ -2749,35 +1717,35 @@ public class InternalRaspduinoDSLParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Model__Group__6__Impl"
-    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:978:1: rule__Model__Group__6__Impl : ( ( rule__Model__SensorListenersAssignment_6 )* ) ;
+    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:612:1: rule__Model__Group__6__Impl : ( ( rule__Model__SensorListenersAssignment_6 )* ) ;
     public final void rule__Model__Group__6__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:982:1: ( ( ( rule__Model__SensorListenersAssignment_6 )* ) )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:983:1: ( ( rule__Model__SensorListenersAssignment_6 )* )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:616:1: ( ( ( rule__Model__SensorListenersAssignment_6 )* ) )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:617:1: ( ( rule__Model__SensorListenersAssignment_6 )* )
             {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:983:1: ( ( rule__Model__SensorListenersAssignment_6 )* )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:984:1: ( rule__Model__SensorListenersAssignment_6 )*
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:617:1: ( ( rule__Model__SensorListenersAssignment_6 )* )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:618:1: ( rule__Model__SensorListenersAssignment_6 )*
             {
              before(grammarAccess.getModelAccess().getSensorListenersAssignment_6()); 
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:985:1: ( rule__Model__SensorListenersAssignment_6 )*
-            loop14:
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:619:1: ( rule__Model__SensorListenersAssignment_6 )*
+            loop8:
             do {
-                int alt14=2;
-                int LA14_0 = input.LA(1);
+                int alt8=2;
+                int LA8_0 = input.LA(1);
 
-                if ( (LA14_0==43) ) {
-                    alt14=1;
+                if ( (LA8_0==26) ) {
+                    alt8=1;
                 }
 
 
-                switch (alt14) {
+                switch (alt8) {
             	case 1 :
-            	    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:985:2: rule__Model__SensorListenersAssignment_6
+            	    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:619:2: rule__Model__SensorListenersAssignment_6
             	    {
-            	    pushFollow(FOLLOW_rule__Model__SensorListenersAssignment_6_in_rule__Model__Group__6__Impl2049);
+            	    pushFollow(FOLLOW_rule__Model__SensorListenersAssignment_6_in_rule__Model__Group__6__Impl1247);
             	    rule__Model__SensorListenersAssignment_6();
 
             	    state._fsp--;
@@ -2787,7 +1755,7 @@ public class InternalRaspduinoDSLParser extends AbstractInternalContentAssistPar
             	    break;
 
             	default :
-            	    break loop14;
+            	    break loop8;
                 }
             } while (true);
 
@@ -2814,22 +1782,17 @@ public class InternalRaspduinoDSLParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Model__Group__7"
-    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:995:1: rule__Model__Group__7 : rule__Model__Group__7__Impl rule__Model__Group__8 ;
+    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:629:1: rule__Model__Group__7 : rule__Model__Group__7__Impl ;
     public final void rule__Model__Group__7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:999:1: ( rule__Model__Group__7__Impl rule__Model__Group__8 )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1000:2: rule__Model__Group__7__Impl rule__Model__Group__8
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:633:1: ( rule__Model__Group__7__Impl )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:634:2: rule__Model__Group__7__Impl
             {
-            pushFollow(FOLLOW_rule__Model__Group__7__Impl_in_rule__Model__Group__72080);
+            pushFollow(FOLLOW_rule__Model__Group__7__Impl_in_rule__Model__Group__71278);
             rule__Model__Group__7__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_rule__Model__Group__8_in_rule__Model__Group__72083);
-            rule__Model__Group__8();
 
             state._fsp--;
 
@@ -2852,53 +1815,35 @@ public class InternalRaspduinoDSLParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Model__Group__7__Impl"
-    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1007:1: rule__Model__Group__7__Impl : ( ( rule__Model__TimersAssignment_7 )* ) ;
+    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:640:1: rule__Model__Group__7__Impl : ( ( rule__Model__TimersAssignment_7 )* ) ;
     public final void rule__Model__Group__7__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1011:1: ( ( ( rule__Model__TimersAssignment_7 )* ) )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1012:1: ( ( rule__Model__TimersAssignment_7 )* )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:644:1: ( ( ( rule__Model__TimersAssignment_7 )* ) )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:645:1: ( ( rule__Model__TimersAssignment_7 )* )
             {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1012:1: ( ( rule__Model__TimersAssignment_7 )* )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1013:1: ( rule__Model__TimersAssignment_7 )*
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:645:1: ( ( rule__Model__TimersAssignment_7 )* )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:646:1: ( rule__Model__TimersAssignment_7 )*
             {
              before(grammarAccess.getModelAccess().getTimersAssignment_7()); 
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1014:1: ( rule__Model__TimersAssignment_7 )*
-            loop15:
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:647:1: ( rule__Model__TimersAssignment_7 )*
+            loop9:
             do {
-                int alt15=2;
-                int LA15_0 = input.LA(1);
+                int alt9=2;
+                int LA9_0 = input.LA(1);
 
-                if ( (LA15_0==47) ) {
-                    int LA15_1 = input.LA(2);
-
-                    if ( (LA15_1==RULE_ID) ) {
-                        int LA15_3 = input.LA(3);
-
-                        if ( (LA15_3==48) ) {
-                            int LA15_4 = input.LA(4);
-
-                            if ( ((LA15_4>=24 && LA15_4<=25)) ) {
-                                alt15=1;
-                            }
-
-
-                        }
-
-
-                    }
-
-
+                if ( (LA9_0==30) ) {
+                    alt9=1;
                 }
 
 
-                switch (alt15) {
+                switch (alt9) {
             	case 1 :
-            	    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1014:2: rule__Model__TimersAssignment_7
+            	    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:647:2: rule__Model__TimersAssignment_7
             	    {
-            	    pushFollow(FOLLOW_rule__Model__TimersAssignment_7_in_rule__Model__Group__7__Impl2110);
+            	    pushFollow(FOLLOW_rule__Model__TimersAssignment_7_in_rule__Model__Group__7__Impl1305);
             	    rule__Model__TimersAssignment_7();
 
             	    state._fsp--;
@@ -2908,7 +1853,7 @@ public class InternalRaspduinoDSLParser extends AbstractInternalContentAssistPar
             	    break;
 
             	default :
-            	    break loop15;
+            	    break loop9;
                 }
             } while (true);
 
@@ -2934,378 +1879,22 @@ public class InternalRaspduinoDSLParser extends AbstractInternalContentAssistPar
     // $ANTLR end "rule__Model__Group__7__Impl"
 
 
-    // $ANTLR start "rule__Model__Group__8"
-    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1024:1: rule__Model__Group__8 : rule__Model__Group__8__Impl rule__Model__Group__9 ;
-    public final void rule__Model__Group__8() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1028:1: ( rule__Model__Group__8__Impl rule__Model__Group__9 )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1029:2: rule__Model__Group__8__Impl rule__Model__Group__9
-            {
-            pushFollow(FOLLOW_rule__Model__Group__8__Impl_in_rule__Model__Group__82141);
-            rule__Model__Group__8__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_rule__Model__Group__9_in_rule__Model__Group__82144);
-            rule__Model__Group__9();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Model__Group__8"
-
-
-    // $ANTLR start "rule__Model__Group__8__Impl"
-    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1036:1: rule__Model__Group__8__Impl : ( ( rule__Model__AlarmsAssignment_8 )* ) ;
-    public final void rule__Model__Group__8__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1040:1: ( ( ( rule__Model__AlarmsAssignment_8 )* ) )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1041:1: ( ( rule__Model__AlarmsAssignment_8 )* )
-            {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1041:1: ( ( rule__Model__AlarmsAssignment_8 )* )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1042:1: ( rule__Model__AlarmsAssignment_8 )*
-            {
-             before(grammarAccess.getModelAccess().getAlarmsAssignment_8()); 
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1043:1: ( rule__Model__AlarmsAssignment_8 )*
-            loop16:
-            do {
-                int alt16=2;
-                int LA16_0 = input.LA(1);
-
-                if ( (LA16_0==47) ) {
-                    alt16=1;
-                }
-
-
-                switch (alt16) {
-            	case 1 :
-            	    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1043:2: rule__Model__AlarmsAssignment_8
-            	    {
-            	    pushFollow(FOLLOW_rule__Model__AlarmsAssignment_8_in_rule__Model__Group__8__Impl2171);
-            	    rule__Model__AlarmsAssignment_8();
-
-            	    state._fsp--;
-
-
-            	    }
-            	    break;
-
-            	default :
-            	    break loop16;
-                }
-            } while (true);
-
-             after(grammarAccess.getModelAccess().getAlarmsAssignment_8()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Model__Group__8__Impl"
-
-
-    // $ANTLR start "rule__Model__Group__9"
-    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1053:1: rule__Model__Group__9 : rule__Model__Group__9__Impl ;
-    public final void rule__Model__Group__9() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1057:1: ( rule__Model__Group__9__Impl )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1058:2: rule__Model__Group__9__Impl
-            {
-            pushFollow(FOLLOW_rule__Model__Group__9__Impl_in_rule__Model__Group__92202);
-            rule__Model__Group__9__Impl();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Model__Group__9"
-
-
-    // $ANTLR start "rule__Model__Group__9__Impl"
-    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1064:1: rule__Model__Group__9__Impl : ( ( rule__Model__Group_9__0 )* ) ;
-    public final void rule__Model__Group__9__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1068:1: ( ( ( rule__Model__Group_9__0 )* ) )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1069:1: ( ( rule__Model__Group_9__0 )* )
-            {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1069:1: ( ( rule__Model__Group_9__0 )* )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1070:1: ( rule__Model__Group_9__0 )*
-            {
-             before(grammarAccess.getModelAccess().getGroup_9()); 
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1071:1: ( rule__Model__Group_9__0 )*
-            loop17:
-            do {
-                int alt17=2;
-                int LA17_0 = input.LA(1);
-
-                if ( (LA17_0==36) ) {
-                    alt17=1;
-                }
-
-
-                switch (alt17) {
-            	case 1 :
-            	    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1071:2: rule__Model__Group_9__0
-            	    {
-            	    pushFollow(FOLLOW_rule__Model__Group_9__0_in_rule__Model__Group__9__Impl2229);
-            	    rule__Model__Group_9__0();
-
-            	    state._fsp--;
-
-
-            	    }
-            	    break;
-
-            	default :
-            	    break loop17;
-                }
-            } while (true);
-
-             after(grammarAccess.getModelAccess().getGroup_9()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Model__Group__9__Impl"
-
-
-    // $ANTLR start "rule__Model__Group_9__0"
-    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1101:1: rule__Model__Group_9__0 : rule__Model__Group_9__0__Impl rule__Model__Group_9__1 ;
-    public final void rule__Model__Group_9__0() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1105:1: ( rule__Model__Group_9__0__Impl rule__Model__Group_9__1 )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1106:2: rule__Model__Group_9__0__Impl rule__Model__Group_9__1
-            {
-            pushFollow(FOLLOW_rule__Model__Group_9__0__Impl_in_rule__Model__Group_9__02280);
-            rule__Model__Group_9__0__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_rule__Model__Group_9__1_in_rule__Model__Group_9__02283);
-            rule__Model__Group_9__1();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Model__Group_9__0"
-
-
-    // $ANTLR start "rule__Model__Group_9__0__Impl"
-    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1113:1: rule__Model__Group_9__0__Impl : ( 'Concurrency Priority:' ) ;
-    public final void rule__Model__Group_9__0__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1117:1: ( ( 'Concurrency Priority:' ) )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1118:1: ( 'Concurrency Priority:' )
-            {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1118:1: ( 'Concurrency Priority:' )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1119:1: 'Concurrency Priority:'
-            {
-             before(grammarAccess.getModelAccess().getConcurrencyPriorityKeyword_9_0()); 
-            match(input,36,FOLLOW_36_in_rule__Model__Group_9__0__Impl2311); 
-             after(grammarAccess.getModelAccess().getConcurrencyPriorityKeyword_9_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Model__Group_9__0__Impl"
-
-
-    // $ANTLR start "rule__Model__Group_9__1"
-    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1132:1: rule__Model__Group_9__1 : rule__Model__Group_9__1__Impl ;
-    public final void rule__Model__Group_9__1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1136:1: ( rule__Model__Group_9__1__Impl )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1137:2: rule__Model__Group_9__1__Impl
-            {
-            pushFollow(FOLLOW_rule__Model__Group_9__1__Impl_in_rule__Model__Group_9__12342);
-            rule__Model__Group_9__1__Impl();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Model__Group_9__1"
-
-
-    // $ANTLR start "rule__Model__Group_9__1__Impl"
-    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1143:1: rule__Model__Group_9__1__Impl : ( ( rule__Model__PriorityAssignment_9_1 ) ) ;
-    public final void rule__Model__Group_9__1__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1147:1: ( ( ( rule__Model__PriorityAssignment_9_1 ) ) )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1148:1: ( ( rule__Model__PriorityAssignment_9_1 ) )
-            {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1148:1: ( ( rule__Model__PriorityAssignment_9_1 ) )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1149:1: ( rule__Model__PriorityAssignment_9_1 )
-            {
-             before(grammarAccess.getModelAccess().getPriorityAssignment_9_1()); 
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1150:1: ( rule__Model__PriorityAssignment_9_1 )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1150:2: rule__Model__PriorityAssignment_9_1
-            {
-            pushFollow(FOLLOW_rule__Model__PriorityAssignment_9_1_in_rule__Model__Group_9__1__Impl2369);
-            rule__Model__PriorityAssignment_9_1();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getModelAccess().getPriorityAssignment_9_1()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Model__Group_9__1__Impl"
-
-
     // $ANTLR start "rule__Sensor__Group__0"
-    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1164:1: rule__Sensor__Group__0 : rule__Sensor__Group__0__Impl rule__Sensor__Group__1 ;
+    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:673:1: rule__Sensor__Group__0 : rule__Sensor__Group__0__Impl rule__Sensor__Group__1 ;
     public final void rule__Sensor__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1168:1: ( rule__Sensor__Group__0__Impl rule__Sensor__Group__1 )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1169:2: rule__Sensor__Group__0__Impl rule__Sensor__Group__1
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:677:1: ( rule__Sensor__Group__0__Impl rule__Sensor__Group__1 )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:678:2: rule__Sensor__Group__0__Impl rule__Sensor__Group__1
             {
-            pushFollow(FOLLOW_rule__Sensor__Group__0__Impl_in_rule__Sensor__Group__02403);
+            pushFollow(FOLLOW_rule__Sensor__Group__0__Impl_in_rule__Sensor__Group__01352);
             rule__Sensor__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Sensor__Group__1_in_rule__Sensor__Group__02406);
+            pushFollow(FOLLOW_rule__Sensor__Group__1_in_rule__Sensor__Group__01355);
             rule__Sensor__Group__1();
 
             state._fsp--;
@@ -3329,20 +1918,20 @@ public class InternalRaspduinoDSLParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Sensor__Group__0__Impl"
-    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1176:1: rule__Sensor__Group__0__Impl : ( 'Sensor' ) ;
+    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:685:1: rule__Sensor__Group__0__Impl : ( 'Sensor' ) ;
     public final void rule__Sensor__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1180:1: ( ( 'Sensor' ) )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1181:1: ( 'Sensor' )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:689:1: ( ( 'Sensor' ) )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:690:1: ( 'Sensor' )
             {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1181:1: ( 'Sensor' )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1182:1: 'Sensor'
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:690:1: ( 'Sensor' )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:691:1: 'Sensor'
             {
              before(grammarAccess.getSensorAccess().getSensorKeyword_0()); 
-            match(input,37,FOLLOW_37_in_rule__Sensor__Group__0__Impl2434); 
+            match(input,20,FOLLOW_20_in_rule__Sensor__Group__0__Impl1383); 
              after(grammarAccess.getSensorAccess().getSensorKeyword_0()); 
 
             }
@@ -3366,21 +1955,21 @@ public class InternalRaspduinoDSLParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Sensor__Group__1"
-    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1195:1: rule__Sensor__Group__1 : rule__Sensor__Group__1__Impl rule__Sensor__Group__2 ;
+    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:704:1: rule__Sensor__Group__1 : rule__Sensor__Group__1__Impl rule__Sensor__Group__2 ;
     public final void rule__Sensor__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1199:1: ( rule__Sensor__Group__1__Impl rule__Sensor__Group__2 )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1200:2: rule__Sensor__Group__1__Impl rule__Sensor__Group__2
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:708:1: ( rule__Sensor__Group__1__Impl rule__Sensor__Group__2 )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:709:2: rule__Sensor__Group__1__Impl rule__Sensor__Group__2
             {
-            pushFollow(FOLLOW_rule__Sensor__Group__1__Impl_in_rule__Sensor__Group__12465);
+            pushFollow(FOLLOW_rule__Sensor__Group__1__Impl_in_rule__Sensor__Group__11414);
             rule__Sensor__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Sensor__Group__2_in_rule__Sensor__Group__12468);
+            pushFollow(FOLLOW_rule__Sensor__Group__2_in_rule__Sensor__Group__11417);
             rule__Sensor__Group__2();
 
             state._fsp--;
@@ -3404,23 +1993,23 @@ public class InternalRaspduinoDSLParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Sensor__Group__1__Impl"
-    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1207:1: rule__Sensor__Group__1__Impl : ( ( rule__Sensor__NameAssignment_1 ) ) ;
+    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:716:1: rule__Sensor__Group__1__Impl : ( ( rule__Sensor__NameAssignment_1 ) ) ;
     public final void rule__Sensor__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1211:1: ( ( ( rule__Sensor__NameAssignment_1 ) ) )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1212:1: ( ( rule__Sensor__NameAssignment_1 ) )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:720:1: ( ( ( rule__Sensor__NameAssignment_1 ) ) )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:721:1: ( ( rule__Sensor__NameAssignment_1 ) )
             {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1212:1: ( ( rule__Sensor__NameAssignment_1 ) )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1213:1: ( rule__Sensor__NameAssignment_1 )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:721:1: ( ( rule__Sensor__NameAssignment_1 ) )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:722:1: ( rule__Sensor__NameAssignment_1 )
             {
              before(grammarAccess.getSensorAccess().getNameAssignment_1()); 
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1214:1: ( rule__Sensor__NameAssignment_1 )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1214:2: rule__Sensor__NameAssignment_1
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:723:1: ( rule__Sensor__NameAssignment_1 )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:723:2: rule__Sensor__NameAssignment_1
             {
-            pushFollow(FOLLOW_rule__Sensor__NameAssignment_1_in_rule__Sensor__Group__1__Impl2495);
+            pushFollow(FOLLOW_rule__Sensor__NameAssignment_1_in_rule__Sensor__Group__1__Impl1444);
             rule__Sensor__NameAssignment_1();
 
             state._fsp--;
@@ -3451,21 +2040,21 @@ public class InternalRaspduinoDSLParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Sensor__Group__2"
-    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1224:1: rule__Sensor__Group__2 : rule__Sensor__Group__2__Impl rule__Sensor__Group__3 ;
+    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:733:1: rule__Sensor__Group__2 : rule__Sensor__Group__2__Impl rule__Sensor__Group__3 ;
     public final void rule__Sensor__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1228:1: ( rule__Sensor__Group__2__Impl rule__Sensor__Group__3 )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1229:2: rule__Sensor__Group__2__Impl rule__Sensor__Group__3
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:737:1: ( rule__Sensor__Group__2__Impl rule__Sensor__Group__3 )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:738:2: rule__Sensor__Group__2__Impl rule__Sensor__Group__3
             {
-            pushFollow(FOLLOW_rule__Sensor__Group__2__Impl_in_rule__Sensor__Group__22525);
+            pushFollow(FOLLOW_rule__Sensor__Group__2__Impl_in_rule__Sensor__Group__21474);
             rule__Sensor__Group__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Sensor__Group__3_in_rule__Sensor__Group__22528);
+            pushFollow(FOLLOW_rule__Sensor__Group__3_in_rule__Sensor__Group__21477);
             rule__Sensor__Group__3();
 
             state._fsp--;
@@ -3489,20 +2078,20 @@ public class InternalRaspduinoDSLParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Sensor__Group__2__Impl"
-    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1236:1: rule__Sensor__Group__2__Impl : ( 'pin' ) ;
+    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:745:1: rule__Sensor__Group__2__Impl : ( 'pin' ) ;
     public final void rule__Sensor__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1240:1: ( ( 'pin' ) )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1241:1: ( 'pin' )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:749:1: ( ( 'pin' ) )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:750:1: ( 'pin' )
             {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1241:1: ( 'pin' )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1242:1: 'pin'
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:750:1: ( 'pin' )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:751:1: 'pin'
             {
              before(grammarAccess.getSensorAccess().getPinKeyword_2()); 
-            match(input,38,FOLLOW_38_in_rule__Sensor__Group__2__Impl2556); 
+            match(input,21,FOLLOW_21_in_rule__Sensor__Group__2__Impl1505); 
              after(grammarAccess.getSensorAccess().getPinKeyword_2()); 
 
             }
@@ -3526,16 +2115,16 @@ public class InternalRaspduinoDSLParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Sensor__Group__3"
-    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1255:1: rule__Sensor__Group__3 : rule__Sensor__Group__3__Impl ;
+    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:764:1: rule__Sensor__Group__3 : rule__Sensor__Group__3__Impl ;
     public final void rule__Sensor__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1259:1: ( rule__Sensor__Group__3__Impl )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1260:2: rule__Sensor__Group__3__Impl
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:768:1: ( rule__Sensor__Group__3__Impl )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:769:2: rule__Sensor__Group__3__Impl
             {
-            pushFollow(FOLLOW_rule__Sensor__Group__3__Impl_in_rule__Sensor__Group__32587);
+            pushFollow(FOLLOW_rule__Sensor__Group__3__Impl_in_rule__Sensor__Group__31536);
             rule__Sensor__Group__3__Impl();
 
             state._fsp--;
@@ -3559,23 +2148,23 @@ public class InternalRaspduinoDSLParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Sensor__Group__3__Impl"
-    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1266:1: rule__Sensor__Group__3__Impl : ( ( rule__Sensor__PinAssignment_3 ) ) ;
+    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:775:1: rule__Sensor__Group__3__Impl : ( ( rule__Sensor__PinAssignment_3 ) ) ;
     public final void rule__Sensor__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1270:1: ( ( ( rule__Sensor__PinAssignment_3 ) ) )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1271:1: ( ( rule__Sensor__PinAssignment_3 ) )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:779:1: ( ( ( rule__Sensor__PinAssignment_3 ) ) )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:780:1: ( ( rule__Sensor__PinAssignment_3 ) )
             {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1271:1: ( ( rule__Sensor__PinAssignment_3 ) )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1272:1: ( rule__Sensor__PinAssignment_3 )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:780:1: ( ( rule__Sensor__PinAssignment_3 ) )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:781:1: ( rule__Sensor__PinAssignment_3 )
             {
              before(grammarAccess.getSensorAccess().getPinAssignment_3()); 
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1273:1: ( rule__Sensor__PinAssignment_3 )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1273:2: rule__Sensor__PinAssignment_3
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:782:1: ( rule__Sensor__PinAssignment_3 )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:782:2: rule__Sensor__PinAssignment_3
             {
-            pushFollow(FOLLOW_rule__Sensor__PinAssignment_3_in_rule__Sensor__Group__3__Impl2614);
+            pushFollow(FOLLOW_rule__Sensor__PinAssignment_3_in_rule__Sensor__Group__3__Impl1563);
             rule__Sensor__PinAssignment_3();
 
             state._fsp--;
@@ -3606,21 +2195,21 @@ public class InternalRaspduinoDSLParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Actuator__Group__0"
-    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1291:1: rule__Actuator__Group__0 : rule__Actuator__Group__0__Impl rule__Actuator__Group__1 ;
+    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:800:1: rule__Actuator__Group__0 : rule__Actuator__Group__0__Impl rule__Actuator__Group__1 ;
     public final void rule__Actuator__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1295:1: ( rule__Actuator__Group__0__Impl rule__Actuator__Group__1 )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1296:2: rule__Actuator__Group__0__Impl rule__Actuator__Group__1
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:804:1: ( rule__Actuator__Group__0__Impl rule__Actuator__Group__1 )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:805:2: rule__Actuator__Group__0__Impl rule__Actuator__Group__1
             {
-            pushFollow(FOLLOW_rule__Actuator__Group__0__Impl_in_rule__Actuator__Group__02652);
+            pushFollow(FOLLOW_rule__Actuator__Group__0__Impl_in_rule__Actuator__Group__01601);
             rule__Actuator__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Actuator__Group__1_in_rule__Actuator__Group__02655);
+            pushFollow(FOLLOW_rule__Actuator__Group__1_in_rule__Actuator__Group__01604);
             rule__Actuator__Group__1();
 
             state._fsp--;
@@ -3644,20 +2233,20 @@ public class InternalRaspduinoDSLParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Actuator__Group__0__Impl"
-    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1303:1: rule__Actuator__Group__0__Impl : ( 'Actuator' ) ;
+    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:812:1: rule__Actuator__Group__0__Impl : ( 'Actuator' ) ;
     public final void rule__Actuator__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1307:1: ( ( 'Actuator' ) )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1308:1: ( 'Actuator' )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:816:1: ( ( 'Actuator' ) )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:817:1: ( 'Actuator' )
             {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1308:1: ( 'Actuator' )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1309:1: 'Actuator'
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:817:1: ( 'Actuator' )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:818:1: 'Actuator'
             {
              before(grammarAccess.getActuatorAccess().getActuatorKeyword_0()); 
-            match(input,39,FOLLOW_39_in_rule__Actuator__Group__0__Impl2683); 
+            match(input,22,FOLLOW_22_in_rule__Actuator__Group__0__Impl1632); 
              after(grammarAccess.getActuatorAccess().getActuatorKeyword_0()); 
 
             }
@@ -3681,21 +2270,21 @@ public class InternalRaspduinoDSLParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Actuator__Group__1"
-    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1322:1: rule__Actuator__Group__1 : rule__Actuator__Group__1__Impl rule__Actuator__Group__2 ;
+    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:831:1: rule__Actuator__Group__1 : rule__Actuator__Group__1__Impl rule__Actuator__Group__2 ;
     public final void rule__Actuator__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1326:1: ( rule__Actuator__Group__1__Impl rule__Actuator__Group__2 )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1327:2: rule__Actuator__Group__1__Impl rule__Actuator__Group__2
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:835:1: ( rule__Actuator__Group__1__Impl rule__Actuator__Group__2 )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:836:2: rule__Actuator__Group__1__Impl rule__Actuator__Group__2
             {
-            pushFollow(FOLLOW_rule__Actuator__Group__1__Impl_in_rule__Actuator__Group__12714);
+            pushFollow(FOLLOW_rule__Actuator__Group__1__Impl_in_rule__Actuator__Group__11663);
             rule__Actuator__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Actuator__Group__2_in_rule__Actuator__Group__12717);
+            pushFollow(FOLLOW_rule__Actuator__Group__2_in_rule__Actuator__Group__11666);
             rule__Actuator__Group__2();
 
             state._fsp--;
@@ -3719,23 +2308,23 @@ public class InternalRaspduinoDSLParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Actuator__Group__1__Impl"
-    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1334:1: rule__Actuator__Group__1__Impl : ( ( rule__Actuator__NameAssignment_1 ) ) ;
+    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:843:1: rule__Actuator__Group__1__Impl : ( ( rule__Actuator__NameAssignment_1 ) ) ;
     public final void rule__Actuator__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1338:1: ( ( ( rule__Actuator__NameAssignment_1 ) ) )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1339:1: ( ( rule__Actuator__NameAssignment_1 ) )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:847:1: ( ( ( rule__Actuator__NameAssignment_1 ) ) )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:848:1: ( ( rule__Actuator__NameAssignment_1 ) )
             {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1339:1: ( ( rule__Actuator__NameAssignment_1 ) )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1340:1: ( rule__Actuator__NameAssignment_1 )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:848:1: ( ( rule__Actuator__NameAssignment_1 ) )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:849:1: ( rule__Actuator__NameAssignment_1 )
             {
              before(grammarAccess.getActuatorAccess().getNameAssignment_1()); 
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1341:1: ( rule__Actuator__NameAssignment_1 )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1341:2: rule__Actuator__NameAssignment_1
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:850:1: ( rule__Actuator__NameAssignment_1 )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:850:2: rule__Actuator__NameAssignment_1
             {
-            pushFollow(FOLLOW_rule__Actuator__NameAssignment_1_in_rule__Actuator__Group__1__Impl2744);
+            pushFollow(FOLLOW_rule__Actuator__NameAssignment_1_in_rule__Actuator__Group__1__Impl1693);
             rule__Actuator__NameAssignment_1();
 
             state._fsp--;
@@ -3766,21 +2355,21 @@ public class InternalRaspduinoDSLParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Actuator__Group__2"
-    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1351:1: rule__Actuator__Group__2 : rule__Actuator__Group__2__Impl rule__Actuator__Group__3 ;
+    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:860:1: rule__Actuator__Group__2 : rule__Actuator__Group__2__Impl rule__Actuator__Group__3 ;
     public final void rule__Actuator__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1355:1: ( rule__Actuator__Group__2__Impl rule__Actuator__Group__3 )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1356:2: rule__Actuator__Group__2__Impl rule__Actuator__Group__3
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:864:1: ( rule__Actuator__Group__2__Impl rule__Actuator__Group__3 )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:865:2: rule__Actuator__Group__2__Impl rule__Actuator__Group__3
             {
-            pushFollow(FOLLOW_rule__Actuator__Group__2__Impl_in_rule__Actuator__Group__22774);
+            pushFollow(FOLLOW_rule__Actuator__Group__2__Impl_in_rule__Actuator__Group__21723);
             rule__Actuator__Group__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Actuator__Group__3_in_rule__Actuator__Group__22777);
+            pushFollow(FOLLOW_rule__Actuator__Group__3_in_rule__Actuator__Group__21726);
             rule__Actuator__Group__3();
 
             state._fsp--;
@@ -3804,20 +2393,20 @@ public class InternalRaspduinoDSLParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Actuator__Group__2__Impl"
-    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1363:1: rule__Actuator__Group__2__Impl : ( 'pin' ) ;
+    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:872:1: rule__Actuator__Group__2__Impl : ( 'pin' ) ;
     public final void rule__Actuator__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1367:1: ( ( 'pin' ) )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1368:1: ( 'pin' )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:876:1: ( ( 'pin' ) )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:877:1: ( 'pin' )
             {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1368:1: ( 'pin' )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1369:1: 'pin'
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:877:1: ( 'pin' )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:878:1: 'pin'
             {
              before(grammarAccess.getActuatorAccess().getPinKeyword_2()); 
-            match(input,38,FOLLOW_38_in_rule__Actuator__Group__2__Impl2805); 
+            match(input,21,FOLLOW_21_in_rule__Actuator__Group__2__Impl1754); 
              after(grammarAccess.getActuatorAccess().getPinKeyword_2()); 
 
             }
@@ -3841,16 +2430,16 @@ public class InternalRaspduinoDSLParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Actuator__Group__3"
-    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1382:1: rule__Actuator__Group__3 : rule__Actuator__Group__3__Impl ;
+    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:891:1: rule__Actuator__Group__3 : rule__Actuator__Group__3__Impl ;
     public final void rule__Actuator__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1386:1: ( rule__Actuator__Group__3__Impl )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1387:2: rule__Actuator__Group__3__Impl
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:895:1: ( rule__Actuator__Group__3__Impl )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:896:2: rule__Actuator__Group__3__Impl
             {
-            pushFollow(FOLLOW_rule__Actuator__Group__3__Impl_in_rule__Actuator__Group__32836);
+            pushFollow(FOLLOW_rule__Actuator__Group__3__Impl_in_rule__Actuator__Group__31785);
             rule__Actuator__Group__3__Impl();
 
             state._fsp--;
@@ -3874,23 +2463,23 @@ public class InternalRaspduinoDSLParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Actuator__Group__3__Impl"
-    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1393:1: rule__Actuator__Group__3__Impl : ( ( rule__Actuator__PinAssignment_3 ) ) ;
+    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:902:1: rule__Actuator__Group__3__Impl : ( ( rule__Actuator__PinAssignment_3 ) ) ;
     public final void rule__Actuator__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1397:1: ( ( ( rule__Actuator__PinAssignment_3 ) ) )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1398:1: ( ( rule__Actuator__PinAssignment_3 ) )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:906:1: ( ( ( rule__Actuator__PinAssignment_3 ) ) )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:907:1: ( ( rule__Actuator__PinAssignment_3 ) )
             {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1398:1: ( ( rule__Actuator__PinAssignment_3 ) )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1399:1: ( rule__Actuator__PinAssignment_3 )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:907:1: ( ( rule__Actuator__PinAssignment_3 ) )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:908:1: ( rule__Actuator__PinAssignment_3 )
             {
              before(grammarAccess.getActuatorAccess().getPinAssignment_3()); 
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1400:1: ( rule__Actuator__PinAssignment_3 )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1400:2: rule__Actuator__PinAssignment_3
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:909:1: ( rule__Actuator__PinAssignment_3 )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:909:2: rule__Actuator__PinAssignment_3
             {
-            pushFollow(FOLLOW_rule__Actuator__PinAssignment_3_in_rule__Actuator__Group__3__Impl2863);
+            pushFollow(FOLLOW_rule__Actuator__PinAssignment_3_in_rule__Actuator__Group__3__Impl1812);
             rule__Actuator__PinAssignment_3();
 
             state._fsp--;
@@ -3921,21 +2510,21 @@ public class InternalRaspduinoDSLParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__EventHandler__Group__0"
-    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1418:1: rule__EventHandler__Group__0 : rule__EventHandler__Group__0__Impl rule__EventHandler__Group__1 ;
+    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:927:1: rule__EventHandler__Group__0 : rule__EventHandler__Group__0__Impl rule__EventHandler__Group__1 ;
     public final void rule__EventHandler__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1422:1: ( rule__EventHandler__Group__0__Impl rule__EventHandler__Group__1 )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1423:2: rule__EventHandler__Group__0__Impl rule__EventHandler__Group__1
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:931:1: ( rule__EventHandler__Group__0__Impl rule__EventHandler__Group__1 )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:932:2: rule__EventHandler__Group__0__Impl rule__EventHandler__Group__1
             {
-            pushFollow(FOLLOW_rule__EventHandler__Group__0__Impl_in_rule__EventHandler__Group__02901);
+            pushFollow(FOLLOW_rule__EventHandler__Group__0__Impl_in_rule__EventHandler__Group__01850);
             rule__EventHandler__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__EventHandler__Group__1_in_rule__EventHandler__Group__02904);
+            pushFollow(FOLLOW_rule__EventHandler__Group__1_in_rule__EventHandler__Group__01853);
             rule__EventHandler__Group__1();
 
             state._fsp--;
@@ -3959,20 +2548,20 @@ public class InternalRaspduinoDSLParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__EventHandler__Group__0__Impl"
-    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1430:1: rule__EventHandler__Group__0__Impl : ( 'EventHandler' ) ;
+    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:939:1: rule__EventHandler__Group__0__Impl : ( 'EventHandler' ) ;
     public final void rule__EventHandler__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1434:1: ( ( 'EventHandler' ) )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1435:1: ( 'EventHandler' )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:943:1: ( ( 'EventHandler' ) )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:944:1: ( 'EventHandler' )
             {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1435:1: ( 'EventHandler' )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1436:1: 'EventHandler'
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:944:1: ( 'EventHandler' )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:945:1: 'EventHandler'
             {
              before(grammarAccess.getEventHandlerAccess().getEventHandlerKeyword_0()); 
-            match(input,40,FOLLOW_40_in_rule__EventHandler__Group__0__Impl2932); 
+            match(input,23,FOLLOW_23_in_rule__EventHandler__Group__0__Impl1881); 
              after(grammarAccess.getEventHandlerAccess().getEventHandlerKeyword_0()); 
 
             }
@@ -3996,21 +2585,21 @@ public class InternalRaspduinoDSLParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__EventHandler__Group__1"
-    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1449:1: rule__EventHandler__Group__1 : rule__EventHandler__Group__1__Impl rule__EventHandler__Group__2 ;
+    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:958:1: rule__EventHandler__Group__1 : rule__EventHandler__Group__1__Impl rule__EventHandler__Group__2 ;
     public final void rule__EventHandler__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1453:1: ( rule__EventHandler__Group__1__Impl rule__EventHandler__Group__2 )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1454:2: rule__EventHandler__Group__1__Impl rule__EventHandler__Group__2
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:962:1: ( rule__EventHandler__Group__1__Impl rule__EventHandler__Group__2 )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:963:2: rule__EventHandler__Group__1__Impl rule__EventHandler__Group__2
             {
-            pushFollow(FOLLOW_rule__EventHandler__Group__1__Impl_in_rule__EventHandler__Group__12963);
+            pushFollow(FOLLOW_rule__EventHandler__Group__1__Impl_in_rule__EventHandler__Group__11912);
             rule__EventHandler__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__EventHandler__Group__2_in_rule__EventHandler__Group__12966);
+            pushFollow(FOLLOW_rule__EventHandler__Group__2_in_rule__EventHandler__Group__11915);
             rule__EventHandler__Group__2();
 
             state._fsp--;
@@ -4034,23 +2623,23 @@ public class InternalRaspduinoDSLParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__EventHandler__Group__1__Impl"
-    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1461:1: rule__EventHandler__Group__1__Impl : ( ( rule__EventHandler__NameAssignment_1 ) ) ;
+    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:970:1: rule__EventHandler__Group__1__Impl : ( ( rule__EventHandler__NameAssignment_1 ) ) ;
     public final void rule__EventHandler__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1465:1: ( ( ( rule__EventHandler__NameAssignment_1 ) ) )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1466:1: ( ( rule__EventHandler__NameAssignment_1 ) )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:974:1: ( ( ( rule__EventHandler__NameAssignment_1 ) ) )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:975:1: ( ( rule__EventHandler__NameAssignment_1 ) )
             {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1466:1: ( ( rule__EventHandler__NameAssignment_1 ) )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1467:1: ( rule__EventHandler__NameAssignment_1 )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:975:1: ( ( rule__EventHandler__NameAssignment_1 ) )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:976:1: ( rule__EventHandler__NameAssignment_1 )
             {
              before(grammarAccess.getEventHandlerAccess().getNameAssignment_1()); 
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1468:1: ( rule__EventHandler__NameAssignment_1 )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1468:2: rule__EventHandler__NameAssignment_1
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:977:1: ( rule__EventHandler__NameAssignment_1 )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:977:2: rule__EventHandler__NameAssignment_1
             {
-            pushFollow(FOLLOW_rule__EventHandler__NameAssignment_1_in_rule__EventHandler__Group__1__Impl2993);
+            pushFollow(FOLLOW_rule__EventHandler__NameAssignment_1_in_rule__EventHandler__Group__1__Impl1942);
             rule__EventHandler__NameAssignment_1();
 
             state._fsp--;
@@ -4081,21 +2670,21 @@ public class InternalRaspduinoDSLParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__EventHandler__Group__2"
-    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1478:1: rule__EventHandler__Group__2 : rule__EventHandler__Group__2__Impl rule__EventHandler__Group__3 ;
+    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:987:1: rule__EventHandler__Group__2 : rule__EventHandler__Group__2__Impl rule__EventHandler__Group__3 ;
     public final void rule__EventHandler__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1482:1: ( rule__EventHandler__Group__2__Impl rule__EventHandler__Group__3 )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1483:2: rule__EventHandler__Group__2__Impl rule__EventHandler__Group__3
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:991:1: ( rule__EventHandler__Group__2__Impl rule__EventHandler__Group__3 )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:992:2: rule__EventHandler__Group__2__Impl rule__EventHandler__Group__3
             {
-            pushFollow(FOLLOW_rule__EventHandler__Group__2__Impl_in_rule__EventHandler__Group__23023);
+            pushFollow(FOLLOW_rule__EventHandler__Group__2__Impl_in_rule__EventHandler__Group__21972);
             rule__EventHandler__Group__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__EventHandler__Group__3_in_rule__EventHandler__Group__23026);
+            pushFollow(FOLLOW_rule__EventHandler__Group__3_in_rule__EventHandler__Group__21975);
             rule__EventHandler__Group__3();
 
             state._fsp--;
@@ -4119,35 +2708,35 @@ public class InternalRaspduinoDSLParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__EventHandler__Group__2__Impl"
-    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1490:1: rule__EventHandler__Group__2__Impl : ( ( rule__EventHandler__ChangeActuatorsAssignment_2 )* ) ;
+    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:999:1: rule__EventHandler__Group__2__Impl : ( ( rule__EventHandler__ChangeActuatorsAssignment_2 )* ) ;
     public final void rule__EventHandler__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1494:1: ( ( ( rule__EventHandler__ChangeActuatorsAssignment_2 )* ) )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1495:1: ( ( rule__EventHandler__ChangeActuatorsAssignment_2 )* )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1003:1: ( ( ( rule__EventHandler__ChangeActuatorsAssignment_2 )* ) )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1004:1: ( ( rule__EventHandler__ChangeActuatorsAssignment_2 )* )
             {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1495:1: ( ( rule__EventHandler__ChangeActuatorsAssignment_2 )* )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1496:1: ( rule__EventHandler__ChangeActuatorsAssignment_2 )*
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1004:1: ( ( rule__EventHandler__ChangeActuatorsAssignment_2 )* )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1005:1: ( rule__EventHandler__ChangeActuatorsAssignment_2 )*
             {
              before(grammarAccess.getEventHandlerAccess().getChangeActuatorsAssignment_2()); 
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1497:1: ( rule__EventHandler__ChangeActuatorsAssignment_2 )*
-            loop18:
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1006:1: ( rule__EventHandler__ChangeActuatorsAssignment_2 )*
+            loop10:
             do {
-                int alt18=2;
-                int LA18_0 = input.LA(1);
+                int alt10=2;
+                int LA10_0 = input.LA(1);
 
-                if ( (LA18_0==RULE_ID) ) {
-                    alt18=1;
+                if ( (LA10_0==RULE_ID) ) {
+                    alt10=1;
                 }
 
 
-                switch (alt18) {
+                switch (alt10) {
             	case 1 :
-            	    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1497:2: rule__EventHandler__ChangeActuatorsAssignment_2
+            	    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1006:2: rule__EventHandler__ChangeActuatorsAssignment_2
             	    {
-            	    pushFollow(FOLLOW_rule__EventHandler__ChangeActuatorsAssignment_2_in_rule__EventHandler__Group__2__Impl3053);
+            	    pushFollow(FOLLOW_rule__EventHandler__ChangeActuatorsAssignment_2_in_rule__EventHandler__Group__2__Impl2002);
             	    rule__EventHandler__ChangeActuatorsAssignment_2();
 
             	    state._fsp--;
@@ -4157,7 +2746,7 @@ public class InternalRaspduinoDSLParser extends AbstractInternalContentAssistPar
             	    break;
 
             	default :
-            	    break loop18;
+            	    break loop10;
                 }
             } while (true);
 
@@ -4184,16 +2773,16 @@ public class InternalRaspduinoDSLParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__EventHandler__Group__3"
-    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1507:1: rule__EventHandler__Group__3 : rule__EventHandler__Group__3__Impl ;
+    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1016:1: rule__EventHandler__Group__3 : rule__EventHandler__Group__3__Impl ;
     public final void rule__EventHandler__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1511:1: ( rule__EventHandler__Group__3__Impl )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1512:2: rule__EventHandler__Group__3__Impl
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1020:1: ( rule__EventHandler__Group__3__Impl )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1021:2: rule__EventHandler__Group__3__Impl
             {
-            pushFollow(FOLLOW_rule__EventHandler__Group__3__Impl_in_rule__EventHandler__Group__33084);
+            pushFollow(FOLLOW_rule__EventHandler__Group__3__Impl_in_rule__EventHandler__Group__32033);
             rule__EventHandler__Group__3__Impl();
 
             state._fsp--;
@@ -4217,20 +2806,20 @@ public class InternalRaspduinoDSLParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__EventHandler__Group__3__Impl"
-    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1518:1: rule__EventHandler__Group__3__Impl : ( ';' ) ;
+    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1027:1: rule__EventHandler__Group__3__Impl : ( ';' ) ;
     public final void rule__EventHandler__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1522:1: ( ( ';' ) )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1523:1: ( ';' )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1031:1: ( ( ';' ) )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1032:1: ( ';' )
             {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1523:1: ( ';' )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1524:1: ';'
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1032:1: ( ';' )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1033:1: ';'
             {
              before(grammarAccess.getEventHandlerAccess().getSemicolonKeyword_3()); 
-            match(input,41,FOLLOW_41_in_rule__EventHandler__Group__3__Impl3112); 
+            match(input,24,FOLLOW_24_in_rule__EventHandler__Group__3__Impl2061); 
              after(grammarAccess.getEventHandlerAccess().getSemicolonKeyword_3()); 
 
             }
@@ -4254,21 +2843,21 @@ public class InternalRaspduinoDSLParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__ChangeActuator__Group__0"
-    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1545:1: rule__ChangeActuator__Group__0 : rule__ChangeActuator__Group__0__Impl rule__ChangeActuator__Group__1 ;
+    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1054:1: rule__ChangeActuator__Group__0 : rule__ChangeActuator__Group__0__Impl rule__ChangeActuator__Group__1 ;
     public final void rule__ChangeActuator__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1549:1: ( rule__ChangeActuator__Group__0__Impl rule__ChangeActuator__Group__1 )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1550:2: rule__ChangeActuator__Group__0__Impl rule__ChangeActuator__Group__1
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1058:1: ( rule__ChangeActuator__Group__0__Impl rule__ChangeActuator__Group__1 )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1059:2: rule__ChangeActuator__Group__0__Impl rule__ChangeActuator__Group__1
             {
-            pushFollow(FOLLOW_rule__ChangeActuator__Group__0__Impl_in_rule__ChangeActuator__Group__03151);
+            pushFollow(FOLLOW_rule__ChangeActuator__Group__0__Impl_in_rule__ChangeActuator__Group__02100);
             rule__ChangeActuator__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__ChangeActuator__Group__1_in_rule__ChangeActuator__Group__03154);
+            pushFollow(FOLLOW_rule__ChangeActuator__Group__1_in_rule__ChangeActuator__Group__02103);
             rule__ChangeActuator__Group__1();
 
             state._fsp--;
@@ -4292,23 +2881,23 @@ public class InternalRaspduinoDSLParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__ChangeActuator__Group__0__Impl"
-    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1557:1: rule__ChangeActuator__Group__0__Impl : ( ( rule__ChangeActuator__ActuatorAssignment_0 ) ) ;
+    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1066:1: rule__ChangeActuator__Group__0__Impl : ( ( rule__ChangeActuator__ActuatorAssignment_0 ) ) ;
     public final void rule__ChangeActuator__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1561:1: ( ( ( rule__ChangeActuator__ActuatorAssignment_0 ) ) )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1562:1: ( ( rule__ChangeActuator__ActuatorAssignment_0 ) )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1070:1: ( ( ( rule__ChangeActuator__ActuatorAssignment_0 ) ) )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1071:1: ( ( rule__ChangeActuator__ActuatorAssignment_0 ) )
             {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1562:1: ( ( rule__ChangeActuator__ActuatorAssignment_0 ) )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1563:1: ( rule__ChangeActuator__ActuatorAssignment_0 )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1071:1: ( ( rule__ChangeActuator__ActuatorAssignment_0 ) )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1072:1: ( rule__ChangeActuator__ActuatorAssignment_0 )
             {
              before(grammarAccess.getChangeActuatorAccess().getActuatorAssignment_0()); 
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1564:1: ( rule__ChangeActuator__ActuatorAssignment_0 )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1564:2: rule__ChangeActuator__ActuatorAssignment_0
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1073:1: ( rule__ChangeActuator__ActuatorAssignment_0 )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1073:2: rule__ChangeActuator__ActuatorAssignment_0
             {
-            pushFollow(FOLLOW_rule__ChangeActuator__ActuatorAssignment_0_in_rule__ChangeActuator__Group__0__Impl3181);
+            pushFollow(FOLLOW_rule__ChangeActuator__ActuatorAssignment_0_in_rule__ChangeActuator__Group__0__Impl2130);
             rule__ChangeActuator__ActuatorAssignment_0();
 
             state._fsp--;
@@ -4339,21 +2928,21 @@ public class InternalRaspduinoDSLParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__ChangeActuator__Group__1"
-    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1574:1: rule__ChangeActuator__Group__1 : rule__ChangeActuator__Group__1__Impl rule__ChangeActuator__Group__2 ;
+    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1083:1: rule__ChangeActuator__Group__1 : rule__ChangeActuator__Group__1__Impl rule__ChangeActuator__Group__2 ;
     public final void rule__ChangeActuator__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1578:1: ( rule__ChangeActuator__Group__1__Impl rule__ChangeActuator__Group__2 )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1579:2: rule__ChangeActuator__Group__1__Impl rule__ChangeActuator__Group__2
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1087:1: ( rule__ChangeActuator__Group__1__Impl rule__ChangeActuator__Group__2 )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1088:2: rule__ChangeActuator__Group__1__Impl rule__ChangeActuator__Group__2
             {
-            pushFollow(FOLLOW_rule__ChangeActuator__Group__1__Impl_in_rule__ChangeActuator__Group__13211);
+            pushFollow(FOLLOW_rule__ChangeActuator__Group__1__Impl_in_rule__ChangeActuator__Group__12160);
             rule__ChangeActuator__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__ChangeActuator__Group__2_in_rule__ChangeActuator__Group__13214);
+            pushFollow(FOLLOW_rule__ChangeActuator__Group__2_in_rule__ChangeActuator__Group__12163);
             rule__ChangeActuator__Group__2();
 
             state._fsp--;
@@ -4377,20 +2966,20 @@ public class InternalRaspduinoDSLParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__ChangeActuator__Group__1__Impl"
-    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1586:1: rule__ChangeActuator__Group__1__Impl : ( ':' ) ;
+    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1095:1: rule__ChangeActuator__Group__1__Impl : ( ':' ) ;
     public final void rule__ChangeActuator__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1590:1: ( ( ':' ) )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1591:1: ( ':' )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1099:1: ( ( ':' ) )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1100:1: ( ':' )
             {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1591:1: ( ':' )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1592:1: ':'
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1100:1: ( ':' )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1101:1: ':'
             {
              before(grammarAccess.getChangeActuatorAccess().getColonKeyword_1()); 
-            match(input,42,FOLLOW_42_in_rule__ChangeActuator__Group__1__Impl3242); 
+            match(input,25,FOLLOW_25_in_rule__ChangeActuator__Group__1__Impl2191); 
              after(grammarAccess.getChangeActuatorAccess().getColonKeyword_1()); 
 
             }
@@ -4414,16 +3003,16 @@ public class InternalRaspduinoDSLParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__ChangeActuator__Group__2"
-    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1605:1: rule__ChangeActuator__Group__2 : rule__ChangeActuator__Group__2__Impl ;
+    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1114:1: rule__ChangeActuator__Group__2 : rule__ChangeActuator__Group__2__Impl ;
     public final void rule__ChangeActuator__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1609:1: ( rule__ChangeActuator__Group__2__Impl )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1610:2: rule__ChangeActuator__Group__2__Impl
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1118:1: ( rule__ChangeActuator__Group__2__Impl )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1119:2: rule__ChangeActuator__Group__2__Impl
             {
-            pushFollow(FOLLOW_rule__ChangeActuator__Group__2__Impl_in_rule__ChangeActuator__Group__23273);
+            pushFollow(FOLLOW_rule__ChangeActuator__Group__2__Impl_in_rule__ChangeActuator__Group__22222);
             rule__ChangeActuator__Group__2__Impl();
 
             state._fsp--;
@@ -4447,23 +3036,23 @@ public class InternalRaspduinoDSLParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__ChangeActuator__Group__2__Impl"
-    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1616:1: rule__ChangeActuator__Group__2__Impl : ( ( rule__ChangeActuator__ActuatorStateAssignment_2 ) ) ;
+    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1125:1: rule__ChangeActuator__Group__2__Impl : ( ( rule__ChangeActuator__ActuatorStateAssignment_2 ) ) ;
     public final void rule__ChangeActuator__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1620:1: ( ( ( rule__ChangeActuator__ActuatorStateAssignment_2 ) ) )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1621:1: ( ( rule__ChangeActuator__ActuatorStateAssignment_2 ) )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1129:1: ( ( ( rule__ChangeActuator__ActuatorStateAssignment_2 ) ) )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1130:1: ( ( rule__ChangeActuator__ActuatorStateAssignment_2 ) )
             {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1621:1: ( ( rule__ChangeActuator__ActuatorStateAssignment_2 ) )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1622:1: ( rule__ChangeActuator__ActuatorStateAssignment_2 )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1130:1: ( ( rule__ChangeActuator__ActuatorStateAssignment_2 ) )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1131:1: ( rule__ChangeActuator__ActuatorStateAssignment_2 )
             {
              before(grammarAccess.getChangeActuatorAccess().getActuatorStateAssignment_2()); 
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1623:1: ( rule__ChangeActuator__ActuatorStateAssignment_2 )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1623:2: rule__ChangeActuator__ActuatorStateAssignment_2
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1132:1: ( rule__ChangeActuator__ActuatorStateAssignment_2 )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1132:2: rule__ChangeActuator__ActuatorStateAssignment_2
             {
-            pushFollow(FOLLOW_rule__ChangeActuator__ActuatorStateAssignment_2_in_rule__ChangeActuator__Group__2__Impl3300);
+            pushFollow(FOLLOW_rule__ChangeActuator__ActuatorStateAssignment_2_in_rule__ChangeActuator__Group__2__Impl2249);
             rule__ChangeActuator__ActuatorStateAssignment_2();
 
             state._fsp--;
@@ -4494,21 +3083,21 @@ public class InternalRaspduinoDSLParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__SensorListener__Group__0"
-    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1639:1: rule__SensorListener__Group__0 : rule__SensorListener__Group__0__Impl rule__SensorListener__Group__1 ;
+    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1148:1: rule__SensorListener__Group__0 : rule__SensorListener__Group__0__Impl rule__SensorListener__Group__1 ;
     public final void rule__SensorListener__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1643:1: ( rule__SensorListener__Group__0__Impl rule__SensorListener__Group__1 )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1644:2: rule__SensorListener__Group__0__Impl rule__SensorListener__Group__1
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1152:1: ( rule__SensorListener__Group__0__Impl rule__SensorListener__Group__1 )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1153:2: rule__SensorListener__Group__0__Impl rule__SensorListener__Group__1
             {
-            pushFollow(FOLLOW_rule__SensorListener__Group__0__Impl_in_rule__SensorListener__Group__03336);
+            pushFollow(FOLLOW_rule__SensorListener__Group__0__Impl_in_rule__SensorListener__Group__02285);
             rule__SensorListener__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__SensorListener__Group__1_in_rule__SensorListener__Group__03339);
+            pushFollow(FOLLOW_rule__SensorListener__Group__1_in_rule__SensorListener__Group__02288);
             rule__SensorListener__Group__1();
 
             state._fsp--;
@@ -4532,20 +3121,20 @@ public class InternalRaspduinoDSLParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__SensorListener__Group__0__Impl"
-    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1651:1: rule__SensorListener__Group__0__Impl : ( 'SensorListener' ) ;
+    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1160:1: rule__SensorListener__Group__0__Impl : ( 'SensorListener' ) ;
     public final void rule__SensorListener__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1655:1: ( ( 'SensorListener' ) )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1656:1: ( 'SensorListener' )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1164:1: ( ( 'SensorListener' ) )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1165:1: ( 'SensorListener' )
             {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1656:1: ( 'SensorListener' )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1657:1: 'SensorListener'
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1165:1: ( 'SensorListener' )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1166:1: 'SensorListener'
             {
              before(grammarAccess.getSensorListenerAccess().getSensorListenerKeyword_0()); 
-            match(input,43,FOLLOW_43_in_rule__SensorListener__Group__0__Impl3367); 
+            match(input,26,FOLLOW_26_in_rule__SensorListener__Group__0__Impl2316); 
              after(grammarAccess.getSensorListenerAccess().getSensorListenerKeyword_0()); 
 
             }
@@ -4569,21 +3158,21 @@ public class InternalRaspduinoDSLParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__SensorListener__Group__1"
-    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1670:1: rule__SensorListener__Group__1 : rule__SensorListener__Group__1__Impl rule__SensorListener__Group__2 ;
+    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1179:1: rule__SensorListener__Group__1 : rule__SensorListener__Group__1__Impl rule__SensorListener__Group__2 ;
     public final void rule__SensorListener__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1674:1: ( rule__SensorListener__Group__1__Impl rule__SensorListener__Group__2 )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1675:2: rule__SensorListener__Group__1__Impl rule__SensorListener__Group__2
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1183:1: ( rule__SensorListener__Group__1__Impl rule__SensorListener__Group__2 )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1184:2: rule__SensorListener__Group__1__Impl rule__SensorListener__Group__2
             {
-            pushFollow(FOLLOW_rule__SensorListener__Group__1__Impl_in_rule__SensorListener__Group__13398);
+            pushFollow(FOLLOW_rule__SensorListener__Group__1__Impl_in_rule__SensorListener__Group__12347);
             rule__SensorListener__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__SensorListener__Group__2_in_rule__SensorListener__Group__13401);
+            pushFollow(FOLLOW_rule__SensorListener__Group__2_in_rule__SensorListener__Group__12350);
             rule__SensorListener__Group__2();
 
             state._fsp--;
@@ -4607,23 +3196,23 @@ public class InternalRaspduinoDSLParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__SensorListener__Group__1__Impl"
-    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1682:1: rule__SensorListener__Group__1__Impl : ( ( rule__SensorListener__SensorAssignment_1 ) ) ;
+    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1191:1: rule__SensorListener__Group__1__Impl : ( ( rule__SensorListener__SensorAssignment_1 ) ) ;
     public final void rule__SensorListener__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1686:1: ( ( ( rule__SensorListener__SensorAssignment_1 ) ) )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1687:1: ( ( rule__SensorListener__SensorAssignment_1 ) )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1195:1: ( ( ( rule__SensorListener__SensorAssignment_1 ) ) )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1196:1: ( ( rule__SensorListener__SensorAssignment_1 ) )
             {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1687:1: ( ( rule__SensorListener__SensorAssignment_1 ) )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1688:1: ( rule__SensorListener__SensorAssignment_1 )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1196:1: ( ( rule__SensorListener__SensorAssignment_1 ) )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1197:1: ( rule__SensorListener__SensorAssignment_1 )
             {
              before(grammarAccess.getSensorListenerAccess().getSensorAssignment_1()); 
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1689:1: ( rule__SensorListener__SensorAssignment_1 )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1689:2: rule__SensorListener__SensorAssignment_1
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1198:1: ( rule__SensorListener__SensorAssignment_1 )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1198:2: rule__SensorListener__SensorAssignment_1
             {
-            pushFollow(FOLLOW_rule__SensorListener__SensorAssignment_1_in_rule__SensorListener__Group__1__Impl3428);
+            pushFollow(FOLLOW_rule__SensorListener__SensorAssignment_1_in_rule__SensorListener__Group__1__Impl2377);
             rule__SensorListener__SensorAssignment_1();
 
             state._fsp--;
@@ -4654,21 +3243,21 @@ public class InternalRaspduinoDSLParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__SensorListener__Group__2"
-    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1699:1: rule__SensorListener__Group__2 : rule__SensorListener__Group__2__Impl rule__SensorListener__Group__3 ;
+    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1208:1: rule__SensorListener__Group__2 : rule__SensorListener__Group__2__Impl rule__SensorListener__Group__3 ;
     public final void rule__SensorListener__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1703:1: ( rule__SensorListener__Group__2__Impl rule__SensorListener__Group__3 )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1704:2: rule__SensorListener__Group__2__Impl rule__SensorListener__Group__3
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1212:1: ( rule__SensorListener__Group__2__Impl rule__SensorListener__Group__3 )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1213:2: rule__SensorListener__Group__2__Impl rule__SensorListener__Group__3
             {
-            pushFollow(FOLLOW_rule__SensorListener__Group__2__Impl_in_rule__SensorListener__Group__23458);
+            pushFollow(FOLLOW_rule__SensorListener__Group__2__Impl_in_rule__SensorListener__Group__22407);
             rule__SensorListener__Group__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__SensorListener__Group__3_in_rule__SensorListener__Group__23461);
+            pushFollow(FOLLOW_rule__SensorListener__Group__3_in_rule__SensorListener__Group__22410);
             rule__SensorListener__Group__3();
 
             state._fsp--;
@@ -4692,20 +3281,20 @@ public class InternalRaspduinoDSLParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__SensorListener__Group__2__Impl"
-    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1711:1: rule__SensorListener__Group__2__Impl : ( 'if' ) ;
+    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1220:1: rule__SensorListener__Group__2__Impl : ( 'if' ) ;
     public final void rule__SensorListener__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1715:1: ( ( 'if' ) )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1716:1: ( 'if' )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1224:1: ( ( 'if' ) )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1225:1: ( 'if' )
             {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1716:1: ( 'if' )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1717:1: 'if'
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1225:1: ( 'if' )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1226:1: 'if'
             {
              before(grammarAccess.getSensorListenerAccess().getIfKeyword_2()); 
-            match(input,44,FOLLOW_44_in_rule__SensorListener__Group__2__Impl3489); 
+            match(input,27,FOLLOW_27_in_rule__SensorListener__Group__2__Impl2438); 
              after(grammarAccess.getSensorListenerAccess().getIfKeyword_2()); 
 
             }
@@ -4729,21 +3318,21 @@ public class InternalRaspduinoDSLParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__SensorListener__Group__3"
-    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1730:1: rule__SensorListener__Group__3 : rule__SensorListener__Group__3__Impl rule__SensorListener__Group__4 ;
+    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1239:1: rule__SensorListener__Group__3 : rule__SensorListener__Group__3__Impl rule__SensorListener__Group__4 ;
     public final void rule__SensorListener__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1734:1: ( rule__SensorListener__Group__3__Impl rule__SensorListener__Group__4 )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1735:2: rule__SensorListener__Group__3__Impl rule__SensorListener__Group__4
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1243:1: ( rule__SensorListener__Group__3__Impl rule__SensorListener__Group__4 )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1244:2: rule__SensorListener__Group__3__Impl rule__SensorListener__Group__4
             {
-            pushFollow(FOLLOW_rule__SensorListener__Group__3__Impl_in_rule__SensorListener__Group__33520);
+            pushFollow(FOLLOW_rule__SensorListener__Group__3__Impl_in_rule__SensorListener__Group__32469);
             rule__SensorListener__Group__3__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__SensorListener__Group__4_in_rule__SensorListener__Group__33523);
+            pushFollow(FOLLOW_rule__SensorListener__Group__4_in_rule__SensorListener__Group__32472);
             rule__SensorListener__Group__4();
 
             state._fsp--;
@@ -4767,31 +3356,31 @@ public class InternalRaspduinoDSLParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__SensorListener__Group__3__Impl"
-    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1742:1: rule__SensorListener__Group__3__Impl : ( ( rule__SensorListener__Group_3__0 ) ) ;
+    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1251:1: rule__SensorListener__Group__3__Impl : ( ( rule__SensorListener__Alternatives_3 ) ) ;
     public final void rule__SensorListener__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1746:1: ( ( ( rule__SensorListener__Group_3__0 ) ) )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1747:1: ( ( rule__SensorListener__Group_3__0 ) )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1255:1: ( ( ( rule__SensorListener__Alternatives_3 ) ) )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1256:1: ( ( rule__SensorListener__Alternatives_3 ) )
             {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1747:1: ( ( rule__SensorListener__Group_3__0 ) )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1748:1: ( rule__SensorListener__Group_3__0 )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1256:1: ( ( rule__SensorListener__Alternatives_3 ) )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1257:1: ( rule__SensorListener__Alternatives_3 )
             {
-             before(grammarAccess.getSensorListenerAccess().getGroup_3()); 
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1749:1: ( rule__SensorListener__Group_3__0 )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1749:2: rule__SensorListener__Group_3__0
+             before(grammarAccess.getSensorListenerAccess().getAlternatives_3()); 
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1258:1: ( rule__SensorListener__Alternatives_3 )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1258:2: rule__SensorListener__Alternatives_3
             {
-            pushFollow(FOLLOW_rule__SensorListener__Group_3__0_in_rule__SensorListener__Group__3__Impl3550);
-            rule__SensorListener__Group_3__0();
+            pushFollow(FOLLOW_rule__SensorListener__Alternatives_3_in_rule__SensorListener__Group__3__Impl2499);
+            rule__SensorListener__Alternatives_3();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getSensorListenerAccess().getGroup_3()); 
+             after(grammarAccess.getSensorListenerAccess().getAlternatives_3()); 
 
             }
 
@@ -4814,21 +3403,21 @@ public class InternalRaspduinoDSLParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__SensorListener__Group__4"
-    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1759:1: rule__SensorListener__Group__4 : rule__SensorListener__Group__4__Impl rule__SensorListener__Group__5 ;
+    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1268:1: rule__SensorListener__Group__4 : rule__SensorListener__Group__4__Impl rule__SensorListener__Group__5 ;
     public final void rule__SensorListener__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1763:1: ( rule__SensorListener__Group__4__Impl rule__SensorListener__Group__5 )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1764:2: rule__SensorListener__Group__4__Impl rule__SensorListener__Group__5
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1272:1: ( rule__SensorListener__Group__4__Impl rule__SensorListener__Group__5 )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1273:2: rule__SensorListener__Group__4__Impl rule__SensorListener__Group__5
             {
-            pushFollow(FOLLOW_rule__SensorListener__Group__4__Impl_in_rule__SensorListener__Group__43580);
+            pushFollow(FOLLOW_rule__SensorListener__Group__4__Impl_in_rule__SensorListener__Group__42529);
             rule__SensorListener__Group__4__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__SensorListener__Group__5_in_rule__SensorListener__Group__43583);
+            pushFollow(FOLLOW_rule__SensorListener__Group__5_in_rule__SensorListener__Group__42532);
             rule__SensorListener__Group__5();
 
             state._fsp--;
@@ -4852,20 +3441,20 @@ public class InternalRaspduinoDSLParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__SensorListener__Group__4__Impl"
-    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1771:1: rule__SensorListener__Group__4__Impl : ( 'call' ) ;
+    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1280:1: rule__SensorListener__Group__4__Impl : ( 'call' ) ;
     public final void rule__SensorListener__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1775:1: ( ( 'call' ) )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1776:1: ( 'call' )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1284:1: ( ( 'call' ) )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1285:1: ( 'call' )
             {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1776:1: ( 'call' )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1777:1: 'call'
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1285:1: ( 'call' )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1286:1: 'call'
             {
              before(grammarAccess.getSensorListenerAccess().getCallKeyword_4()); 
-            match(input,45,FOLLOW_45_in_rule__SensorListener__Group__4__Impl3611); 
+            match(input,28,FOLLOW_28_in_rule__SensorListener__Group__4__Impl2560); 
              after(grammarAccess.getSensorListenerAccess().getCallKeyword_4()); 
 
             }
@@ -4889,16 +3478,16 @@ public class InternalRaspduinoDSLParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__SensorListener__Group__5"
-    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1790:1: rule__SensorListener__Group__5 : rule__SensorListener__Group__5__Impl ;
+    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1299:1: rule__SensorListener__Group__5 : rule__SensorListener__Group__5__Impl ;
     public final void rule__SensorListener__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1794:1: ( rule__SensorListener__Group__5__Impl )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1795:2: rule__SensorListener__Group__5__Impl
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1303:1: ( rule__SensorListener__Group__5__Impl )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1304:2: rule__SensorListener__Group__5__Impl
             {
-            pushFollow(FOLLOW_rule__SensorListener__Group__5__Impl_in_rule__SensorListener__Group__53642);
+            pushFollow(FOLLOW_rule__SensorListener__Group__5__Impl_in_rule__SensorListener__Group__52591);
             rule__SensorListener__Group__5__Impl();
 
             state._fsp--;
@@ -4922,23 +3511,23 @@ public class InternalRaspduinoDSLParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__SensorListener__Group__5__Impl"
-    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1801:1: rule__SensorListener__Group__5__Impl : ( ( rule__SensorListener__EventHandlerAssignment_5 ) ) ;
+    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1310:1: rule__SensorListener__Group__5__Impl : ( ( rule__SensorListener__EventHandlerAssignment_5 ) ) ;
     public final void rule__SensorListener__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1805:1: ( ( ( rule__SensorListener__EventHandlerAssignment_5 ) ) )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1806:1: ( ( rule__SensorListener__EventHandlerAssignment_5 ) )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1314:1: ( ( ( rule__SensorListener__EventHandlerAssignment_5 ) ) )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1315:1: ( ( rule__SensorListener__EventHandlerAssignment_5 ) )
             {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1806:1: ( ( rule__SensorListener__EventHandlerAssignment_5 ) )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1807:1: ( rule__SensorListener__EventHandlerAssignment_5 )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1315:1: ( ( rule__SensorListener__EventHandlerAssignment_5 ) )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1316:1: ( rule__SensorListener__EventHandlerAssignment_5 )
             {
              before(grammarAccess.getSensorListenerAccess().getEventHandlerAssignment_5()); 
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1808:1: ( rule__SensorListener__EventHandlerAssignment_5 )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1808:2: rule__SensorListener__EventHandlerAssignment_5
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1317:1: ( rule__SensorListener__EventHandlerAssignment_5 )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1317:2: rule__SensorListener__EventHandlerAssignment_5
             {
-            pushFollow(FOLLOW_rule__SensorListener__EventHandlerAssignment_5_in_rule__SensorListener__Group__5__Impl3669);
+            pushFollow(FOLLOW_rule__SensorListener__EventHandlerAssignment_5_in_rule__SensorListener__Group__5__Impl2618);
             rule__SensorListener__EventHandlerAssignment_5();
 
             state._fsp--;
@@ -4968,23 +3557,23 @@ public class InternalRaspduinoDSLParser extends AbstractInternalContentAssistPar
     // $ANTLR end "rule__SensorListener__Group__5__Impl"
 
 
-    // $ANTLR start "rule__SensorListener__Group_3__0"
-    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1830:1: rule__SensorListener__Group_3__0 : rule__SensorListener__Group_3__0__Impl rule__SensorListener__Group_3__1 ;
-    public final void rule__SensorListener__Group_3__0() throws RecognitionException {
+    // $ANTLR start "rule__SensorListener__Group_3_2__0"
+    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1339:1: rule__SensorListener__Group_3_2__0 : rule__SensorListener__Group_3_2__0__Impl rule__SensorListener__Group_3_2__1 ;
+    public final void rule__SensorListener__Group_3_2__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1834:1: ( rule__SensorListener__Group_3__0__Impl rule__SensorListener__Group_3__1 )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1835:2: rule__SensorListener__Group_3__0__Impl rule__SensorListener__Group_3__1
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1343:1: ( rule__SensorListener__Group_3_2__0__Impl rule__SensorListener__Group_3_2__1 )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1344:2: rule__SensorListener__Group_3_2__0__Impl rule__SensorListener__Group_3_2__1
             {
-            pushFollow(FOLLOW_rule__SensorListener__Group_3__0__Impl_in_rule__SensorListener__Group_3__03711);
-            rule__SensorListener__Group_3__0__Impl();
+            pushFollow(FOLLOW_rule__SensorListener__Group_3_2__0__Impl_in_rule__SensorListener__Group_3_2__02660);
+            rule__SensorListener__Group_3_2__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__SensorListener__Group_3__1_in_rule__SensorListener__Group_3__03714);
-            rule__SensorListener__Group_3__1();
+            pushFollow(FOLLOW_rule__SensorListener__Group_3_2__1_in_rule__SensorListener__Group_3_2__02663);
+            rule__SensorListener__Group_3_2__1();
 
             state._fsp--;
 
@@ -5003,35 +3592,35 @@ public class InternalRaspduinoDSLParser extends AbstractInternalContentAssistPar
         }
         return ;
     }
-    // $ANTLR end "rule__SensorListener__Group_3__0"
+    // $ANTLR end "rule__SensorListener__Group_3_2__0"
 
 
-    // $ANTLR start "rule__SensorListener__Group_3__0__Impl"
-    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1842:1: rule__SensorListener__Group_3__0__Impl : ( ( rule__SensorListener__TypeAssignment_3_0 ) ) ;
-    public final void rule__SensorListener__Group_3__0__Impl() throws RecognitionException {
+    // $ANTLR start "rule__SensorListener__Group_3_2__0__Impl"
+    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1351:1: rule__SensorListener__Group_3_2__0__Impl : ( ( rule__SensorListener__TypeAssignment_3_2_0 ) ) ;
+    public final void rule__SensorListener__Group_3_2__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1846:1: ( ( ( rule__SensorListener__TypeAssignment_3_0 ) ) )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1847:1: ( ( rule__SensorListener__TypeAssignment_3_0 ) )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1355:1: ( ( ( rule__SensorListener__TypeAssignment_3_2_0 ) ) )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1356:1: ( ( rule__SensorListener__TypeAssignment_3_2_0 ) )
             {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1847:1: ( ( rule__SensorListener__TypeAssignment_3_0 ) )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1848:1: ( rule__SensorListener__TypeAssignment_3_0 )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1356:1: ( ( rule__SensorListener__TypeAssignment_3_2_0 ) )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1357:1: ( rule__SensorListener__TypeAssignment_3_2_0 )
             {
-             before(grammarAccess.getSensorListenerAccess().getTypeAssignment_3_0()); 
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1849:1: ( rule__SensorListener__TypeAssignment_3_0 )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1849:2: rule__SensorListener__TypeAssignment_3_0
+             before(grammarAccess.getSensorListenerAccess().getTypeAssignment_3_2_0()); 
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1358:1: ( rule__SensorListener__TypeAssignment_3_2_0 )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1358:2: rule__SensorListener__TypeAssignment_3_2_0
             {
-            pushFollow(FOLLOW_rule__SensorListener__TypeAssignment_3_0_in_rule__SensorListener__Group_3__0__Impl3741);
-            rule__SensorListener__TypeAssignment_3_0();
+            pushFollow(FOLLOW_rule__SensorListener__TypeAssignment_3_2_0_in_rule__SensorListener__Group_3_2__0__Impl2690);
+            rule__SensorListener__TypeAssignment_3_2_0();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getSensorListenerAccess().getTypeAssignment_3_0()); 
+             after(grammarAccess.getSensorListenerAccess().getTypeAssignment_3_2_0()); 
 
             }
 
@@ -5050,26 +3639,26 @@ public class InternalRaspduinoDSLParser extends AbstractInternalContentAssistPar
         }
         return ;
     }
-    // $ANTLR end "rule__SensorListener__Group_3__0__Impl"
+    // $ANTLR end "rule__SensorListener__Group_3_2__0__Impl"
 
 
-    // $ANTLR start "rule__SensorListener__Group_3__1"
-    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1859:1: rule__SensorListener__Group_3__1 : rule__SensorListener__Group_3__1__Impl rule__SensorListener__Group_3__2 ;
-    public final void rule__SensorListener__Group_3__1() throws RecognitionException {
+    // $ANTLR start "rule__SensorListener__Group_3_2__1"
+    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1368:1: rule__SensorListener__Group_3_2__1 : rule__SensorListener__Group_3_2__1__Impl rule__SensorListener__Group_3_2__2 ;
+    public final void rule__SensorListener__Group_3_2__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1863:1: ( rule__SensorListener__Group_3__1__Impl rule__SensorListener__Group_3__2 )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1864:2: rule__SensorListener__Group_3__1__Impl rule__SensorListener__Group_3__2
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1372:1: ( rule__SensorListener__Group_3_2__1__Impl rule__SensorListener__Group_3_2__2 )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1373:2: rule__SensorListener__Group_3_2__1__Impl rule__SensorListener__Group_3_2__2
             {
-            pushFollow(FOLLOW_rule__SensorListener__Group_3__1__Impl_in_rule__SensorListener__Group_3__13771);
-            rule__SensorListener__Group_3__1__Impl();
+            pushFollow(FOLLOW_rule__SensorListener__Group_3_2__1__Impl_in_rule__SensorListener__Group_3_2__12720);
+            rule__SensorListener__Group_3_2__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__SensorListener__Group_3__2_in_rule__SensorListener__Group_3__13774);
-            rule__SensorListener__Group_3__2();
+            pushFollow(FOLLOW_rule__SensorListener__Group_3_2__2_in_rule__SensorListener__Group_3_2__12723);
+            rule__SensorListener__Group_3_2__2();
 
             state._fsp--;
 
@@ -5088,35 +3677,35 @@ public class InternalRaspduinoDSLParser extends AbstractInternalContentAssistPar
         }
         return ;
     }
-    // $ANTLR end "rule__SensorListener__Group_3__1"
+    // $ANTLR end "rule__SensorListener__Group_3_2__1"
 
 
-    // $ANTLR start "rule__SensorListener__Group_3__1__Impl"
-    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1871:1: rule__SensorListener__Group_3__1__Impl : ( ( rule__SensorListener__LAssignment_3_1 ) ) ;
-    public final void rule__SensorListener__Group_3__1__Impl() throws RecognitionException {
+    // $ANTLR start "rule__SensorListener__Group_3_2__1__Impl"
+    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1380:1: rule__SensorListener__Group_3_2__1__Impl : ( ( rule__SensorListener__LAssignment_3_2_1 ) ) ;
+    public final void rule__SensorListener__Group_3_2__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1875:1: ( ( ( rule__SensorListener__LAssignment_3_1 ) ) )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1876:1: ( ( rule__SensorListener__LAssignment_3_1 ) )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1384:1: ( ( ( rule__SensorListener__LAssignment_3_2_1 ) ) )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1385:1: ( ( rule__SensorListener__LAssignment_3_2_1 ) )
             {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1876:1: ( ( rule__SensorListener__LAssignment_3_1 ) )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1877:1: ( rule__SensorListener__LAssignment_3_1 )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1385:1: ( ( rule__SensorListener__LAssignment_3_2_1 ) )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1386:1: ( rule__SensorListener__LAssignment_3_2_1 )
             {
-             before(grammarAccess.getSensorListenerAccess().getLAssignment_3_1()); 
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1878:1: ( rule__SensorListener__LAssignment_3_1 )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1878:2: rule__SensorListener__LAssignment_3_1
+             before(grammarAccess.getSensorListenerAccess().getLAssignment_3_2_1()); 
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1387:1: ( rule__SensorListener__LAssignment_3_2_1 )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1387:2: rule__SensorListener__LAssignment_3_2_1
             {
-            pushFollow(FOLLOW_rule__SensorListener__LAssignment_3_1_in_rule__SensorListener__Group_3__1__Impl3801);
-            rule__SensorListener__LAssignment_3_1();
+            pushFollow(FOLLOW_rule__SensorListener__LAssignment_3_2_1_in_rule__SensorListener__Group_3_2__1__Impl2750);
+            rule__SensorListener__LAssignment_3_2_1();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getSensorListenerAccess().getLAssignment_3_1()); 
+             after(grammarAccess.getSensorListenerAccess().getLAssignment_3_2_1()); 
 
             }
 
@@ -5135,26 +3724,26 @@ public class InternalRaspduinoDSLParser extends AbstractInternalContentAssistPar
         }
         return ;
     }
-    // $ANTLR end "rule__SensorListener__Group_3__1__Impl"
+    // $ANTLR end "rule__SensorListener__Group_3_2__1__Impl"
 
 
-    // $ANTLR start "rule__SensorListener__Group_3__2"
-    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1888:1: rule__SensorListener__Group_3__2 : rule__SensorListener__Group_3__2__Impl rule__SensorListener__Group_3__3 ;
-    public final void rule__SensorListener__Group_3__2() throws RecognitionException {
+    // $ANTLR start "rule__SensorListener__Group_3_2__2"
+    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1397:1: rule__SensorListener__Group_3_2__2 : rule__SensorListener__Group_3_2__2__Impl rule__SensorListener__Group_3_2__3 ;
+    public final void rule__SensorListener__Group_3_2__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1892:1: ( rule__SensorListener__Group_3__2__Impl rule__SensorListener__Group_3__3 )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1893:2: rule__SensorListener__Group_3__2__Impl rule__SensorListener__Group_3__3
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1401:1: ( rule__SensorListener__Group_3_2__2__Impl rule__SensorListener__Group_3_2__3 )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1402:2: rule__SensorListener__Group_3_2__2__Impl rule__SensorListener__Group_3_2__3
             {
-            pushFollow(FOLLOW_rule__SensorListener__Group_3__2__Impl_in_rule__SensorListener__Group_3__23831);
-            rule__SensorListener__Group_3__2__Impl();
+            pushFollow(FOLLOW_rule__SensorListener__Group_3_2__2__Impl_in_rule__SensorListener__Group_3_2__22780);
+            rule__SensorListener__Group_3_2__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__SensorListener__Group_3__3_in_rule__SensorListener__Group_3__23834);
-            rule__SensorListener__Group_3__3();
+            pushFollow(FOLLOW_rule__SensorListener__Group_3_2__3_in_rule__SensorListener__Group_3_2__22783);
+            rule__SensorListener__Group_3_2__3();
 
             state._fsp--;
 
@@ -5173,25 +3762,25 @@ public class InternalRaspduinoDSLParser extends AbstractInternalContentAssistPar
         }
         return ;
     }
-    // $ANTLR end "rule__SensorListener__Group_3__2"
+    // $ANTLR end "rule__SensorListener__Group_3_2__2"
 
 
-    // $ANTLR start "rule__SensorListener__Group_3__2__Impl"
-    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1900:1: rule__SensorListener__Group_3__2__Impl : ( 'AND' ) ;
-    public final void rule__SensorListener__Group_3__2__Impl() throws RecognitionException {
+    // $ANTLR start "rule__SensorListener__Group_3_2__2__Impl"
+    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1409:1: rule__SensorListener__Group_3_2__2__Impl : ( 'AND' ) ;
+    public final void rule__SensorListener__Group_3_2__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1904:1: ( ( 'AND' ) )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1905:1: ( 'AND' )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1413:1: ( ( 'AND' ) )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1414:1: ( 'AND' )
             {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1905:1: ( 'AND' )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1906:1: 'AND'
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1414:1: ( 'AND' )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1415:1: 'AND'
             {
-             before(grammarAccess.getSensorListenerAccess().getANDKeyword_3_2()); 
-            match(input,46,FOLLOW_46_in_rule__SensorListener__Group_3__2__Impl3862); 
-             after(grammarAccess.getSensorListenerAccess().getANDKeyword_3_2()); 
+             before(grammarAccess.getSensorListenerAccess().getANDKeyword_3_2_2()); 
+            match(input,29,FOLLOW_29_in_rule__SensorListener__Group_3_2__2__Impl2811); 
+             after(grammarAccess.getSensorListenerAccess().getANDKeyword_3_2_2()); 
 
             }
 
@@ -5210,21 +3799,21 @@ public class InternalRaspduinoDSLParser extends AbstractInternalContentAssistPar
         }
         return ;
     }
-    // $ANTLR end "rule__SensorListener__Group_3__2__Impl"
+    // $ANTLR end "rule__SensorListener__Group_3_2__2__Impl"
 
 
-    // $ANTLR start "rule__SensorListener__Group_3__3"
-    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1919:1: rule__SensorListener__Group_3__3 : rule__SensorListener__Group_3__3__Impl ;
-    public final void rule__SensorListener__Group_3__3() throws RecognitionException {
+    // $ANTLR start "rule__SensorListener__Group_3_2__3"
+    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1428:1: rule__SensorListener__Group_3_2__3 : rule__SensorListener__Group_3_2__3__Impl ;
+    public final void rule__SensorListener__Group_3_2__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1923:1: ( rule__SensorListener__Group_3__3__Impl )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1924:2: rule__SensorListener__Group_3__3__Impl
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1432:1: ( rule__SensorListener__Group_3_2__3__Impl )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1433:2: rule__SensorListener__Group_3_2__3__Impl
             {
-            pushFollow(FOLLOW_rule__SensorListener__Group_3__3__Impl_in_rule__SensorListener__Group_3__33893);
-            rule__SensorListener__Group_3__3__Impl();
+            pushFollow(FOLLOW_rule__SensorListener__Group_3_2__3__Impl_in_rule__SensorListener__Group_3_2__32842);
+            rule__SensorListener__Group_3_2__3__Impl();
 
             state._fsp--;
 
@@ -5243,35 +3832,35 @@ public class InternalRaspduinoDSLParser extends AbstractInternalContentAssistPar
         }
         return ;
     }
-    // $ANTLR end "rule__SensorListener__Group_3__3"
+    // $ANTLR end "rule__SensorListener__Group_3_2__3"
 
 
-    // $ANTLR start "rule__SensorListener__Group_3__3__Impl"
-    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1930:1: rule__SensorListener__Group_3__3__Impl : ( ( rule__SensorListener__HAssignment_3_3 ) ) ;
-    public final void rule__SensorListener__Group_3__3__Impl() throws RecognitionException {
+    // $ANTLR start "rule__SensorListener__Group_3_2__3__Impl"
+    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1439:1: rule__SensorListener__Group_3_2__3__Impl : ( ( rule__SensorListener__HAssignment_3_2_3 ) ) ;
+    public final void rule__SensorListener__Group_3_2__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1934:1: ( ( ( rule__SensorListener__HAssignment_3_3 ) ) )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1935:1: ( ( rule__SensorListener__HAssignment_3_3 ) )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1443:1: ( ( ( rule__SensorListener__HAssignment_3_2_3 ) ) )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1444:1: ( ( rule__SensorListener__HAssignment_3_2_3 ) )
             {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1935:1: ( ( rule__SensorListener__HAssignment_3_3 ) )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1936:1: ( rule__SensorListener__HAssignment_3_3 )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1444:1: ( ( rule__SensorListener__HAssignment_3_2_3 ) )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1445:1: ( rule__SensorListener__HAssignment_3_2_3 )
             {
-             before(grammarAccess.getSensorListenerAccess().getHAssignment_3_3()); 
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1937:1: ( rule__SensorListener__HAssignment_3_3 )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1937:2: rule__SensorListener__HAssignment_3_3
+             before(grammarAccess.getSensorListenerAccess().getHAssignment_3_2_3()); 
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1446:1: ( rule__SensorListener__HAssignment_3_2_3 )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1446:2: rule__SensorListener__HAssignment_3_2_3
             {
-            pushFollow(FOLLOW_rule__SensorListener__HAssignment_3_3_in_rule__SensorListener__Group_3__3__Impl3920);
-            rule__SensorListener__HAssignment_3_3();
+            pushFollow(FOLLOW_rule__SensorListener__HAssignment_3_2_3_in_rule__SensorListener__Group_3_2__3__Impl2869);
+            rule__SensorListener__HAssignment_3_2_3();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getSensorListenerAccess().getHAssignment_3_3()); 
+             after(grammarAccess.getSensorListenerAccess().getHAssignment_3_2_3()); 
 
             }
 
@@ -5290,525 +3879,25 @@ public class InternalRaspduinoDSLParser extends AbstractInternalContentAssistPar
         }
         return ;
     }
-    // $ANTLR end "rule__SensorListener__Group_3__3__Impl"
-
-
-    // $ANTLR start "rule__Precondition__Group_0__0"
-    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1955:1: rule__Precondition__Group_0__0 : rule__Precondition__Group_0__0__Impl rule__Precondition__Group_0__1 ;
-    public final void rule__Precondition__Group_0__0() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1959:1: ( rule__Precondition__Group_0__0__Impl rule__Precondition__Group_0__1 )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1960:2: rule__Precondition__Group_0__0__Impl rule__Precondition__Group_0__1
-            {
-            pushFollow(FOLLOW_rule__Precondition__Group_0__0__Impl_in_rule__Precondition__Group_0__03958);
-            rule__Precondition__Group_0__0__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_rule__Precondition__Group_0__1_in_rule__Precondition__Group_0__03961);
-            rule__Precondition__Group_0__1();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Precondition__Group_0__0"
-
-
-    // $ANTLR start "rule__Precondition__Group_0__0__Impl"
-    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1967:1: rule__Precondition__Group_0__0__Impl : ( ( rule__Precondition__Pre1Assignment_0_0 ) ) ;
-    public final void rule__Precondition__Group_0__0__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1971:1: ( ( ( rule__Precondition__Pre1Assignment_0_0 ) ) )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1972:1: ( ( rule__Precondition__Pre1Assignment_0_0 ) )
-            {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1972:1: ( ( rule__Precondition__Pre1Assignment_0_0 ) )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1973:1: ( rule__Precondition__Pre1Assignment_0_0 )
-            {
-             before(grammarAccess.getPreconditionAccess().getPre1Assignment_0_0()); 
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1974:1: ( rule__Precondition__Pre1Assignment_0_0 )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1974:2: rule__Precondition__Pre1Assignment_0_0
-            {
-            pushFollow(FOLLOW_rule__Precondition__Pre1Assignment_0_0_in_rule__Precondition__Group_0__0__Impl3988);
-            rule__Precondition__Pre1Assignment_0_0();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getPreconditionAccess().getPre1Assignment_0_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Precondition__Group_0__0__Impl"
-
-
-    // $ANTLR start "rule__Precondition__Group_0__1"
-    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1984:1: rule__Precondition__Group_0__1 : rule__Precondition__Group_0__1__Impl rule__Precondition__Group_0__2 ;
-    public final void rule__Precondition__Group_0__1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1988:1: ( rule__Precondition__Group_0__1__Impl rule__Precondition__Group_0__2 )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1989:2: rule__Precondition__Group_0__1__Impl rule__Precondition__Group_0__2
-            {
-            pushFollow(FOLLOW_rule__Precondition__Group_0__1__Impl_in_rule__Precondition__Group_0__14018);
-            rule__Precondition__Group_0__1__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_rule__Precondition__Group_0__2_in_rule__Precondition__Group_0__14021);
-            rule__Precondition__Group_0__2();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Precondition__Group_0__1"
-
-
-    // $ANTLR start "rule__Precondition__Group_0__1__Impl"
-    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1996:1: rule__Precondition__Group_0__1__Impl : ( ( rule__Precondition__OpAssignment_0_1 ) ) ;
-    public final void rule__Precondition__Group_0__1__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2000:1: ( ( ( rule__Precondition__OpAssignment_0_1 ) ) )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2001:1: ( ( rule__Precondition__OpAssignment_0_1 ) )
-            {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2001:1: ( ( rule__Precondition__OpAssignment_0_1 ) )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2002:1: ( rule__Precondition__OpAssignment_0_1 )
-            {
-             before(grammarAccess.getPreconditionAccess().getOpAssignment_0_1()); 
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2003:1: ( rule__Precondition__OpAssignment_0_1 )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2003:2: rule__Precondition__OpAssignment_0_1
-            {
-            pushFollow(FOLLOW_rule__Precondition__OpAssignment_0_1_in_rule__Precondition__Group_0__1__Impl4048);
-            rule__Precondition__OpAssignment_0_1();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getPreconditionAccess().getOpAssignment_0_1()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Precondition__Group_0__1__Impl"
-
-
-    // $ANTLR start "rule__Precondition__Group_0__2"
-    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2013:1: rule__Precondition__Group_0__2 : rule__Precondition__Group_0__2__Impl ;
-    public final void rule__Precondition__Group_0__2() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2017:1: ( rule__Precondition__Group_0__2__Impl )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2018:2: rule__Precondition__Group_0__2__Impl
-            {
-            pushFollow(FOLLOW_rule__Precondition__Group_0__2__Impl_in_rule__Precondition__Group_0__24078);
-            rule__Precondition__Group_0__2__Impl();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Precondition__Group_0__2"
-
-
-    // $ANTLR start "rule__Precondition__Group_0__2__Impl"
-    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2024:1: rule__Precondition__Group_0__2__Impl : ( ( rule__Precondition__PreAssignment_0_2 ) ) ;
-    public final void rule__Precondition__Group_0__2__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2028:1: ( ( ( rule__Precondition__PreAssignment_0_2 ) ) )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2029:1: ( ( rule__Precondition__PreAssignment_0_2 ) )
-            {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2029:1: ( ( rule__Precondition__PreAssignment_0_2 ) )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2030:1: ( rule__Precondition__PreAssignment_0_2 )
-            {
-             before(grammarAccess.getPreconditionAccess().getPreAssignment_0_2()); 
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2031:1: ( rule__Precondition__PreAssignment_0_2 )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2031:2: rule__Precondition__PreAssignment_0_2
-            {
-            pushFollow(FOLLOW_rule__Precondition__PreAssignment_0_2_in_rule__Precondition__Group_0__2__Impl4105);
-            rule__Precondition__PreAssignment_0_2();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getPreconditionAccess().getPreAssignment_0_2()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Precondition__Group_0__2__Impl"
-
-
-    // $ANTLR start "rule__SensorValuePrecondition__Group__0"
-    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2047:1: rule__SensorValuePrecondition__Group__0 : rule__SensorValuePrecondition__Group__0__Impl rule__SensorValuePrecondition__Group__1 ;
-    public final void rule__SensorValuePrecondition__Group__0() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2051:1: ( rule__SensorValuePrecondition__Group__0__Impl rule__SensorValuePrecondition__Group__1 )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2052:2: rule__SensorValuePrecondition__Group__0__Impl rule__SensorValuePrecondition__Group__1
-            {
-            pushFollow(FOLLOW_rule__SensorValuePrecondition__Group__0__Impl_in_rule__SensorValuePrecondition__Group__04141);
-            rule__SensorValuePrecondition__Group__0__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_rule__SensorValuePrecondition__Group__1_in_rule__SensorValuePrecondition__Group__04144);
-            rule__SensorValuePrecondition__Group__1();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__SensorValuePrecondition__Group__0"
-
-
-    // $ANTLR start "rule__SensorValuePrecondition__Group__0__Impl"
-    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2059:1: rule__SensorValuePrecondition__Group__0__Impl : ( ( rule__SensorValuePrecondition__SensorAssignment_0 ) ) ;
-    public final void rule__SensorValuePrecondition__Group__0__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2063:1: ( ( ( rule__SensorValuePrecondition__SensorAssignment_0 ) ) )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2064:1: ( ( rule__SensorValuePrecondition__SensorAssignment_0 ) )
-            {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2064:1: ( ( rule__SensorValuePrecondition__SensorAssignment_0 ) )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2065:1: ( rule__SensorValuePrecondition__SensorAssignment_0 )
-            {
-             before(grammarAccess.getSensorValuePreconditionAccess().getSensorAssignment_0()); 
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2066:1: ( rule__SensorValuePrecondition__SensorAssignment_0 )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2066:2: rule__SensorValuePrecondition__SensorAssignment_0
-            {
-            pushFollow(FOLLOW_rule__SensorValuePrecondition__SensorAssignment_0_in_rule__SensorValuePrecondition__Group__0__Impl4171);
-            rule__SensorValuePrecondition__SensorAssignment_0();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getSensorValuePreconditionAccess().getSensorAssignment_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__SensorValuePrecondition__Group__0__Impl"
-
-
-    // $ANTLR start "rule__SensorValuePrecondition__Group__1"
-    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2076:1: rule__SensorValuePrecondition__Group__1 : rule__SensorValuePrecondition__Group__1__Impl rule__SensorValuePrecondition__Group__2 ;
-    public final void rule__SensorValuePrecondition__Group__1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2080:1: ( rule__SensorValuePrecondition__Group__1__Impl rule__SensorValuePrecondition__Group__2 )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2081:2: rule__SensorValuePrecondition__Group__1__Impl rule__SensorValuePrecondition__Group__2
-            {
-            pushFollow(FOLLOW_rule__SensorValuePrecondition__Group__1__Impl_in_rule__SensorValuePrecondition__Group__14201);
-            rule__SensorValuePrecondition__Group__1__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_rule__SensorValuePrecondition__Group__2_in_rule__SensorValuePrecondition__Group__14204);
-            rule__SensorValuePrecondition__Group__2();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__SensorValuePrecondition__Group__1"
-
-
-    // $ANTLR start "rule__SensorValuePrecondition__Group__1__Impl"
-    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2088:1: rule__SensorValuePrecondition__Group__1__Impl : ( ( rule__SensorValuePrecondition__CondAssignment_1 ) ) ;
-    public final void rule__SensorValuePrecondition__Group__1__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2092:1: ( ( ( rule__SensorValuePrecondition__CondAssignment_1 ) ) )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2093:1: ( ( rule__SensorValuePrecondition__CondAssignment_1 ) )
-            {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2093:1: ( ( rule__SensorValuePrecondition__CondAssignment_1 ) )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2094:1: ( rule__SensorValuePrecondition__CondAssignment_1 )
-            {
-             before(grammarAccess.getSensorValuePreconditionAccess().getCondAssignment_1()); 
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2095:1: ( rule__SensorValuePrecondition__CondAssignment_1 )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2095:2: rule__SensorValuePrecondition__CondAssignment_1
-            {
-            pushFollow(FOLLOW_rule__SensorValuePrecondition__CondAssignment_1_in_rule__SensorValuePrecondition__Group__1__Impl4231);
-            rule__SensorValuePrecondition__CondAssignment_1();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getSensorValuePreconditionAccess().getCondAssignment_1()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__SensorValuePrecondition__Group__1__Impl"
-
-
-    // $ANTLR start "rule__SensorValuePrecondition__Group__2"
-    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2105:1: rule__SensorValuePrecondition__Group__2 : rule__SensorValuePrecondition__Group__2__Impl ;
-    public final void rule__SensorValuePrecondition__Group__2() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2109:1: ( rule__SensorValuePrecondition__Group__2__Impl )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2110:2: rule__SensorValuePrecondition__Group__2__Impl
-            {
-            pushFollow(FOLLOW_rule__SensorValuePrecondition__Group__2__Impl_in_rule__SensorValuePrecondition__Group__24261);
-            rule__SensorValuePrecondition__Group__2__Impl();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__SensorValuePrecondition__Group__2"
-
-
-    // $ANTLR start "rule__SensorValuePrecondition__Group__2__Impl"
-    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2116:1: rule__SensorValuePrecondition__Group__2__Impl : ( ( rule__SensorValuePrecondition__ValueAssignment_2 ) ) ;
-    public final void rule__SensorValuePrecondition__Group__2__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2120:1: ( ( ( rule__SensorValuePrecondition__ValueAssignment_2 ) ) )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2121:1: ( ( rule__SensorValuePrecondition__ValueAssignment_2 ) )
-            {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2121:1: ( ( rule__SensorValuePrecondition__ValueAssignment_2 ) )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2122:1: ( rule__SensorValuePrecondition__ValueAssignment_2 )
-            {
-             before(grammarAccess.getSensorValuePreconditionAccess().getValueAssignment_2()); 
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2123:1: ( rule__SensorValuePrecondition__ValueAssignment_2 )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2123:2: rule__SensorValuePrecondition__ValueAssignment_2
-            {
-            pushFollow(FOLLOW_rule__SensorValuePrecondition__ValueAssignment_2_in_rule__SensorValuePrecondition__Group__2__Impl4288);
-            rule__SensorValuePrecondition__ValueAssignment_2();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getSensorValuePreconditionAccess().getValueAssignment_2()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__SensorValuePrecondition__Group__2__Impl"
+    // $ANTLR end "rule__SensorListener__Group_3_2__3__Impl"
 
 
     // $ANTLR start "rule__Timer__Group__0"
-    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2139:1: rule__Timer__Group__0 : rule__Timer__Group__0__Impl rule__Timer__Group__1 ;
+    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1464:1: rule__Timer__Group__0 : rule__Timer__Group__0__Impl rule__Timer__Group__1 ;
     public final void rule__Timer__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2143:1: ( rule__Timer__Group__0__Impl rule__Timer__Group__1 )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2144:2: rule__Timer__Group__0__Impl rule__Timer__Group__1
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1468:1: ( rule__Timer__Group__0__Impl rule__Timer__Group__1 )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1469:2: rule__Timer__Group__0__Impl rule__Timer__Group__1
             {
-            pushFollow(FOLLOW_rule__Timer__Group__0__Impl_in_rule__Timer__Group__04324);
+            pushFollow(FOLLOW_rule__Timer__Group__0__Impl_in_rule__Timer__Group__02907);
             rule__Timer__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Timer__Group__1_in_rule__Timer__Group__04327);
+            pushFollow(FOLLOW_rule__Timer__Group__1_in_rule__Timer__Group__02910);
             rule__Timer__Group__1();
 
             state._fsp--;
@@ -5832,21 +3921,21 @@ public class InternalRaspduinoDSLParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Timer__Group__0__Impl"
-    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2151:1: rule__Timer__Group__0__Impl : ( 'action' ) ;
+    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1476:1: rule__Timer__Group__0__Impl : ( 'Timer action' ) ;
     public final void rule__Timer__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2155:1: ( ( 'action' ) )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2156:1: ( 'action' )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1480:1: ( ( 'Timer action' ) )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1481:1: ( 'Timer action' )
             {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2156:1: ( 'action' )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2157:1: 'action'
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1481:1: ( 'Timer action' )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1482:1: 'Timer action'
             {
-             before(grammarAccess.getTimerAccess().getActionKeyword_0()); 
-            match(input,47,FOLLOW_47_in_rule__Timer__Group__0__Impl4355); 
-             after(grammarAccess.getTimerAccess().getActionKeyword_0()); 
+             before(grammarAccess.getTimerAccess().getTimerActionKeyword_0()); 
+            match(input,30,FOLLOW_30_in_rule__Timer__Group__0__Impl2938); 
+             after(grammarAccess.getTimerAccess().getTimerActionKeyword_0()); 
 
             }
 
@@ -5869,21 +3958,21 @@ public class InternalRaspduinoDSLParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Timer__Group__1"
-    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2170:1: rule__Timer__Group__1 : rule__Timer__Group__1__Impl rule__Timer__Group__2 ;
+    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1495:1: rule__Timer__Group__1 : rule__Timer__Group__1__Impl rule__Timer__Group__2 ;
     public final void rule__Timer__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2174:1: ( rule__Timer__Group__1__Impl rule__Timer__Group__2 )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2175:2: rule__Timer__Group__1__Impl rule__Timer__Group__2
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1499:1: ( rule__Timer__Group__1__Impl rule__Timer__Group__2 )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1500:2: rule__Timer__Group__1__Impl rule__Timer__Group__2
             {
-            pushFollow(FOLLOW_rule__Timer__Group__1__Impl_in_rule__Timer__Group__14386);
+            pushFollow(FOLLOW_rule__Timer__Group__1__Impl_in_rule__Timer__Group__12969);
             rule__Timer__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Timer__Group__2_in_rule__Timer__Group__14389);
+            pushFollow(FOLLOW_rule__Timer__Group__2_in_rule__Timer__Group__12972);
             rule__Timer__Group__2();
 
             state._fsp--;
@@ -5907,23 +3996,23 @@ public class InternalRaspduinoDSLParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Timer__Group__1__Impl"
-    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2182:1: rule__Timer__Group__1__Impl : ( ( rule__Timer__EventHandlerAssignment_1 ) ) ;
+    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1507:1: rule__Timer__Group__1__Impl : ( ( rule__Timer__EventHandlerAssignment_1 ) ) ;
     public final void rule__Timer__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2186:1: ( ( ( rule__Timer__EventHandlerAssignment_1 ) ) )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2187:1: ( ( rule__Timer__EventHandlerAssignment_1 ) )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1511:1: ( ( ( rule__Timer__EventHandlerAssignment_1 ) ) )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1512:1: ( ( rule__Timer__EventHandlerAssignment_1 ) )
             {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2187:1: ( ( rule__Timer__EventHandlerAssignment_1 ) )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2188:1: ( rule__Timer__EventHandlerAssignment_1 )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1512:1: ( ( rule__Timer__EventHandlerAssignment_1 ) )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1513:1: ( rule__Timer__EventHandlerAssignment_1 )
             {
              before(grammarAccess.getTimerAccess().getEventHandlerAssignment_1()); 
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2189:1: ( rule__Timer__EventHandlerAssignment_1 )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2189:2: rule__Timer__EventHandlerAssignment_1
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1514:1: ( rule__Timer__EventHandlerAssignment_1 )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1514:2: rule__Timer__EventHandlerAssignment_1
             {
-            pushFollow(FOLLOW_rule__Timer__EventHandlerAssignment_1_in_rule__Timer__Group__1__Impl4416);
+            pushFollow(FOLLOW_rule__Timer__EventHandlerAssignment_1_in_rule__Timer__Group__1__Impl2999);
             rule__Timer__EventHandlerAssignment_1();
 
             state._fsp--;
@@ -5954,21 +4043,21 @@ public class InternalRaspduinoDSLParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Timer__Group__2"
-    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2199:1: rule__Timer__Group__2 : rule__Timer__Group__2__Impl rule__Timer__Group__3 ;
+    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1524:1: rule__Timer__Group__2 : rule__Timer__Group__2__Impl rule__Timer__Group__3 ;
     public final void rule__Timer__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2203:1: ( rule__Timer__Group__2__Impl rule__Timer__Group__3 )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2204:2: rule__Timer__Group__2__Impl rule__Timer__Group__3
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1528:1: ( rule__Timer__Group__2__Impl rule__Timer__Group__3 )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1529:2: rule__Timer__Group__2__Impl rule__Timer__Group__3
             {
-            pushFollow(FOLLOW_rule__Timer__Group__2__Impl_in_rule__Timer__Group__24446);
+            pushFollow(FOLLOW_rule__Timer__Group__2__Impl_in_rule__Timer__Group__23029);
             rule__Timer__Group__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Timer__Group__3_in_rule__Timer__Group__24449);
+            pushFollow(FOLLOW_rule__Timer__Group__3_in_rule__Timer__Group__23032);
             rule__Timer__Group__3();
 
             state._fsp--;
@@ -5992,20 +4081,20 @@ public class InternalRaspduinoDSLParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Timer__Group__2__Impl"
-    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2211:1: rule__Timer__Group__2__Impl : ( 'repeat' ) ;
+    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1536:1: rule__Timer__Group__2__Impl : ( 'repeat' ) ;
     public final void rule__Timer__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2215:1: ( ( 'repeat' ) )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2216:1: ( 'repeat' )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1540:1: ( ( 'repeat' ) )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1541:1: ( 'repeat' )
             {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2216:1: ( 'repeat' )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2217:1: 'repeat'
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1541:1: ( 'repeat' )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1542:1: 'repeat'
             {
              before(grammarAccess.getTimerAccess().getRepeatKeyword_2()); 
-            match(input,48,FOLLOW_48_in_rule__Timer__Group__2__Impl4477); 
+            match(input,31,FOLLOW_31_in_rule__Timer__Group__2__Impl3060); 
              after(grammarAccess.getTimerAccess().getRepeatKeyword_2()); 
 
             }
@@ -6029,21 +4118,21 @@ public class InternalRaspduinoDSLParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Timer__Group__3"
-    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2230:1: rule__Timer__Group__3 : rule__Timer__Group__3__Impl rule__Timer__Group__4 ;
+    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1555:1: rule__Timer__Group__3 : rule__Timer__Group__3__Impl rule__Timer__Group__4 ;
     public final void rule__Timer__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2234:1: ( rule__Timer__Group__3__Impl rule__Timer__Group__4 )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2235:2: rule__Timer__Group__3__Impl rule__Timer__Group__4
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1559:1: ( rule__Timer__Group__3__Impl rule__Timer__Group__4 )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1560:2: rule__Timer__Group__3__Impl rule__Timer__Group__4
             {
-            pushFollow(FOLLOW_rule__Timer__Group__3__Impl_in_rule__Timer__Group__34508);
+            pushFollow(FOLLOW_rule__Timer__Group__3__Impl_in_rule__Timer__Group__33091);
             rule__Timer__Group__3__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Timer__Group__4_in_rule__Timer__Group__34511);
+            pushFollow(FOLLOW_rule__Timer__Group__4_in_rule__Timer__Group__33094);
             rule__Timer__Group__4();
 
             state._fsp--;
@@ -6067,23 +4156,23 @@ public class InternalRaspduinoDSLParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Timer__Group__3__Impl"
-    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2242:1: rule__Timer__Group__3__Impl : ( ( rule__Timer__RepeattypeAssignment_3 ) ) ;
+    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1567:1: rule__Timer__Group__3__Impl : ( ( rule__Timer__RepeattypeAssignment_3 ) ) ;
     public final void rule__Timer__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2246:1: ( ( ( rule__Timer__RepeattypeAssignment_3 ) ) )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2247:1: ( ( rule__Timer__RepeattypeAssignment_3 ) )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1571:1: ( ( ( rule__Timer__RepeattypeAssignment_3 ) ) )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1572:1: ( ( rule__Timer__RepeattypeAssignment_3 ) )
             {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2247:1: ( ( rule__Timer__RepeattypeAssignment_3 ) )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2248:1: ( rule__Timer__RepeattypeAssignment_3 )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1572:1: ( ( rule__Timer__RepeattypeAssignment_3 ) )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1573:1: ( rule__Timer__RepeattypeAssignment_3 )
             {
              before(grammarAccess.getTimerAccess().getRepeattypeAssignment_3()); 
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2249:1: ( rule__Timer__RepeattypeAssignment_3 )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2249:2: rule__Timer__RepeattypeAssignment_3
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1574:1: ( rule__Timer__RepeattypeAssignment_3 )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1574:2: rule__Timer__RepeattypeAssignment_3
             {
-            pushFollow(FOLLOW_rule__Timer__RepeattypeAssignment_3_in_rule__Timer__Group__3__Impl4538);
+            pushFollow(FOLLOW_rule__Timer__RepeattypeAssignment_3_in_rule__Timer__Group__3__Impl3121);
             rule__Timer__RepeattypeAssignment_3();
 
             state._fsp--;
@@ -6114,21 +4203,21 @@ public class InternalRaspduinoDSLParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Timer__Group__4"
-    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2259:1: rule__Timer__Group__4 : rule__Timer__Group__4__Impl rule__Timer__Group__5 ;
+    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1584:1: rule__Timer__Group__4 : rule__Timer__Group__4__Impl rule__Timer__Group__5 ;
     public final void rule__Timer__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2263:1: ( rule__Timer__Group__4__Impl rule__Timer__Group__5 )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2264:2: rule__Timer__Group__4__Impl rule__Timer__Group__5
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1588:1: ( rule__Timer__Group__4__Impl rule__Timer__Group__5 )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1589:2: rule__Timer__Group__4__Impl rule__Timer__Group__5
             {
-            pushFollow(FOLLOW_rule__Timer__Group__4__Impl_in_rule__Timer__Group__44568);
+            pushFollow(FOLLOW_rule__Timer__Group__4__Impl_in_rule__Timer__Group__43151);
             rule__Timer__Group__4__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Timer__Group__5_in_rule__Timer__Group__44571);
+            pushFollow(FOLLOW_rule__Timer__Group__5_in_rule__Timer__Group__43154);
             rule__Timer__Group__5();
 
             state._fsp--;
@@ -6152,20 +4241,20 @@ public class InternalRaspduinoDSLParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Timer__Group__4__Impl"
-    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2271:1: rule__Timer__Group__4__Impl : ( 'seconds:' ) ;
+    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1596:1: rule__Timer__Group__4__Impl : ( 'seconds:' ) ;
     public final void rule__Timer__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2275:1: ( ( 'seconds:' ) )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2276:1: ( 'seconds:' )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1600:1: ( ( 'seconds:' ) )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1601:1: ( 'seconds:' )
             {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2276:1: ( 'seconds:' )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2277:1: 'seconds:'
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1601:1: ( 'seconds:' )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1602:1: 'seconds:'
             {
              before(grammarAccess.getTimerAccess().getSecondsKeyword_4()); 
-            match(input,49,FOLLOW_49_in_rule__Timer__Group__4__Impl4599); 
+            match(input,32,FOLLOW_32_in_rule__Timer__Group__4__Impl3182); 
              after(grammarAccess.getTimerAccess().getSecondsKeyword_4()); 
 
             }
@@ -6189,16 +4278,16 @@ public class InternalRaspduinoDSLParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Timer__Group__5"
-    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2290:1: rule__Timer__Group__5 : rule__Timer__Group__5__Impl ;
+    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1615:1: rule__Timer__Group__5 : rule__Timer__Group__5__Impl ;
     public final void rule__Timer__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2294:1: ( rule__Timer__Group__5__Impl )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2295:2: rule__Timer__Group__5__Impl
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1619:1: ( rule__Timer__Group__5__Impl )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1620:2: rule__Timer__Group__5__Impl
             {
-            pushFollow(FOLLOW_rule__Timer__Group__5__Impl_in_rule__Timer__Group__54630);
+            pushFollow(FOLLOW_rule__Timer__Group__5__Impl_in_rule__Timer__Group__53213);
             rule__Timer__Group__5__Impl();
 
             state._fsp--;
@@ -6222,23 +4311,23 @@ public class InternalRaspduinoDSLParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Timer__Group__5__Impl"
-    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2301:1: rule__Timer__Group__5__Impl : ( ( rule__Timer__TimerSecsAssignment_5 ) ) ;
+    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1626:1: rule__Timer__Group__5__Impl : ( ( rule__Timer__TimerSecsAssignment_5 ) ) ;
     public final void rule__Timer__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2305:1: ( ( ( rule__Timer__TimerSecsAssignment_5 ) ) )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2306:1: ( ( rule__Timer__TimerSecsAssignment_5 ) )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1630:1: ( ( ( rule__Timer__TimerSecsAssignment_5 ) ) )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1631:1: ( ( rule__Timer__TimerSecsAssignment_5 ) )
             {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2306:1: ( ( rule__Timer__TimerSecsAssignment_5 ) )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2307:1: ( rule__Timer__TimerSecsAssignment_5 )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1631:1: ( ( rule__Timer__TimerSecsAssignment_5 ) )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1632:1: ( rule__Timer__TimerSecsAssignment_5 )
             {
              before(grammarAccess.getTimerAccess().getTimerSecsAssignment_5()); 
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2308:1: ( rule__Timer__TimerSecsAssignment_5 )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2308:2: rule__Timer__TimerSecsAssignment_5
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1633:1: ( rule__Timer__TimerSecsAssignment_5 )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1633:2: rule__Timer__TimerSecsAssignment_5
             {
-            pushFollow(FOLLOW_rule__Timer__TimerSecsAssignment_5_in_rule__Timer__Group__5__Impl4657);
+            pushFollow(FOLLOW_rule__Timer__TimerSecsAssignment_5_in_rule__Timer__Group__5__Impl3240);
             rule__Timer__TimerSecsAssignment_5();
 
             state._fsp--;
@@ -6268,656 +4357,21 @@ public class InternalRaspduinoDSLParser extends AbstractInternalContentAssistPar
     // $ANTLR end "rule__Timer__Group__5__Impl"
 
 
-    // $ANTLR start "rule__Alarm__Group__0"
-    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2330:1: rule__Alarm__Group__0 : rule__Alarm__Group__0__Impl rule__Alarm__Group__1 ;
-    public final void rule__Alarm__Group__0() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2334:1: ( rule__Alarm__Group__0__Impl rule__Alarm__Group__1 )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2335:2: rule__Alarm__Group__0__Impl rule__Alarm__Group__1
-            {
-            pushFollow(FOLLOW_rule__Alarm__Group__0__Impl_in_rule__Alarm__Group__04699);
-            rule__Alarm__Group__0__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_rule__Alarm__Group__1_in_rule__Alarm__Group__04702);
-            rule__Alarm__Group__1();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Alarm__Group__0"
-
-
-    // $ANTLR start "rule__Alarm__Group__0__Impl"
-    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2342:1: rule__Alarm__Group__0__Impl : ( 'action' ) ;
-    public final void rule__Alarm__Group__0__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2346:1: ( ( 'action' ) )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2347:1: ( 'action' )
-            {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2347:1: ( 'action' )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2348:1: 'action'
-            {
-             before(grammarAccess.getAlarmAccess().getActionKeyword_0()); 
-            match(input,47,FOLLOW_47_in_rule__Alarm__Group__0__Impl4730); 
-             after(grammarAccess.getAlarmAccess().getActionKeyword_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Alarm__Group__0__Impl"
-
-
-    // $ANTLR start "rule__Alarm__Group__1"
-    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2361:1: rule__Alarm__Group__1 : rule__Alarm__Group__1__Impl rule__Alarm__Group__2 ;
-    public final void rule__Alarm__Group__1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2365:1: ( rule__Alarm__Group__1__Impl rule__Alarm__Group__2 )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2366:2: rule__Alarm__Group__1__Impl rule__Alarm__Group__2
-            {
-            pushFollow(FOLLOW_rule__Alarm__Group__1__Impl_in_rule__Alarm__Group__14761);
-            rule__Alarm__Group__1__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_rule__Alarm__Group__2_in_rule__Alarm__Group__14764);
-            rule__Alarm__Group__2();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Alarm__Group__1"
-
-
-    // $ANTLR start "rule__Alarm__Group__1__Impl"
-    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2373:1: rule__Alarm__Group__1__Impl : ( ( rule__Alarm__EventHandlerAssignment_1 ) ) ;
-    public final void rule__Alarm__Group__1__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2377:1: ( ( ( rule__Alarm__EventHandlerAssignment_1 ) ) )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2378:1: ( ( rule__Alarm__EventHandlerAssignment_1 ) )
-            {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2378:1: ( ( rule__Alarm__EventHandlerAssignment_1 ) )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2379:1: ( rule__Alarm__EventHandlerAssignment_1 )
-            {
-             before(grammarAccess.getAlarmAccess().getEventHandlerAssignment_1()); 
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2380:1: ( rule__Alarm__EventHandlerAssignment_1 )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2380:2: rule__Alarm__EventHandlerAssignment_1
-            {
-            pushFollow(FOLLOW_rule__Alarm__EventHandlerAssignment_1_in_rule__Alarm__Group__1__Impl4791);
-            rule__Alarm__EventHandlerAssignment_1();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getAlarmAccess().getEventHandlerAssignment_1()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Alarm__Group__1__Impl"
-
-
-    // $ANTLR start "rule__Alarm__Group__2"
-    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2390:1: rule__Alarm__Group__2 : rule__Alarm__Group__2__Impl rule__Alarm__Group__3 ;
-    public final void rule__Alarm__Group__2() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2394:1: ( rule__Alarm__Group__2__Impl rule__Alarm__Group__3 )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2395:2: rule__Alarm__Group__2__Impl rule__Alarm__Group__3
-            {
-            pushFollow(FOLLOW_rule__Alarm__Group__2__Impl_in_rule__Alarm__Group__24821);
-            rule__Alarm__Group__2__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_rule__Alarm__Group__3_in_rule__Alarm__Group__24824);
-            rule__Alarm__Group__3();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Alarm__Group__2"
-
-
-    // $ANTLR start "rule__Alarm__Group__2__Impl"
-    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2402:1: rule__Alarm__Group__2__Impl : ( 'repeat' ) ;
-    public final void rule__Alarm__Group__2__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2406:1: ( ( 'repeat' ) )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2407:1: ( 'repeat' )
-            {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2407:1: ( 'repeat' )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2408:1: 'repeat'
-            {
-             before(grammarAccess.getAlarmAccess().getRepeatKeyword_2()); 
-            match(input,48,FOLLOW_48_in_rule__Alarm__Group__2__Impl4852); 
-             after(grammarAccess.getAlarmAccess().getRepeatKeyword_2()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Alarm__Group__2__Impl"
-
-
-    // $ANTLR start "rule__Alarm__Group__3"
-    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2421:1: rule__Alarm__Group__3 : rule__Alarm__Group__3__Impl rule__Alarm__Group__4 ;
-    public final void rule__Alarm__Group__3() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2425:1: ( rule__Alarm__Group__3__Impl rule__Alarm__Group__4 )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2426:2: rule__Alarm__Group__3__Impl rule__Alarm__Group__4
-            {
-            pushFollow(FOLLOW_rule__Alarm__Group__3__Impl_in_rule__Alarm__Group__34883);
-            rule__Alarm__Group__3__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_rule__Alarm__Group__4_in_rule__Alarm__Group__34886);
-            rule__Alarm__Group__4();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Alarm__Group__3"
-
-
-    // $ANTLR start "rule__Alarm__Group__3__Impl"
-    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2433:1: rule__Alarm__Group__3__Impl : ( ( rule__Alarm__RepeattypeAssignment_3 ) ) ;
-    public final void rule__Alarm__Group__3__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2437:1: ( ( ( rule__Alarm__RepeattypeAssignment_3 ) ) )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2438:1: ( ( rule__Alarm__RepeattypeAssignment_3 ) )
-            {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2438:1: ( ( rule__Alarm__RepeattypeAssignment_3 ) )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2439:1: ( rule__Alarm__RepeattypeAssignment_3 )
-            {
-             before(grammarAccess.getAlarmAccess().getRepeattypeAssignment_3()); 
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2440:1: ( rule__Alarm__RepeattypeAssignment_3 )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2440:2: rule__Alarm__RepeattypeAssignment_3
-            {
-            pushFollow(FOLLOW_rule__Alarm__RepeattypeAssignment_3_in_rule__Alarm__Group__3__Impl4913);
-            rule__Alarm__RepeattypeAssignment_3();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getAlarmAccess().getRepeattypeAssignment_3()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Alarm__Group__3__Impl"
-
-
-    // $ANTLR start "rule__Alarm__Group__4"
-    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2450:1: rule__Alarm__Group__4 : rule__Alarm__Group__4__Impl rule__Alarm__Group__5 ;
-    public final void rule__Alarm__Group__4() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2454:1: ( rule__Alarm__Group__4__Impl rule__Alarm__Group__5 )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2455:2: rule__Alarm__Group__4__Impl rule__Alarm__Group__5
-            {
-            pushFollow(FOLLOW_rule__Alarm__Group__4__Impl_in_rule__Alarm__Group__44943);
-            rule__Alarm__Group__4__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_rule__Alarm__Group__5_in_rule__Alarm__Group__44946);
-            rule__Alarm__Group__5();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Alarm__Group__4"
-
-
-    // $ANTLR start "rule__Alarm__Group__4__Impl"
-    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2462:1: rule__Alarm__Group__4__Impl : ( 'hours:' ) ;
-    public final void rule__Alarm__Group__4__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2466:1: ( ( 'hours:' ) )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2467:1: ( 'hours:' )
-            {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2467:1: ( 'hours:' )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2468:1: 'hours:'
-            {
-             before(grammarAccess.getAlarmAccess().getHoursKeyword_4()); 
-            match(input,50,FOLLOW_50_in_rule__Alarm__Group__4__Impl4974); 
-             after(grammarAccess.getAlarmAccess().getHoursKeyword_4()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Alarm__Group__4__Impl"
-
-
-    // $ANTLR start "rule__Alarm__Group__5"
-    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2481:1: rule__Alarm__Group__5 : rule__Alarm__Group__5__Impl rule__Alarm__Group__6 ;
-    public final void rule__Alarm__Group__5() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2485:1: ( rule__Alarm__Group__5__Impl rule__Alarm__Group__6 )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2486:2: rule__Alarm__Group__5__Impl rule__Alarm__Group__6
-            {
-            pushFollow(FOLLOW_rule__Alarm__Group__5__Impl_in_rule__Alarm__Group__55005);
-            rule__Alarm__Group__5__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_rule__Alarm__Group__6_in_rule__Alarm__Group__55008);
-            rule__Alarm__Group__6();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Alarm__Group__5"
-
-
-    // $ANTLR start "rule__Alarm__Group__5__Impl"
-    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2493:1: rule__Alarm__Group__5__Impl : ( ( rule__Alarm__TimerHoursAssignment_5 ) ) ;
-    public final void rule__Alarm__Group__5__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2497:1: ( ( ( rule__Alarm__TimerHoursAssignment_5 ) ) )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2498:1: ( ( rule__Alarm__TimerHoursAssignment_5 ) )
-            {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2498:1: ( ( rule__Alarm__TimerHoursAssignment_5 ) )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2499:1: ( rule__Alarm__TimerHoursAssignment_5 )
-            {
-             before(grammarAccess.getAlarmAccess().getTimerHoursAssignment_5()); 
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2500:1: ( rule__Alarm__TimerHoursAssignment_5 )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2500:2: rule__Alarm__TimerHoursAssignment_5
-            {
-            pushFollow(FOLLOW_rule__Alarm__TimerHoursAssignment_5_in_rule__Alarm__Group__5__Impl5035);
-            rule__Alarm__TimerHoursAssignment_5();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getAlarmAccess().getTimerHoursAssignment_5()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Alarm__Group__5__Impl"
-
-
-    // $ANTLR start "rule__Alarm__Group__6"
-    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2510:1: rule__Alarm__Group__6 : rule__Alarm__Group__6__Impl rule__Alarm__Group__7 ;
-    public final void rule__Alarm__Group__6() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2514:1: ( rule__Alarm__Group__6__Impl rule__Alarm__Group__7 )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2515:2: rule__Alarm__Group__6__Impl rule__Alarm__Group__7
-            {
-            pushFollow(FOLLOW_rule__Alarm__Group__6__Impl_in_rule__Alarm__Group__65065);
-            rule__Alarm__Group__6__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_rule__Alarm__Group__7_in_rule__Alarm__Group__65068);
-            rule__Alarm__Group__7();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Alarm__Group__6"
-
-
-    // $ANTLR start "rule__Alarm__Group__6__Impl"
-    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2522:1: rule__Alarm__Group__6__Impl : ( 'minutes:' ) ;
-    public final void rule__Alarm__Group__6__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2526:1: ( ( 'minutes:' ) )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2527:1: ( 'minutes:' )
-            {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2527:1: ( 'minutes:' )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2528:1: 'minutes:'
-            {
-             before(grammarAccess.getAlarmAccess().getMinutesKeyword_6()); 
-            match(input,51,FOLLOW_51_in_rule__Alarm__Group__6__Impl5096); 
-             after(grammarAccess.getAlarmAccess().getMinutesKeyword_6()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Alarm__Group__6__Impl"
-
-
-    // $ANTLR start "rule__Alarm__Group__7"
-    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2541:1: rule__Alarm__Group__7 : rule__Alarm__Group__7__Impl ;
-    public final void rule__Alarm__Group__7() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2545:1: ( rule__Alarm__Group__7__Impl )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2546:2: rule__Alarm__Group__7__Impl
-            {
-            pushFollow(FOLLOW_rule__Alarm__Group__7__Impl_in_rule__Alarm__Group__75127);
-            rule__Alarm__Group__7__Impl();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Alarm__Group__7"
-
-
-    // $ANTLR start "rule__Alarm__Group__7__Impl"
-    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2552:1: rule__Alarm__Group__7__Impl : ( ( rule__Alarm__TimerMinutesAssignment_7 ) ) ;
-    public final void rule__Alarm__Group__7__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2556:1: ( ( ( rule__Alarm__TimerMinutesAssignment_7 ) ) )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2557:1: ( ( rule__Alarm__TimerMinutesAssignment_7 ) )
-            {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2557:1: ( ( rule__Alarm__TimerMinutesAssignment_7 ) )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2558:1: ( rule__Alarm__TimerMinutesAssignment_7 )
-            {
-             before(grammarAccess.getAlarmAccess().getTimerMinutesAssignment_7()); 
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2559:1: ( rule__Alarm__TimerMinutesAssignment_7 )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2559:2: rule__Alarm__TimerMinutesAssignment_7
-            {
-            pushFollow(FOLLOW_rule__Alarm__TimerMinutesAssignment_7_in_rule__Alarm__Group__7__Impl5154);
-            rule__Alarm__TimerMinutesAssignment_7();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getAlarmAccess().getTimerMinutesAssignment_7()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Alarm__Group__7__Impl"
-
-
     // $ANTLR start "rule__Model__NameAssignment_1"
-    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2586:1: rule__Model__NameAssignment_1 : ( RULE_ID ) ;
+    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1656:1: rule__Model__NameAssignment_1 : ( RULE_ID ) ;
     public final void rule__Model__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2590:1: ( ( RULE_ID ) )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2591:1: ( RULE_ID )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1660:1: ( ( RULE_ID ) )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1661:1: ( RULE_ID )
             {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2591:1: ( RULE_ID )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2592:1: RULE_ID
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1661:1: ( RULE_ID )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1662:1: RULE_ID
             {
              before(grammarAccess.getModelAccess().getNameIDTerminalRuleCall_1_0()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Model__NameAssignment_15205); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Model__NameAssignment_13287); 
              after(grammarAccess.getModelAccess().getNameIDTerminalRuleCall_1_0()); 
 
             }
@@ -6941,23 +4395,23 @@ public class InternalRaspduinoDSLParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Model__HardwareAssignment_3"
-    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2601:1: rule__Model__HardwareAssignment_3 : ( ( rule__Model__HardwareAlternatives_3_0 ) ) ;
+    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1671:1: rule__Model__HardwareAssignment_3 : ( ( rule__Model__HardwareAlternatives_3_0 ) ) ;
     public final void rule__Model__HardwareAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2605:1: ( ( ( rule__Model__HardwareAlternatives_3_0 ) ) )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2606:1: ( ( rule__Model__HardwareAlternatives_3_0 ) )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1675:1: ( ( ( rule__Model__HardwareAlternatives_3_0 ) ) )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1676:1: ( ( rule__Model__HardwareAlternatives_3_0 ) )
             {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2606:1: ( ( rule__Model__HardwareAlternatives_3_0 ) )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2607:1: ( rule__Model__HardwareAlternatives_3_0 )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1676:1: ( ( rule__Model__HardwareAlternatives_3_0 ) )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1677:1: ( rule__Model__HardwareAlternatives_3_0 )
             {
              before(grammarAccess.getModelAccess().getHardwareAlternatives_3_0()); 
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2608:1: ( rule__Model__HardwareAlternatives_3_0 )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2608:2: rule__Model__HardwareAlternatives_3_0
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1678:1: ( rule__Model__HardwareAlternatives_3_0 )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1678:2: rule__Model__HardwareAlternatives_3_0
             {
-            pushFollow(FOLLOW_rule__Model__HardwareAlternatives_3_0_in_rule__Model__HardwareAssignment_35236);
+            pushFollow(FOLLOW_rule__Model__HardwareAlternatives_3_0_in_rule__Model__HardwareAssignment_33318);
             rule__Model__HardwareAlternatives_3_0();
 
             state._fsp--;
@@ -6988,20 +4442,20 @@ public class InternalRaspduinoDSLParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Model__DevicesAssignment_4"
-    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2617:1: rule__Model__DevicesAssignment_4 : ( ruleAbstractDevice ) ;
+    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1687:1: rule__Model__DevicesAssignment_4 : ( ruleAbstractDevice ) ;
     public final void rule__Model__DevicesAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2621:1: ( ( ruleAbstractDevice ) )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2622:1: ( ruleAbstractDevice )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1691:1: ( ( ruleAbstractDevice ) )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1692:1: ( ruleAbstractDevice )
             {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2622:1: ( ruleAbstractDevice )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2623:1: ruleAbstractDevice
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1692:1: ( ruleAbstractDevice )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1693:1: ruleAbstractDevice
             {
              before(grammarAccess.getModelAccess().getDevicesAbstractDeviceParserRuleCall_4_0()); 
-            pushFollow(FOLLOW_ruleAbstractDevice_in_rule__Model__DevicesAssignment_45269);
+            pushFollow(FOLLOW_ruleAbstractDevice_in_rule__Model__DevicesAssignment_43351);
             ruleAbstractDevice();
 
             state._fsp--;
@@ -7029,20 +4483,20 @@ public class InternalRaspduinoDSLParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Model__EventHandlersAssignment_5"
-    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2632:1: rule__Model__EventHandlersAssignment_5 : ( ruleEventHandler ) ;
+    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1702:1: rule__Model__EventHandlersAssignment_5 : ( ruleEventHandler ) ;
     public final void rule__Model__EventHandlersAssignment_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2636:1: ( ( ruleEventHandler ) )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2637:1: ( ruleEventHandler )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1706:1: ( ( ruleEventHandler ) )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1707:1: ( ruleEventHandler )
             {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2637:1: ( ruleEventHandler )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2638:1: ruleEventHandler
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1707:1: ( ruleEventHandler )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1708:1: ruleEventHandler
             {
              before(grammarAccess.getModelAccess().getEventHandlersEventHandlerParserRuleCall_5_0()); 
-            pushFollow(FOLLOW_ruleEventHandler_in_rule__Model__EventHandlersAssignment_55300);
+            pushFollow(FOLLOW_ruleEventHandler_in_rule__Model__EventHandlersAssignment_53382);
             ruleEventHandler();
 
             state._fsp--;
@@ -7070,20 +4524,20 @@ public class InternalRaspduinoDSLParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Model__SensorListenersAssignment_6"
-    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2647:1: rule__Model__SensorListenersAssignment_6 : ( ruleSensorListener ) ;
+    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1717:1: rule__Model__SensorListenersAssignment_6 : ( ruleSensorListener ) ;
     public final void rule__Model__SensorListenersAssignment_6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2651:1: ( ( ruleSensorListener ) )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2652:1: ( ruleSensorListener )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1721:1: ( ( ruleSensorListener ) )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1722:1: ( ruleSensorListener )
             {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2652:1: ( ruleSensorListener )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2653:1: ruleSensorListener
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1722:1: ( ruleSensorListener )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1723:1: ruleSensorListener
             {
              before(grammarAccess.getModelAccess().getSensorListenersSensorListenerParserRuleCall_6_0()); 
-            pushFollow(FOLLOW_ruleSensorListener_in_rule__Model__SensorListenersAssignment_65331);
+            pushFollow(FOLLOW_ruleSensorListener_in_rule__Model__SensorListenersAssignment_63413);
             ruleSensorListener();
 
             state._fsp--;
@@ -7111,20 +4565,20 @@ public class InternalRaspduinoDSLParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Model__TimersAssignment_7"
-    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2662:1: rule__Model__TimersAssignment_7 : ( ruleTimer ) ;
+    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1732:1: rule__Model__TimersAssignment_7 : ( ruleTimer ) ;
     public final void rule__Model__TimersAssignment_7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2666:1: ( ( ruleTimer ) )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2667:1: ( ruleTimer )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1736:1: ( ( ruleTimer ) )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1737:1: ( ruleTimer )
             {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2667:1: ( ruleTimer )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2668:1: ruleTimer
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1737:1: ( ruleTimer )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1738:1: ruleTimer
             {
              before(grammarAccess.getModelAccess().getTimersTimerParserRuleCall_7_0()); 
-            pushFollow(FOLLOW_ruleTimer_in_rule__Model__TimersAssignment_75362);
+            pushFollow(FOLLOW_ruleTimer_in_rule__Model__TimersAssignment_73444);
             ruleTimer();
 
             state._fsp--;
@@ -7151,109 +4605,21 @@ public class InternalRaspduinoDSLParser extends AbstractInternalContentAssistPar
     // $ANTLR end "rule__Model__TimersAssignment_7"
 
 
-    // $ANTLR start "rule__Model__AlarmsAssignment_8"
-    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2677:1: rule__Model__AlarmsAssignment_8 : ( ruleAlarm ) ;
-    public final void rule__Model__AlarmsAssignment_8() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2681:1: ( ( ruleAlarm ) )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2682:1: ( ruleAlarm )
-            {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2682:1: ( ruleAlarm )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2683:1: ruleAlarm
-            {
-             before(grammarAccess.getModelAccess().getAlarmsAlarmParserRuleCall_8_0()); 
-            pushFollow(FOLLOW_ruleAlarm_in_rule__Model__AlarmsAssignment_85393);
-            ruleAlarm();
-
-            state._fsp--;
-
-             after(grammarAccess.getModelAccess().getAlarmsAlarmParserRuleCall_8_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Model__AlarmsAssignment_8"
-
-
-    // $ANTLR start "rule__Model__PriorityAssignment_9_1"
-    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2692:1: rule__Model__PriorityAssignment_9_1 : ( ( rule__Model__PriorityAlternatives_9_1_0 ) ) ;
-    public final void rule__Model__PriorityAssignment_9_1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2696:1: ( ( ( rule__Model__PriorityAlternatives_9_1_0 ) ) )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2697:1: ( ( rule__Model__PriorityAlternatives_9_1_0 ) )
-            {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2697:1: ( ( rule__Model__PriorityAlternatives_9_1_0 ) )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2698:1: ( rule__Model__PriorityAlternatives_9_1_0 )
-            {
-             before(grammarAccess.getModelAccess().getPriorityAlternatives_9_1_0()); 
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2699:1: ( rule__Model__PriorityAlternatives_9_1_0 )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2699:2: rule__Model__PriorityAlternatives_9_1_0
-            {
-            pushFollow(FOLLOW_rule__Model__PriorityAlternatives_9_1_0_in_rule__Model__PriorityAssignment_9_15424);
-            rule__Model__PriorityAlternatives_9_1_0();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getModelAccess().getPriorityAlternatives_9_1_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Model__PriorityAssignment_9_1"
-
-
     // $ANTLR start "rule__Sensor__NameAssignment_1"
-    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2708:1: rule__Sensor__NameAssignment_1 : ( RULE_ID ) ;
+    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1747:1: rule__Sensor__NameAssignment_1 : ( RULE_ID ) ;
     public final void rule__Sensor__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2712:1: ( ( RULE_ID ) )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2713:1: ( RULE_ID )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1751:1: ( ( RULE_ID ) )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1752:1: ( RULE_ID )
             {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2713:1: ( RULE_ID )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2714:1: RULE_ID
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1752:1: ( RULE_ID )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1753:1: RULE_ID
             {
              before(grammarAccess.getSensorAccess().getNameIDTerminalRuleCall_1_0()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Sensor__NameAssignment_15457); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Sensor__NameAssignment_13475); 
              after(grammarAccess.getSensorAccess().getNameIDTerminalRuleCall_1_0()); 
 
             }
@@ -7277,20 +4643,20 @@ public class InternalRaspduinoDSLParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Sensor__PinAssignment_3"
-    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2723:1: rule__Sensor__PinAssignment_3 : ( RULE_STRING ) ;
+    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1762:1: rule__Sensor__PinAssignment_3 : ( RULE_STRING ) ;
     public final void rule__Sensor__PinAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2727:1: ( ( RULE_STRING ) )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2728:1: ( RULE_STRING )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1766:1: ( ( RULE_STRING ) )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1767:1: ( RULE_STRING )
             {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2728:1: ( RULE_STRING )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2729:1: RULE_STRING
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1767:1: ( RULE_STRING )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1768:1: RULE_STRING
             {
              before(grammarAccess.getSensorAccess().getPinSTRINGTerminalRuleCall_3_0()); 
-            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__Sensor__PinAssignment_35488); 
+            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__Sensor__PinAssignment_33506); 
              after(grammarAccess.getSensorAccess().getPinSTRINGTerminalRuleCall_3_0()); 
 
             }
@@ -7314,20 +4680,20 @@ public class InternalRaspduinoDSLParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Actuator__NameAssignment_1"
-    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2738:1: rule__Actuator__NameAssignment_1 : ( RULE_ID ) ;
+    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1777:1: rule__Actuator__NameAssignment_1 : ( RULE_ID ) ;
     public final void rule__Actuator__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2742:1: ( ( RULE_ID ) )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2743:1: ( RULE_ID )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1781:1: ( ( RULE_ID ) )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1782:1: ( RULE_ID )
             {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2743:1: ( RULE_ID )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2744:1: RULE_ID
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1782:1: ( RULE_ID )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1783:1: RULE_ID
             {
              before(grammarAccess.getActuatorAccess().getNameIDTerminalRuleCall_1_0()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Actuator__NameAssignment_15519); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Actuator__NameAssignment_13537); 
              after(grammarAccess.getActuatorAccess().getNameIDTerminalRuleCall_1_0()); 
 
             }
@@ -7351,20 +4717,20 @@ public class InternalRaspduinoDSLParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Actuator__PinAssignment_3"
-    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2753:1: rule__Actuator__PinAssignment_3 : ( RULE_STRING ) ;
+    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1792:1: rule__Actuator__PinAssignment_3 : ( RULE_STRING ) ;
     public final void rule__Actuator__PinAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2757:1: ( ( RULE_STRING ) )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2758:1: ( RULE_STRING )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1796:1: ( ( RULE_STRING ) )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1797:1: ( RULE_STRING )
             {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2758:1: ( RULE_STRING )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2759:1: RULE_STRING
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1797:1: ( RULE_STRING )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1798:1: RULE_STRING
             {
              before(grammarAccess.getActuatorAccess().getPinSTRINGTerminalRuleCall_3_0()); 
-            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__Actuator__PinAssignment_35550); 
+            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__Actuator__PinAssignment_33568); 
              after(grammarAccess.getActuatorAccess().getPinSTRINGTerminalRuleCall_3_0()); 
 
             }
@@ -7388,20 +4754,20 @@ public class InternalRaspduinoDSLParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__EventHandler__NameAssignment_1"
-    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2768:1: rule__EventHandler__NameAssignment_1 : ( RULE_ID ) ;
+    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1807:1: rule__EventHandler__NameAssignment_1 : ( RULE_ID ) ;
     public final void rule__EventHandler__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2772:1: ( ( RULE_ID ) )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2773:1: ( RULE_ID )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1811:1: ( ( RULE_ID ) )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1812:1: ( RULE_ID )
             {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2773:1: ( RULE_ID )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2774:1: RULE_ID
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1812:1: ( RULE_ID )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1813:1: RULE_ID
             {
              before(grammarAccess.getEventHandlerAccess().getNameIDTerminalRuleCall_1_0()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__EventHandler__NameAssignment_15581); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__EventHandler__NameAssignment_13599); 
              after(grammarAccess.getEventHandlerAccess().getNameIDTerminalRuleCall_1_0()); 
 
             }
@@ -7425,20 +4791,20 @@ public class InternalRaspduinoDSLParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__EventHandler__ChangeActuatorsAssignment_2"
-    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2783:1: rule__EventHandler__ChangeActuatorsAssignment_2 : ( ruleChangeActuator ) ;
+    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1822:1: rule__EventHandler__ChangeActuatorsAssignment_2 : ( ruleChangeActuator ) ;
     public final void rule__EventHandler__ChangeActuatorsAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2787:1: ( ( ruleChangeActuator ) )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2788:1: ( ruleChangeActuator )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1826:1: ( ( ruleChangeActuator ) )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1827:1: ( ruleChangeActuator )
             {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2788:1: ( ruleChangeActuator )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2789:1: ruleChangeActuator
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1827:1: ( ruleChangeActuator )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1828:1: ruleChangeActuator
             {
              before(grammarAccess.getEventHandlerAccess().getChangeActuatorsChangeActuatorParserRuleCall_2_0()); 
-            pushFollow(FOLLOW_ruleChangeActuator_in_rule__EventHandler__ChangeActuatorsAssignment_25612);
+            pushFollow(FOLLOW_ruleChangeActuator_in_rule__EventHandler__ChangeActuatorsAssignment_23630);
             ruleChangeActuator();
 
             state._fsp--;
@@ -7466,24 +4832,24 @@ public class InternalRaspduinoDSLParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__ChangeActuator__ActuatorAssignment_0"
-    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2798:1: rule__ChangeActuator__ActuatorAssignment_0 : ( ( RULE_ID ) ) ;
+    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1837:1: rule__ChangeActuator__ActuatorAssignment_0 : ( ( RULE_ID ) ) ;
     public final void rule__ChangeActuator__ActuatorAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2802:1: ( ( ( RULE_ID ) ) )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2803:1: ( ( RULE_ID ) )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1841:1: ( ( ( RULE_ID ) ) )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1842:1: ( ( RULE_ID ) )
             {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2803:1: ( ( RULE_ID ) )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2804:1: ( RULE_ID )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1842:1: ( ( RULE_ID ) )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1843:1: ( RULE_ID )
             {
              before(grammarAccess.getChangeActuatorAccess().getActuatorActuatorCrossReference_0_0()); 
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2805:1: ( RULE_ID )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2806:1: RULE_ID
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1844:1: ( RULE_ID )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1845:1: RULE_ID
             {
              before(grammarAccess.getChangeActuatorAccess().getActuatorActuatorIDTerminalRuleCall_0_0_1()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__ChangeActuator__ActuatorAssignment_05647); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__ChangeActuator__ActuatorAssignment_03665); 
              after(grammarAccess.getChangeActuatorAccess().getActuatorActuatorIDTerminalRuleCall_0_0_1()); 
 
             }
@@ -7511,23 +4877,23 @@ public class InternalRaspduinoDSLParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__ChangeActuator__ActuatorStateAssignment_2"
-    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2817:1: rule__ChangeActuator__ActuatorStateAssignment_2 : ( ( rule__ChangeActuator__ActuatorStateAlternatives_2_0 ) ) ;
+    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1856:1: rule__ChangeActuator__ActuatorStateAssignment_2 : ( ( rule__ChangeActuator__ActuatorStateAlternatives_2_0 ) ) ;
     public final void rule__ChangeActuator__ActuatorStateAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2821:1: ( ( ( rule__ChangeActuator__ActuatorStateAlternatives_2_0 ) ) )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2822:1: ( ( rule__ChangeActuator__ActuatorStateAlternatives_2_0 ) )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1860:1: ( ( ( rule__ChangeActuator__ActuatorStateAlternatives_2_0 ) ) )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1861:1: ( ( rule__ChangeActuator__ActuatorStateAlternatives_2_0 ) )
             {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2822:1: ( ( rule__ChangeActuator__ActuatorStateAlternatives_2_0 ) )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2823:1: ( rule__ChangeActuator__ActuatorStateAlternatives_2_0 )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1861:1: ( ( rule__ChangeActuator__ActuatorStateAlternatives_2_0 ) )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1862:1: ( rule__ChangeActuator__ActuatorStateAlternatives_2_0 )
             {
              before(grammarAccess.getChangeActuatorAccess().getActuatorStateAlternatives_2_0()); 
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2824:1: ( rule__ChangeActuator__ActuatorStateAlternatives_2_0 )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2824:2: rule__ChangeActuator__ActuatorStateAlternatives_2_0
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1863:1: ( rule__ChangeActuator__ActuatorStateAlternatives_2_0 )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1863:2: rule__ChangeActuator__ActuatorStateAlternatives_2_0
             {
-            pushFollow(FOLLOW_rule__ChangeActuator__ActuatorStateAlternatives_2_0_in_rule__ChangeActuator__ActuatorStateAssignment_25682);
+            pushFollow(FOLLOW_rule__ChangeActuator__ActuatorStateAlternatives_2_0_in_rule__ChangeActuator__ActuatorStateAssignment_23700);
             rule__ChangeActuator__ActuatorStateAlternatives_2_0();
 
             state._fsp--;
@@ -7558,24 +4924,24 @@ public class InternalRaspduinoDSLParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__SensorListener__SensorAssignment_1"
-    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2833:1: rule__SensorListener__SensorAssignment_1 : ( ( RULE_ID ) ) ;
+    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1872:1: rule__SensorListener__SensorAssignment_1 : ( ( RULE_ID ) ) ;
     public final void rule__SensorListener__SensorAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2837:1: ( ( ( RULE_ID ) ) )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2838:1: ( ( RULE_ID ) )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1876:1: ( ( ( RULE_ID ) ) )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1877:1: ( ( RULE_ID ) )
             {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2838:1: ( ( RULE_ID ) )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2839:1: ( RULE_ID )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1877:1: ( ( RULE_ID ) )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1878:1: ( RULE_ID )
             {
              before(grammarAccess.getSensorListenerAccess().getSensorSensorCrossReference_1_0()); 
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2840:1: ( RULE_ID )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2841:1: RULE_ID
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1879:1: ( RULE_ID )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1880:1: RULE_ID
             {
              before(grammarAccess.getSensorListenerAccess().getSensorSensorIDTerminalRuleCall_1_0_1()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__SensorListener__SensorAssignment_15719); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__SensorListener__SensorAssignment_13737); 
              after(grammarAccess.getSensorListenerAccess().getSensorSensorIDTerminalRuleCall_1_0_1()); 
 
             }
@@ -7603,29 +4969,29 @@ public class InternalRaspduinoDSLParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__SensorListener__TypeAssignment_3_0"
-    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2852:1: rule__SensorListener__TypeAssignment_3_0 : ( ( 'BETWEEN' ) ) ;
+    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1891:1: rule__SensorListener__TypeAssignment_3_0 : ( ( 'ON' ) ) ;
     public final void rule__SensorListener__TypeAssignment_3_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2856:1: ( ( ( 'BETWEEN' ) ) )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2857:1: ( ( 'BETWEEN' ) )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1895:1: ( ( ( 'ON' ) ) )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1896:1: ( ( 'ON' ) )
             {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2857:1: ( ( 'BETWEEN' ) )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2858:1: ( 'BETWEEN' )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1896:1: ( ( 'ON' ) )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1897:1: ( 'ON' )
             {
-             before(grammarAccess.getSensorListenerAccess().getTypeBETWEENKeyword_3_0_0()); 
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2859:1: ( 'BETWEEN' )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2860:1: 'BETWEEN'
+             before(grammarAccess.getSensorListenerAccess().getTypeONKeyword_3_0_0()); 
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1898:1: ( 'ON' )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1899:1: 'ON'
             {
-             before(grammarAccess.getSensorListenerAccess().getTypeBETWEENKeyword_3_0_0()); 
-            match(input,52,FOLLOW_52_in_rule__SensorListener__TypeAssignment_3_05759); 
-             after(grammarAccess.getSensorListenerAccess().getTypeBETWEENKeyword_3_0_0()); 
+             before(grammarAccess.getSensorListenerAccess().getTypeONKeyword_3_0_0()); 
+            match(input,33,FOLLOW_33_in_rule__SensorListener__TypeAssignment_3_03777); 
+             after(grammarAccess.getSensorListenerAccess().getTypeONKeyword_3_0_0()); 
 
             }
 
-             after(grammarAccess.getSensorListenerAccess().getTypeBETWEENKeyword_3_0_0()); 
+             after(grammarAccess.getSensorListenerAccess().getTypeONKeyword_3_0_0()); 
 
             }
 
@@ -7647,22 +5013,30 @@ public class InternalRaspduinoDSLParser extends AbstractInternalContentAssistPar
     // $ANTLR end "rule__SensorListener__TypeAssignment_3_0"
 
 
-    // $ANTLR start "rule__SensorListener__LAssignment_3_1"
-    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2875:1: rule__SensorListener__LAssignment_3_1 : ( RULE_INT ) ;
-    public final void rule__SensorListener__LAssignment_3_1() throws RecognitionException {
+    // $ANTLR start "rule__SensorListener__TypeAssignment_3_1"
+    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1914:1: rule__SensorListener__TypeAssignment_3_1 : ( ( 'OFF' ) ) ;
+    public final void rule__SensorListener__TypeAssignment_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2879:1: ( ( RULE_INT ) )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2880:1: ( RULE_INT )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1918:1: ( ( ( 'OFF' ) ) )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1919:1: ( ( 'OFF' ) )
             {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2880:1: ( RULE_INT )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2881:1: RULE_INT
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1919:1: ( ( 'OFF' ) )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1920:1: ( 'OFF' )
             {
-             before(grammarAccess.getSensorListenerAccess().getLINTTerminalRuleCall_3_1_0()); 
-            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__SensorListener__LAssignment_3_15798); 
-             after(grammarAccess.getSensorListenerAccess().getLINTTerminalRuleCall_3_1_0()); 
+             before(grammarAccess.getSensorListenerAccess().getTypeOFFKeyword_3_1_0()); 
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1921:1: ( 'OFF' )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1922:1: 'OFF'
+            {
+             before(grammarAccess.getSensorListenerAccess().getTypeOFFKeyword_3_1_0()); 
+            match(input,34,FOLLOW_34_in_rule__SensorListener__TypeAssignment_3_13821); 
+             after(grammarAccess.getSensorListenerAccess().getTypeOFFKeyword_3_1_0()); 
+
+            }
+
+             after(grammarAccess.getSensorListenerAccess().getTypeOFFKeyword_3_1_0()); 
 
             }
 
@@ -7681,25 +5055,33 @@ public class InternalRaspduinoDSLParser extends AbstractInternalContentAssistPar
         }
         return ;
     }
-    // $ANTLR end "rule__SensorListener__LAssignment_3_1"
+    // $ANTLR end "rule__SensorListener__TypeAssignment_3_1"
 
 
-    // $ANTLR start "rule__SensorListener__HAssignment_3_3"
-    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2890:1: rule__SensorListener__HAssignment_3_3 : ( RULE_INT ) ;
-    public final void rule__SensorListener__HAssignment_3_3() throws RecognitionException {
+    // $ANTLR start "rule__SensorListener__TypeAssignment_3_2_0"
+    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1937:1: rule__SensorListener__TypeAssignment_3_2_0 : ( ( 'BETWEEN' ) ) ;
+    public final void rule__SensorListener__TypeAssignment_3_2_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2894:1: ( ( RULE_INT ) )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2895:1: ( RULE_INT )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1941:1: ( ( ( 'BETWEEN' ) ) )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1942:1: ( ( 'BETWEEN' ) )
             {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2895:1: ( RULE_INT )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2896:1: RULE_INT
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1942:1: ( ( 'BETWEEN' ) )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1943:1: ( 'BETWEEN' )
             {
-             before(grammarAccess.getSensorListenerAccess().getHINTTerminalRuleCall_3_3_0()); 
-            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__SensorListener__HAssignment_3_35829); 
-             after(grammarAccess.getSensorListenerAccess().getHINTTerminalRuleCall_3_3_0()); 
+             before(grammarAccess.getSensorListenerAccess().getTypeBETWEENKeyword_3_2_0_0()); 
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1944:1: ( 'BETWEEN' )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1945:1: 'BETWEEN'
+            {
+             before(grammarAccess.getSensorListenerAccess().getTypeBETWEENKeyword_3_2_0_0()); 
+            match(input,35,FOLLOW_35_in_rule__SensorListener__TypeAssignment_3_2_03865); 
+             after(grammarAccess.getSensorListenerAccess().getTypeBETWEENKeyword_3_2_0_0()); 
+
+            }
+
+             after(grammarAccess.getSensorListenerAccess().getTypeBETWEENKeyword_3_2_0_0()); 
 
             }
 
@@ -7718,28 +5100,102 @@ public class InternalRaspduinoDSLParser extends AbstractInternalContentAssistPar
         }
         return ;
     }
-    // $ANTLR end "rule__SensorListener__HAssignment_3_3"
+    // $ANTLR end "rule__SensorListener__TypeAssignment_3_2_0"
+
+
+    // $ANTLR start "rule__SensorListener__LAssignment_3_2_1"
+    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1960:1: rule__SensorListener__LAssignment_3_2_1 : ( RULE_INT ) ;
+    public final void rule__SensorListener__LAssignment_3_2_1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1964:1: ( ( RULE_INT ) )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1965:1: ( RULE_INT )
+            {
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1965:1: ( RULE_INT )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1966:1: RULE_INT
+            {
+             before(grammarAccess.getSensorListenerAccess().getLINTTerminalRuleCall_3_2_1_0()); 
+            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__SensorListener__LAssignment_3_2_13904); 
+             after(grammarAccess.getSensorListenerAccess().getLINTTerminalRuleCall_3_2_1_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__SensorListener__LAssignment_3_2_1"
+
+
+    // $ANTLR start "rule__SensorListener__HAssignment_3_2_3"
+    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1975:1: rule__SensorListener__HAssignment_3_2_3 : ( RULE_INT ) ;
+    public final void rule__SensorListener__HAssignment_3_2_3() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1979:1: ( ( RULE_INT ) )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1980:1: ( RULE_INT )
+            {
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1980:1: ( RULE_INT )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1981:1: RULE_INT
+            {
+             before(grammarAccess.getSensorListenerAccess().getHINTTerminalRuleCall_3_2_3_0()); 
+            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__SensorListener__HAssignment_3_2_33935); 
+             after(grammarAccess.getSensorListenerAccess().getHINTTerminalRuleCall_3_2_3_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__SensorListener__HAssignment_3_2_3"
 
 
     // $ANTLR start "rule__SensorListener__EventHandlerAssignment_5"
-    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2905:1: rule__SensorListener__EventHandlerAssignment_5 : ( ( RULE_ID ) ) ;
+    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1990:1: rule__SensorListener__EventHandlerAssignment_5 : ( ( RULE_ID ) ) ;
     public final void rule__SensorListener__EventHandlerAssignment_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2909:1: ( ( ( RULE_ID ) ) )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2910:1: ( ( RULE_ID ) )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1994:1: ( ( ( RULE_ID ) ) )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1995:1: ( ( RULE_ID ) )
             {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2910:1: ( ( RULE_ID ) )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2911:1: ( RULE_ID )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1995:1: ( ( RULE_ID ) )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1996:1: ( RULE_ID )
             {
              before(grammarAccess.getSensorListenerAccess().getEventHandlerEventHandlerCrossReference_5_0()); 
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2912:1: ( RULE_ID )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2913:1: RULE_ID
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1997:1: ( RULE_ID )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:1998:1: RULE_ID
             {
              before(grammarAccess.getSensorListenerAccess().getEventHandlerEventHandlerIDTerminalRuleCall_5_0_1()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__SensorListener__EventHandlerAssignment_55864); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__SensorListener__EventHandlerAssignment_53970); 
              after(grammarAccess.getSensorListenerAccess().getEventHandlerEventHandlerIDTerminalRuleCall_5_0_1()); 
 
             }
@@ -7766,447 +5222,25 @@ public class InternalRaspduinoDSLParser extends AbstractInternalContentAssistPar
     // $ANTLR end "rule__SensorListener__EventHandlerAssignment_5"
 
 
-    // $ANTLR start "rule__Precondition__Pre1Assignment_0_0"
-    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2924:1: rule__Precondition__Pre1Assignment_0_0 : ( rulePrecondition1 ) ;
-    public final void rule__Precondition__Pre1Assignment_0_0() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2928:1: ( ( rulePrecondition1 ) )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2929:1: ( rulePrecondition1 )
-            {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2929:1: ( rulePrecondition1 )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2930:1: rulePrecondition1
-            {
-             before(grammarAccess.getPreconditionAccess().getPre1Precondition1ParserRuleCall_0_0_0()); 
-            pushFollow(FOLLOW_rulePrecondition1_in_rule__Precondition__Pre1Assignment_0_05899);
-            rulePrecondition1();
-
-            state._fsp--;
-
-             after(grammarAccess.getPreconditionAccess().getPre1Precondition1ParserRuleCall_0_0_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Precondition__Pre1Assignment_0_0"
-
-
-    // $ANTLR start "rule__Precondition__OpAssignment_0_1"
-    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2939:1: rule__Precondition__OpAssignment_0_1 : ( ( rule__Precondition__OpAlternatives_0_1_0 ) ) ;
-    public final void rule__Precondition__OpAssignment_0_1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2943:1: ( ( ( rule__Precondition__OpAlternatives_0_1_0 ) ) )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2944:1: ( ( rule__Precondition__OpAlternatives_0_1_0 ) )
-            {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2944:1: ( ( rule__Precondition__OpAlternatives_0_1_0 ) )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2945:1: ( rule__Precondition__OpAlternatives_0_1_0 )
-            {
-             before(grammarAccess.getPreconditionAccess().getOpAlternatives_0_1_0()); 
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2946:1: ( rule__Precondition__OpAlternatives_0_1_0 )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2946:2: rule__Precondition__OpAlternatives_0_1_0
-            {
-            pushFollow(FOLLOW_rule__Precondition__OpAlternatives_0_1_0_in_rule__Precondition__OpAssignment_0_15930);
-            rule__Precondition__OpAlternatives_0_1_0();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getPreconditionAccess().getOpAlternatives_0_1_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Precondition__OpAssignment_0_1"
-
-
-    // $ANTLR start "rule__Precondition__PreAssignment_0_2"
-    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2955:1: rule__Precondition__PreAssignment_0_2 : ( rulePrecondition ) ;
-    public final void rule__Precondition__PreAssignment_0_2() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2959:1: ( ( rulePrecondition ) )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2960:1: ( rulePrecondition )
-            {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2960:1: ( rulePrecondition )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2961:1: rulePrecondition
-            {
-             before(grammarAccess.getPreconditionAccess().getPrePreconditionParserRuleCall_0_2_0()); 
-            pushFollow(FOLLOW_rulePrecondition_in_rule__Precondition__PreAssignment_0_25963);
-            rulePrecondition();
-
-            state._fsp--;
-
-             after(grammarAccess.getPreconditionAccess().getPrePreconditionParserRuleCall_0_2_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Precondition__PreAssignment_0_2"
-
-
-    // $ANTLR start "rule__Precondition__Pre1Assignment_1"
-    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2970:1: rule__Precondition__Pre1Assignment_1 : ( rulePrecondition1 ) ;
-    public final void rule__Precondition__Pre1Assignment_1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2974:1: ( ( rulePrecondition1 ) )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2975:1: ( rulePrecondition1 )
-            {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2975:1: ( rulePrecondition1 )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2976:1: rulePrecondition1
-            {
-             before(grammarAccess.getPreconditionAccess().getPre1Precondition1ParserRuleCall_1_0()); 
-            pushFollow(FOLLOW_rulePrecondition1_in_rule__Precondition__Pre1Assignment_15994);
-            rulePrecondition1();
-
-            state._fsp--;
-
-             after(grammarAccess.getPreconditionAccess().getPre1Precondition1ParserRuleCall_1_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Precondition__Pre1Assignment_1"
-
-
-    // $ANTLR start "rule__Precondition1__PreAssignment_0"
-    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2985:1: rule__Precondition1__PreAssignment_0 : ( ruleSensorValuePrecondition ) ;
-    public final void rule__Precondition1__PreAssignment_0() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2989:1: ( ( ruleSensorValuePrecondition ) )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2990:1: ( ruleSensorValuePrecondition )
-            {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2990:1: ( ruleSensorValuePrecondition )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2991:1: ruleSensorValuePrecondition
-            {
-             before(grammarAccess.getPrecondition1Access().getPreSensorValuePreconditionParserRuleCall_0_0()); 
-            pushFollow(FOLLOW_ruleSensorValuePrecondition_in_rule__Precondition1__PreAssignment_06025);
-            ruleSensorValuePrecondition();
-
-            state._fsp--;
-
-             after(grammarAccess.getPrecondition1Access().getPreSensorValuePreconditionParserRuleCall_0_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Precondition1__PreAssignment_0"
-
-
-    // $ANTLR start "rule__Precondition1__PreAssignment_1"
-    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:3000:1: rule__Precondition1__PreAssignment_1 : ( ruleEmptyPrecondition ) ;
-    public final void rule__Precondition1__PreAssignment_1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:3004:1: ( ( ruleEmptyPrecondition ) )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:3005:1: ( ruleEmptyPrecondition )
-            {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:3005:1: ( ruleEmptyPrecondition )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:3006:1: ruleEmptyPrecondition
-            {
-             before(grammarAccess.getPrecondition1Access().getPreEmptyPreconditionParserRuleCall_1_0()); 
-            pushFollow(FOLLOW_ruleEmptyPrecondition_in_rule__Precondition1__PreAssignment_16056);
-            ruleEmptyPrecondition();
-
-            state._fsp--;
-
-             after(grammarAccess.getPrecondition1Access().getPreEmptyPreconditionParserRuleCall_1_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Precondition1__PreAssignment_1"
-
-
-    // $ANTLR start "rule__EmptyPrecondition__NameAssignment"
-    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:3015:1: rule__EmptyPrecondition__NameAssignment : ( RULE_ID ) ;
-    public final void rule__EmptyPrecondition__NameAssignment() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:3019:1: ( ( RULE_ID ) )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:3020:1: ( RULE_ID )
-            {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:3020:1: ( RULE_ID )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:3021:1: RULE_ID
-            {
-             before(grammarAccess.getEmptyPreconditionAccess().getNameIDTerminalRuleCall_0()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__EmptyPrecondition__NameAssignment6087); 
-             after(grammarAccess.getEmptyPreconditionAccess().getNameIDTerminalRuleCall_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__EmptyPrecondition__NameAssignment"
-
-
-    // $ANTLR start "rule__SensorValuePrecondition__SensorAssignment_0"
-    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:3030:1: rule__SensorValuePrecondition__SensorAssignment_0 : ( ( RULE_ID ) ) ;
-    public final void rule__SensorValuePrecondition__SensorAssignment_0() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:3034:1: ( ( ( RULE_ID ) ) )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:3035:1: ( ( RULE_ID ) )
-            {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:3035:1: ( ( RULE_ID ) )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:3036:1: ( RULE_ID )
-            {
-             before(grammarAccess.getSensorValuePreconditionAccess().getSensorSensorCrossReference_0_0()); 
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:3037:1: ( RULE_ID )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:3038:1: RULE_ID
-            {
-             before(grammarAccess.getSensorValuePreconditionAccess().getSensorSensorIDTerminalRuleCall_0_0_1()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__SensorValuePrecondition__SensorAssignment_06122); 
-             after(grammarAccess.getSensorValuePreconditionAccess().getSensorSensorIDTerminalRuleCall_0_0_1()); 
-
-            }
-
-             after(grammarAccess.getSensorValuePreconditionAccess().getSensorSensorCrossReference_0_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__SensorValuePrecondition__SensorAssignment_0"
-
-
-    // $ANTLR start "rule__SensorValuePrecondition__CondAssignment_1"
-    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:3049:1: rule__SensorValuePrecondition__CondAssignment_1 : ( ( rule__SensorValuePrecondition__CondAlternatives_1_0 ) ) ;
-    public final void rule__SensorValuePrecondition__CondAssignment_1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:3053:1: ( ( ( rule__SensorValuePrecondition__CondAlternatives_1_0 ) ) )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:3054:1: ( ( rule__SensorValuePrecondition__CondAlternatives_1_0 ) )
-            {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:3054:1: ( ( rule__SensorValuePrecondition__CondAlternatives_1_0 ) )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:3055:1: ( rule__SensorValuePrecondition__CondAlternatives_1_0 )
-            {
-             before(grammarAccess.getSensorValuePreconditionAccess().getCondAlternatives_1_0()); 
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:3056:1: ( rule__SensorValuePrecondition__CondAlternatives_1_0 )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:3056:2: rule__SensorValuePrecondition__CondAlternatives_1_0
-            {
-            pushFollow(FOLLOW_rule__SensorValuePrecondition__CondAlternatives_1_0_in_rule__SensorValuePrecondition__CondAssignment_16157);
-            rule__SensorValuePrecondition__CondAlternatives_1_0();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getSensorValuePreconditionAccess().getCondAlternatives_1_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__SensorValuePrecondition__CondAssignment_1"
-
-
-    // $ANTLR start "rule__SensorValuePrecondition__ValueAssignment_2"
-    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:3065:1: rule__SensorValuePrecondition__ValueAssignment_2 : ( rulePossibleValues ) ;
-    public final void rule__SensorValuePrecondition__ValueAssignment_2() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:3069:1: ( ( rulePossibleValues ) )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:3070:1: ( rulePossibleValues )
-            {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:3070:1: ( rulePossibleValues )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:3071:1: rulePossibleValues
-            {
-             before(grammarAccess.getSensorValuePreconditionAccess().getValuePossibleValuesParserRuleCall_2_0()); 
-            pushFollow(FOLLOW_rulePossibleValues_in_rule__SensorValuePrecondition__ValueAssignment_26190);
-            rulePossibleValues();
-
-            state._fsp--;
-
-             after(grammarAccess.getSensorValuePreconditionAccess().getValuePossibleValuesParserRuleCall_2_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__SensorValuePrecondition__ValueAssignment_2"
-
-
     // $ANTLR start "rule__Timer__EventHandlerAssignment_1"
-    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:3080:1: rule__Timer__EventHandlerAssignment_1 : ( ( RULE_ID ) ) ;
+    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2009:1: rule__Timer__EventHandlerAssignment_1 : ( ( RULE_ID ) ) ;
     public final void rule__Timer__EventHandlerAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:3084:1: ( ( ( RULE_ID ) ) )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:3085:1: ( ( RULE_ID ) )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2013:1: ( ( ( RULE_ID ) ) )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2014:1: ( ( RULE_ID ) )
             {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:3085:1: ( ( RULE_ID ) )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:3086:1: ( RULE_ID )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2014:1: ( ( RULE_ID ) )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2015:1: ( RULE_ID )
             {
              before(grammarAccess.getTimerAccess().getEventHandlerEventHandlerCrossReference_1_0()); 
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:3087:1: ( RULE_ID )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:3088:1: RULE_ID
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2016:1: ( RULE_ID )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2017:1: RULE_ID
             {
              before(grammarAccess.getTimerAccess().getEventHandlerEventHandlerIDTerminalRuleCall_1_0_1()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Timer__EventHandlerAssignment_16225); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Timer__EventHandlerAssignment_14009); 
              after(grammarAccess.getTimerAccess().getEventHandlerEventHandlerIDTerminalRuleCall_1_0_1()); 
 
             }
@@ -8234,23 +5268,23 @@ public class InternalRaspduinoDSLParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Timer__RepeattypeAssignment_3"
-    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:3099:1: rule__Timer__RepeattypeAssignment_3 : ( ( rule__Timer__RepeattypeAlternatives_3_0 ) ) ;
+    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2028:1: rule__Timer__RepeattypeAssignment_3 : ( ( rule__Timer__RepeattypeAlternatives_3_0 ) ) ;
     public final void rule__Timer__RepeattypeAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:3103:1: ( ( ( rule__Timer__RepeattypeAlternatives_3_0 ) ) )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:3104:1: ( ( rule__Timer__RepeattypeAlternatives_3_0 ) )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2032:1: ( ( ( rule__Timer__RepeattypeAlternatives_3_0 ) ) )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2033:1: ( ( rule__Timer__RepeattypeAlternatives_3_0 ) )
             {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:3104:1: ( ( rule__Timer__RepeattypeAlternatives_3_0 ) )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:3105:1: ( rule__Timer__RepeattypeAlternatives_3_0 )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2033:1: ( ( rule__Timer__RepeattypeAlternatives_3_0 ) )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2034:1: ( rule__Timer__RepeattypeAlternatives_3_0 )
             {
              before(grammarAccess.getTimerAccess().getRepeattypeAlternatives_3_0()); 
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:3106:1: ( rule__Timer__RepeattypeAlternatives_3_0 )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:3106:2: rule__Timer__RepeattypeAlternatives_3_0
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2035:1: ( rule__Timer__RepeattypeAlternatives_3_0 )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2035:2: rule__Timer__RepeattypeAlternatives_3_0
             {
-            pushFollow(FOLLOW_rule__Timer__RepeattypeAlternatives_3_0_in_rule__Timer__RepeattypeAssignment_36260);
+            pushFollow(FOLLOW_rule__Timer__RepeattypeAlternatives_3_0_in_rule__Timer__RepeattypeAssignment_34044);
             rule__Timer__RepeattypeAlternatives_3_0();
 
             state._fsp--;
@@ -8281,20 +5315,20 @@ public class InternalRaspduinoDSLParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Timer__TimerSecsAssignment_5"
-    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:3115:1: rule__Timer__TimerSecsAssignment_5 : ( RULE_INT ) ;
+    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2044:1: rule__Timer__TimerSecsAssignment_5 : ( RULE_INT ) ;
     public final void rule__Timer__TimerSecsAssignment_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:3119:1: ( ( RULE_INT ) )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:3120:1: ( RULE_INT )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2048:1: ( ( RULE_INT ) )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2049:1: ( RULE_INT )
             {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:3120:1: ( RULE_INT )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:3121:1: RULE_INT
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2049:1: ( RULE_INT )
+            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:2050:1: RULE_INT
             {
              before(grammarAccess.getTimerAccess().getTimerSecsINTTerminalRuleCall_5_0()); 
-            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__Timer__TimerSecsAssignment_56293); 
+            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__Timer__TimerSecsAssignment_54077); 
              after(grammarAccess.getTimerAccess().getTimerSecsINTTerminalRuleCall_5_0()); 
 
             }
@@ -8316,234 +5350,9 @@ public class InternalRaspduinoDSLParser extends AbstractInternalContentAssistPar
     }
     // $ANTLR end "rule__Timer__TimerSecsAssignment_5"
 
-
-    // $ANTLR start "rule__Alarm__EventHandlerAssignment_1"
-    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:3130:1: rule__Alarm__EventHandlerAssignment_1 : ( ( RULE_ID ) ) ;
-    public final void rule__Alarm__EventHandlerAssignment_1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:3134:1: ( ( ( RULE_ID ) ) )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:3135:1: ( ( RULE_ID ) )
-            {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:3135:1: ( ( RULE_ID ) )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:3136:1: ( RULE_ID )
-            {
-             before(grammarAccess.getAlarmAccess().getEventHandlerEventHandlerCrossReference_1_0()); 
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:3137:1: ( RULE_ID )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:3138:1: RULE_ID
-            {
-             before(grammarAccess.getAlarmAccess().getEventHandlerEventHandlerIDTerminalRuleCall_1_0_1()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Alarm__EventHandlerAssignment_16328); 
-             after(grammarAccess.getAlarmAccess().getEventHandlerEventHandlerIDTerminalRuleCall_1_0_1()); 
-
-            }
-
-             after(grammarAccess.getAlarmAccess().getEventHandlerEventHandlerCrossReference_1_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Alarm__EventHandlerAssignment_1"
-
-
-    // $ANTLR start "rule__Alarm__RepeattypeAssignment_3"
-    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:3149:1: rule__Alarm__RepeattypeAssignment_3 : ( ( rule__Alarm__RepeattypeAlternatives_3_0 ) ) ;
-    public final void rule__Alarm__RepeattypeAssignment_3() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:3153:1: ( ( ( rule__Alarm__RepeattypeAlternatives_3_0 ) ) )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:3154:1: ( ( rule__Alarm__RepeattypeAlternatives_3_0 ) )
-            {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:3154:1: ( ( rule__Alarm__RepeattypeAlternatives_3_0 ) )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:3155:1: ( rule__Alarm__RepeattypeAlternatives_3_0 )
-            {
-             before(grammarAccess.getAlarmAccess().getRepeattypeAlternatives_3_0()); 
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:3156:1: ( rule__Alarm__RepeattypeAlternatives_3_0 )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:3156:2: rule__Alarm__RepeattypeAlternatives_3_0
-            {
-            pushFollow(FOLLOW_rule__Alarm__RepeattypeAlternatives_3_0_in_rule__Alarm__RepeattypeAssignment_36363);
-            rule__Alarm__RepeattypeAlternatives_3_0();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getAlarmAccess().getRepeattypeAlternatives_3_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Alarm__RepeattypeAssignment_3"
-
-
-    // $ANTLR start "rule__Alarm__TimerHoursAssignment_5"
-    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:3165:1: rule__Alarm__TimerHoursAssignment_5 : ( RULE_INT ) ;
-    public final void rule__Alarm__TimerHoursAssignment_5() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:3169:1: ( ( RULE_INT ) )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:3170:1: ( RULE_INT )
-            {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:3170:1: ( RULE_INT )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:3171:1: RULE_INT
-            {
-             before(grammarAccess.getAlarmAccess().getTimerHoursINTTerminalRuleCall_5_0()); 
-            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__Alarm__TimerHoursAssignment_56396); 
-             after(grammarAccess.getAlarmAccess().getTimerHoursINTTerminalRuleCall_5_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Alarm__TimerHoursAssignment_5"
-
-
-    // $ANTLR start "rule__Alarm__TimerMinutesAssignment_7"
-    // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:3180:1: rule__Alarm__TimerMinutesAssignment_7 : ( RULE_INT ) ;
-    public final void rule__Alarm__TimerMinutesAssignment_7() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:3184:1: ( ( RULE_INT ) )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:3185:1: ( RULE_INT )
-            {
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:3185:1: ( RULE_INT )
-            // ../es.usj.raspduino.ui/src-gen/es/usj/raspduino/ui/contentassist/antlr/internal/InternalRaspduinoDSL.g:3186:1: RULE_INT
-            {
-             before(grammarAccess.getAlarmAccess().getTimerMinutesINTTerminalRuleCall_7_0()); 
-            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__Alarm__TimerMinutesAssignment_76427); 
-             after(grammarAccess.getAlarmAccess().getTimerMinutesINTTerminalRuleCall_7_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Alarm__TimerMinutesAssignment_7"
-
     // Delegated rules
 
 
-    protected DFA5 dfa5 = new DFA5(this);
-    static final String DFA5_eotS =
-        "\12\uffff";
-    static final String DFA5_eofS =
-        "\1\uffff\1\3\6\uffff\2\3";
-    static final String DFA5_minS =
-        "\1\6\1\22\2\uffff\4\4\2\22";
-    static final String DFA5_maxS =
-        "\1\6\1\27\2\uffff\4\5\2\23";
-    static final String DFA5_acceptS =
-        "\2\uffff\1\1\1\2\6\uffff";
-    static final String DFA5_specialS =
-        "\12\uffff}>";
-    static final String[] DFA5_transitionS = {
-            "\1\1",
-            "\2\2\1\4\1\5\1\6\1\7",
-            "",
-            "",
-            "\1\10\1\11",
-            "\1\10\1\11",
-            "\1\10\1\11",
-            "\1\10\1\11",
-            "\2\2",
-            "\2\2"
-    };
-
-    static final short[] DFA5_eot = DFA.unpackEncodedString(DFA5_eotS);
-    static final short[] DFA5_eof = DFA.unpackEncodedString(DFA5_eofS);
-    static final char[] DFA5_min = DFA.unpackEncodedStringToUnsignedChars(DFA5_minS);
-    static final char[] DFA5_max = DFA.unpackEncodedStringToUnsignedChars(DFA5_maxS);
-    static final short[] DFA5_accept = DFA.unpackEncodedString(DFA5_acceptS);
-    static final short[] DFA5_special = DFA.unpackEncodedString(DFA5_specialS);
-    static final short[][] DFA5_transition;
-
-    static {
-        int numStates = DFA5_transitionS.length;
-        DFA5_transition = new short[numStates][];
-        for (int i=0; i<numStates; i++) {
-            DFA5_transition[i] = DFA.unpackEncodedString(DFA5_transitionS[i]);
-        }
-    }
-
-    class DFA5 extends DFA {
-
-        public DFA5(BaseRecognizer recognizer) {
-            this.recognizer = recognizer;
-            this.decisionNumber = 5;
-            this.eot = DFA5_eot;
-            this.eof = DFA5_eof;
-            this.min = DFA5_min;
-            this.max = DFA5_max;
-            this.accept = DFA5_accept;
-            this.special = DFA5_special;
-            this.transition = DFA5_transition;
-        }
-        public String getDescription() {
-            return "552:1: rule__Precondition__Alternatives : ( ( ( rule__Precondition__Group_0__0 ) ) | ( ( rule__Precondition__Pre1Assignment_1 ) ) );";
-        }
-    }
  
 
     public static final BitSet FOLLOW_ruleModel_in_entryRuleModel61 = new BitSet(new long[]{0x0000000000000000L});
@@ -8567,253 +5376,153 @@ public class InternalRaspduinoDSLParser extends AbstractInternalContentAssistPar
     public static final BitSet FOLLOW_ruleSensorListener_in_entryRuleSensorListener421 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleSensorListener428 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__SensorListener__Group__0_in_ruleSensorListener454 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rulePrecondition_in_entryRulePrecondition481 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRulePrecondition488 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Precondition__Alternatives_in_rulePrecondition514 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rulePrecondition1_in_entryRulePrecondition1541 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRulePrecondition1548 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Precondition1__Alternatives_in_rulePrecondition1574 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleEmptyPrecondition_in_entryRuleEmptyPrecondition601 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleEmptyPrecondition608 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__EmptyPrecondition__NameAssignment_in_ruleEmptyPrecondition634 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleSensorValuePrecondition_in_entryRuleSensorValuePrecondition661 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleSensorValuePrecondition668 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SensorValuePrecondition__Group__0_in_ruleSensorValuePrecondition694 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rulePossibleValues_in_entryRulePossibleValues721 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRulePossibleValues728 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__PossibleValues__Alternatives_in_rulePossibleValues754 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleTimer_in_entryRuleTimer781 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleTimer788 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Timer__Group__0_in_ruleTimer814 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleAlarm_in_entryRuleAlarm841 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleAlarm848 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Alarm__Group__0_in_ruleAlarm874 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_12_in_rule__Model__HardwareAlternatives_3_0911 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_13_in_rule__Model__HardwareAlternatives_3_0931 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_14_in_rule__Model__PriorityAlternatives_9_1_0966 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_15_in_rule__Model__PriorityAlternatives_9_1_0986 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleSensor_in_rule__AbstractDevice__Alternatives1020 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleActuator_in_rule__AbstractDevice__Alternatives1037 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_16_in_rule__ChangeActuator__ActuatorStateAlternatives_2_01070 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_17_in_rule__ChangeActuator__ActuatorStateAlternatives_2_01090 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Precondition__Group_0__0_in_rule__Precondition__Alternatives1124 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Precondition__Pre1Assignment_1_in_rule__Precondition__Alternatives1142 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_18_in_rule__Precondition__OpAlternatives_0_1_01176 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_19_in_rule__Precondition__OpAlternatives_0_1_01196 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Precondition1__PreAssignment_0_in_rule__Precondition1__Alternatives1230 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Precondition1__PreAssignment_1_in_rule__Precondition1__Alternatives1248 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_20_in_rule__SensorValuePrecondition__CondAlternatives_1_01282 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_21_in_rule__SensorValuePrecondition__CondAlternatives_1_01302 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_22_in_rule__SensorValuePrecondition__CondAlternatives_1_01322 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_23_in_rule__SensorValuePrecondition__CondAlternatives_1_01342 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_DOUBLE_in_rule__PossibleValues__Alternatives1376 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_INT_in_rule__PossibleValues__Alternatives1393 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_24_in_rule__Timer__RepeattypeAlternatives_3_01426 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_25_in_rule__Timer__RepeattypeAlternatives_3_01446 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_26_in_rule__Alarm__RepeattypeAlternatives_3_01481 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_27_in_rule__Alarm__RepeattypeAlternatives_3_01501 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_28_in_rule__Alarm__RepeattypeAlternatives_3_01521 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_29_in_rule__Alarm__RepeattypeAlternatives_3_01541 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_30_in_rule__Alarm__RepeattypeAlternatives_3_01561 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_31_in_rule__Alarm__RepeattypeAlternatives_3_01581 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_32_in_rule__Alarm__RepeattypeAlternatives_3_01601 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_33_in_rule__Alarm__RepeattypeAlternatives_3_01621 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Model__Group__0__Impl_in_rule__Model__Group__01653 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_rule__Model__Group__1_in_rule__Model__Group__01656 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_34_in_rule__Model__Group__0__Impl1684 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Model__Group__1__Impl_in_rule__Model__Group__11715 = new BitSet(new long[]{0x0000000800000000L});
-    public static final BitSet FOLLOW_rule__Model__Group__2_in_rule__Model__Group__11718 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Model__NameAssignment_1_in_rule__Model__Group__1__Impl1745 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Model__Group__2__Impl_in_rule__Model__Group__21775 = new BitSet(new long[]{0x0000000000003000L});
-    public static final BitSet FOLLOW_rule__Model__Group__3_in_rule__Model__Group__21778 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_35_in_rule__Model__Group__2__Impl1806 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Model__Group__3__Impl_in_rule__Model__Group__31837 = new BitSet(new long[]{0x000089B000000000L});
-    public static final BitSet FOLLOW_rule__Model__Group__4_in_rule__Model__Group__31840 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Model__HardwareAssignment_3_in_rule__Model__Group__3__Impl1867 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Model__Group__4__Impl_in_rule__Model__Group__41897 = new BitSet(new long[]{0x000089B000000000L});
-    public static final BitSet FOLLOW_rule__Model__Group__5_in_rule__Model__Group__41900 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Model__DevicesAssignment_4_in_rule__Model__Group__4__Impl1927 = new BitSet(new long[]{0x000000A000000002L});
-    public static final BitSet FOLLOW_rule__Model__Group__5__Impl_in_rule__Model__Group__51958 = new BitSet(new long[]{0x000089B000000000L});
-    public static final BitSet FOLLOW_rule__Model__Group__6_in_rule__Model__Group__51961 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Model__EventHandlersAssignment_5_in_rule__Model__Group__5__Impl1988 = new BitSet(new long[]{0x0000010000000002L});
-    public static final BitSet FOLLOW_rule__Model__Group__6__Impl_in_rule__Model__Group__62019 = new BitSet(new long[]{0x000089B000000000L});
-    public static final BitSet FOLLOW_rule__Model__Group__7_in_rule__Model__Group__62022 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Model__SensorListenersAssignment_6_in_rule__Model__Group__6__Impl2049 = new BitSet(new long[]{0x0000080000000002L});
-    public static final BitSet FOLLOW_rule__Model__Group__7__Impl_in_rule__Model__Group__72080 = new BitSet(new long[]{0x000089B000000000L});
-    public static final BitSet FOLLOW_rule__Model__Group__8_in_rule__Model__Group__72083 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Model__TimersAssignment_7_in_rule__Model__Group__7__Impl2110 = new BitSet(new long[]{0x0000800000000002L});
-    public static final BitSet FOLLOW_rule__Model__Group__8__Impl_in_rule__Model__Group__82141 = new BitSet(new long[]{0x000089B000000000L});
-    public static final BitSet FOLLOW_rule__Model__Group__9_in_rule__Model__Group__82144 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Model__AlarmsAssignment_8_in_rule__Model__Group__8__Impl2171 = new BitSet(new long[]{0x0000800000000002L});
-    public static final BitSet FOLLOW_rule__Model__Group__9__Impl_in_rule__Model__Group__92202 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Model__Group_9__0_in_rule__Model__Group__9__Impl2229 = new BitSet(new long[]{0x0000001000000002L});
-    public static final BitSet FOLLOW_rule__Model__Group_9__0__Impl_in_rule__Model__Group_9__02280 = new BitSet(new long[]{0x000000000000C000L});
-    public static final BitSet FOLLOW_rule__Model__Group_9__1_in_rule__Model__Group_9__02283 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_36_in_rule__Model__Group_9__0__Impl2311 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Model__Group_9__1__Impl_in_rule__Model__Group_9__12342 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Model__PriorityAssignment_9_1_in_rule__Model__Group_9__1__Impl2369 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Sensor__Group__0__Impl_in_rule__Sensor__Group__02403 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_rule__Sensor__Group__1_in_rule__Sensor__Group__02406 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_37_in_rule__Sensor__Group__0__Impl2434 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Sensor__Group__1__Impl_in_rule__Sensor__Group__12465 = new BitSet(new long[]{0x0000004000000000L});
-    public static final BitSet FOLLOW_rule__Sensor__Group__2_in_rule__Sensor__Group__12468 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Sensor__NameAssignment_1_in_rule__Sensor__Group__1__Impl2495 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Sensor__Group__2__Impl_in_rule__Sensor__Group__22525 = new BitSet(new long[]{0x0000000000000080L});
-    public static final BitSet FOLLOW_rule__Sensor__Group__3_in_rule__Sensor__Group__22528 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_38_in_rule__Sensor__Group__2__Impl2556 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Sensor__Group__3__Impl_in_rule__Sensor__Group__32587 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Sensor__PinAssignment_3_in_rule__Sensor__Group__3__Impl2614 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Actuator__Group__0__Impl_in_rule__Actuator__Group__02652 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_rule__Actuator__Group__1_in_rule__Actuator__Group__02655 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_39_in_rule__Actuator__Group__0__Impl2683 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Actuator__Group__1__Impl_in_rule__Actuator__Group__12714 = new BitSet(new long[]{0x0000004000000000L});
-    public static final BitSet FOLLOW_rule__Actuator__Group__2_in_rule__Actuator__Group__12717 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Actuator__NameAssignment_1_in_rule__Actuator__Group__1__Impl2744 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Actuator__Group__2__Impl_in_rule__Actuator__Group__22774 = new BitSet(new long[]{0x0000000000000080L});
-    public static final BitSet FOLLOW_rule__Actuator__Group__3_in_rule__Actuator__Group__22777 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_38_in_rule__Actuator__Group__2__Impl2805 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Actuator__Group__3__Impl_in_rule__Actuator__Group__32836 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Actuator__PinAssignment_3_in_rule__Actuator__Group__3__Impl2863 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__EventHandler__Group__0__Impl_in_rule__EventHandler__Group__02901 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_rule__EventHandler__Group__1_in_rule__EventHandler__Group__02904 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_40_in_rule__EventHandler__Group__0__Impl2932 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__EventHandler__Group__1__Impl_in_rule__EventHandler__Group__12963 = new BitSet(new long[]{0x0000020000000040L});
-    public static final BitSet FOLLOW_rule__EventHandler__Group__2_in_rule__EventHandler__Group__12966 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__EventHandler__NameAssignment_1_in_rule__EventHandler__Group__1__Impl2993 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__EventHandler__Group__2__Impl_in_rule__EventHandler__Group__23023 = new BitSet(new long[]{0x0000020000000040L});
-    public static final BitSet FOLLOW_rule__EventHandler__Group__3_in_rule__EventHandler__Group__23026 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__EventHandler__ChangeActuatorsAssignment_2_in_rule__EventHandler__Group__2__Impl3053 = new BitSet(new long[]{0x0000000000000042L});
-    public static final BitSet FOLLOW_rule__EventHandler__Group__3__Impl_in_rule__EventHandler__Group__33084 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_41_in_rule__EventHandler__Group__3__Impl3112 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ChangeActuator__Group__0__Impl_in_rule__ChangeActuator__Group__03151 = new BitSet(new long[]{0x0000040000000000L});
-    public static final BitSet FOLLOW_rule__ChangeActuator__Group__1_in_rule__ChangeActuator__Group__03154 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ChangeActuator__ActuatorAssignment_0_in_rule__ChangeActuator__Group__0__Impl3181 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ChangeActuator__Group__1__Impl_in_rule__ChangeActuator__Group__13211 = new BitSet(new long[]{0x0000000000030000L});
-    public static final BitSet FOLLOW_rule__ChangeActuator__Group__2_in_rule__ChangeActuator__Group__13214 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_42_in_rule__ChangeActuator__Group__1__Impl3242 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ChangeActuator__Group__2__Impl_in_rule__ChangeActuator__Group__23273 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ChangeActuator__ActuatorStateAssignment_2_in_rule__ChangeActuator__Group__2__Impl3300 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SensorListener__Group__0__Impl_in_rule__SensorListener__Group__03336 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_rule__SensorListener__Group__1_in_rule__SensorListener__Group__03339 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_43_in_rule__SensorListener__Group__0__Impl3367 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SensorListener__Group__1__Impl_in_rule__SensorListener__Group__13398 = new BitSet(new long[]{0x0000100000000000L});
-    public static final BitSet FOLLOW_rule__SensorListener__Group__2_in_rule__SensorListener__Group__13401 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SensorListener__SensorAssignment_1_in_rule__SensorListener__Group__1__Impl3428 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SensorListener__Group__2__Impl_in_rule__SensorListener__Group__23458 = new BitSet(new long[]{0x0010000000000000L});
-    public static final BitSet FOLLOW_rule__SensorListener__Group__3_in_rule__SensorListener__Group__23461 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_44_in_rule__SensorListener__Group__2__Impl3489 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SensorListener__Group__3__Impl_in_rule__SensorListener__Group__33520 = new BitSet(new long[]{0x0000200000000000L});
-    public static final BitSet FOLLOW_rule__SensorListener__Group__4_in_rule__SensorListener__Group__33523 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SensorListener__Group_3__0_in_rule__SensorListener__Group__3__Impl3550 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SensorListener__Group__4__Impl_in_rule__SensorListener__Group__43580 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_rule__SensorListener__Group__5_in_rule__SensorListener__Group__43583 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_45_in_rule__SensorListener__Group__4__Impl3611 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SensorListener__Group__5__Impl_in_rule__SensorListener__Group__53642 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SensorListener__EventHandlerAssignment_5_in_rule__SensorListener__Group__5__Impl3669 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SensorListener__Group_3__0__Impl_in_rule__SensorListener__Group_3__03711 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_rule__SensorListener__Group_3__1_in_rule__SensorListener__Group_3__03714 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SensorListener__TypeAssignment_3_0_in_rule__SensorListener__Group_3__0__Impl3741 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SensorListener__Group_3__1__Impl_in_rule__SensorListener__Group_3__13771 = new BitSet(new long[]{0x0000400000000000L});
-    public static final BitSet FOLLOW_rule__SensorListener__Group_3__2_in_rule__SensorListener__Group_3__13774 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SensorListener__LAssignment_3_1_in_rule__SensorListener__Group_3__1__Impl3801 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SensorListener__Group_3__2__Impl_in_rule__SensorListener__Group_3__23831 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_rule__SensorListener__Group_3__3_in_rule__SensorListener__Group_3__23834 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_46_in_rule__SensorListener__Group_3__2__Impl3862 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SensorListener__Group_3__3__Impl_in_rule__SensorListener__Group_3__33893 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SensorListener__HAssignment_3_3_in_rule__SensorListener__Group_3__3__Impl3920 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Precondition__Group_0__0__Impl_in_rule__Precondition__Group_0__03958 = new BitSet(new long[]{0x00000000000C0000L});
-    public static final BitSet FOLLOW_rule__Precondition__Group_0__1_in_rule__Precondition__Group_0__03961 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Precondition__Pre1Assignment_0_0_in_rule__Precondition__Group_0__0__Impl3988 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Precondition__Group_0__1__Impl_in_rule__Precondition__Group_0__14018 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_rule__Precondition__Group_0__2_in_rule__Precondition__Group_0__14021 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Precondition__OpAssignment_0_1_in_rule__Precondition__Group_0__1__Impl4048 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Precondition__Group_0__2__Impl_in_rule__Precondition__Group_0__24078 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Precondition__PreAssignment_0_2_in_rule__Precondition__Group_0__2__Impl4105 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SensorValuePrecondition__Group__0__Impl_in_rule__SensorValuePrecondition__Group__04141 = new BitSet(new long[]{0x0000000000F00000L});
-    public static final BitSet FOLLOW_rule__SensorValuePrecondition__Group__1_in_rule__SensorValuePrecondition__Group__04144 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SensorValuePrecondition__SensorAssignment_0_in_rule__SensorValuePrecondition__Group__0__Impl4171 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SensorValuePrecondition__Group__1__Impl_in_rule__SensorValuePrecondition__Group__14201 = new BitSet(new long[]{0x0000000000000030L});
-    public static final BitSet FOLLOW_rule__SensorValuePrecondition__Group__2_in_rule__SensorValuePrecondition__Group__14204 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SensorValuePrecondition__CondAssignment_1_in_rule__SensorValuePrecondition__Group__1__Impl4231 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SensorValuePrecondition__Group__2__Impl_in_rule__SensorValuePrecondition__Group__24261 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SensorValuePrecondition__ValueAssignment_2_in_rule__SensorValuePrecondition__Group__2__Impl4288 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Timer__Group__0__Impl_in_rule__Timer__Group__04324 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_rule__Timer__Group__1_in_rule__Timer__Group__04327 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_47_in_rule__Timer__Group__0__Impl4355 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Timer__Group__1__Impl_in_rule__Timer__Group__14386 = new BitSet(new long[]{0x0001000000000000L});
-    public static final BitSet FOLLOW_rule__Timer__Group__2_in_rule__Timer__Group__14389 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Timer__EventHandlerAssignment_1_in_rule__Timer__Group__1__Impl4416 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Timer__Group__2__Impl_in_rule__Timer__Group__24446 = new BitSet(new long[]{0x0000000003000000L});
-    public static final BitSet FOLLOW_rule__Timer__Group__3_in_rule__Timer__Group__24449 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_48_in_rule__Timer__Group__2__Impl4477 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Timer__Group__3__Impl_in_rule__Timer__Group__34508 = new BitSet(new long[]{0x0002000000000000L});
-    public static final BitSet FOLLOW_rule__Timer__Group__4_in_rule__Timer__Group__34511 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Timer__RepeattypeAssignment_3_in_rule__Timer__Group__3__Impl4538 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Timer__Group__4__Impl_in_rule__Timer__Group__44568 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_rule__Timer__Group__5_in_rule__Timer__Group__44571 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_49_in_rule__Timer__Group__4__Impl4599 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Timer__Group__5__Impl_in_rule__Timer__Group__54630 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Timer__TimerSecsAssignment_5_in_rule__Timer__Group__5__Impl4657 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Alarm__Group__0__Impl_in_rule__Alarm__Group__04699 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_rule__Alarm__Group__1_in_rule__Alarm__Group__04702 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_47_in_rule__Alarm__Group__0__Impl4730 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Alarm__Group__1__Impl_in_rule__Alarm__Group__14761 = new BitSet(new long[]{0x0001000000000000L});
-    public static final BitSet FOLLOW_rule__Alarm__Group__2_in_rule__Alarm__Group__14764 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Alarm__EventHandlerAssignment_1_in_rule__Alarm__Group__1__Impl4791 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Alarm__Group__2__Impl_in_rule__Alarm__Group__24821 = new BitSet(new long[]{0x00000003FC000000L});
-    public static final BitSet FOLLOW_rule__Alarm__Group__3_in_rule__Alarm__Group__24824 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_48_in_rule__Alarm__Group__2__Impl4852 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Alarm__Group__3__Impl_in_rule__Alarm__Group__34883 = new BitSet(new long[]{0x0004000000000000L});
-    public static final BitSet FOLLOW_rule__Alarm__Group__4_in_rule__Alarm__Group__34886 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Alarm__RepeattypeAssignment_3_in_rule__Alarm__Group__3__Impl4913 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Alarm__Group__4__Impl_in_rule__Alarm__Group__44943 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_rule__Alarm__Group__5_in_rule__Alarm__Group__44946 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_50_in_rule__Alarm__Group__4__Impl4974 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Alarm__Group__5__Impl_in_rule__Alarm__Group__55005 = new BitSet(new long[]{0x0008000000000000L});
-    public static final BitSet FOLLOW_rule__Alarm__Group__6_in_rule__Alarm__Group__55008 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Alarm__TimerHoursAssignment_5_in_rule__Alarm__Group__5__Impl5035 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Alarm__Group__6__Impl_in_rule__Alarm__Group__65065 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_rule__Alarm__Group__7_in_rule__Alarm__Group__65068 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_51_in_rule__Alarm__Group__6__Impl5096 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Alarm__Group__7__Impl_in_rule__Alarm__Group__75127 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Alarm__TimerMinutesAssignment_7_in_rule__Alarm__Group__7__Impl5154 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__Model__NameAssignment_15205 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Model__HardwareAlternatives_3_0_in_rule__Model__HardwareAssignment_35236 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleAbstractDevice_in_rule__Model__DevicesAssignment_45269 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleEventHandler_in_rule__Model__EventHandlersAssignment_55300 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleSensorListener_in_rule__Model__SensorListenersAssignment_65331 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleTimer_in_rule__Model__TimersAssignment_75362 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleAlarm_in_rule__Model__AlarmsAssignment_85393 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Model__PriorityAlternatives_9_1_0_in_rule__Model__PriorityAssignment_9_15424 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__Sensor__NameAssignment_15457 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_STRING_in_rule__Sensor__PinAssignment_35488 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__Actuator__NameAssignment_15519 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_STRING_in_rule__Actuator__PinAssignment_35550 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__EventHandler__NameAssignment_15581 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleChangeActuator_in_rule__EventHandler__ChangeActuatorsAssignment_25612 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__ChangeActuator__ActuatorAssignment_05647 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ChangeActuator__ActuatorStateAlternatives_2_0_in_rule__ChangeActuator__ActuatorStateAssignment_25682 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__SensorListener__SensorAssignment_15719 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_52_in_rule__SensorListener__TypeAssignment_3_05759 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_INT_in_rule__SensorListener__LAssignment_3_15798 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_INT_in_rule__SensorListener__HAssignment_3_35829 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__SensorListener__EventHandlerAssignment_55864 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rulePrecondition1_in_rule__Precondition__Pre1Assignment_0_05899 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Precondition__OpAlternatives_0_1_0_in_rule__Precondition__OpAssignment_0_15930 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rulePrecondition_in_rule__Precondition__PreAssignment_0_25963 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rulePrecondition1_in_rule__Precondition__Pre1Assignment_15994 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleSensorValuePrecondition_in_rule__Precondition1__PreAssignment_06025 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleEmptyPrecondition_in_rule__Precondition1__PreAssignment_16056 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__EmptyPrecondition__NameAssignment6087 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__SensorValuePrecondition__SensorAssignment_06122 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SensorValuePrecondition__CondAlternatives_1_0_in_rule__SensorValuePrecondition__CondAssignment_16157 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rulePossibleValues_in_rule__SensorValuePrecondition__ValueAssignment_26190 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__Timer__EventHandlerAssignment_16225 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Timer__RepeattypeAlternatives_3_0_in_rule__Timer__RepeattypeAssignment_36260 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_INT_in_rule__Timer__TimerSecsAssignment_56293 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__Alarm__EventHandlerAssignment_16328 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Alarm__RepeattypeAlternatives_3_0_in_rule__Alarm__RepeattypeAssignment_36363 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_INT_in_rule__Alarm__TimerHoursAssignment_56396 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_INT_in_rule__Alarm__TimerMinutesAssignment_76427 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleTimer_in_entryRuleTimer481 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleTimer488 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Timer__Group__0_in_ruleTimer514 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_11_in_rule__Model__HardwareAlternatives_3_0551 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_12_in_rule__Model__HardwareAlternatives_3_0571 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSensor_in_rule__AbstractDevice__Alternatives605 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleActuator_in_rule__AbstractDevice__Alternatives622 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_13_in_rule__ChangeActuator__ActuatorStateAlternatives_2_0655 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_14_in_rule__ChangeActuator__ActuatorStateAlternatives_2_0675 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_15_in_rule__ChangeActuator__ActuatorStateAlternatives_2_0695 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SensorListener__TypeAssignment_3_0_in_rule__SensorListener__Alternatives_3729 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SensorListener__TypeAssignment_3_1_in_rule__SensorListener__Alternatives_3747 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SensorListener__Group_3_2__0_in_rule__SensorListener__Alternatives_3765 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_16_in_rule__Timer__RepeattypeAlternatives_3_0799 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_17_in_rule__Timer__RepeattypeAlternatives_3_0819 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Model__Group__0__Impl_in_rule__Model__Group__0851 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_rule__Model__Group__1_in_rule__Model__Group__0854 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_18_in_rule__Model__Group__0__Impl882 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Model__Group__1__Impl_in_rule__Model__Group__1913 = new BitSet(new long[]{0x0000000000080000L});
+    public static final BitSet FOLLOW_rule__Model__Group__2_in_rule__Model__Group__1916 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Model__NameAssignment_1_in_rule__Model__Group__1__Impl943 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Model__Group__2__Impl_in_rule__Model__Group__2973 = new BitSet(new long[]{0x0000000000001800L});
+    public static final BitSet FOLLOW_rule__Model__Group__3_in_rule__Model__Group__2976 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_19_in_rule__Model__Group__2__Impl1004 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Model__Group__3__Impl_in_rule__Model__Group__31035 = new BitSet(new long[]{0x0000000044D00000L});
+    public static final BitSet FOLLOW_rule__Model__Group__4_in_rule__Model__Group__31038 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Model__HardwareAssignment_3_in_rule__Model__Group__3__Impl1065 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Model__Group__4__Impl_in_rule__Model__Group__41095 = new BitSet(new long[]{0x0000000044D00000L});
+    public static final BitSet FOLLOW_rule__Model__Group__5_in_rule__Model__Group__41098 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Model__DevicesAssignment_4_in_rule__Model__Group__4__Impl1125 = new BitSet(new long[]{0x0000000000500002L});
+    public static final BitSet FOLLOW_rule__Model__Group__5__Impl_in_rule__Model__Group__51156 = new BitSet(new long[]{0x0000000044D00000L});
+    public static final BitSet FOLLOW_rule__Model__Group__6_in_rule__Model__Group__51159 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Model__EventHandlersAssignment_5_in_rule__Model__Group__5__Impl1186 = new BitSet(new long[]{0x0000000000800002L});
+    public static final BitSet FOLLOW_rule__Model__Group__6__Impl_in_rule__Model__Group__61217 = new BitSet(new long[]{0x0000000044D00000L});
+    public static final BitSet FOLLOW_rule__Model__Group__7_in_rule__Model__Group__61220 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Model__SensorListenersAssignment_6_in_rule__Model__Group__6__Impl1247 = new BitSet(new long[]{0x0000000004000002L});
+    public static final BitSet FOLLOW_rule__Model__Group__7__Impl_in_rule__Model__Group__71278 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Model__TimersAssignment_7_in_rule__Model__Group__7__Impl1305 = new BitSet(new long[]{0x0000000040000002L});
+    public static final BitSet FOLLOW_rule__Sensor__Group__0__Impl_in_rule__Sensor__Group__01352 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_rule__Sensor__Group__1_in_rule__Sensor__Group__01355 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_20_in_rule__Sensor__Group__0__Impl1383 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Sensor__Group__1__Impl_in_rule__Sensor__Group__11414 = new BitSet(new long[]{0x0000000000200000L});
+    public static final BitSet FOLLOW_rule__Sensor__Group__2_in_rule__Sensor__Group__11417 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Sensor__NameAssignment_1_in_rule__Sensor__Group__1__Impl1444 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Sensor__Group__2__Impl_in_rule__Sensor__Group__21474 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_rule__Sensor__Group__3_in_rule__Sensor__Group__21477 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_21_in_rule__Sensor__Group__2__Impl1505 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Sensor__Group__3__Impl_in_rule__Sensor__Group__31536 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Sensor__PinAssignment_3_in_rule__Sensor__Group__3__Impl1563 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Actuator__Group__0__Impl_in_rule__Actuator__Group__01601 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_rule__Actuator__Group__1_in_rule__Actuator__Group__01604 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_22_in_rule__Actuator__Group__0__Impl1632 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Actuator__Group__1__Impl_in_rule__Actuator__Group__11663 = new BitSet(new long[]{0x0000000000200000L});
+    public static final BitSet FOLLOW_rule__Actuator__Group__2_in_rule__Actuator__Group__11666 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Actuator__NameAssignment_1_in_rule__Actuator__Group__1__Impl1693 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Actuator__Group__2__Impl_in_rule__Actuator__Group__21723 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_rule__Actuator__Group__3_in_rule__Actuator__Group__21726 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_21_in_rule__Actuator__Group__2__Impl1754 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Actuator__Group__3__Impl_in_rule__Actuator__Group__31785 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Actuator__PinAssignment_3_in_rule__Actuator__Group__3__Impl1812 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__EventHandler__Group__0__Impl_in_rule__EventHandler__Group__01850 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_rule__EventHandler__Group__1_in_rule__EventHandler__Group__01853 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_23_in_rule__EventHandler__Group__0__Impl1881 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__EventHandler__Group__1__Impl_in_rule__EventHandler__Group__11912 = new BitSet(new long[]{0x0000000001000010L});
+    public static final BitSet FOLLOW_rule__EventHandler__Group__2_in_rule__EventHandler__Group__11915 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__EventHandler__NameAssignment_1_in_rule__EventHandler__Group__1__Impl1942 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__EventHandler__Group__2__Impl_in_rule__EventHandler__Group__21972 = new BitSet(new long[]{0x0000000001000010L});
+    public static final BitSet FOLLOW_rule__EventHandler__Group__3_in_rule__EventHandler__Group__21975 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__EventHandler__ChangeActuatorsAssignment_2_in_rule__EventHandler__Group__2__Impl2002 = new BitSet(new long[]{0x0000000000000012L});
+    public static final BitSet FOLLOW_rule__EventHandler__Group__3__Impl_in_rule__EventHandler__Group__32033 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_24_in_rule__EventHandler__Group__3__Impl2061 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ChangeActuator__Group__0__Impl_in_rule__ChangeActuator__Group__02100 = new BitSet(new long[]{0x0000000002000000L});
+    public static final BitSet FOLLOW_rule__ChangeActuator__Group__1_in_rule__ChangeActuator__Group__02103 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ChangeActuator__ActuatorAssignment_0_in_rule__ChangeActuator__Group__0__Impl2130 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ChangeActuator__Group__1__Impl_in_rule__ChangeActuator__Group__12160 = new BitSet(new long[]{0x000000000000E000L});
+    public static final BitSet FOLLOW_rule__ChangeActuator__Group__2_in_rule__ChangeActuator__Group__12163 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_25_in_rule__ChangeActuator__Group__1__Impl2191 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ChangeActuator__Group__2__Impl_in_rule__ChangeActuator__Group__22222 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ChangeActuator__ActuatorStateAssignment_2_in_rule__ChangeActuator__Group__2__Impl2249 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SensorListener__Group__0__Impl_in_rule__SensorListener__Group__02285 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_rule__SensorListener__Group__1_in_rule__SensorListener__Group__02288 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_26_in_rule__SensorListener__Group__0__Impl2316 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SensorListener__Group__1__Impl_in_rule__SensorListener__Group__12347 = new BitSet(new long[]{0x0000000008000000L});
+    public static final BitSet FOLLOW_rule__SensorListener__Group__2_in_rule__SensorListener__Group__12350 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SensorListener__SensorAssignment_1_in_rule__SensorListener__Group__1__Impl2377 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SensorListener__Group__2__Impl_in_rule__SensorListener__Group__22407 = new BitSet(new long[]{0x0000000E00000000L});
+    public static final BitSet FOLLOW_rule__SensorListener__Group__3_in_rule__SensorListener__Group__22410 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_27_in_rule__SensorListener__Group__2__Impl2438 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SensorListener__Group__3__Impl_in_rule__SensorListener__Group__32469 = new BitSet(new long[]{0x0000000010000000L});
+    public static final BitSet FOLLOW_rule__SensorListener__Group__4_in_rule__SensorListener__Group__32472 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SensorListener__Alternatives_3_in_rule__SensorListener__Group__3__Impl2499 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SensorListener__Group__4__Impl_in_rule__SensorListener__Group__42529 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_rule__SensorListener__Group__5_in_rule__SensorListener__Group__42532 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_28_in_rule__SensorListener__Group__4__Impl2560 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SensorListener__Group__5__Impl_in_rule__SensorListener__Group__52591 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SensorListener__EventHandlerAssignment_5_in_rule__SensorListener__Group__5__Impl2618 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SensorListener__Group_3_2__0__Impl_in_rule__SensorListener__Group_3_2__02660 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_rule__SensorListener__Group_3_2__1_in_rule__SensorListener__Group_3_2__02663 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SensorListener__TypeAssignment_3_2_0_in_rule__SensorListener__Group_3_2__0__Impl2690 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SensorListener__Group_3_2__1__Impl_in_rule__SensorListener__Group_3_2__12720 = new BitSet(new long[]{0x0000000020000000L});
+    public static final BitSet FOLLOW_rule__SensorListener__Group_3_2__2_in_rule__SensorListener__Group_3_2__12723 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SensorListener__LAssignment_3_2_1_in_rule__SensorListener__Group_3_2__1__Impl2750 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SensorListener__Group_3_2__2__Impl_in_rule__SensorListener__Group_3_2__22780 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_rule__SensorListener__Group_3_2__3_in_rule__SensorListener__Group_3_2__22783 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_29_in_rule__SensorListener__Group_3_2__2__Impl2811 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SensorListener__Group_3_2__3__Impl_in_rule__SensorListener__Group_3_2__32842 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SensorListener__HAssignment_3_2_3_in_rule__SensorListener__Group_3_2__3__Impl2869 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Timer__Group__0__Impl_in_rule__Timer__Group__02907 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_rule__Timer__Group__1_in_rule__Timer__Group__02910 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_30_in_rule__Timer__Group__0__Impl2938 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Timer__Group__1__Impl_in_rule__Timer__Group__12969 = new BitSet(new long[]{0x0000000080000000L});
+    public static final BitSet FOLLOW_rule__Timer__Group__2_in_rule__Timer__Group__12972 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Timer__EventHandlerAssignment_1_in_rule__Timer__Group__1__Impl2999 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Timer__Group__2__Impl_in_rule__Timer__Group__23029 = new BitSet(new long[]{0x0000000000030000L});
+    public static final BitSet FOLLOW_rule__Timer__Group__3_in_rule__Timer__Group__23032 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_31_in_rule__Timer__Group__2__Impl3060 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Timer__Group__3__Impl_in_rule__Timer__Group__33091 = new BitSet(new long[]{0x0000000100000000L});
+    public static final BitSet FOLLOW_rule__Timer__Group__4_in_rule__Timer__Group__33094 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Timer__RepeattypeAssignment_3_in_rule__Timer__Group__3__Impl3121 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Timer__Group__4__Impl_in_rule__Timer__Group__43151 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_rule__Timer__Group__5_in_rule__Timer__Group__43154 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_32_in_rule__Timer__Group__4__Impl3182 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Timer__Group__5__Impl_in_rule__Timer__Group__53213 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Timer__TimerSecsAssignment_5_in_rule__Timer__Group__5__Impl3240 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__Model__NameAssignment_13287 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Model__HardwareAlternatives_3_0_in_rule__Model__HardwareAssignment_33318 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleAbstractDevice_in_rule__Model__DevicesAssignment_43351 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleEventHandler_in_rule__Model__EventHandlersAssignment_53382 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSensorListener_in_rule__Model__SensorListenersAssignment_63413 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleTimer_in_rule__Model__TimersAssignment_73444 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__Sensor__NameAssignment_13475 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_STRING_in_rule__Sensor__PinAssignment_33506 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__Actuator__NameAssignment_13537 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_STRING_in_rule__Actuator__PinAssignment_33568 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__EventHandler__NameAssignment_13599 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleChangeActuator_in_rule__EventHandler__ChangeActuatorsAssignment_23630 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__ChangeActuator__ActuatorAssignment_03665 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ChangeActuator__ActuatorStateAlternatives_2_0_in_rule__ChangeActuator__ActuatorStateAssignment_23700 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__SensorListener__SensorAssignment_13737 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_33_in_rule__SensorListener__TypeAssignment_3_03777 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_34_in_rule__SensorListener__TypeAssignment_3_13821 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_35_in_rule__SensorListener__TypeAssignment_3_2_03865 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_INT_in_rule__SensorListener__LAssignment_3_2_13904 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_INT_in_rule__SensorListener__HAssignment_3_2_33935 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__SensorListener__EventHandlerAssignment_53970 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__Timer__EventHandlerAssignment_14009 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Timer__RepeattypeAlternatives_3_0_in_rule__Timer__RepeattypeAssignment_34044 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_INT_in_rule__Timer__TimerSecsAssignment_54077 = new BitSet(new long[]{0x0000000000000002L});
 
 }

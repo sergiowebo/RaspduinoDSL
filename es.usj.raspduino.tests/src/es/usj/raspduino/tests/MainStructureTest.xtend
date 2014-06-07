@@ -31,6 +31,21 @@ class ParserTest {
 		assertTrue(fsa.files.containsKey(IFileSystemAccess::DEFAULT_OUTPUT+"mySketch.h"))
 	}
 	
+	@Test
+	def void generateArduinoStructure() {
+		'''
+		Sketch: mySketch
+		Hardware: Arduino UNO
+		'''.assertCompilesTo(
+		'''
+		void setup(){
+		}
+		
+		void loop(){
+		}
+		''')
+		}
+	
  	@Test 
 	def void generateRaspberryFile() {
 		val model = parser.parse(
@@ -41,4 +56,6 @@ class ParserTest {
 		underTest.doGenerate(model.eResource, fsa)
 		assertTrue(fsa.files.containsKey(IFileSystemAccess::DEFAULT_OUTPUT+"mySketch.py"))
 	}
+	
+	
 }

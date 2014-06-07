@@ -1,43 +1,22 @@
 package es.usj.raspduino.generator.arduino;
 
 import es.usj.raspduino.generator.Util;
-import es.usj.raspduino.raspduinoDSL.Alarm;
 import es.usj.raspduino.raspduinoDSL.Model;
 import es.usj.raspduino.raspduinoDSL.Timer;
 import org.eclipse.emf.common.util.EList;
 
 @SuppressWarnings("all")
 public class TimeAlarmsLibraries {
-  public boolean generateCode(final Model model, final Util util) {
-    boolean _xblockexpression = false;
-    {
-      boolean firstOccurrence = true;
-      EList<Timer> _timers = model.getTimers();
-      for (final Timer dev : _timers) {
-        this.generateTimeH(util);
-      }
-      this.generateTimeCpp(util);
-      this.generateTimeAlarmsH(util);
-      this.generateTimeAlarmsCpp(util);
-      firstOccurrence = false;
-      boolean _xifexpression = false;
-      if (firstOccurrence) {
-        boolean _xblockexpression_1 = false;
-        {
-          EList<Alarm> _alarms = model.getAlarms();
-          for (final Alarm dev_1 : _alarms) {
-            this.generateTimeH(util);
-          }
-          this.generateTimeCpp(util);
-          this.generateTimeAlarmsH(util);
-          this.generateTimeAlarmsCpp(util);
-          _xblockexpression_1 = firstOccurrence = false;
-        }
-        _xifexpression = _xblockexpression_1;
-      }
-      _xblockexpression = _xifexpression;
+  public void generateCode(final Model model, final Util util) {
+    EList<Timer> _timers = model.getTimers();
+    boolean _isEmpty = _timers.isEmpty();
+    boolean _not = (!_isEmpty);
+    if (_not) {
+      this.generateTimeH(util);
     }
-    return _xblockexpression;
+    this.generateTimeCpp(util);
+    this.generateTimeAlarmsH(util);
+    this.generateTimeAlarmsCpp(util);
   }
   
   public void generateTimeH(final Util util) {

@@ -86,42 +86,6 @@ public interface RaspduinoDSLFactory extends EFactory
   SensorListener createSensorListener();
 
   /**
-   * Returns a new object of class '<em>Precondition</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Precondition</em>'.
-   * @generated
-   */
-  Precondition createPrecondition();
-
-  /**
-   * Returns a new object of class '<em>Precondition1</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Precondition1</em>'.
-   * @generated
-   */
-  Precondition1 createPrecondition1();
-
-  /**
-   * Returns a new object of class '<em>Empty Precondition</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Empty Precondition</em>'.
-   * @generated
-   */
-  EmptyPrecondition createEmptyPrecondition();
-
-  /**
-   * Returns a new object of class '<em>Sensor Value Precondition</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Sensor Value Precondition</em>'.
-   * @generated
-   */
-  SensorValuePrecondition createSensorValuePrecondition();
-
-  /**
    * Returns a new object of class '<em>Timer</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -129,15 +93,6 @@ public interface RaspduinoDSLFactory extends EFactory
    * @generated
    */
   Timer createTimer();
-
-  /**
-   * Returns a new object of class '<em>Alarm</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Alarm</em>'.
-   * @generated
-   */
-  Alarm createAlarm();
 
   /**
    * Returns the package supported by this factory.
