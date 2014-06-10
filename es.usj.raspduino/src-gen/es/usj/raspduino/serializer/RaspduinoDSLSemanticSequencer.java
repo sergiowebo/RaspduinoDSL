@@ -162,7 +162,20 @@ public class RaspduinoDSLSemanticSequencer extends AbstractDelegatingSemanticSeq
 	
 	/**
 	 * Constraint:
-	 *     (eventHandler=[EventHandler|ID] (repeattype='ONCE' | repeattype='EVERY') timerSecs=INT)
+	 *     (
+	 *         eventHandler=[EventHandler|ID] 
+	 *         (
+	 *             (repeattype='EVERY INTERVAL of' secs=INT) | 
+	 *             (repeattype='EVERY DAY at' hours=INT minutes=INT) | 
+	 *             (repeattype='EVERY MONDAY at' hours=INT minutes=INT) | 
+	 *             (repeattype='EVERY TUESDAY at' hours=INT minutes=INT) | 
+	 *             (repeattype='EVERY WEDNESDAY at' hours=INT minutes=INT) | 
+	 *             (repeattype='EVERY THURSDAY at' hours=INT minutes=INT) | 
+	 *             (repeattype='EVERY FRIDAY at' hours=INT minutes=INT) | 
+	 *             (repeattype='EVERY SATURDAY at' hours=INT minutes=INT) | 
+	 *             (repeattype='EVERY SUNDAY at' hours=INT minutes=INT)
+	 *         )
+	 *     )
 	 */
 	protected void sequence_Timer(EObject context, Timer semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

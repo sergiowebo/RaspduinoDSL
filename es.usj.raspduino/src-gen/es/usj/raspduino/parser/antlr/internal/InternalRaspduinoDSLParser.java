@@ -21,9 +21,12 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalRaspduinoDSLParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_STRING", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'Sketch:'", "'Hardware:'", "'Arduino UNO'", "'Raspberry Pi'", "'Sensor'", "'pin'", "'Actuator'", "'EventHandler'", "';'", "':'", "'On'", "'Off'", "'Toggle'", "'SensorListener'", "'if'", "'ON'", "'OFF'", "'BETWEEN'", "'AND'", "'call'", "'Timer action'", "'repeat'", "'ONCE'", "'EVERY'", "'seconds:'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_STRING", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'Sketch:'", "'Hardware:'", "'Arduino UNO'", "'Raspberry Pi'", "'Sensor'", "'pin'", "'Actuator'", "'EventHandler'", "';'", "':'", "'On'", "'Off'", "'Toggle'", "'SensorListener'", "'if'", "'ON'", "'OFF'", "'BETWEEN'", "'AND'", "'call'", "'Timer action'", "'repeat'", "'EVERY INTERVAL of'", "'seconds'", "'EVERY DAY at'", "'EVERY MONDAY at'", "'EVERY TUESDAY at'", "'EVERY WEDNESDAY at'", "'EVERY THURSDAY at'", "'EVERY FRIDAY at'", "'EVERY SATURDAY at'", "'EVERY SUNDAY at'"
     };
+    public static final int T__42=42;
     public static final int RULE_ID=4;
+    public static final int T__40=40;
+    public static final int T__41=41;
     public static final int T__29=29;
     public static final int T__28=28;
     public static final int T__27=27;
@@ -49,9 +52,13 @@ public class InternalRaspduinoDSLParser extends AbstractInternalAntlrParser {
     public static final int T__15=15;
     public static final int T__35=35;
     public static final int T__18=18;
+    public static final int T__36=36;
     public static final int T__17=17;
+    public static final int T__37=37;
     public static final int T__12=12;
+    public static final int T__38=38;
     public static final int T__11=11;
+    public static final int T__39=39;
     public static final int T__14=14;
     public static final int T__13=13;
     public static final int RULE_INT=6;
@@ -1565,26 +1572,57 @@ public class InternalRaspduinoDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleTimer"
-    // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:686:1: ruleTimer returns [EObject current=null] : (otherlv_0= 'Timer action' ( (otherlv_1= RULE_ID ) ) otherlv_2= 'repeat' ( ( (lv_repeattype_3_1= 'ONCE' | lv_repeattype_3_2= 'EVERY' ) ) ) otherlv_4= 'seconds:' ( (lv_timerSecs_5_0= RULE_INT ) ) ) ;
+    // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:686:1: ruleTimer returns [EObject current=null] : (otherlv_0= 'Timer action' ( (otherlv_1= RULE_ID ) ) otherlv_2= 'repeat' ( ( ( (lv_repeattype_3_0= 'EVERY INTERVAL of' ) ) ( (lv_secs_4_0= RULE_INT ) ) otherlv_5= 'seconds' ) | ( ( (lv_repeattype_6_0= 'EVERY DAY at' ) ) ( (lv_hours_7_0= RULE_INT ) ) otherlv_8= ':' ( (lv_minutes_9_0= RULE_INT ) ) ) | ( ( (lv_repeattype_10_0= 'EVERY MONDAY at' ) ) ( (lv_hours_11_0= RULE_INT ) ) otherlv_12= ':' ( (lv_minutes_13_0= RULE_INT ) ) ) | ( ( (lv_repeattype_14_0= 'EVERY TUESDAY at' ) ) ( (lv_hours_15_0= RULE_INT ) ) otherlv_16= ':' ( (lv_minutes_17_0= RULE_INT ) ) ) | ( ( (lv_repeattype_18_0= 'EVERY WEDNESDAY at' ) ) ( (lv_hours_19_0= RULE_INT ) ) otherlv_20= ':' ( (lv_minutes_21_0= RULE_INT ) ) ) | ( ( (lv_repeattype_22_0= 'EVERY THURSDAY at' ) ) ( (lv_hours_23_0= RULE_INT ) ) otherlv_24= ':' ( (lv_minutes_25_0= RULE_INT ) ) ) | ( ( (lv_repeattype_26_0= 'EVERY FRIDAY at' ) ) ( (lv_hours_27_0= RULE_INT ) ) otherlv_28= ':' ( (lv_minutes_29_0= RULE_INT ) ) ) | ( ( (lv_repeattype_30_0= 'EVERY SATURDAY at' ) ) ( (lv_hours_31_0= RULE_INT ) ) otherlv_32= ':' ( (lv_minutes_33_0= RULE_INT ) ) ) | ( ( (lv_repeattype_34_0= 'EVERY SUNDAY at' ) ) ( (lv_hours_35_0= RULE_INT ) ) otherlv_36= ':' ( (lv_minutes_37_0= RULE_INT ) ) ) ) ) ;
     public final EObject ruleTimer() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
         Token otherlv_1=null;
         Token otherlv_2=null;
-        Token lv_repeattype_3_1=null;
-        Token lv_repeattype_3_2=null;
-        Token otherlv_4=null;
-        Token lv_timerSecs_5_0=null;
+        Token lv_repeattype_3_0=null;
+        Token lv_secs_4_0=null;
+        Token otherlv_5=null;
+        Token lv_repeattype_6_0=null;
+        Token lv_hours_7_0=null;
+        Token otherlv_8=null;
+        Token lv_minutes_9_0=null;
+        Token lv_repeattype_10_0=null;
+        Token lv_hours_11_0=null;
+        Token otherlv_12=null;
+        Token lv_minutes_13_0=null;
+        Token lv_repeattype_14_0=null;
+        Token lv_hours_15_0=null;
+        Token otherlv_16=null;
+        Token lv_minutes_17_0=null;
+        Token lv_repeattype_18_0=null;
+        Token lv_hours_19_0=null;
+        Token otherlv_20=null;
+        Token lv_minutes_21_0=null;
+        Token lv_repeattype_22_0=null;
+        Token lv_hours_23_0=null;
+        Token otherlv_24=null;
+        Token lv_minutes_25_0=null;
+        Token lv_repeattype_26_0=null;
+        Token lv_hours_27_0=null;
+        Token otherlv_28=null;
+        Token lv_minutes_29_0=null;
+        Token lv_repeattype_30_0=null;
+        Token lv_hours_31_0=null;
+        Token otherlv_32=null;
+        Token lv_minutes_33_0=null;
+        Token lv_repeattype_34_0=null;
+        Token lv_hours_35_0=null;
+        Token otherlv_36=null;
+        Token lv_minutes_37_0=null;
 
          enterRule(); 
             
         try {
-            // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:689:28: ( (otherlv_0= 'Timer action' ( (otherlv_1= RULE_ID ) ) otherlv_2= 'repeat' ( ( (lv_repeattype_3_1= 'ONCE' | lv_repeattype_3_2= 'EVERY' ) ) ) otherlv_4= 'seconds:' ( (lv_timerSecs_5_0= RULE_INT ) ) ) )
-            // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:690:1: (otherlv_0= 'Timer action' ( (otherlv_1= RULE_ID ) ) otherlv_2= 'repeat' ( ( (lv_repeattype_3_1= 'ONCE' | lv_repeattype_3_2= 'EVERY' ) ) ) otherlv_4= 'seconds:' ( (lv_timerSecs_5_0= RULE_INT ) ) )
+            // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:689:28: ( (otherlv_0= 'Timer action' ( (otherlv_1= RULE_ID ) ) otherlv_2= 'repeat' ( ( ( (lv_repeattype_3_0= 'EVERY INTERVAL of' ) ) ( (lv_secs_4_0= RULE_INT ) ) otherlv_5= 'seconds' ) | ( ( (lv_repeattype_6_0= 'EVERY DAY at' ) ) ( (lv_hours_7_0= RULE_INT ) ) otherlv_8= ':' ( (lv_minutes_9_0= RULE_INT ) ) ) | ( ( (lv_repeattype_10_0= 'EVERY MONDAY at' ) ) ( (lv_hours_11_0= RULE_INT ) ) otherlv_12= ':' ( (lv_minutes_13_0= RULE_INT ) ) ) | ( ( (lv_repeattype_14_0= 'EVERY TUESDAY at' ) ) ( (lv_hours_15_0= RULE_INT ) ) otherlv_16= ':' ( (lv_minutes_17_0= RULE_INT ) ) ) | ( ( (lv_repeattype_18_0= 'EVERY WEDNESDAY at' ) ) ( (lv_hours_19_0= RULE_INT ) ) otherlv_20= ':' ( (lv_minutes_21_0= RULE_INT ) ) ) | ( ( (lv_repeattype_22_0= 'EVERY THURSDAY at' ) ) ( (lv_hours_23_0= RULE_INT ) ) otherlv_24= ':' ( (lv_minutes_25_0= RULE_INT ) ) ) | ( ( (lv_repeattype_26_0= 'EVERY FRIDAY at' ) ) ( (lv_hours_27_0= RULE_INT ) ) otherlv_28= ':' ( (lv_minutes_29_0= RULE_INT ) ) ) | ( ( (lv_repeattype_30_0= 'EVERY SATURDAY at' ) ) ( (lv_hours_31_0= RULE_INT ) ) otherlv_32= ':' ( (lv_minutes_33_0= RULE_INT ) ) ) | ( ( (lv_repeattype_34_0= 'EVERY SUNDAY at' ) ) ( (lv_hours_35_0= RULE_INT ) ) otherlv_36= ':' ( (lv_minutes_37_0= RULE_INT ) ) ) ) ) )
+            // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:690:1: (otherlv_0= 'Timer action' ( (otherlv_1= RULE_ID ) ) otherlv_2= 'repeat' ( ( ( (lv_repeattype_3_0= 'EVERY INTERVAL of' ) ) ( (lv_secs_4_0= RULE_INT ) ) otherlv_5= 'seconds' ) | ( ( (lv_repeattype_6_0= 'EVERY DAY at' ) ) ( (lv_hours_7_0= RULE_INT ) ) otherlv_8= ':' ( (lv_minutes_9_0= RULE_INT ) ) ) | ( ( (lv_repeattype_10_0= 'EVERY MONDAY at' ) ) ( (lv_hours_11_0= RULE_INT ) ) otherlv_12= ':' ( (lv_minutes_13_0= RULE_INT ) ) ) | ( ( (lv_repeattype_14_0= 'EVERY TUESDAY at' ) ) ( (lv_hours_15_0= RULE_INT ) ) otherlv_16= ':' ( (lv_minutes_17_0= RULE_INT ) ) ) | ( ( (lv_repeattype_18_0= 'EVERY WEDNESDAY at' ) ) ( (lv_hours_19_0= RULE_INT ) ) otherlv_20= ':' ( (lv_minutes_21_0= RULE_INT ) ) ) | ( ( (lv_repeattype_22_0= 'EVERY THURSDAY at' ) ) ( (lv_hours_23_0= RULE_INT ) ) otherlv_24= ':' ( (lv_minutes_25_0= RULE_INT ) ) ) | ( ( (lv_repeattype_26_0= 'EVERY FRIDAY at' ) ) ( (lv_hours_27_0= RULE_INT ) ) otherlv_28= ':' ( (lv_minutes_29_0= RULE_INT ) ) ) | ( ( (lv_repeattype_30_0= 'EVERY SATURDAY at' ) ) ( (lv_hours_31_0= RULE_INT ) ) otherlv_32= ':' ( (lv_minutes_33_0= RULE_INT ) ) ) | ( ( (lv_repeattype_34_0= 'EVERY SUNDAY at' ) ) ( (lv_hours_35_0= RULE_INT ) ) otherlv_36= ':' ( (lv_minutes_37_0= RULE_INT ) ) ) ) )
             {
-            // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:690:1: (otherlv_0= 'Timer action' ( (otherlv_1= RULE_ID ) ) otherlv_2= 'repeat' ( ( (lv_repeattype_3_1= 'ONCE' | lv_repeattype_3_2= 'EVERY' ) ) ) otherlv_4= 'seconds:' ( (lv_timerSecs_5_0= RULE_INT ) ) )
-            // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:690:3: otherlv_0= 'Timer action' ( (otherlv_1= RULE_ID ) ) otherlv_2= 'repeat' ( ( (lv_repeattype_3_1= 'ONCE' | lv_repeattype_3_2= 'EVERY' ) ) ) otherlv_4= 'seconds:' ( (lv_timerSecs_5_0= RULE_INT ) )
+            // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:690:1: (otherlv_0= 'Timer action' ( (otherlv_1= RULE_ID ) ) otherlv_2= 'repeat' ( ( ( (lv_repeattype_3_0= 'EVERY INTERVAL of' ) ) ( (lv_secs_4_0= RULE_INT ) ) otherlv_5= 'seconds' ) | ( ( (lv_repeattype_6_0= 'EVERY DAY at' ) ) ( (lv_hours_7_0= RULE_INT ) ) otherlv_8= ':' ( (lv_minutes_9_0= RULE_INT ) ) ) | ( ( (lv_repeattype_10_0= 'EVERY MONDAY at' ) ) ( (lv_hours_11_0= RULE_INT ) ) otherlv_12= ':' ( (lv_minutes_13_0= RULE_INT ) ) ) | ( ( (lv_repeattype_14_0= 'EVERY TUESDAY at' ) ) ( (lv_hours_15_0= RULE_INT ) ) otherlv_16= ':' ( (lv_minutes_17_0= RULE_INT ) ) ) | ( ( (lv_repeattype_18_0= 'EVERY WEDNESDAY at' ) ) ( (lv_hours_19_0= RULE_INT ) ) otherlv_20= ':' ( (lv_minutes_21_0= RULE_INT ) ) ) | ( ( (lv_repeattype_22_0= 'EVERY THURSDAY at' ) ) ( (lv_hours_23_0= RULE_INT ) ) otherlv_24= ':' ( (lv_minutes_25_0= RULE_INT ) ) ) | ( ( (lv_repeattype_26_0= 'EVERY FRIDAY at' ) ) ( (lv_hours_27_0= RULE_INT ) ) otherlv_28= ':' ( (lv_minutes_29_0= RULE_INT ) ) ) | ( ( (lv_repeattype_30_0= 'EVERY SATURDAY at' ) ) ( (lv_hours_31_0= RULE_INT ) ) otherlv_32= ':' ( (lv_minutes_33_0= RULE_INT ) ) ) | ( ( (lv_repeattype_34_0= 'EVERY SUNDAY at' ) ) ( (lv_hours_35_0= RULE_INT ) ) otherlv_36= ':' ( (lv_minutes_37_0= RULE_INT ) ) ) ) )
+            // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:690:3: otherlv_0= 'Timer action' ( (otherlv_1= RULE_ID ) ) otherlv_2= 'repeat' ( ( ( (lv_repeattype_3_0= 'EVERY INTERVAL of' ) ) ( (lv_secs_4_0= RULE_INT ) ) otherlv_5= 'seconds' ) | ( ( (lv_repeattype_6_0= 'EVERY DAY at' ) ) ( (lv_hours_7_0= RULE_INT ) ) otherlv_8= ':' ( (lv_minutes_9_0= RULE_INT ) ) ) | ( ( (lv_repeattype_10_0= 'EVERY MONDAY at' ) ) ( (lv_hours_11_0= RULE_INT ) ) otherlv_12= ':' ( (lv_minutes_13_0= RULE_INT ) ) ) | ( ( (lv_repeattype_14_0= 'EVERY TUESDAY at' ) ) ( (lv_hours_15_0= RULE_INT ) ) otherlv_16= ':' ( (lv_minutes_17_0= RULE_INT ) ) ) | ( ( (lv_repeattype_18_0= 'EVERY WEDNESDAY at' ) ) ( (lv_hours_19_0= RULE_INT ) ) otherlv_20= ':' ( (lv_minutes_21_0= RULE_INT ) ) ) | ( ( (lv_repeattype_22_0= 'EVERY THURSDAY at' ) ) ( (lv_hours_23_0= RULE_INT ) ) otherlv_24= ':' ( (lv_minutes_25_0= RULE_INT ) ) ) | ( ( (lv_repeattype_26_0= 'EVERY FRIDAY at' ) ) ( (lv_hours_27_0= RULE_INT ) ) otherlv_28= ':' ( (lv_minutes_29_0= RULE_INT ) ) ) | ( ( (lv_repeattype_30_0= 'EVERY SATURDAY at' ) ) ( (lv_hours_31_0= RULE_INT ) ) otherlv_32= ':' ( (lv_minutes_33_0= RULE_INT ) ) ) | ( ( (lv_repeattype_34_0= 'EVERY SUNDAY at' ) ) ( (lv_hours_35_0= RULE_INT ) ) otherlv_36= ':' ( (lv_minutes_37_0= RULE_INT ) ) ) )
             {
             otherlv_0=(Token)match(input,31,FOLLOW_31_in_ruleTimer1437); 
 
@@ -1615,97 +1653,846 @@ public class InternalRaspduinoDSLParser extends AbstractInternalAntlrParser {
 
                 	newLeafNode(otherlv_2, grammarAccess.getTimerAccess().getRepeatKeyword_2());
                 
-            // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:711:1: ( ( (lv_repeattype_3_1= 'ONCE' | lv_repeattype_3_2= 'EVERY' ) ) )
-            // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:712:1: ( (lv_repeattype_3_1= 'ONCE' | lv_repeattype_3_2= 'EVERY' ) )
-            {
-            // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:712:1: ( (lv_repeattype_3_1= 'ONCE' | lv_repeattype_3_2= 'EVERY' ) )
-            // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:713:1: (lv_repeattype_3_1= 'ONCE' | lv_repeattype_3_2= 'EVERY' )
-            {
-            // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:713:1: (lv_repeattype_3_1= 'ONCE' | lv_repeattype_3_2= 'EVERY' )
-            int alt10=2;
-            int LA10_0 = input.LA(1);
-
-            if ( (LA10_0==33) ) {
+            // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:711:1: ( ( ( (lv_repeattype_3_0= 'EVERY INTERVAL of' ) ) ( (lv_secs_4_0= RULE_INT ) ) otherlv_5= 'seconds' ) | ( ( (lv_repeattype_6_0= 'EVERY DAY at' ) ) ( (lv_hours_7_0= RULE_INT ) ) otherlv_8= ':' ( (lv_minutes_9_0= RULE_INT ) ) ) | ( ( (lv_repeattype_10_0= 'EVERY MONDAY at' ) ) ( (lv_hours_11_0= RULE_INT ) ) otherlv_12= ':' ( (lv_minutes_13_0= RULE_INT ) ) ) | ( ( (lv_repeattype_14_0= 'EVERY TUESDAY at' ) ) ( (lv_hours_15_0= RULE_INT ) ) otherlv_16= ':' ( (lv_minutes_17_0= RULE_INT ) ) ) | ( ( (lv_repeattype_18_0= 'EVERY WEDNESDAY at' ) ) ( (lv_hours_19_0= RULE_INT ) ) otherlv_20= ':' ( (lv_minutes_21_0= RULE_INT ) ) ) | ( ( (lv_repeattype_22_0= 'EVERY THURSDAY at' ) ) ( (lv_hours_23_0= RULE_INT ) ) otherlv_24= ':' ( (lv_minutes_25_0= RULE_INT ) ) ) | ( ( (lv_repeattype_26_0= 'EVERY FRIDAY at' ) ) ( (lv_hours_27_0= RULE_INT ) ) otherlv_28= ':' ( (lv_minutes_29_0= RULE_INT ) ) ) | ( ( (lv_repeattype_30_0= 'EVERY SATURDAY at' ) ) ( (lv_hours_31_0= RULE_INT ) ) otherlv_32= ':' ( (lv_minutes_33_0= RULE_INT ) ) ) | ( ( (lv_repeattype_34_0= 'EVERY SUNDAY at' ) ) ( (lv_hours_35_0= RULE_INT ) ) otherlv_36= ':' ( (lv_minutes_37_0= RULE_INT ) ) ) )
+            int alt10=9;
+            switch ( input.LA(1) ) {
+            case 33:
+                {
                 alt10=1;
-            }
-            else if ( (LA10_0==34) ) {
+                }
+                break;
+            case 35:
+                {
                 alt10=2;
-            }
-            else {
+                }
+                break;
+            case 36:
+                {
+                alt10=3;
+                }
+                break;
+            case 37:
+                {
+                alt10=4;
+                }
+                break;
+            case 38:
+                {
+                alt10=5;
+                }
+                break;
+            case 39:
+                {
+                alt10=6;
+                }
+                break;
+            case 40:
+                {
+                alt10=7;
+                }
+                break;
+            case 41:
+                {
+                alt10=8;
+                }
+                break;
+            case 42:
+                {
+                alt10=9;
+                }
+                break;
+            default:
                 NoViableAltException nvae =
                     new NoViableAltException("", 10, 0, input);
 
                 throw nvae;
             }
+
             switch (alt10) {
                 case 1 :
-                    // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:714:3: lv_repeattype_3_1= 'ONCE'
+                    // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:711:2: ( ( (lv_repeattype_3_0= 'EVERY INTERVAL of' ) ) ( (lv_secs_4_0= RULE_INT ) ) otherlv_5= 'seconds' )
                     {
-                    lv_repeattype_3_1=(Token)match(input,33,FOLLOW_33_in_ruleTimer1489); 
+                    // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:711:2: ( ( (lv_repeattype_3_0= 'EVERY INTERVAL of' ) ) ( (lv_secs_4_0= RULE_INT ) ) otherlv_5= 'seconds' )
+                    // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:711:3: ( (lv_repeattype_3_0= 'EVERY INTERVAL of' ) ) ( (lv_secs_4_0= RULE_INT ) ) otherlv_5= 'seconds'
+                    {
+                    // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:711:3: ( (lv_repeattype_3_0= 'EVERY INTERVAL of' ) )
+                    // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:712:1: (lv_repeattype_3_0= 'EVERY INTERVAL of' )
+                    {
+                    // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:712:1: (lv_repeattype_3_0= 'EVERY INTERVAL of' )
+                    // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:713:3: lv_repeattype_3_0= 'EVERY INTERVAL of'
+                    {
+                    lv_repeattype_3_0=(Token)match(input,33,FOLLOW_33_in_ruleTimer1489); 
 
-                            newLeafNode(lv_repeattype_3_1, grammarAccess.getTimerAccess().getRepeattypeONCEKeyword_3_0_0());
+                            newLeafNode(lv_repeattype_3_0, grammarAccess.getTimerAccess().getRepeattypeEVERYINTERVALOfKeyword_3_0_0_0());
                         
 
                     	        if (current==null) {
                     	            current = createModelElement(grammarAccess.getTimerRule());
                     	        }
-                           		setWithLastConsumed(current, "repeattype", lv_repeattype_3_1, null);
+                           		setWithLastConsumed(current, "repeattype", lv_repeattype_3_0, "EVERY INTERVAL of");
                     	    
+
+                    }
+
+
+                    }
+
+                    // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:726:2: ( (lv_secs_4_0= RULE_INT ) )
+                    // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:727:1: (lv_secs_4_0= RULE_INT )
+                    {
+                    // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:727:1: (lv_secs_4_0= RULE_INT )
+                    // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:728:3: lv_secs_4_0= RULE_INT
+                    {
+                    lv_secs_4_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleTimer1519); 
+
+                    			newLeafNode(lv_secs_4_0, grammarAccess.getTimerAccess().getSecsINTTerminalRuleCall_3_0_1_0()); 
+                    		
+
+                    	        if (current==null) {
+                    	            current = createModelElement(grammarAccess.getTimerRule());
+                    	        }
+                           		setWithLastConsumed(
+                           			current, 
+                           			"secs",
+                            		lv_secs_4_0, 
+                            		"INT");
+                    	    
+
+                    }
+
+
+                    }
+
+                    otherlv_5=(Token)match(input,34,FOLLOW_34_in_ruleTimer1536); 
+
+                        	newLeafNode(otherlv_5, grammarAccess.getTimerAccess().getSecondsKeyword_3_0_2());
+                        
+
+                    }
+
 
                     }
                     break;
                 case 2 :
-                    // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:726:8: lv_repeattype_3_2= 'EVERY'
+                    // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:749:6: ( ( (lv_repeattype_6_0= 'EVERY DAY at' ) ) ( (lv_hours_7_0= RULE_INT ) ) otherlv_8= ':' ( (lv_minutes_9_0= RULE_INT ) ) )
                     {
-                    lv_repeattype_3_2=(Token)match(input,34,FOLLOW_34_in_ruleTimer1518); 
+                    // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:749:6: ( ( (lv_repeattype_6_0= 'EVERY DAY at' ) ) ( (lv_hours_7_0= RULE_INT ) ) otherlv_8= ':' ( (lv_minutes_9_0= RULE_INT ) ) )
+                    // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:749:7: ( (lv_repeattype_6_0= 'EVERY DAY at' ) ) ( (lv_hours_7_0= RULE_INT ) ) otherlv_8= ':' ( (lv_minutes_9_0= RULE_INT ) )
+                    {
+                    // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:749:7: ( (lv_repeattype_6_0= 'EVERY DAY at' ) )
+                    // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:750:1: (lv_repeattype_6_0= 'EVERY DAY at' )
+                    {
+                    // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:750:1: (lv_repeattype_6_0= 'EVERY DAY at' )
+                    // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:751:3: lv_repeattype_6_0= 'EVERY DAY at'
+                    {
+                    lv_repeattype_6_0=(Token)match(input,35,FOLLOW_35_in_ruleTimer1562); 
 
-                            newLeafNode(lv_repeattype_3_2, grammarAccess.getTimerAccess().getRepeattypeEVERYKeyword_3_0_1());
+                            newLeafNode(lv_repeattype_6_0, grammarAccess.getTimerAccess().getRepeattypeEVERYDAYAtKeyword_3_1_0_0());
                         
 
                     	        if (current==null) {
                     	            current = createModelElement(grammarAccess.getTimerRule());
                     	        }
-                           		setWithLastConsumed(current, "repeattype", lv_repeattype_3_2, null);
+                           		setWithLastConsumed(current, "repeattype", lv_repeattype_6_0, "EVERY DAY at");
                     	    
 
                     }
+
+
+                    }
+
+                    // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:764:2: ( (lv_hours_7_0= RULE_INT ) )
+                    // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:765:1: (lv_hours_7_0= RULE_INT )
+                    {
+                    // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:765:1: (lv_hours_7_0= RULE_INT )
+                    // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:766:3: lv_hours_7_0= RULE_INT
+                    {
+                    lv_hours_7_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleTimer1592); 
+
+                    			newLeafNode(lv_hours_7_0, grammarAccess.getTimerAccess().getHoursINTTerminalRuleCall_3_1_1_0()); 
+                    		
+
+                    	        if (current==null) {
+                    	            current = createModelElement(grammarAccess.getTimerRule());
+                    	        }
+                           		setWithLastConsumed(
+                           			current, 
+                           			"hours",
+                            		lv_hours_7_0, 
+                            		"INT");
+                    	    
+
+                    }
+
+
+                    }
+
+                    otherlv_8=(Token)match(input,20,FOLLOW_20_in_ruleTimer1609); 
+
+                        	newLeafNode(otherlv_8, grammarAccess.getTimerAccess().getColonKeyword_3_1_2());
+                        
+                    // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:786:1: ( (lv_minutes_9_0= RULE_INT ) )
+                    // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:787:1: (lv_minutes_9_0= RULE_INT )
+                    {
+                    // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:787:1: (lv_minutes_9_0= RULE_INT )
+                    // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:788:3: lv_minutes_9_0= RULE_INT
+                    {
+                    lv_minutes_9_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleTimer1626); 
+
+                    			newLeafNode(lv_minutes_9_0, grammarAccess.getTimerAccess().getMinutesINTTerminalRuleCall_3_1_3_0()); 
+                    		
+
+                    	        if (current==null) {
+                    	            current = createModelElement(grammarAccess.getTimerRule());
+                    	        }
+                           		setWithLastConsumed(
+                           			current, 
+                           			"minutes",
+                            		lv_minutes_9_0, 
+                            		"INT");
+                    	    
+
+                    }
+
+
+                    }
+
+
+                    }
+
+
+                    }
                     break;
+                case 3 :
+                    // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:805:6: ( ( (lv_repeattype_10_0= 'EVERY MONDAY at' ) ) ( (lv_hours_11_0= RULE_INT ) ) otherlv_12= ':' ( (lv_minutes_13_0= RULE_INT ) ) )
+                    {
+                    // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:805:6: ( ( (lv_repeattype_10_0= 'EVERY MONDAY at' ) ) ( (lv_hours_11_0= RULE_INT ) ) otherlv_12= ':' ( (lv_minutes_13_0= RULE_INT ) ) )
+                    // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:805:7: ( (lv_repeattype_10_0= 'EVERY MONDAY at' ) ) ( (lv_hours_11_0= RULE_INT ) ) otherlv_12= ':' ( (lv_minutes_13_0= RULE_INT ) )
+                    {
+                    // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:805:7: ( (lv_repeattype_10_0= 'EVERY MONDAY at' ) )
+                    // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:806:1: (lv_repeattype_10_0= 'EVERY MONDAY at' )
+                    {
+                    // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:806:1: (lv_repeattype_10_0= 'EVERY MONDAY at' )
+                    // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:807:3: lv_repeattype_10_0= 'EVERY MONDAY at'
+                    {
+                    lv_repeattype_10_0=(Token)match(input,36,FOLLOW_36_in_ruleTimer1657); 
 
-            }
+                            newLeafNode(lv_repeattype_10_0, grammarAccess.getTimerAccess().getRepeattypeEVERYMONDAYAtKeyword_3_2_0_0());
+                        
+
+                    	        if (current==null) {
+                    	            current = createModelElement(grammarAccess.getTimerRule());
+                    	        }
+                           		setWithLastConsumed(current, "repeattype", lv_repeattype_10_0, "EVERY MONDAY at");
+                    	    
+
+                    }
 
 
-            }
+                    }
+
+                    // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:820:2: ( (lv_hours_11_0= RULE_INT ) )
+                    // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:821:1: (lv_hours_11_0= RULE_INT )
+                    {
+                    // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:821:1: (lv_hours_11_0= RULE_INT )
+                    // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:822:3: lv_hours_11_0= RULE_INT
+                    {
+                    lv_hours_11_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleTimer1687); 
+
+                    			newLeafNode(lv_hours_11_0, grammarAccess.getTimerAccess().getHoursINTTerminalRuleCall_3_2_1_0()); 
+                    		
+
+                    	        if (current==null) {
+                    	            current = createModelElement(grammarAccess.getTimerRule());
+                    	        }
+                           		setWithLastConsumed(
+                           			current, 
+                           			"hours",
+                            		lv_hours_11_0, 
+                            		"INT");
+                    	    
+
+                    }
 
 
-            }
+                    }
 
-            otherlv_4=(Token)match(input,35,FOLLOW_35_in_ruleTimer1546); 
+                    otherlv_12=(Token)match(input,20,FOLLOW_20_in_ruleTimer1704); 
 
-                	newLeafNode(otherlv_4, grammarAccess.getTimerAccess().getSecondsKeyword_4());
-                
-            // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:745:1: ( (lv_timerSecs_5_0= RULE_INT ) )
-            // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:746:1: (lv_timerSecs_5_0= RULE_INT )
-            {
-            // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:746:1: (lv_timerSecs_5_0= RULE_INT )
-            // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:747:3: lv_timerSecs_5_0= RULE_INT
-            {
-            lv_timerSecs_5_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleTimer1563); 
+                        	newLeafNode(otherlv_12, grammarAccess.getTimerAccess().getColonKeyword_3_2_2());
+                        
+                    // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:842:1: ( (lv_minutes_13_0= RULE_INT ) )
+                    // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:843:1: (lv_minutes_13_0= RULE_INT )
+                    {
+                    // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:843:1: (lv_minutes_13_0= RULE_INT )
+                    // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:844:3: lv_minutes_13_0= RULE_INT
+                    {
+                    lv_minutes_13_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleTimer1721); 
 
-            			newLeafNode(lv_timerSecs_5_0, grammarAccess.getTimerAccess().getTimerSecsINTTerminalRuleCall_5_0()); 
-            		
+                    			newLeafNode(lv_minutes_13_0, grammarAccess.getTimerAccess().getMinutesINTTerminalRuleCall_3_2_3_0()); 
+                    		
 
-            	        if (current==null) {
-            	            current = createModelElement(grammarAccess.getTimerRule());
-            	        }
-                   		setWithLastConsumed(
-                   			current, 
-                   			"timerSecs",
-                    		lv_timerSecs_5_0, 
-                    		"INT");
-            	    
+                    	        if (current==null) {
+                    	            current = createModelElement(grammarAccess.getTimerRule());
+                    	        }
+                           		setWithLastConsumed(
+                           			current, 
+                           			"minutes",
+                            		lv_minutes_13_0, 
+                            		"INT");
+                    	    
 
-            }
+                    }
 
+
+                    }
+
+
+                    }
+
+
+                    }
+                    break;
+                case 4 :
+                    // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:861:6: ( ( (lv_repeattype_14_0= 'EVERY TUESDAY at' ) ) ( (lv_hours_15_0= RULE_INT ) ) otherlv_16= ':' ( (lv_minutes_17_0= RULE_INT ) ) )
+                    {
+                    // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:861:6: ( ( (lv_repeattype_14_0= 'EVERY TUESDAY at' ) ) ( (lv_hours_15_0= RULE_INT ) ) otherlv_16= ':' ( (lv_minutes_17_0= RULE_INT ) ) )
+                    // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:861:7: ( (lv_repeattype_14_0= 'EVERY TUESDAY at' ) ) ( (lv_hours_15_0= RULE_INT ) ) otherlv_16= ':' ( (lv_minutes_17_0= RULE_INT ) )
+                    {
+                    // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:861:7: ( (lv_repeattype_14_0= 'EVERY TUESDAY at' ) )
+                    // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:862:1: (lv_repeattype_14_0= 'EVERY TUESDAY at' )
+                    {
+                    // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:862:1: (lv_repeattype_14_0= 'EVERY TUESDAY at' )
+                    // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:863:3: lv_repeattype_14_0= 'EVERY TUESDAY at'
+                    {
+                    lv_repeattype_14_0=(Token)match(input,37,FOLLOW_37_in_ruleTimer1752); 
+
+                            newLeafNode(lv_repeattype_14_0, grammarAccess.getTimerAccess().getRepeattypeEVERYTUESDAYAtKeyword_3_3_0_0());
+                        
+
+                    	        if (current==null) {
+                    	            current = createModelElement(grammarAccess.getTimerRule());
+                    	        }
+                           		setWithLastConsumed(current, "repeattype", lv_repeattype_14_0, "EVERY TUESDAY at");
+                    	    
+
+                    }
+
+
+                    }
+
+                    // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:876:2: ( (lv_hours_15_0= RULE_INT ) )
+                    // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:877:1: (lv_hours_15_0= RULE_INT )
+                    {
+                    // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:877:1: (lv_hours_15_0= RULE_INT )
+                    // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:878:3: lv_hours_15_0= RULE_INT
+                    {
+                    lv_hours_15_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleTimer1782); 
+
+                    			newLeafNode(lv_hours_15_0, grammarAccess.getTimerAccess().getHoursINTTerminalRuleCall_3_3_1_0()); 
+                    		
+
+                    	        if (current==null) {
+                    	            current = createModelElement(grammarAccess.getTimerRule());
+                    	        }
+                           		setWithLastConsumed(
+                           			current, 
+                           			"hours",
+                            		lv_hours_15_0, 
+                            		"INT");
+                    	    
+
+                    }
+
+
+                    }
+
+                    otherlv_16=(Token)match(input,20,FOLLOW_20_in_ruleTimer1799); 
+
+                        	newLeafNode(otherlv_16, grammarAccess.getTimerAccess().getColonKeyword_3_3_2());
+                        
+                    // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:898:1: ( (lv_minutes_17_0= RULE_INT ) )
+                    // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:899:1: (lv_minutes_17_0= RULE_INT )
+                    {
+                    // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:899:1: (lv_minutes_17_0= RULE_INT )
+                    // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:900:3: lv_minutes_17_0= RULE_INT
+                    {
+                    lv_minutes_17_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleTimer1816); 
+
+                    			newLeafNode(lv_minutes_17_0, grammarAccess.getTimerAccess().getMinutesINTTerminalRuleCall_3_3_3_0()); 
+                    		
+
+                    	        if (current==null) {
+                    	            current = createModelElement(grammarAccess.getTimerRule());
+                    	        }
+                           		setWithLastConsumed(
+                           			current, 
+                           			"minutes",
+                            		lv_minutes_17_0, 
+                            		"INT");
+                    	    
+
+                    }
+
+
+                    }
+
+
+                    }
+
+
+                    }
+                    break;
+                case 5 :
+                    // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:917:6: ( ( (lv_repeattype_18_0= 'EVERY WEDNESDAY at' ) ) ( (lv_hours_19_0= RULE_INT ) ) otherlv_20= ':' ( (lv_minutes_21_0= RULE_INT ) ) )
+                    {
+                    // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:917:6: ( ( (lv_repeattype_18_0= 'EVERY WEDNESDAY at' ) ) ( (lv_hours_19_0= RULE_INT ) ) otherlv_20= ':' ( (lv_minutes_21_0= RULE_INT ) ) )
+                    // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:917:7: ( (lv_repeattype_18_0= 'EVERY WEDNESDAY at' ) ) ( (lv_hours_19_0= RULE_INT ) ) otherlv_20= ':' ( (lv_minutes_21_0= RULE_INT ) )
+                    {
+                    // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:917:7: ( (lv_repeattype_18_0= 'EVERY WEDNESDAY at' ) )
+                    // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:918:1: (lv_repeattype_18_0= 'EVERY WEDNESDAY at' )
+                    {
+                    // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:918:1: (lv_repeattype_18_0= 'EVERY WEDNESDAY at' )
+                    // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:919:3: lv_repeattype_18_0= 'EVERY WEDNESDAY at'
+                    {
+                    lv_repeattype_18_0=(Token)match(input,38,FOLLOW_38_in_ruleTimer1847); 
+
+                            newLeafNode(lv_repeattype_18_0, grammarAccess.getTimerAccess().getRepeattypeEVERYWEDNESDAYAtKeyword_3_4_0_0());
+                        
+
+                    	        if (current==null) {
+                    	            current = createModelElement(grammarAccess.getTimerRule());
+                    	        }
+                           		setWithLastConsumed(current, "repeattype", lv_repeattype_18_0, "EVERY WEDNESDAY at");
+                    	    
+
+                    }
+
+
+                    }
+
+                    // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:932:2: ( (lv_hours_19_0= RULE_INT ) )
+                    // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:933:1: (lv_hours_19_0= RULE_INT )
+                    {
+                    // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:933:1: (lv_hours_19_0= RULE_INT )
+                    // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:934:3: lv_hours_19_0= RULE_INT
+                    {
+                    lv_hours_19_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleTimer1877); 
+
+                    			newLeafNode(lv_hours_19_0, grammarAccess.getTimerAccess().getHoursINTTerminalRuleCall_3_4_1_0()); 
+                    		
+
+                    	        if (current==null) {
+                    	            current = createModelElement(grammarAccess.getTimerRule());
+                    	        }
+                           		setWithLastConsumed(
+                           			current, 
+                           			"hours",
+                            		lv_hours_19_0, 
+                            		"INT");
+                    	    
+
+                    }
+
+
+                    }
+
+                    otherlv_20=(Token)match(input,20,FOLLOW_20_in_ruleTimer1894); 
+
+                        	newLeafNode(otherlv_20, grammarAccess.getTimerAccess().getColonKeyword_3_4_2());
+                        
+                    // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:954:1: ( (lv_minutes_21_0= RULE_INT ) )
+                    // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:955:1: (lv_minutes_21_0= RULE_INT )
+                    {
+                    // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:955:1: (lv_minutes_21_0= RULE_INT )
+                    // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:956:3: lv_minutes_21_0= RULE_INT
+                    {
+                    lv_minutes_21_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleTimer1911); 
+
+                    			newLeafNode(lv_minutes_21_0, grammarAccess.getTimerAccess().getMinutesINTTerminalRuleCall_3_4_3_0()); 
+                    		
+
+                    	        if (current==null) {
+                    	            current = createModelElement(grammarAccess.getTimerRule());
+                    	        }
+                           		setWithLastConsumed(
+                           			current, 
+                           			"minutes",
+                            		lv_minutes_21_0, 
+                            		"INT");
+                    	    
+
+                    }
+
+
+                    }
+
+
+                    }
+
+
+                    }
+                    break;
+                case 6 :
+                    // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:973:6: ( ( (lv_repeattype_22_0= 'EVERY THURSDAY at' ) ) ( (lv_hours_23_0= RULE_INT ) ) otherlv_24= ':' ( (lv_minutes_25_0= RULE_INT ) ) )
+                    {
+                    // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:973:6: ( ( (lv_repeattype_22_0= 'EVERY THURSDAY at' ) ) ( (lv_hours_23_0= RULE_INT ) ) otherlv_24= ':' ( (lv_minutes_25_0= RULE_INT ) ) )
+                    // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:973:7: ( (lv_repeattype_22_0= 'EVERY THURSDAY at' ) ) ( (lv_hours_23_0= RULE_INT ) ) otherlv_24= ':' ( (lv_minutes_25_0= RULE_INT ) )
+                    {
+                    // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:973:7: ( (lv_repeattype_22_0= 'EVERY THURSDAY at' ) )
+                    // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:974:1: (lv_repeattype_22_0= 'EVERY THURSDAY at' )
+                    {
+                    // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:974:1: (lv_repeattype_22_0= 'EVERY THURSDAY at' )
+                    // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:975:3: lv_repeattype_22_0= 'EVERY THURSDAY at'
+                    {
+                    lv_repeattype_22_0=(Token)match(input,39,FOLLOW_39_in_ruleTimer1942); 
+
+                            newLeafNode(lv_repeattype_22_0, grammarAccess.getTimerAccess().getRepeattypeEVERYTHURSDAYAtKeyword_3_5_0_0());
+                        
+
+                    	        if (current==null) {
+                    	            current = createModelElement(grammarAccess.getTimerRule());
+                    	        }
+                           		setWithLastConsumed(current, "repeattype", lv_repeattype_22_0, "EVERY THURSDAY at");
+                    	    
+
+                    }
+
+
+                    }
+
+                    // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:988:2: ( (lv_hours_23_0= RULE_INT ) )
+                    // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:989:1: (lv_hours_23_0= RULE_INT )
+                    {
+                    // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:989:1: (lv_hours_23_0= RULE_INT )
+                    // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:990:3: lv_hours_23_0= RULE_INT
+                    {
+                    lv_hours_23_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleTimer1972); 
+
+                    			newLeafNode(lv_hours_23_0, grammarAccess.getTimerAccess().getHoursINTTerminalRuleCall_3_5_1_0()); 
+                    		
+
+                    	        if (current==null) {
+                    	            current = createModelElement(grammarAccess.getTimerRule());
+                    	        }
+                           		setWithLastConsumed(
+                           			current, 
+                           			"hours",
+                            		lv_hours_23_0, 
+                            		"INT");
+                    	    
+
+                    }
+
+
+                    }
+
+                    otherlv_24=(Token)match(input,20,FOLLOW_20_in_ruleTimer1989); 
+
+                        	newLeafNode(otherlv_24, grammarAccess.getTimerAccess().getColonKeyword_3_5_2());
+                        
+                    // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:1010:1: ( (lv_minutes_25_0= RULE_INT ) )
+                    // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:1011:1: (lv_minutes_25_0= RULE_INT )
+                    {
+                    // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:1011:1: (lv_minutes_25_0= RULE_INT )
+                    // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:1012:3: lv_minutes_25_0= RULE_INT
+                    {
+                    lv_minutes_25_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleTimer2006); 
+
+                    			newLeafNode(lv_minutes_25_0, grammarAccess.getTimerAccess().getMinutesINTTerminalRuleCall_3_5_3_0()); 
+                    		
+
+                    	        if (current==null) {
+                    	            current = createModelElement(grammarAccess.getTimerRule());
+                    	        }
+                           		setWithLastConsumed(
+                           			current, 
+                           			"minutes",
+                            		lv_minutes_25_0, 
+                            		"INT");
+                    	    
+
+                    }
+
+
+                    }
+
+
+                    }
+
+
+                    }
+                    break;
+                case 7 :
+                    // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:1029:6: ( ( (lv_repeattype_26_0= 'EVERY FRIDAY at' ) ) ( (lv_hours_27_0= RULE_INT ) ) otherlv_28= ':' ( (lv_minutes_29_0= RULE_INT ) ) )
+                    {
+                    // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:1029:6: ( ( (lv_repeattype_26_0= 'EVERY FRIDAY at' ) ) ( (lv_hours_27_0= RULE_INT ) ) otherlv_28= ':' ( (lv_minutes_29_0= RULE_INT ) ) )
+                    // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:1029:7: ( (lv_repeattype_26_0= 'EVERY FRIDAY at' ) ) ( (lv_hours_27_0= RULE_INT ) ) otherlv_28= ':' ( (lv_minutes_29_0= RULE_INT ) )
+                    {
+                    // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:1029:7: ( (lv_repeattype_26_0= 'EVERY FRIDAY at' ) )
+                    // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:1030:1: (lv_repeattype_26_0= 'EVERY FRIDAY at' )
+                    {
+                    // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:1030:1: (lv_repeattype_26_0= 'EVERY FRIDAY at' )
+                    // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:1031:3: lv_repeattype_26_0= 'EVERY FRIDAY at'
+                    {
+                    lv_repeattype_26_0=(Token)match(input,40,FOLLOW_40_in_ruleTimer2037); 
+
+                            newLeafNode(lv_repeattype_26_0, grammarAccess.getTimerAccess().getRepeattypeEVERYFRIDAYAtKeyword_3_6_0_0());
+                        
+
+                    	        if (current==null) {
+                    	            current = createModelElement(grammarAccess.getTimerRule());
+                    	        }
+                           		setWithLastConsumed(current, "repeattype", lv_repeattype_26_0, "EVERY FRIDAY at");
+                    	    
+
+                    }
+
+
+                    }
+
+                    // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:1044:2: ( (lv_hours_27_0= RULE_INT ) )
+                    // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:1045:1: (lv_hours_27_0= RULE_INT )
+                    {
+                    // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:1045:1: (lv_hours_27_0= RULE_INT )
+                    // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:1046:3: lv_hours_27_0= RULE_INT
+                    {
+                    lv_hours_27_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleTimer2067); 
+
+                    			newLeafNode(lv_hours_27_0, grammarAccess.getTimerAccess().getHoursINTTerminalRuleCall_3_6_1_0()); 
+                    		
+
+                    	        if (current==null) {
+                    	            current = createModelElement(grammarAccess.getTimerRule());
+                    	        }
+                           		setWithLastConsumed(
+                           			current, 
+                           			"hours",
+                            		lv_hours_27_0, 
+                            		"INT");
+                    	    
+
+                    }
+
+
+                    }
+
+                    otherlv_28=(Token)match(input,20,FOLLOW_20_in_ruleTimer2084); 
+
+                        	newLeafNode(otherlv_28, grammarAccess.getTimerAccess().getColonKeyword_3_6_2());
+                        
+                    // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:1066:1: ( (lv_minutes_29_0= RULE_INT ) )
+                    // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:1067:1: (lv_minutes_29_0= RULE_INT )
+                    {
+                    // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:1067:1: (lv_minutes_29_0= RULE_INT )
+                    // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:1068:3: lv_minutes_29_0= RULE_INT
+                    {
+                    lv_minutes_29_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleTimer2101); 
+
+                    			newLeafNode(lv_minutes_29_0, grammarAccess.getTimerAccess().getMinutesINTTerminalRuleCall_3_6_3_0()); 
+                    		
+
+                    	        if (current==null) {
+                    	            current = createModelElement(grammarAccess.getTimerRule());
+                    	        }
+                           		setWithLastConsumed(
+                           			current, 
+                           			"minutes",
+                            		lv_minutes_29_0, 
+                            		"INT");
+                    	    
+
+                    }
+
+
+                    }
+
+
+                    }
+
+
+                    }
+                    break;
+                case 8 :
+                    // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:1085:6: ( ( (lv_repeattype_30_0= 'EVERY SATURDAY at' ) ) ( (lv_hours_31_0= RULE_INT ) ) otherlv_32= ':' ( (lv_minutes_33_0= RULE_INT ) ) )
+                    {
+                    // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:1085:6: ( ( (lv_repeattype_30_0= 'EVERY SATURDAY at' ) ) ( (lv_hours_31_0= RULE_INT ) ) otherlv_32= ':' ( (lv_minutes_33_0= RULE_INT ) ) )
+                    // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:1085:7: ( (lv_repeattype_30_0= 'EVERY SATURDAY at' ) ) ( (lv_hours_31_0= RULE_INT ) ) otherlv_32= ':' ( (lv_minutes_33_0= RULE_INT ) )
+                    {
+                    // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:1085:7: ( (lv_repeattype_30_0= 'EVERY SATURDAY at' ) )
+                    // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:1086:1: (lv_repeattype_30_0= 'EVERY SATURDAY at' )
+                    {
+                    // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:1086:1: (lv_repeattype_30_0= 'EVERY SATURDAY at' )
+                    // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:1087:3: lv_repeattype_30_0= 'EVERY SATURDAY at'
+                    {
+                    lv_repeattype_30_0=(Token)match(input,41,FOLLOW_41_in_ruleTimer2132); 
+
+                            newLeafNode(lv_repeattype_30_0, grammarAccess.getTimerAccess().getRepeattypeEVERYSATURDAYAtKeyword_3_7_0_0());
+                        
+
+                    	        if (current==null) {
+                    	            current = createModelElement(grammarAccess.getTimerRule());
+                    	        }
+                           		setWithLastConsumed(current, "repeattype", lv_repeattype_30_0, "EVERY SATURDAY at");
+                    	    
+
+                    }
+
+
+                    }
+
+                    // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:1100:2: ( (lv_hours_31_0= RULE_INT ) )
+                    // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:1101:1: (lv_hours_31_0= RULE_INT )
+                    {
+                    // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:1101:1: (lv_hours_31_0= RULE_INT )
+                    // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:1102:3: lv_hours_31_0= RULE_INT
+                    {
+                    lv_hours_31_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleTimer2162); 
+
+                    			newLeafNode(lv_hours_31_0, grammarAccess.getTimerAccess().getHoursINTTerminalRuleCall_3_7_1_0()); 
+                    		
+
+                    	        if (current==null) {
+                    	            current = createModelElement(grammarAccess.getTimerRule());
+                    	        }
+                           		setWithLastConsumed(
+                           			current, 
+                           			"hours",
+                            		lv_hours_31_0, 
+                            		"INT");
+                    	    
+
+                    }
+
+
+                    }
+
+                    otherlv_32=(Token)match(input,20,FOLLOW_20_in_ruleTimer2179); 
+
+                        	newLeafNode(otherlv_32, grammarAccess.getTimerAccess().getColonKeyword_3_7_2());
+                        
+                    // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:1122:1: ( (lv_minutes_33_0= RULE_INT ) )
+                    // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:1123:1: (lv_minutes_33_0= RULE_INT )
+                    {
+                    // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:1123:1: (lv_minutes_33_0= RULE_INT )
+                    // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:1124:3: lv_minutes_33_0= RULE_INT
+                    {
+                    lv_minutes_33_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleTimer2196); 
+
+                    			newLeafNode(lv_minutes_33_0, grammarAccess.getTimerAccess().getMinutesINTTerminalRuleCall_3_7_3_0()); 
+                    		
+
+                    	        if (current==null) {
+                    	            current = createModelElement(grammarAccess.getTimerRule());
+                    	        }
+                           		setWithLastConsumed(
+                           			current, 
+                           			"minutes",
+                            		lv_minutes_33_0, 
+                            		"INT");
+                    	    
+
+                    }
+
+
+                    }
+
+
+                    }
+
+
+                    }
+                    break;
+                case 9 :
+                    // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:1141:6: ( ( (lv_repeattype_34_0= 'EVERY SUNDAY at' ) ) ( (lv_hours_35_0= RULE_INT ) ) otherlv_36= ':' ( (lv_minutes_37_0= RULE_INT ) ) )
+                    {
+                    // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:1141:6: ( ( (lv_repeattype_34_0= 'EVERY SUNDAY at' ) ) ( (lv_hours_35_0= RULE_INT ) ) otherlv_36= ':' ( (lv_minutes_37_0= RULE_INT ) ) )
+                    // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:1141:7: ( (lv_repeattype_34_0= 'EVERY SUNDAY at' ) ) ( (lv_hours_35_0= RULE_INT ) ) otherlv_36= ':' ( (lv_minutes_37_0= RULE_INT ) )
+                    {
+                    // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:1141:7: ( (lv_repeattype_34_0= 'EVERY SUNDAY at' ) )
+                    // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:1142:1: (lv_repeattype_34_0= 'EVERY SUNDAY at' )
+                    {
+                    // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:1142:1: (lv_repeattype_34_0= 'EVERY SUNDAY at' )
+                    // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:1143:3: lv_repeattype_34_0= 'EVERY SUNDAY at'
+                    {
+                    lv_repeattype_34_0=(Token)match(input,42,FOLLOW_42_in_ruleTimer2227); 
+
+                            newLeafNode(lv_repeattype_34_0, grammarAccess.getTimerAccess().getRepeattypeEVERYSUNDAYAtKeyword_3_8_0_0());
+                        
+
+                    	        if (current==null) {
+                    	            current = createModelElement(grammarAccess.getTimerRule());
+                    	        }
+                           		setWithLastConsumed(current, "repeattype", lv_repeattype_34_0, "EVERY SUNDAY at");
+                    	    
+
+                    }
+
+
+                    }
+
+                    // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:1156:2: ( (lv_hours_35_0= RULE_INT ) )
+                    // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:1157:1: (lv_hours_35_0= RULE_INT )
+                    {
+                    // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:1157:1: (lv_hours_35_0= RULE_INT )
+                    // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:1158:3: lv_hours_35_0= RULE_INT
+                    {
+                    lv_hours_35_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleTimer2257); 
+
+                    			newLeafNode(lv_hours_35_0, grammarAccess.getTimerAccess().getHoursINTTerminalRuleCall_3_8_1_0()); 
+                    		
+
+                    	        if (current==null) {
+                    	            current = createModelElement(grammarAccess.getTimerRule());
+                    	        }
+                           		setWithLastConsumed(
+                           			current, 
+                           			"hours",
+                            		lv_hours_35_0, 
+                            		"INT");
+                    	    
+
+                    }
+
+
+                    }
+
+                    otherlv_36=(Token)match(input,20,FOLLOW_20_in_ruleTimer2274); 
+
+                        	newLeafNode(otherlv_36, grammarAccess.getTimerAccess().getColonKeyword_3_8_2());
+                        
+                    // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:1178:1: ( (lv_minutes_37_0= RULE_INT ) )
+                    // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:1179:1: (lv_minutes_37_0= RULE_INT )
+                    {
+                    // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:1179:1: (lv_minutes_37_0= RULE_INT )
+                    // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:1180:3: lv_minutes_37_0= RULE_INT
+                    {
+                    lv_minutes_37_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleTimer2291); 
+
+                    			newLeafNode(lv_minutes_37_0, grammarAccess.getTimerAccess().getMinutesINTTerminalRuleCall_3_8_3_0()); 
+                    		
+
+                    	        if (current==null) {
+                    	            current = createModelElement(grammarAccess.getTimerRule());
+                    	        }
+                           		setWithLastConsumed(
+                           			current, 
+                           			"minutes",
+                            		lv_minutes_37_0, 
+                            		"INT");
+                    	    
+
+                    }
+
+
+                    }
+
+
+                    }
+
+
+                    }
+                    break;
 
             }
 
@@ -1790,10 +2577,41 @@ public class InternalRaspduinoDSLParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_EOF_in_entryRuleTimer1400 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_31_in_ruleTimer1437 = new BitSet(new long[]{0x0000000000000010L});
     public static final BitSet FOLLOW_RULE_ID_in_ruleTimer1457 = new BitSet(new long[]{0x0000000100000000L});
-    public static final BitSet FOLLOW_32_in_ruleTimer1469 = new BitSet(new long[]{0x0000000600000000L});
-    public static final BitSet FOLLOW_33_in_ruleTimer1489 = new BitSet(new long[]{0x0000000800000000L});
-    public static final BitSet FOLLOW_34_in_ruleTimer1518 = new BitSet(new long[]{0x0000000800000000L});
-    public static final BitSet FOLLOW_35_in_ruleTimer1546 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_RULE_INT_in_ruleTimer1563 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_32_in_ruleTimer1469 = new BitSet(new long[]{0x000007FA00000000L});
+    public static final BitSet FOLLOW_33_in_ruleTimer1489 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_RULE_INT_in_ruleTimer1519 = new BitSet(new long[]{0x0000000400000000L});
+    public static final BitSet FOLLOW_34_in_ruleTimer1536 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_35_in_ruleTimer1562 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_RULE_INT_in_ruleTimer1592 = new BitSet(new long[]{0x0000000000100000L});
+    public static final BitSet FOLLOW_20_in_ruleTimer1609 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_RULE_INT_in_ruleTimer1626 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_36_in_ruleTimer1657 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_RULE_INT_in_ruleTimer1687 = new BitSet(new long[]{0x0000000000100000L});
+    public static final BitSet FOLLOW_20_in_ruleTimer1704 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_RULE_INT_in_ruleTimer1721 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_37_in_ruleTimer1752 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_RULE_INT_in_ruleTimer1782 = new BitSet(new long[]{0x0000000000100000L});
+    public static final BitSet FOLLOW_20_in_ruleTimer1799 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_RULE_INT_in_ruleTimer1816 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_38_in_ruleTimer1847 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_RULE_INT_in_ruleTimer1877 = new BitSet(new long[]{0x0000000000100000L});
+    public static final BitSet FOLLOW_20_in_ruleTimer1894 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_RULE_INT_in_ruleTimer1911 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_39_in_ruleTimer1942 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_RULE_INT_in_ruleTimer1972 = new BitSet(new long[]{0x0000000000100000L});
+    public static final BitSet FOLLOW_20_in_ruleTimer1989 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_RULE_INT_in_ruleTimer2006 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_40_in_ruleTimer2037 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_RULE_INT_in_ruleTimer2067 = new BitSet(new long[]{0x0000000000100000L});
+    public static final BitSet FOLLOW_20_in_ruleTimer2084 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_RULE_INT_in_ruleTimer2101 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_41_in_ruleTimer2132 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_RULE_INT_in_ruleTimer2162 = new BitSet(new long[]{0x0000000000100000L});
+    public static final BitSet FOLLOW_20_in_ruleTimer2179 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_RULE_INT_in_ruleTimer2196 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_42_in_ruleTimer2227 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_RULE_INT_in_ruleTimer2257 = new BitSet(new long[]{0x0000000000100000L});
+    public static final BitSet FOLLOW_20_in_ruleTimer2274 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_RULE_INT_in_ruleTimer2291 = new BitSet(new long[]{0x0000000000000002L});
 
 }

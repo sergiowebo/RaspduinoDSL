@@ -12,7 +12,10 @@ import java.util.ArrayList;
 
 @SuppressWarnings("all")
 public class InternalRaspduinoDSLLexer extends Lexer {
+    public static final int T__42=42;
+    public static final int T__40=40;
     public static final int RULE_ID=4;
+    public static final int T__41=41;
     public static final int T__29=29;
     public static final int T__28=28;
     public static final int T__27=27;
@@ -24,8 +27,8 @@ public class InternalRaspduinoDSLLexer extends Lexer {
     public static final int RULE_ANY_OTHER=10;
     public static final int T__21=21;
     public static final int T__20=20;
-    public static final int EOF=-1;
     public static final int RULE_SL_COMMENT=8;
+    public static final int EOF=-1;
     public static final int RULE_ML_COMMENT=7;
     public static final int T__19=19;
     public static final int T__30=30;
@@ -39,9 +42,13 @@ public class InternalRaspduinoDSLLexer extends Lexer {
     public static final int T__18=18;
     public static final int T__35=35;
     public static final int T__17=17;
+    public static final int T__36=36;
     public static final int T__12=12;
+    public static final int T__37=37;
     public static final int T__11=11;
+    public static final int T__38=38;
     public static final int T__14=14;
+    public static final int T__39=39;
     public static final int T__13=13;
     public static final int RULE_INT=6;
     public static final int RULE_WS=9;
@@ -524,10 +531,10 @@ public class InternalRaspduinoDSLLexer extends Lexer {
         try {
             int _type = T__33;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:33:7: ( 'ONCE' )
-            // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:33:9: 'ONCE'
+            // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:33:7: ( 'EVERY INTERVAL of' )
+            // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:33:9: 'EVERY INTERVAL of'
             {
-            match("ONCE"); 
+            match("EVERY INTERVAL of"); 
 
 
             }
@@ -545,10 +552,10 @@ public class InternalRaspduinoDSLLexer extends Lexer {
         try {
             int _type = T__34;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:34:7: ( 'EVERY' )
-            // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:34:9: 'EVERY'
+            // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:34:7: ( 'seconds' )
+            // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:34:9: 'seconds'
             {
-            match("EVERY"); 
+            match("seconds"); 
 
 
             }
@@ -566,10 +573,10 @@ public class InternalRaspduinoDSLLexer extends Lexer {
         try {
             int _type = T__35;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:35:7: ( 'seconds:' )
-            // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:35:9: 'seconds:'
+            // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:35:7: ( 'EVERY DAY at' )
+            // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:35:9: 'EVERY DAY at'
             {
-            match("seconds:"); 
+            match("EVERY DAY at"); 
 
 
             }
@@ -582,15 +589,162 @@ public class InternalRaspduinoDSLLexer extends Lexer {
     }
     // $ANTLR end "T__35"
 
+    // $ANTLR start "T__36"
+    public final void mT__36() throws RecognitionException {
+        try {
+            int _type = T__36;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:36:7: ( 'EVERY MONDAY at' )
+            // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:36:9: 'EVERY MONDAY at'
+            {
+            match("EVERY MONDAY at"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__36"
+
+    // $ANTLR start "T__37"
+    public final void mT__37() throws RecognitionException {
+        try {
+            int _type = T__37;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:37:7: ( 'EVERY TUESDAY at' )
+            // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:37:9: 'EVERY TUESDAY at'
+            {
+            match("EVERY TUESDAY at"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__37"
+
+    // $ANTLR start "T__38"
+    public final void mT__38() throws RecognitionException {
+        try {
+            int _type = T__38;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:38:7: ( 'EVERY WEDNESDAY at' )
+            // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:38:9: 'EVERY WEDNESDAY at'
+            {
+            match("EVERY WEDNESDAY at"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__38"
+
+    // $ANTLR start "T__39"
+    public final void mT__39() throws RecognitionException {
+        try {
+            int _type = T__39;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:39:7: ( 'EVERY THURSDAY at' )
+            // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:39:9: 'EVERY THURSDAY at'
+            {
+            match("EVERY THURSDAY at"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__39"
+
+    // $ANTLR start "T__40"
+    public final void mT__40() throws RecognitionException {
+        try {
+            int _type = T__40;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:40:7: ( 'EVERY FRIDAY at' )
+            // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:40:9: 'EVERY FRIDAY at'
+            {
+            match("EVERY FRIDAY at"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__40"
+
+    // $ANTLR start "T__41"
+    public final void mT__41() throws RecognitionException {
+        try {
+            int _type = T__41;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:41:7: ( 'EVERY SATURDAY at' )
+            // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:41:9: 'EVERY SATURDAY at'
+            {
+            match("EVERY SATURDAY at"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__41"
+
+    // $ANTLR start "T__42"
+    public final void mT__42() throws RecognitionException {
+        try {
+            int _type = T__42;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:42:7: ( 'EVERY SUNDAY at' )
+            // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:42:9: 'EVERY SUNDAY at'
+            {
+            match("EVERY SUNDAY at"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__42"
+
     // $ANTLR start "RULE_ID"
     public final void mRULE_ID() throws RecognitionException {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:770:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
-            // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:770:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:1203:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
+            // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:1203:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             {
-            // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:770:11: ( '^' )?
+            // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:1203:11: ( '^' )?
             int alt1=2;
             int LA1_0 = input.LA(1);
 
@@ -599,7 +753,7 @@ public class InternalRaspduinoDSLLexer extends Lexer {
             }
             switch (alt1) {
                 case 1 :
-                    // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:770:11: '^'
+                    // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:1203:11: '^'
                     {
                     match('^'); 
 
@@ -617,7 +771,7 @@ public class InternalRaspduinoDSLLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:770:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:1203:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             loop2:
             do {
                 int alt2=2;
@@ -666,10 +820,10 @@ public class InternalRaspduinoDSLLexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:772:10: ( ( '0' .. '9' )+ )
-            // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:772:12: ( '0' .. '9' )+
+            // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:1205:10: ( ( '0' .. '9' )+ )
+            // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:1205:12: ( '0' .. '9' )+
             {
-            // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:772:12: ( '0' .. '9' )+
+            // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:1205:12: ( '0' .. '9' )+
             int cnt3=0;
             loop3:
             do {
@@ -683,7 +837,7 @@ public class InternalRaspduinoDSLLexer extends Lexer {
 
                 switch (alt3) {
             	case 1 :
-            	    // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:772:13: '0' .. '9'
+            	    // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:1205:13: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -715,10 +869,10 @@ public class InternalRaspduinoDSLLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:774:13: ( ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:774:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:1207:13: ( ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:1207:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:774:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:1207:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt6=2;
             int LA6_0 = input.LA(1);
 
@@ -736,10 +890,10 @@ public class InternalRaspduinoDSLLexer extends Lexer {
             }
             switch (alt6) {
                 case 1 :
-                    // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:774:16: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:1207:16: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:774:20: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:1207:20: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop4:
                     do {
                         int alt4=3;
@@ -755,7 +909,7 @@ public class InternalRaspduinoDSLLexer extends Lexer {
 
                         switch (alt4) {
                     	case 1 :
-                    	    // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:774:21: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
+                    	    // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:1207:21: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
                     	    {
                     	    match('\\'); 
                     	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
@@ -771,7 +925,7 @@ public class InternalRaspduinoDSLLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:774:66: ~ ( ( '\\\\' | '\"' ) )
+                    	    // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:1207:66: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -796,10 +950,10 @@ public class InternalRaspduinoDSLLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:774:86: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:1207:86: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:774:91: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:1207:91: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop5:
                     do {
                         int alt5=3;
@@ -815,7 +969,7 @@ public class InternalRaspduinoDSLLexer extends Lexer {
 
                         switch (alt5) {
                     	case 1 :
-                    	    // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:774:92: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
+                    	    // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:1207:92: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
                     	    {
                     	    match('\\'); 
                     	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
@@ -831,7 +985,7 @@ public class InternalRaspduinoDSLLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:774:137: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:1207:137: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -874,12 +1028,12 @@ public class InternalRaspduinoDSLLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:776:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:776:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:1209:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:1209:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:776:24: ( options {greedy=false; } : . )*
+            // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:1209:24: ( options {greedy=false; } : . )*
             loop7:
             do {
                 int alt7=2;
@@ -904,7 +1058,7 @@ public class InternalRaspduinoDSLLexer extends Lexer {
 
                 switch (alt7) {
             	case 1 :
-            	    // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:776:52: .
+            	    // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:1209:52: .
             	    {
             	    matchAny(); 
 
@@ -934,12 +1088,12 @@ public class InternalRaspduinoDSLLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:778:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:778:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:1211:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:1211:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:778:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:1211:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop8:
             do {
                 int alt8=2;
@@ -952,7 +1106,7 @@ public class InternalRaspduinoDSLLexer extends Lexer {
 
                 switch (alt8) {
             	case 1 :
-            	    // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:778:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:1211:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -972,7 +1126,7 @@ public class InternalRaspduinoDSLLexer extends Lexer {
                 }
             } while (true);
 
-            // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:778:40: ( ( '\\r' )? '\\n' )?
+            // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:1211:40: ( ( '\\r' )? '\\n' )?
             int alt10=2;
             int LA10_0 = input.LA(1);
 
@@ -981,9 +1135,9 @@ public class InternalRaspduinoDSLLexer extends Lexer {
             }
             switch (alt10) {
                 case 1 :
-                    // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:778:41: ( '\\r' )? '\\n'
+                    // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:1211:41: ( '\\r' )? '\\n'
                     {
-                    // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:778:41: ( '\\r' )?
+                    // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:1211:41: ( '\\r' )?
                     int alt9=2;
                     int LA9_0 = input.LA(1);
 
@@ -992,7 +1146,7 @@ public class InternalRaspduinoDSLLexer extends Lexer {
                     }
                     switch (alt9) {
                         case 1 :
-                            // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:778:41: '\\r'
+                            // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:1211:41: '\\r'
                             {
                             match('\r'); 
 
@@ -1024,10 +1178,10 @@ public class InternalRaspduinoDSLLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:780:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:780:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:1213:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:1213:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:780:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:1213:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt11=0;
             loop11:
             do {
@@ -1081,8 +1235,8 @@ public class InternalRaspduinoDSLLexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:782:16: ( . )
-            // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:782:18: .
+            // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:1215:16: ( . )
+            // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:1215:18: .
             {
             matchAny(); 
 
@@ -1097,8 +1251,8 @@ public class InternalRaspduinoDSLLexer extends Lexer {
     // $ANTLR end "RULE_ANY_OTHER"
 
     public void mTokens() throws RecognitionException {
-        // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:1:8: ( T__11 | T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER )
-        int alt12=32;
+        // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:1:8: ( T__11 | T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER )
+        int alt12=39;
         alt12 = dfa12.predict(input);
         switch (alt12) {
             case 1 :
@@ -1277,49 +1431,98 @@ public class InternalRaspduinoDSLLexer extends Lexer {
                 }
                 break;
             case 26 :
-                // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:1:160: RULE_ID
+                // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:1:160: T__36
+                {
+                mT__36(); 
+
+                }
+                break;
+            case 27 :
+                // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:1:166: T__37
+                {
+                mT__37(); 
+
+                }
+                break;
+            case 28 :
+                // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:1:172: T__38
+                {
+                mT__38(); 
+
+                }
+                break;
+            case 29 :
+                // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:1:178: T__39
+                {
+                mT__39(); 
+
+                }
+                break;
+            case 30 :
+                // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:1:184: T__40
+                {
+                mT__40(); 
+
+                }
+                break;
+            case 31 :
+                // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:1:190: T__41
+                {
+                mT__41(); 
+
+                }
+                break;
+            case 32 :
+                // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:1:196: T__42
+                {
+                mT__42(); 
+
+                }
+                break;
+            case 33 :
+                // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:1:202: RULE_ID
                 {
                 mRULE_ID(); 
 
                 }
                 break;
-            case 27 :
-                // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:1:168: RULE_INT
+            case 34 :
+                // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:1:210: RULE_INT
                 {
                 mRULE_INT(); 
 
                 }
                 break;
-            case 28 :
-                // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:1:177: RULE_STRING
+            case 35 :
+                // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:1:219: RULE_STRING
                 {
                 mRULE_STRING(); 
 
                 }
                 break;
-            case 29 :
-                // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:1:189: RULE_ML_COMMENT
+            case 36 :
+                // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:1:231: RULE_ML_COMMENT
                 {
                 mRULE_ML_COMMENT(); 
 
                 }
                 break;
-            case 30 :
-                // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:1:205: RULE_SL_COMMENT
+            case 37 :
+                // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:1:247: RULE_SL_COMMENT
                 {
                 mRULE_SL_COMMENT(); 
 
                 }
                 break;
-            case 31 :
-                // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:1:221: RULE_WS
+            case 38 :
+                // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:1:263: RULE_WS
                 {
                 mRULE_WS(); 
 
                 }
                 break;
-            case 32 :
-                // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:1:229: RULE_ANY_OTHER
+            case 39 :
+                // ../es.usj.raspduino/src-gen/es/usj/raspduino/parser/antlr/internal/InternalRaspduinoDSL.g:1:271: RULE_ANY_OTHER
                 {
                 mRULE_ANY_OTHER(); 
 
@@ -1334,29 +1537,29 @@ public class InternalRaspduinoDSLLexer extends Lexer {
     protected DFA12 dfa12 = new DFA12(this);
     static final String DFA12_eotS =
         "\1\uffff\6\32\2\uffff\7\32\1\27\2\uffff\3\27\2\uffff\2\32\1\uffff"+
-        "\10\32\2\uffff\1\77\1\32\1\102\3\32\1\106\4\32\5\uffff\5\32\1\120"+
-        "\1\32\1\122\2\32\1\uffff\1\125\1\32\1\uffff\1\127\2\32\1\uffff\11"+
-        "\32\1\uffff\1\32\1\uffff\2\32\1\uffff\1\146\1\uffff\3\32\1\152\11"+
-        "\32\1\164\1\uffff\3\32\1\uffff\3\32\1\174\5\32\1\uffff\1\u0082\1"+
-        "\uffff\1\32\1\u0084\1\32\1\uffff\1\32\1\uffff\5\32\1\uffff\1\u008c"+
-        "\1\uffff\3\32\1\uffff\1\u0090\2\32\2\uffff\1\32\2\uffff\3\32\1\uffff"+
-        "\4\32\1\u009b\1\32\1\uffff\1\u009d\1\uffff";
+        "\10\32\2\uffff\1\77\1\32\1\101\3\32\1\105\4\32\5\uffff\5\32\1\117"+
+        "\1\32\1\121\2\32\1\uffff\1\124\1\uffff\1\125\2\32\1\uffff\11\32"+
+        "\1\uffff\1\32\1\uffff\2\32\2\uffff\3\32\1\147\15\32\1\uffff\3\32"+
+        "\1\171\5\32\1\uffff\1\u0086\1\uffff\1\32\1\u0088\1\32\1\uffff\1"+
+        "\32\1\uffff\5\32\10\uffff\1\u0094\1\uffff\1\u0095\2\32\1\uffff\1"+
+        "\u0098\2\32\6\uffff\1\32\2\uffff\3\32\1\uffff\4\32\1\u00a3\1\32"+
+        "\1\uffff\1\u00a5\1\uffff";
     static final String DFA12_eofS =
-        "\u009e\uffff";
+        "\u00a6\uffff";
     static final String DFA12_minS =
         "\1\0\1\145\1\141\1\116\1\141\1\151\1\126\2\uffff\1\106\1\151\1"+
         "\146\1\105\1\141\2\145\1\101\2\uffff\2\0\1\52\2\uffff\1\145\1\156"+
         "\1\uffff\1\162\1\144\1\164\1\104\1\163\1\156\1\145\1\105\2\uffff"+
         "\1\60\1\146\1\60\1\106\1\147\1\155\1\60\1\124\1\154\1\160\1\143"+
         "\5\uffff\1\164\1\163\1\144\2\165\1\60\1\160\1\60\1\156\1\122\1\uffff"+
-        "\1\60\1\105\1\uffff\1\60\1\147\1\145\1\uffff\1\127\1\154\1\145\1"+
-        "\157\1\143\1\157\1\167\1\151\1\141\1\uffff\1\142\1\uffff\1\164\1"+
-        "\131\1\uffff\1\60\1\uffff\1\154\1\162\1\105\1\60\1\141\1\156\1\150"+
-        "\1\162\1\141\1\156\1\164\1\145\1\110\1\60\1\uffff\1\145\1\40\1\105"+
-        "\1\uffff\1\164\1\144\1\72\1\60\1\162\2\157\1\162\1\141\1\uffff\1"+
-        "\60\1\uffff\1\116\1\60\1\163\1\uffff\1\151\1\uffff\1\145\1\40\2"+
-        "\162\1\156\1\uffff\1\60\1\uffff\1\72\1\163\1\72\1\uffff\1\60\1\171"+
-        "\1\144\2\uffff\1\164\2\uffff\1\40\1\154\1\145\1\uffff\1\145\1\156"+
+        "\1\60\1\uffff\1\60\1\147\1\145\1\uffff\1\127\1\154\1\145\1\157\1"+
+        "\143\1\157\1\167\1\151\1\141\1\uffff\1\142\1\uffff\1\164\1\131\2"+
+        "\uffff\1\154\1\162\1\105\1\60\1\141\1\156\1\150\1\162\1\141\1\156"+
+        "\1\164\1\145\1\110\1\40\1\145\1\40\1\105\1\uffff\1\164\1\144\1\72"+
+        "\1\60\1\162\2\157\1\162\1\141\1\104\1\60\1\uffff\1\116\1\60\1\163"+
+        "\1\uffff\1\151\1\uffff\1\145\1\40\2\162\1\156\3\uffff\1\110\2\uffff"+
+        "\1\101\1\uffff\1\60\1\uffff\1\60\1\163\1\72\1\uffff\1\60\1\171\1"+
+        "\144\6\uffff\1\164\2\uffff\1\40\1\154\1\145\1\uffff\1\145\1\156"+
         "\1\162\1\145\1\60\1\162\1\uffff\1\60\1\uffff";
     static final String DFA12_maxS =
         "\1\uffff\1\153\1\141\1\162\1\141\1\151\1\166\2\uffff\1\156\1\157"+
@@ -1364,25 +1567,26 @@ public class InternalRaspduinoDSLLexer extends Lexer {
         "\1\156\1\uffff\1\162\1\144\1\164\1\104\1\163\1\156\1\145\1\105\2"+
         "\uffff\1\172\1\146\1\172\1\106\1\147\1\155\1\172\1\124\1\154\1\160"+
         "\1\143\5\uffff\1\164\1\163\1\144\2\165\1\172\1\160\1\172\1\156\1"+
-        "\122\1\uffff\1\172\1\105\1\uffff\1\172\1\147\1\145\1\uffff\1\127"+
-        "\1\154\1\145\1\157\1\143\1\157\1\167\1\151\1\141\1\uffff\1\142\1"+
-        "\uffff\1\164\1\131\1\uffff\1\172\1\uffff\1\154\1\162\1\105\1\172"+
-        "\1\141\1\156\1\150\1\162\1\141\1\156\1\164\1\145\1\110\1\172\1\uffff"+
-        "\1\145\1\40\1\105\1\uffff\1\164\1\144\1\72\1\172\1\162\2\157\1\162"+
-        "\1\141\1\uffff\1\172\1\uffff\1\116\1\172\1\163\1\uffff\1\151\1\uffff"+
-        "\1\145\1\40\2\162\1\156\1\uffff\1\172\1\uffff\1\72\1\163\1\72\1"+
-        "\uffff\1\172\1\171\1\144\2\uffff\1\164\2\uffff\1\40\1\154\1\145"+
-        "\1\uffff\1\145\1\156\1\162\1\145\1\172\1\162\1\uffff\1\172\1\uffff";
+        "\122\1\uffff\1\172\1\uffff\1\172\1\147\1\145\1\uffff\1\127\1\154"+
+        "\1\145\1\157\1\143\1\157\1\167\1\151\1\141\1\uffff\1\142\1\uffff"+
+        "\1\164\1\131\2\uffff\1\154\1\162\1\105\1\172\1\141\1\156\1\150\1"+
+        "\162\1\141\1\156\1\164\1\145\1\110\1\40\1\145\1\40\1\105\1\uffff"+
+        "\1\164\1\144\1\72\1\172\1\162\2\157\1\162\1\141\1\127\1\172\1\uffff"+
+        "\1\116\1\172\1\163\1\uffff\1\151\1\uffff\1\145\1\40\2\162\1\156"+
+        "\3\uffff\1\125\2\uffff\1\125\1\uffff\1\172\1\uffff\1\172\1\163\1"+
+        "\72\1\uffff\1\172\1\171\1\144\6\uffff\1\164\2\uffff\1\40\1\154\1"+
+        "\145\1\uffff\1\145\1\156\1\162\1\145\1\172\1\162\1\uffff\1\172\1"+
+        "\uffff";
     static final String DFA12_acceptS =
-        "\7\uffff\1\11\1\12\10\uffff\1\32\1\33\3\uffff\1\37\1\40\2\uffff"+
-        "\1\32\10\uffff\1\11\1\12\13\uffff\1\33\1\34\1\35\1\36\1\37\12\uffff"+
-        "\1\13\2\uffff\1\20\3\uffff\1\17\11\uffff\1\23\1\uffff\1\6\2\uffff"+
-        "\1\14\1\uffff\1\21\16\uffff\1\27\3\uffff\1\24\11\uffff\1\30\1\uffff"+
-        "\1\25\3\uffff\1\1\1\uffff\1\5\5\uffff\1\15\1\uffff\1\26\3\uffff"+
-        "\1\3\3\uffff\1\22\1\31\1\uffff\1\2\1\7\3\uffff\1\4\6\uffff\1\10"+
-        "\1\uffff\1\16";
+        "\7\uffff\1\11\1\12\10\uffff\1\41\1\42\3\uffff\1\46\1\47\2\uffff"+
+        "\1\41\10\uffff\1\11\1\12\13\uffff\1\42\1\43\1\44\1\45\1\46\12\uffff"+
+        "\1\13\1\uffff\1\20\3\uffff\1\17\11\uffff\1\23\1\uffff\1\6\2\uffff"+
+        "\1\14\1\21\21\uffff\1\24\13\uffff\1\25\3\uffff\1\1\1\uffff\1\5\5"+
+        "\uffff\1\27\1\31\1\32\1\uffff\1\34\1\36\1\uffff\1\15\1\uffff\1\26"+
+        "\3\uffff\1\3\3\uffff\1\33\1\35\1\37\1\40\1\22\1\30\1\uffff\1\2\1"+
+        "\7\3\uffff\1\4\6\uffff\1\10\1\uffff\1\16";
     static final String DFA12_specialS =
-        "\1\1\22\uffff\1\0\1\2\u0089\uffff}>";
+        "\1\0\22\uffff\1\2\1\1\u0091\uffff}>";
     static final String[] DFA12_transitionS = {
             "\11\27\2\26\2\27\1\26\22\27\1\26\1\27\1\23\4\27\1\24\7\27\1"+
             "\25\12\22\1\10\1\7\5\27\1\3\1\14\2\21\1\6\2\21\1\2\6\21\1\11"+
@@ -1426,38 +1630,39 @@ public class InternalRaspduinoDSLLexer extends Lexer {
             "",
             "\12\32\7\uffff\32\32\4\uffff\1\32\1\uffff\32\32",
             "\1\100",
-            "\12\32\7\uffff\2\32\1\101\27\32\4\uffff\1\32\1\uffff\32\32",
+            "\12\32\7\uffff\32\32\4\uffff\1\32\1\uffff\32\32",
+            "\1\102",
             "\1\103",
             "\1\104",
-            "\1\105",
             "\12\32\7\uffff\32\32\4\uffff\1\32\1\uffff\32\32",
+            "\1\106",
             "\1\107",
             "\1\110",
             "\1\111",
+            "",
+            "",
+            "",
+            "",
+            "",
             "\1\112",
-            "",
-            "",
-            "",
-            "",
-            "",
             "\1\113",
             "\1\114",
             "\1\115",
             "\1\116",
-            "\1\117",
             "\12\32\7\uffff\32\32\4\uffff\1\32\1\uffff\32\32",
-            "\1\121",
+            "\1\120",
             "\12\32\7\uffff\32\32\4\uffff\1\32\1\uffff\32\32",
+            "\1\122",
             "\1\123",
-            "\1\124",
+            "",
+            "\12\32\7\uffff\32\32\4\uffff\1\32\1\uffff\32\32",
             "",
             "\12\32\7\uffff\32\32\4\uffff\1\32\1\uffff\32\32",
             "\1\126",
+            "\1\127",
             "",
-            "\12\32\7\uffff\32\32\4\uffff\1\32\1\uffff\32\32",
             "\1\130",
             "\1\131",
-            "",
             "\1\132",
             "\1\133",
             "\1\134",
@@ -1465,20 +1670,20 @@ public class InternalRaspduinoDSLLexer extends Lexer {
             "\1\136",
             "\1\137",
             "\1\140",
-            "\1\141",
-            "\1\142",
             "",
+            "\1\141",
+            "",
+            "\1\142",
             "\1\143",
+            "",
             "",
             "\1\144",
             "\1\145",
-            "",
+            "\1\146",
             "\12\32\7\uffff\32\32\4\uffff\1\32\1\uffff\32\32",
-            "",
-            "\1\147",
             "\1\150",
             "\1\151",
-            "\12\32\7\uffff\32\32\4\uffff\1\32\1\uffff\32\32",
+            "\1\152",
             "\1\153",
             "\1\154",
             "\1\155",
@@ -1488,60 +1693,68 @@ public class InternalRaspduinoDSLLexer extends Lexer {
             "\1\161",
             "\1\162",
             "\1\163",
-            "\12\32\7\uffff\32\32\4\uffff\1\32\1\uffff\32\32",
+            "\1\164",
             "",
             "\1\165",
             "\1\166",
             "\1\167",
-            "",
-            "\1\170",
-            "\1\171",
+            "\12\32\7\uffff\13\32\1\170\16\32\4\uffff\1\32\1\uffff\32\32",
             "\1\172",
-            "\12\32\7\uffff\13\32\1\173\16\32\4\uffff\1\32\1\uffff\32\32",
+            "\1\173",
+            "\1\174",
             "\1\175",
             "\1\176",
-            "\1\177",
-            "\1\u0080",
-            "\1\u0081",
-            "",
+            "\1\u0080\1\uffff\1\u0084\2\uffff\1\177\3\uffff\1\u0081\5\uffff"+
+            "\1\u0085\1\u0082\2\uffff\1\u0083",
             "\12\32\7\uffff\32\32\4\uffff\1\32\1\uffff\32\32",
-            "",
-            "\1\u0083",
-            "\12\32\7\uffff\32\32\4\uffff\1\32\1\uffff\32\32",
-            "\1\u0085",
-            "",
-            "\1\u0086",
             "",
             "\1\u0087",
-            "\1\u0088",
-            "\1\u0089",
-            "\1\u008a",
-            "\1\u008b",
-            "",
             "\12\32\7\uffff\32\32\4\uffff\1\32\1\uffff\32\32",
+            "\1\u0089",
             "",
+            "\1\u008a",
+            "",
+            "\1\u008b",
+            "\1\u008c",
             "\1\u008d",
             "\1\u008e",
             "\1\u008f",
             "",
+            "",
+            "",
+            "\1\u0091\14\uffff\1\u0090",
+            "",
+            "",
+            "\1\u0092\23\uffff\1\u0093",
+            "",
             "\12\32\7\uffff\32\32\4\uffff\1\32\1\uffff\32\32",
-            "\1\u0091",
-            "\1\u0092",
             "",
-            "",
-            "\1\u0093",
-            "",
-            "",
-            "\1\u0094",
-            "\1\u0095",
+            "\12\32\7\uffff\32\32\4\uffff\1\32\1\uffff\32\32",
             "\1\u0096",
-            "",
             "\1\u0097",
-            "\1\u0098",
+            "",
+            "\12\32\7\uffff\32\32\4\uffff\1\32\1\uffff\32\32",
             "\1\u0099",
             "\1\u009a",
-            "\12\32\7\uffff\32\32\4\uffff\1\32\1\uffff\32\32",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "\1\u009b",
+            "",
+            "",
             "\1\u009c",
+            "\1\u009d",
+            "\1\u009e",
+            "",
+            "\1\u009f",
+            "\1\u00a0",
+            "\1\u00a1",
+            "\1\u00a2",
+            "\12\32\7\uffff\32\32\4\uffff\1\32\1\uffff\32\32",
+            "\1\u00a4",
             "",
             "\12\32\7\uffff\32\32\4\uffff\1\32\1\uffff\32\32",
             ""
@@ -1577,23 +1790,13 @@ public class InternalRaspduinoDSLLexer extends Lexer {
             this.transition = DFA12_transition;
         }
         public String getDescription() {
-            return "1:1: Tokens : ( T__11 | T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER );";
+            return "1:1: Tokens : ( T__11 | T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER );";
         }
         public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
             IntStream input = _input;
         	int _s = s;
             switch ( s ) {
                     case 0 : 
-                        int LA12_19 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA12_19>='\u0000' && LA12_19<='\uFFFF')) ) {s = 49;}
-
-                        else s = 23;
-
-                        if ( s>=0 ) return s;
-                        break;
-                    case 1 : 
                         int LA12_0 = input.LA(1);
 
                         s = -1;
@@ -1645,11 +1848,21 @@ public class InternalRaspduinoDSLLexer extends Lexer {
 
                         if ( s>=0 ) return s;
                         break;
-                    case 2 : 
+                    case 1 : 
                         int LA12_20 = input.LA(1);
 
                         s = -1;
                         if ( ((LA12_20>='\u0000' && LA12_20<='\uFFFF')) ) {s = 49;}
+
+                        else s = 23;
+
+                        if ( s>=0 ) return s;
+                        break;
+                    case 2 : 
+                        int LA12_19 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA12_19>='\u0000' && LA12_19<='\uFFFF')) ) {s = 49;}
 
                         else s = 23;
 

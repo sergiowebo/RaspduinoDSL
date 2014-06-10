@@ -38,8 +38,7 @@ public class RaspduinoDSLGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cTimersAssignment_7 = (Assignment)cGroup.eContents().get(7);
 		private final RuleCall cTimersTimerParserRuleCall_7_0 = (RuleCall)cTimersAssignment_7.eContents().get(0);
 		
-		//// Definicion de las condiciones para ejecutar una tarea
-		/// *(alarms+=Alarm)* / // TODO: En caso de conflicto definimos quien tiene preferencia, lo que indican los sensores o lo programado
+		//// TODO: En caso de conflicto definimos quien tiene preferencia, lo que indican los sensores o lo programado
 		//// ('Concurrency Priority:' priority=('SENSOR'|'SCHEDULED'))*
 		//Model: // Nombre y plataforma que utilizaremos
 		//	"Sketch:" name=ID "Hardware:" hardware=("Arduino UNO" //Se podran añadir mas plataformas ARDUINO MEGA, NANO, etc.
@@ -409,13 +408,77 @@ public class RaspduinoDSLGrammarAccess extends AbstractGrammarElementFinder {
 		private final CrossReference cEventHandlerEventHandlerCrossReference_1_0 = (CrossReference)cEventHandlerAssignment_1.eContents().get(0);
 		private final RuleCall cEventHandlerEventHandlerIDTerminalRuleCall_1_0_1 = (RuleCall)cEventHandlerEventHandlerCrossReference_1_0.eContents().get(1);
 		private final Keyword cRepeatKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Assignment cRepeattypeAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final Alternatives cRepeattypeAlternatives_3_0 = (Alternatives)cRepeattypeAssignment_3.eContents().get(0);
-		private final Keyword cRepeattypeONCEKeyword_3_0_0 = (Keyword)cRepeattypeAlternatives_3_0.eContents().get(0);
-		private final Keyword cRepeattypeEVERYKeyword_3_0_1 = (Keyword)cRepeattypeAlternatives_3_0.eContents().get(1);
-		private final Keyword cSecondsKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		private final Assignment cTimerSecsAssignment_5 = (Assignment)cGroup.eContents().get(5);
-		private final RuleCall cTimerSecsINTTerminalRuleCall_5_0 = (RuleCall)cTimerSecsAssignment_5.eContents().get(0);
+		private final Alternatives cAlternatives_3 = (Alternatives)cGroup.eContents().get(3);
+		private final Group cGroup_3_0 = (Group)cAlternatives_3.eContents().get(0);
+		private final Assignment cRepeattypeAssignment_3_0_0 = (Assignment)cGroup_3_0.eContents().get(0);
+		private final Keyword cRepeattypeEVERYINTERVALOfKeyword_3_0_0_0 = (Keyword)cRepeattypeAssignment_3_0_0.eContents().get(0);
+		private final Assignment cSecsAssignment_3_0_1 = (Assignment)cGroup_3_0.eContents().get(1);
+		private final RuleCall cSecsINTTerminalRuleCall_3_0_1_0 = (RuleCall)cSecsAssignment_3_0_1.eContents().get(0);
+		private final Keyword cSecondsKeyword_3_0_2 = (Keyword)cGroup_3_0.eContents().get(2);
+		private final Group cGroup_3_1 = (Group)cAlternatives_3.eContents().get(1);
+		private final Assignment cRepeattypeAssignment_3_1_0 = (Assignment)cGroup_3_1.eContents().get(0);
+		private final Keyword cRepeattypeEVERYDAYAtKeyword_3_1_0_0 = (Keyword)cRepeattypeAssignment_3_1_0.eContents().get(0);
+		private final Assignment cHoursAssignment_3_1_1 = (Assignment)cGroup_3_1.eContents().get(1);
+		private final RuleCall cHoursINTTerminalRuleCall_3_1_1_0 = (RuleCall)cHoursAssignment_3_1_1.eContents().get(0);
+		private final Keyword cColonKeyword_3_1_2 = (Keyword)cGroup_3_1.eContents().get(2);
+		private final Assignment cMinutesAssignment_3_1_3 = (Assignment)cGroup_3_1.eContents().get(3);
+		private final RuleCall cMinutesINTTerminalRuleCall_3_1_3_0 = (RuleCall)cMinutesAssignment_3_1_3.eContents().get(0);
+		private final Group cGroup_3_2 = (Group)cAlternatives_3.eContents().get(2);
+		private final Assignment cRepeattypeAssignment_3_2_0 = (Assignment)cGroup_3_2.eContents().get(0);
+		private final Keyword cRepeattypeEVERYMONDAYAtKeyword_3_2_0_0 = (Keyword)cRepeattypeAssignment_3_2_0.eContents().get(0);
+		private final Assignment cHoursAssignment_3_2_1 = (Assignment)cGroup_3_2.eContents().get(1);
+		private final RuleCall cHoursINTTerminalRuleCall_3_2_1_0 = (RuleCall)cHoursAssignment_3_2_1.eContents().get(0);
+		private final Keyword cColonKeyword_3_2_2 = (Keyword)cGroup_3_2.eContents().get(2);
+		private final Assignment cMinutesAssignment_3_2_3 = (Assignment)cGroup_3_2.eContents().get(3);
+		private final RuleCall cMinutesINTTerminalRuleCall_3_2_3_0 = (RuleCall)cMinutesAssignment_3_2_3.eContents().get(0);
+		private final Group cGroup_3_3 = (Group)cAlternatives_3.eContents().get(3);
+		private final Assignment cRepeattypeAssignment_3_3_0 = (Assignment)cGroup_3_3.eContents().get(0);
+		private final Keyword cRepeattypeEVERYTUESDAYAtKeyword_3_3_0_0 = (Keyword)cRepeattypeAssignment_3_3_0.eContents().get(0);
+		private final Assignment cHoursAssignment_3_3_1 = (Assignment)cGroup_3_3.eContents().get(1);
+		private final RuleCall cHoursINTTerminalRuleCall_3_3_1_0 = (RuleCall)cHoursAssignment_3_3_1.eContents().get(0);
+		private final Keyword cColonKeyword_3_3_2 = (Keyword)cGroup_3_3.eContents().get(2);
+		private final Assignment cMinutesAssignment_3_3_3 = (Assignment)cGroup_3_3.eContents().get(3);
+		private final RuleCall cMinutesINTTerminalRuleCall_3_3_3_0 = (RuleCall)cMinutesAssignment_3_3_3.eContents().get(0);
+		private final Group cGroup_3_4 = (Group)cAlternatives_3.eContents().get(4);
+		private final Assignment cRepeattypeAssignment_3_4_0 = (Assignment)cGroup_3_4.eContents().get(0);
+		private final Keyword cRepeattypeEVERYWEDNESDAYAtKeyword_3_4_0_0 = (Keyword)cRepeattypeAssignment_3_4_0.eContents().get(0);
+		private final Assignment cHoursAssignment_3_4_1 = (Assignment)cGroup_3_4.eContents().get(1);
+		private final RuleCall cHoursINTTerminalRuleCall_3_4_1_0 = (RuleCall)cHoursAssignment_3_4_1.eContents().get(0);
+		private final Keyword cColonKeyword_3_4_2 = (Keyword)cGroup_3_4.eContents().get(2);
+		private final Assignment cMinutesAssignment_3_4_3 = (Assignment)cGroup_3_4.eContents().get(3);
+		private final RuleCall cMinutesINTTerminalRuleCall_3_4_3_0 = (RuleCall)cMinutesAssignment_3_4_3.eContents().get(0);
+		private final Group cGroup_3_5 = (Group)cAlternatives_3.eContents().get(5);
+		private final Assignment cRepeattypeAssignment_3_5_0 = (Assignment)cGroup_3_5.eContents().get(0);
+		private final Keyword cRepeattypeEVERYTHURSDAYAtKeyword_3_5_0_0 = (Keyword)cRepeattypeAssignment_3_5_0.eContents().get(0);
+		private final Assignment cHoursAssignment_3_5_1 = (Assignment)cGroup_3_5.eContents().get(1);
+		private final RuleCall cHoursINTTerminalRuleCall_3_5_1_0 = (RuleCall)cHoursAssignment_3_5_1.eContents().get(0);
+		private final Keyword cColonKeyword_3_5_2 = (Keyword)cGroup_3_5.eContents().get(2);
+		private final Assignment cMinutesAssignment_3_5_3 = (Assignment)cGroup_3_5.eContents().get(3);
+		private final RuleCall cMinutesINTTerminalRuleCall_3_5_3_0 = (RuleCall)cMinutesAssignment_3_5_3.eContents().get(0);
+		private final Group cGroup_3_6 = (Group)cAlternatives_3.eContents().get(6);
+		private final Assignment cRepeattypeAssignment_3_6_0 = (Assignment)cGroup_3_6.eContents().get(0);
+		private final Keyword cRepeattypeEVERYFRIDAYAtKeyword_3_6_0_0 = (Keyword)cRepeattypeAssignment_3_6_0.eContents().get(0);
+		private final Assignment cHoursAssignment_3_6_1 = (Assignment)cGroup_3_6.eContents().get(1);
+		private final RuleCall cHoursINTTerminalRuleCall_3_6_1_0 = (RuleCall)cHoursAssignment_3_6_1.eContents().get(0);
+		private final Keyword cColonKeyword_3_6_2 = (Keyword)cGroup_3_6.eContents().get(2);
+		private final Assignment cMinutesAssignment_3_6_3 = (Assignment)cGroup_3_6.eContents().get(3);
+		private final RuleCall cMinutesINTTerminalRuleCall_3_6_3_0 = (RuleCall)cMinutesAssignment_3_6_3.eContents().get(0);
+		private final Group cGroup_3_7 = (Group)cAlternatives_3.eContents().get(7);
+		private final Assignment cRepeattypeAssignment_3_7_0 = (Assignment)cGroup_3_7.eContents().get(0);
+		private final Keyword cRepeattypeEVERYSATURDAYAtKeyword_3_7_0_0 = (Keyword)cRepeattypeAssignment_3_7_0.eContents().get(0);
+		private final Assignment cHoursAssignment_3_7_1 = (Assignment)cGroup_3_7.eContents().get(1);
+		private final RuleCall cHoursINTTerminalRuleCall_3_7_1_0 = (RuleCall)cHoursAssignment_3_7_1.eContents().get(0);
+		private final Keyword cColonKeyword_3_7_2 = (Keyword)cGroup_3_7.eContents().get(2);
+		private final Assignment cMinutesAssignment_3_7_3 = (Assignment)cGroup_3_7.eContents().get(3);
+		private final RuleCall cMinutesINTTerminalRuleCall_3_7_3_0 = (RuleCall)cMinutesAssignment_3_7_3.eContents().get(0);
+		private final Group cGroup_3_8 = (Group)cAlternatives_3.eContents().get(8);
+		private final Assignment cRepeattypeAssignment_3_8_0 = (Assignment)cGroup_3_8.eContents().get(0);
+		private final Keyword cRepeattypeEVERYSUNDAYAtKeyword_3_8_0_0 = (Keyword)cRepeattypeAssignment_3_8_0.eContents().get(0);
+		private final Assignment cHoursAssignment_3_8_1 = (Assignment)cGroup_3_8.eContents().get(1);
+		private final RuleCall cHoursINTTerminalRuleCall_3_8_1_0 = (RuleCall)cHoursAssignment_3_8_1.eContents().get(0);
+		private final Keyword cColonKeyword_3_8_2 = (Keyword)cGroup_3_8.eContents().get(2);
+		private final Assignment cMinutesAssignment_3_8_3 = (Assignment)cGroup_3_8.eContents().get(3);
+		private final RuleCall cMinutesINTTerminalRuleCall_3_8_3_0 = (RuleCall)cMinutesAssignment_3_8_3.eContents().get(0);
 		
 		//// Acciones programadas para realizarse cada X segundos, o a determinadas horas del dia.
 		//// IDEAS PARA CONTINUAR EL DESARROLLO
@@ -446,10 +509,18 @@ public class RaspduinoDSLGrammarAccess extends AbstractGrammarElementFinder {
 		//			INT'.'INT
 		//		;
 		//	 * / Timer:
-		//	"Timer action" eventHandler=[EventHandler] "repeat" repeattype=("ONCE" | "EVERY") "seconds:" timerSecs=INT;
+		//	"Timer action" eventHandler=[EventHandler] "repeat" (repeattype="EVERY INTERVAL of" secs=INT "seconds" |
+		//	repeattype="EVERY DAY at" hours=INT ":" minutes=INT | repeattype="EVERY MONDAY at" hours=INT ":" minutes=INT |
+		//	repeattype="EVERY TUESDAY at" hours=INT ":" minutes=INT | repeattype="EVERY WEDNESDAY at" hours=INT ":" minutes=INT |
+		//	repeattype="EVERY THURSDAY at" hours=INT ":" minutes=INT | repeattype="EVERY FRIDAY at" hours=INT ":" minutes=INT |
+		//	repeattype="EVERY SATURDAY at" hours=INT ":" minutes=INT | repeattype="EVERY SUNDAY at" hours=INT ":" minutes=INT);
 		public ParserRule getRule() { return rule; }
 
-		//"Timer action" eventHandler=[EventHandler] "repeat" repeattype=("ONCE" | "EVERY") "seconds:" timerSecs=INT
+		//"Timer action" eventHandler=[EventHandler] "repeat" (repeattype="EVERY INTERVAL of" secs=INT "seconds" |
+		//repeattype="EVERY DAY at" hours=INT ":" minutes=INT | repeattype="EVERY MONDAY at" hours=INT ":" minutes=INT |
+		//repeattype="EVERY TUESDAY at" hours=INT ":" minutes=INT | repeattype="EVERY WEDNESDAY at" hours=INT ":" minutes=INT |
+		//repeattype="EVERY THURSDAY at" hours=INT ":" minutes=INT | repeattype="EVERY FRIDAY at" hours=INT ":" minutes=INT |
+		//repeattype="EVERY SATURDAY at" hours=INT ":" minutes=INT | repeattype="EVERY SUNDAY at" hours=INT ":" minutes=INT)
 		public Group getGroup() { return cGroup; }
 
 		//"Timer action"
@@ -467,26 +538,222 @@ public class RaspduinoDSLGrammarAccess extends AbstractGrammarElementFinder {
 		//"repeat"
 		public Keyword getRepeatKeyword_2() { return cRepeatKeyword_2; }
 
-		//repeattype=("ONCE" | "EVERY")
-		public Assignment getRepeattypeAssignment_3() { return cRepeattypeAssignment_3; }
+		//repeattype="EVERY INTERVAL of" secs=INT "seconds" | repeattype="EVERY DAY at" hours=INT ":" minutes=INT |
+		//repeattype="EVERY MONDAY at" hours=INT ":" minutes=INT | repeattype="EVERY TUESDAY at" hours=INT ":" minutes=INT |
+		//repeattype="EVERY WEDNESDAY at" hours=INT ":" minutes=INT | repeattype="EVERY THURSDAY at" hours=INT ":" minutes=INT |
+		//repeattype="EVERY FRIDAY at" hours=INT ":" minutes=INT | repeattype="EVERY SATURDAY at" hours=INT ":" minutes=INT |
+		//repeattype="EVERY SUNDAY at" hours=INT ":" minutes=INT
+		public Alternatives getAlternatives_3() { return cAlternatives_3; }
 
-		//"ONCE" | "EVERY"
-		public Alternatives getRepeattypeAlternatives_3_0() { return cRepeattypeAlternatives_3_0; }
+		//repeattype="EVERY INTERVAL of" secs=INT "seconds"
+		public Group getGroup_3_0() { return cGroup_3_0; }
 
-		//"ONCE"
-		public Keyword getRepeattypeONCEKeyword_3_0_0() { return cRepeattypeONCEKeyword_3_0_0; }
+		//repeattype="EVERY INTERVAL of"
+		public Assignment getRepeattypeAssignment_3_0_0() { return cRepeattypeAssignment_3_0_0; }
 
-		//"EVERY"
-		public Keyword getRepeattypeEVERYKeyword_3_0_1() { return cRepeattypeEVERYKeyword_3_0_1; }
+		//"EVERY INTERVAL of"
+		public Keyword getRepeattypeEVERYINTERVALOfKeyword_3_0_0_0() { return cRepeattypeEVERYINTERVALOfKeyword_3_0_0_0; }
 
-		//"seconds:"
-		public Keyword getSecondsKeyword_4() { return cSecondsKeyword_4; }
-
-		//timerSecs=INT
-		public Assignment getTimerSecsAssignment_5() { return cTimerSecsAssignment_5; }
+		//secs=INT
+		public Assignment getSecsAssignment_3_0_1() { return cSecsAssignment_3_0_1; }
 
 		//INT
-		public RuleCall getTimerSecsINTTerminalRuleCall_5_0() { return cTimerSecsINTTerminalRuleCall_5_0; }
+		public RuleCall getSecsINTTerminalRuleCall_3_0_1_0() { return cSecsINTTerminalRuleCall_3_0_1_0; }
+
+		//"seconds"
+		public Keyword getSecondsKeyword_3_0_2() { return cSecondsKeyword_3_0_2; }
+
+		//repeattype="EVERY DAY at" hours=INT ":" minutes=INT
+		public Group getGroup_3_1() { return cGroup_3_1; }
+
+		//repeattype="EVERY DAY at"
+		public Assignment getRepeattypeAssignment_3_1_0() { return cRepeattypeAssignment_3_1_0; }
+
+		//"EVERY DAY at"
+		public Keyword getRepeattypeEVERYDAYAtKeyword_3_1_0_0() { return cRepeattypeEVERYDAYAtKeyword_3_1_0_0; }
+
+		//hours=INT
+		public Assignment getHoursAssignment_3_1_1() { return cHoursAssignment_3_1_1; }
+
+		//INT
+		public RuleCall getHoursINTTerminalRuleCall_3_1_1_0() { return cHoursINTTerminalRuleCall_3_1_1_0; }
+
+		//":"
+		public Keyword getColonKeyword_3_1_2() { return cColonKeyword_3_1_2; }
+
+		//minutes=INT
+		public Assignment getMinutesAssignment_3_1_3() { return cMinutesAssignment_3_1_3; }
+
+		//INT
+		public RuleCall getMinutesINTTerminalRuleCall_3_1_3_0() { return cMinutesINTTerminalRuleCall_3_1_3_0; }
+
+		//repeattype="EVERY MONDAY at" hours=INT ":" minutes=INT
+		public Group getGroup_3_2() { return cGroup_3_2; }
+
+		//repeattype="EVERY MONDAY at"
+		public Assignment getRepeattypeAssignment_3_2_0() { return cRepeattypeAssignment_3_2_0; }
+
+		//"EVERY MONDAY at"
+		public Keyword getRepeattypeEVERYMONDAYAtKeyword_3_2_0_0() { return cRepeattypeEVERYMONDAYAtKeyword_3_2_0_0; }
+
+		//hours=INT
+		public Assignment getHoursAssignment_3_2_1() { return cHoursAssignment_3_2_1; }
+
+		//INT
+		public RuleCall getHoursINTTerminalRuleCall_3_2_1_0() { return cHoursINTTerminalRuleCall_3_2_1_0; }
+
+		//":"
+		public Keyword getColonKeyword_3_2_2() { return cColonKeyword_3_2_2; }
+
+		//minutes=INT
+		public Assignment getMinutesAssignment_3_2_3() { return cMinutesAssignment_3_2_3; }
+
+		//INT
+		public RuleCall getMinutesINTTerminalRuleCall_3_2_3_0() { return cMinutesINTTerminalRuleCall_3_2_3_0; }
+
+		//repeattype="EVERY TUESDAY at" hours=INT ":" minutes=INT
+		public Group getGroup_3_3() { return cGroup_3_3; }
+
+		//repeattype="EVERY TUESDAY at"
+		public Assignment getRepeattypeAssignment_3_3_0() { return cRepeattypeAssignment_3_3_0; }
+
+		//"EVERY TUESDAY at"
+		public Keyword getRepeattypeEVERYTUESDAYAtKeyword_3_3_0_0() { return cRepeattypeEVERYTUESDAYAtKeyword_3_3_0_0; }
+
+		//hours=INT
+		public Assignment getHoursAssignment_3_3_1() { return cHoursAssignment_3_3_1; }
+
+		//INT
+		public RuleCall getHoursINTTerminalRuleCall_3_3_1_0() { return cHoursINTTerminalRuleCall_3_3_1_0; }
+
+		//":"
+		public Keyword getColonKeyword_3_3_2() { return cColonKeyword_3_3_2; }
+
+		//minutes=INT
+		public Assignment getMinutesAssignment_3_3_3() { return cMinutesAssignment_3_3_3; }
+
+		//INT
+		public RuleCall getMinutesINTTerminalRuleCall_3_3_3_0() { return cMinutesINTTerminalRuleCall_3_3_3_0; }
+
+		//repeattype="EVERY WEDNESDAY at" hours=INT ":" minutes=INT
+		public Group getGroup_3_4() { return cGroup_3_4; }
+
+		//repeattype="EVERY WEDNESDAY at"
+		public Assignment getRepeattypeAssignment_3_4_0() { return cRepeattypeAssignment_3_4_0; }
+
+		//"EVERY WEDNESDAY at"
+		public Keyword getRepeattypeEVERYWEDNESDAYAtKeyword_3_4_0_0() { return cRepeattypeEVERYWEDNESDAYAtKeyword_3_4_0_0; }
+
+		//hours=INT
+		public Assignment getHoursAssignment_3_4_1() { return cHoursAssignment_3_4_1; }
+
+		//INT
+		public RuleCall getHoursINTTerminalRuleCall_3_4_1_0() { return cHoursINTTerminalRuleCall_3_4_1_0; }
+
+		//":"
+		public Keyword getColonKeyword_3_4_2() { return cColonKeyword_3_4_2; }
+
+		//minutes=INT
+		public Assignment getMinutesAssignment_3_4_3() { return cMinutesAssignment_3_4_3; }
+
+		//INT
+		public RuleCall getMinutesINTTerminalRuleCall_3_4_3_0() { return cMinutesINTTerminalRuleCall_3_4_3_0; }
+
+		//repeattype="EVERY THURSDAY at" hours=INT ":" minutes=INT
+		public Group getGroup_3_5() { return cGroup_3_5; }
+
+		//repeattype="EVERY THURSDAY at"
+		public Assignment getRepeattypeAssignment_3_5_0() { return cRepeattypeAssignment_3_5_0; }
+
+		//"EVERY THURSDAY at"
+		public Keyword getRepeattypeEVERYTHURSDAYAtKeyword_3_5_0_0() { return cRepeattypeEVERYTHURSDAYAtKeyword_3_5_0_0; }
+
+		//hours=INT
+		public Assignment getHoursAssignment_3_5_1() { return cHoursAssignment_3_5_1; }
+
+		//INT
+		public RuleCall getHoursINTTerminalRuleCall_3_5_1_0() { return cHoursINTTerminalRuleCall_3_5_1_0; }
+
+		//":"
+		public Keyword getColonKeyword_3_5_2() { return cColonKeyword_3_5_2; }
+
+		//minutes=INT
+		public Assignment getMinutesAssignment_3_5_3() { return cMinutesAssignment_3_5_3; }
+
+		//INT
+		public RuleCall getMinutesINTTerminalRuleCall_3_5_3_0() { return cMinutesINTTerminalRuleCall_3_5_3_0; }
+
+		//repeattype="EVERY FRIDAY at" hours=INT ":" minutes=INT
+		public Group getGroup_3_6() { return cGroup_3_6; }
+
+		//repeattype="EVERY FRIDAY at"
+		public Assignment getRepeattypeAssignment_3_6_0() { return cRepeattypeAssignment_3_6_0; }
+
+		//"EVERY FRIDAY at"
+		public Keyword getRepeattypeEVERYFRIDAYAtKeyword_3_6_0_0() { return cRepeattypeEVERYFRIDAYAtKeyword_3_6_0_0; }
+
+		//hours=INT
+		public Assignment getHoursAssignment_3_6_1() { return cHoursAssignment_3_6_1; }
+
+		//INT
+		public RuleCall getHoursINTTerminalRuleCall_3_6_1_0() { return cHoursINTTerminalRuleCall_3_6_1_0; }
+
+		//":"
+		public Keyword getColonKeyword_3_6_2() { return cColonKeyword_3_6_2; }
+
+		//minutes=INT
+		public Assignment getMinutesAssignment_3_6_3() { return cMinutesAssignment_3_6_3; }
+
+		//INT
+		public RuleCall getMinutesINTTerminalRuleCall_3_6_3_0() { return cMinutesINTTerminalRuleCall_3_6_3_0; }
+
+		//repeattype="EVERY SATURDAY at" hours=INT ":" minutes=INT
+		public Group getGroup_3_7() { return cGroup_3_7; }
+
+		//repeattype="EVERY SATURDAY at"
+		public Assignment getRepeattypeAssignment_3_7_0() { return cRepeattypeAssignment_3_7_0; }
+
+		//"EVERY SATURDAY at"
+		public Keyword getRepeattypeEVERYSATURDAYAtKeyword_3_7_0_0() { return cRepeattypeEVERYSATURDAYAtKeyword_3_7_0_0; }
+
+		//hours=INT
+		public Assignment getHoursAssignment_3_7_1() { return cHoursAssignment_3_7_1; }
+
+		//INT
+		public RuleCall getHoursINTTerminalRuleCall_3_7_1_0() { return cHoursINTTerminalRuleCall_3_7_1_0; }
+
+		//":"
+		public Keyword getColonKeyword_3_7_2() { return cColonKeyword_3_7_2; }
+
+		//minutes=INT
+		public Assignment getMinutesAssignment_3_7_3() { return cMinutesAssignment_3_7_3; }
+
+		//INT
+		public RuleCall getMinutesINTTerminalRuleCall_3_7_3_0() { return cMinutesINTTerminalRuleCall_3_7_3_0; }
+
+		//repeattype="EVERY SUNDAY at" hours=INT ":" minutes=INT
+		public Group getGroup_3_8() { return cGroup_3_8; }
+
+		//repeattype="EVERY SUNDAY at"
+		public Assignment getRepeattypeAssignment_3_8_0() { return cRepeattypeAssignment_3_8_0; }
+
+		//"EVERY SUNDAY at"
+		public Keyword getRepeattypeEVERYSUNDAYAtKeyword_3_8_0_0() { return cRepeattypeEVERYSUNDAYAtKeyword_3_8_0_0; }
+
+		//hours=INT
+		public Assignment getHoursAssignment_3_8_1() { return cHoursAssignment_3_8_1; }
+
+		//INT
+		public RuleCall getHoursINTTerminalRuleCall_3_8_1_0() { return cHoursINTTerminalRuleCall_3_8_1_0; }
+
+		//":"
+		public Keyword getColonKeyword_3_8_2() { return cColonKeyword_3_8_2; }
+
+		//minutes=INT
+		public Assignment getMinutesAssignment_3_8_3() { return cMinutesAssignment_3_8_3; }
+
+		//INT
+		public RuleCall getMinutesINTTerminalRuleCall_3_8_3_0() { return cMinutesINTTerminalRuleCall_3_8_3_0; }
 	}
 	
 	
@@ -537,8 +804,7 @@ public class RaspduinoDSLGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	
-	//// Definicion de las condiciones para ejecutar una tarea
-	/// *(alarms+=Alarm)* / // TODO: En caso de conflicto definimos quien tiene preferencia, lo que indican los sensores o lo programado
+	//// TODO: En caso de conflicto definimos quien tiene preferencia, lo que indican los sensores o lo programado
 	//// ('Concurrency Priority:' priority=('SENSOR'|'SCHEDULED'))*
 	//Model: // Nombre y plataforma que utilizaremos
 	//	"Sketch:" name=ID "Hardware:" hardware=("Arduino UNO" //Se podran añadir mas plataformas ARDUINO MEGA, NANO, etc.
@@ -650,7 +916,11 @@ public class RaspduinoDSLGrammarAccess extends AbstractGrammarElementFinder {
 	//			INT'.'INT
 	//		;
 	//	 * / Timer:
-	//	"Timer action" eventHandler=[EventHandler] "repeat" repeattype=("ONCE" | "EVERY") "seconds:" timerSecs=INT;
+	//	"Timer action" eventHandler=[EventHandler] "repeat" (repeattype="EVERY INTERVAL of" secs=INT "seconds" |
+	//	repeattype="EVERY DAY at" hours=INT ":" minutes=INT | repeattype="EVERY MONDAY at" hours=INT ":" minutes=INT |
+	//	repeattype="EVERY TUESDAY at" hours=INT ":" minutes=INT | repeattype="EVERY WEDNESDAY at" hours=INT ":" minutes=INT |
+	//	repeattype="EVERY THURSDAY at" hours=INT ":" minutes=INT | repeattype="EVERY FRIDAY at" hours=INT ":" minutes=INT |
+	//	repeattype="EVERY SATURDAY at" hours=INT ":" minutes=INT | repeattype="EVERY SUNDAY at" hours=INT ":" minutes=INT);
 	public TimerElements getTimerAccess() {
 		return (pTimer != null) ? pTimer : (pTimer = new TimerElements());
 	}

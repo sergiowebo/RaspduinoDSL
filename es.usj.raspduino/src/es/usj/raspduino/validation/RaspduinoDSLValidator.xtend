@@ -4,7 +4,6 @@ import org.eclipse.xtext.validation.Check
 import es.usj.raspduino.raspduinoDSL.Sensor
 import es.usj.raspduino.raspduinoDSL.RaspduinoDSLPackage
 import es.usj.raspduino.raspduinoDSL.Model
-import org.eclipse.emf.codegen.ecore.genmodel.impl.Literals
 import es.usj.raspduino.raspduinoDSL.AbstractDevice
 import es.usj.raspduino.raspduinoDSL.Actuator
 

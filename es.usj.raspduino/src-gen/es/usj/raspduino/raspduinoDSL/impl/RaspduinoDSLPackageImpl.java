@@ -422,9 +422,29 @@ public class RaspduinoDSLPackageImpl extends EPackageImpl implements RaspduinoDS
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getTimer_TimerSecs()
+  public EAttribute getTimer_Secs()
   {
     return (EAttribute)timerEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getTimer_Hours()
+  {
+    return (EAttribute)timerEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getTimer_Minutes()
+  {
+    return (EAttribute)timerEClass.getEStructuralFeatures().get(4);
   }
 
   /**
@@ -491,7 +511,9 @@ public class RaspduinoDSLPackageImpl extends EPackageImpl implements RaspduinoDS
     timerEClass = createEClass(TIMER);
     createEReference(timerEClass, TIMER__EVENT_HANDLER);
     createEAttribute(timerEClass, TIMER__REPEATTYPE);
-    createEAttribute(timerEClass, TIMER__TIMER_SECS);
+    createEAttribute(timerEClass, TIMER__SECS);
+    createEAttribute(timerEClass, TIMER__HOURS);
+    createEAttribute(timerEClass, TIMER__MINUTES);
   }
 
   /**
@@ -561,7 +583,9 @@ public class RaspduinoDSLPackageImpl extends EPackageImpl implements RaspduinoDS
     initEClass(timerEClass, Timer.class, "Timer", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getTimer_EventHandler(), this.getEventHandler(), null, "eventHandler", null, 0, 1, Timer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getTimer_Repeattype(), ecorePackage.getEString(), "repeattype", null, 0, 1, Timer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getTimer_TimerSecs(), ecorePackage.getEInt(), "timerSecs", null, 0, 1, Timer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getTimer_Secs(), ecorePackage.getEInt(), "secs", null, 0, 1, Timer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getTimer_Hours(), ecorePackage.getEInt(), "hours", null, 0, 1, Timer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getTimer_Minutes(), ecorePackage.getEInt(), "minutes", null, 0, 1, Timer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);

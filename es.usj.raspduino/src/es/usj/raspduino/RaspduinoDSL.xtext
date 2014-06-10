@@ -18,10 +18,7 @@ Model:
 	
 	// Definicion de las condiciones para ejecutar una tarea
 	(timers+=Timer)*
-	
-	// Definicion de las condiciones para ejecutar una tarea
-	/*(alarms+=Alarm)*/
-	
+		
 	// TODO: En caso de conflicto definimos quien tiene preferencia, lo que indican los sensores o lo programado
 	// ('Concurrency Priority:' priority=('SENSOR'|'SCHEDULED'))*
 ;
@@ -58,8 +55,15 @@ Model:
 	// Acciones programadas para realizarse cada X segundos, o a determinadas horas del dia.
 	Timer:
 		'Timer action' eventHandler=[EventHandler]
-		'repeat' repeattype = ('ONCE' | 'EVERY')
-		'seconds:' timerSecs = INT
+		'repeat' (repeattype='EVERY INTERVAL of' secs=INT 'seconds'
+					|repeattype='EVERY DAY at' hours=INT':'minutes=INT
+					|repeattype='EVERY MONDAY at' hours=INT':'minutes=INT
+					|repeattype='EVERY TUESDAY at' hours=INT':'minutes=INT
+					|repeattype='EVERY WEDNESDAY at' hours=INT':'minutes=INT
+					|repeattype='EVERY THURSDAY at' hours=INT':'minutes=INT
+					|repeattype='EVERY FRIDAY at' hours=INT':'minutes=INT
+					|repeattype='EVERY SATURDAY at' hours=INT':'minutes=INT
+					|repeattype='EVERY SUNDAY at' hours=INT':'minutes=INT)
 	;
 	
 	// IDEAS PARA CONTINUAR EL DESARROLLO

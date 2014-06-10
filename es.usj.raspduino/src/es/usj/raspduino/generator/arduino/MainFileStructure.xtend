@@ -66,14 +66,9 @@ class MainFileStructure {
 		firstOccurrence = true;
 		for(AbstractDevice dev:model.devices)
 			if(firstOccurrence && dev.eClass.name.equals("Actuator")){
-				 code = code + "#include \"Actuator.h\" \n";
+				 code = code + "#include \"Led.h\" \n";
 				 firstOccurrence = false;
 			}
-		
-		// Si hay handlers los generaremos en un archivo aparte
-		if(!model.eventHandlers.empty){
-			code = code+"#include \"EventHandler.h\" \n";
-		}
 		
 		// Si hay timers generamos las librerias que los controlaran
 		if(!model.timers.empty){
@@ -96,10 +91,16 @@ class MainFileStructure {
 		for(AbstractDevice dev:model.devices){
 			if(dev.eClass.name.equals("Sensor")){
 				sensor = dev as Sensor;
-				code = code + "Sensor " + sensor.name + "(" + calcPinNumber(sensor.pin) + ");\n";		
+				code = code + "SENSOR " + sensor.name + "(" + calcPinNumber(sensor.pin);		
+				if (sensor.pin.startsWith('A')){
+					code = code + ", true";
+				} else {
+					code = code + ", false";
+				}
+				code = code + ");\n";
 			}else if(dev.eClass.name.equals("Actuator")){
 				actuator = dev as Actuator;
-				code = code + "Actuator " + actuator.name + "(" + calcPinNumber(actuator.pin) + ");\n";		
+				code = code + "LED " + actuator.name + "(" + calcPinNumber(actuator.pin) + ");\n";		
 			}
 		}
 		
@@ -121,10 +122,55 @@ class MainFileStructure {
 		for(Timer dev:model.timers)
 			if(dev.eClass.name.equals("Timer")){
 				timer = dev as Timer;
-				if(timer.repeattype.equals("EVERY")){
-					code = code + "	" + "Alarm.timerRepeat(" + timer.timerSecs + ", " + timer.eventHandler.name + ");\n";
-				} else if (timer.repeattype.equals("ONCE")){
-					code = code + "	" + "Alarm.timerOnce(" + timer.timerSecs + ", " + timer.eventHandler.name + ");\n";	
+				if(timer.repeattype.equals("EVERY INTERVAL of")){
+					code = code + "	" + "Alarm.timerRepeat(" + timer.secs + ", " + timer.eventHandler.name + ");\n";
+				} else if (timer.repeattype.equals("EVERY DAY at")){
+					code = code + "	" + "Alarm.alarmRepeat(" + timer.hours + ", "
+															 + timer.minutes + ", "
+															 + "0" + ", "
+															 + timer.eventHandler.name + ");\n";	
+				} else if (timer.repeattype.equals("EVERY MONDAY at")){
+					code = code + "	" + "Alarm.alarmRepeat(" + "dowMonday" + ", "
+															 + timer.hours + ", "
+										 					 + timer.minutes + ", "
+															 + "0" + ", "
+															 + timer.eventHandler.name + ");\n";	
+				} else if (timer.repeattype.equals("EVERY TUESDAY at")){
+					code = code + "	" + "Alarm.alarmRepeat(" + "dowTuesday" + ", "
+															 + timer.hours + ", "
+										 					 + timer.minutes + ", "
+															 + "0" + ", "
+															 + timer.eventHandler.name + ");\n";
+				} else if (timer.repeattype.equals("EVERY WEDNESDAY at")){
+					code = code + "	" + "Alarm.alarmRepeat(" + "dowWednesday" + ", "
+															 + timer.hours + ", "
+										 					 + timer.minutes + ", "
+															 + "0" + ", "
+															 + timer.eventHandler.name + ");\n";
+				} else if (timer.repeattype.equals("EVERY THURSDAY at")){
+					code = code + "	" + "Alarm.alarmRepeat(" + "dowThursday" + ", "
+															 + timer.hours + ", "
+										 					 + timer.minutes + ", "
+															 + "0" + ", "
+															 + timer.eventHandler.name + ");\n";
+				} else if (timer.repeattype.equals("EVERY FRIDAY at")){
+					code = code + "	" + "Alarm.alarmRepeat(" + "dowFriday" + ", "
+															 + timer.hours + ", "
+										 					 + timer.minutes + ", "
+															 + "0" + ", "
+															 + timer.eventHandler.name + ");\n";
+				} else if (timer.repeattype.equals("EVERY SATURDAY at")){
+					code = code + "	" + "Alarm.alarmRepeat(" + "dowSaturday" + ", "
+															 + timer.hours + ", "
+										 					 + timer.minutes + ", "
+															 + "0" + ", "
+															 + timer.eventHandler.name + ");\n";
+				} else if (timer.repeattype.equals("EVERY SUNDAY at")){
+					code = code + "	" + "Alarm.alarmRepeat(" + "dowSunday" + ", "
+															 + timer.hours + ", "
+										 					 + timer.minutes + ", "
+															 + "0" + ", "
+															 + timer.eventHandler.name + ");\n";
 				}
 			}
 		
@@ -157,10 +203,10 @@ class MainFileStructure {
 							 + " && " + sens.sensor.name + ".readValue() " + ">= " + sens.l + "){\n";
 				
 			} else if (sens.type.equals("ON")){
-				code = code + sens.sensor.name + ".readValue()){\n";
+				code = code + "!" + sens.sensor.name + ".readValue()){\n";
 				
 			} else if (sens.type.equals("OFF")){
-				code = code + "!" +sens.sensor.name + ".readValue()){\n"; 
+				code = code +sens.sensor.name + ".readValue()){\n"; 
 				
 			}
 			
@@ -205,11 +251,11 @@ class MainFileStructure {
 				// Acciones de la funcion
 				code = code + "	" + actuator.name;
 				if (changeAct.actuatorState.equals("On")){
-					code = code + ".On();\n";
+					code = code + ".on();\n";
 				} else if (changeAct.actuatorState.equals("Off")){
 					code = code + ".Off();\n";
 				} else if(changeAct.actuatorState.equals("Toggle")){
-					code = code + ".Toggle();\n";
+					code = code + ".toggle();\n";
 				}
 			}	
 			

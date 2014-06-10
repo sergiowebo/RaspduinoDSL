@@ -407,13 +407,31 @@ public interface RaspduinoDSLPackage extends EPackage
   int TIMER__REPEATTYPE = 1;
 
   /**
-   * The feature id for the '<em><b>Timer Secs</b></em>' attribute.
+   * The feature id for the '<em><b>Secs</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int TIMER__TIMER_SECS = 2;
+  int TIMER__SECS = 2;
+
+  /**
+   * The feature id for the '<em><b>Hours</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TIMER__HOURS = 3;
+
+  /**
+   * The feature id for the '<em><b>Minutes</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TIMER__MINUTES = 4;
 
   /**
    * The number of structural features of the '<em>Timer</em>' class.
@@ -422,7 +440,7 @@ public interface RaspduinoDSLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TIMER_FEATURE_COUNT = 3;
+  int TIMER_FEATURE_COUNT = 5;
 
 
   /**
@@ -715,15 +733,37 @@ public interface RaspduinoDSLPackage extends EPackage
   EAttribute getTimer_Repeattype();
 
   /**
-   * Returns the meta object for the attribute '{@link es.usj.raspduino.raspduinoDSL.Timer#getTimerSecs <em>Timer Secs</em>}'.
+   * Returns the meta object for the attribute '{@link es.usj.raspduino.raspduinoDSL.Timer#getSecs <em>Secs</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Timer Secs</em>'.
-   * @see es.usj.raspduino.raspduinoDSL.Timer#getTimerSecs()
+   * @return the meta object for the attribute '<em>Secs</em>'.
+   * @see es.usj.raspduino.raspduinoDSL.Timer#getSecs()
    * @see #getTimer()
    * @generated
    */
-  EAttribute getTimer_TimerSecs();
+  EAttribute getTimer_Secs();
+
+  /**
+   * Returns the meta object for the attribute '{@link es.usj.raspduino.raspduinoDSL.Timer#getHours <em>Hours</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Hours</em>'.
+   * @see es.usj.raspduino.raspduinoDSL.Timer#getHours()
+   * @see #getTimer()
+   * @generated
+   */
+  EAttribute getTimer_Hours();
+
+  /**
+   * Returns the meta object for the attribute '{@link es.usj.raspduino.raspduinoDSL.Timer#getMinutes <em>Minutes</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Minutes</em>'.
+   * @see es.usj.raspduino.raspduinoDSL.Timer#getMinutes()
+   * @see #getTimer()
+   * @generated
+   */
+  EAttribute getTimer_Minutes();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -981,12 +1021,28 @@ public interface RaspduinoDSLPackage extends EPackage
     EAttribute TIMER__REPEATTYPE = eINSTANCE.getTimer_Repeattype();
 
     /**
-     * The meta object literal for the '<em><b>Timer Secs</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Secs</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute TIMER__TIMER_SECS = eINSTANCE.getTimer_TimerSecs();
+    EAttribute TIMER__SECS = eINSTANCE.getTimer_Secs();
+
+    /**
+     * The meta object literal for the '<em><b>Hours</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute TIMER__HOURS = eINSTANCE.getTimer_Hours();
+
+    /**
+     * The meta object literal for the '<em><b>Minutes</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute TIMER__MINUTES = eINSTANCE.getTimer_Minutes();
 
   }
 

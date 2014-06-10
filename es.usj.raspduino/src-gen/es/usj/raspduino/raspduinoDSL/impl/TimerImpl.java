@@ -23,7 +23,9 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <ul>
  *   <li>{@link es.usj.raspduino.raspduinoDSL.impl.TimerImpl#getEventHandler <em>Event Handler</em>}</li>
  *   <li>{@link es.usj.raspduino.raspduinoDSL.impl.TimerImpl#getRepeattype <em>Repeattype</em>}</li>
- *   <li>{@link es.usj.raspduino.raspduinoDSL.impl.TimerImpl#getTimerSecs <em>Timer Secs</em>}</li>
+ *   <li>{@link es.usj.raspduino.raspduinoDSL.impl.TimerImpl#getSecs <em>Secs</em>}</li>
+ *   <li>{@link es.usj.raspduino.raspduinoDSL.impl.TimerImpl#getHours <em>Hours</em>}</li>
+ *   <li>{@link es.usj.raspduino.raspduinoDSL.impl.TimerImpl#getMinutes <em>Minutes</em>}</li>
  * </ul>
  * </p>
  *
@@ -62,24 +64,64 @@ public class TimerImpl extends MinimalEObjectImpl.Container implements Timer
   protected String repeattype = REPEATTYPE_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getTimerSecs() <em>Timer Secs</em>}' attribute.
+   * The default value of the '{@link #getSecs() <em>Secs</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getTimerSecs()
+   * @see #getSecs()
    * @generated
    * @ordered
    */
-  protected static final int TIMER_SECS_EDEFAULT = 0;
+  protected static final int SECS_EDEFAULT = 0;
 
   /**
-   * The cached value of the '{@link #getTimerSecs() <em>Timer Secs</em>}' attribute.
+   * The cached value of the '{@link #getSecs() <em>Secs</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getTimerSecs()
+   * @see #getSecs()
    * @generated
    * @ordered
    */
-  protected int timerSecs = TIMER_SECS_EDEFAULT;
+  protected int secs = SECS_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getHours() <em>Hours</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getHours()
+   * @generated
+   * @ordered
+   */
+  protected static final int HOURS_EDEFAULT = 0;
+
+  /**
+   * The cached value of the '{@link #getHours() <em>Hours</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getHours()
+   * @generated
+   * @ordered
+   */
+  protected int hours = HOURS_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getMinutes() <em>Minutes</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getMinutes()
+   * @generated
+   * @ordered
+   */
+  protected static final int MINUTES_EDEFAULT = 0;
+
+  /**
+   * The cached value of the '{@link #getMinutes() <em>Minutes</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getMinutes()
+   * @generated
+   * @ordered
+   */
+  protected int minutes = MINUTES_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -173,9 +215,9 @@ public class TimerImpl extends MinimalEObjectImpl.Container implements Timer
    * <!-- end-user-doc -->
    * @generated
    */
-  public int getTimerSecs()
+  public int getSecs()
   {
-    return timerSecs;
+    return secs;
   }
 
   /**
@@ -183,12 +225,58 @@ public class TimerImpl extends MinimalEObjectImpl.Container implements Timer
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setTimerSecs(int newTimerSecs)
+  public void setSecs(int newSecs)
   {
-    int oldTimerSecs = timerSecs;
-    timerSecs = newTimerSecs;
+    int oldSecs = secs;
+    secs = newSecs;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, RaspduinoDSLPackage.TIMER__TIMER_SECS, oldTimerSecs, timerSecs));
+      eNotify(new ENotificationImpl(this, Notification.SET, RaspduinoDSLPackage.TIMER__SECS, oldSecs, secs));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public int getHours()
+  {
+    return hours;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setHours(int newHours)
+  {
+    int oldHours = hours;
+    hours = newHours;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, RaspduinoDSLPackage.TIMER__HOURS, oldHours, hours));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public int getMinutes()
+  {
+    return minutes;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setMinutes(int newMinutes)
+  {
+    int oldMinutes = minutes;
+    minutes = newMinutes;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, RaspduinoDSLPackage.TIMER__MINUTES, oldMinutes, minutes));
   }
 
   /**
@@ -206,8 +294,12 @@ public class TimerImpl extends MinimalEObjectImpl.Container implements Timer
         return basicGetEventHandler();
       case RaspduinoDSLPackage.TIMER__REPEATTYPE:
         return getRepeattype();
-      case RaspduinoDSLPackage.TIMER__TIMER_SECS:
-        return getTimerSecs();
+      case RaspduinoDSLPackage.TIMER__SECS:
+        return getSecs();
+      case RaspduinoDSLPackage.TIMER__HOURS:
+        return getHours();
+      case RaspduinoDSLPackage.TIMER__MINUTES:
+        return getMinutes();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -228,8 +320,14 @@ public class TimerImpl extends MinimalEObjectImpl.Container implements Timer
       case RaspduinoDSLPackage.TIMER__REPEATTYPE:
         setRepeattype((String)newValue);
         return;
-      case RaspduinoDSLPackage.TIMER__TIMER_SECS:
-        setTimerSecs((Integer)newValue);
+      case RaspduinoDSLPackage.TIMER__SECS:
+        setSecs((Integer)newValue);
+        return;
+      case RaspduinoDSLPackage.TIMER__HOURS:
+        setHours((Integer)newValue);
+        return;
+      case RaspduinoDSLPackage.TIMER__MINUTES:
+        setMinutes((Integer)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -251,8 +349,14 @@ public class TimerImpl extends MinimalEObjectImpl.Container implements Timer
       case RaspduinoDSLPackage.TIMER__REPEATTYPE:
         setRepeattype(REPEATTYPE_EDEFAULT);
         return;
-      case RaspduinoDSLPackage.TIMER__TIMER_SECS:
-        setTimerSecs(TIMER_SECS_EDEFAULT);
+      case RaspduinoDSLPackage.TIMER__SECS:
+        setSecs(SECS_EDEFAULT);
+        return;
+      case RaspduinoDSLPackage.TIMER__HOURS:
+        setHours(HOURS_EDEFAULT);
+        return;
+      case RaspduinoDSLPackage.TIMER__MINUTES:
+        setMinutes(MINUTES_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -272,8 +376,12 @@ public class TimerImpl extends MinimalEObjectImpl.Container implements Timer
         return eventHandler != null;
       case RaspduinoDSLPackage.TIMER__REPEATTYPE:
         return REPEATTYPE_EDEFAULT == null ? repeattype != null : !REPEATTYPE_EDEFAULT.equals(repeattype);
-      case RaspduinoDSLPackage.TIMER__TIMER_SECS:
-        return timerSecs != TIMER_SECS_EDEFAULT;
+      case RaspduinoDSLPackage.TIMER__SECS:
+        return secs != SECS_EDEFAULT;
+      case RaspduinoDSLPackage.TIMER__HOURS:
+        return hours != HOURS_EDEFAULT;
+      case RaspduinoDSLPackage.TIMER__MINUTES:
+        return minutes != MINUTES_EDEFAULT;
     }
     return super.eIsSet(featureID);
   }
@@ -291,8 +399,12 @@ public class TimerImpl extends MinimalEObjectImpl.Container implements Timer
     StringBuffer result = new StringBuffer(super.toString());
     result.append(" (repeattype: ");
     result.append(repeattype);
-    result.append(", timerSecs: ");
-    result.append(timerSecs);
+    result.append(", secs: ");
+    result.append(secs);
+    result.append(", hours: ");
+    result.append(hours);
+    result.append(", minutes: ");
+    result.append(minutes);
     result.append(')');
     return result.toString();
   }

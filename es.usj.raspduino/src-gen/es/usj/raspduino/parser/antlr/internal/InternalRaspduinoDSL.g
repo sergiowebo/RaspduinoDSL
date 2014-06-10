@@ -708,45 +708,26 @@ ruleTimer returns [EObject current=null]
     {
     	newLeafNode(otherlv_2, grammarAccess.getTimerAccess().getRepeatKeyword_2());
     }
+(((
 (
-(
-(
-		lv_repeattype_3_1=	'ONCE' 
+		lv_repeattype_3_0=	'EVERY INTERVAL of' 
     {
-        newLeafNode(lv_repeattype_3_1, grammarAccess.getTimerAccess().getRepeattypeONCEKeyword_3_0_0());
+        newLeafNode(lv_repeattype_3_0, grammarAccess.getTimerAccess().getRepeattypeEVERYINTERVALOfKeyword_3_0_0_0());
     }
  
 	    {
 	        if ($current==null) {
 	            $current = createModelElement(grammarAccess.getTimerRule());
 	        }
-       		setWithLastConsumed($current, "repeattype", lv_repeattype_3_1, null);
-	    }
-
-    |		lv_repeattype_3_2=	'EVERY' 
-    {
-        newLeafNode(lv_repeattype_3_2, grammarAccess.getTimerAccess().getRepeattypeEVERYKeyword_3_0_1());
-    }
- 
-	    {
-	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getTimerRule());
-	        }
-       		setWithLastConsumed($current, "repeattype", lv_repeattype_3_2, null);
+       		setWithLastConsumed($current, "repeattype", lv_repeattype_3_0, "EVERY INTERVAL of");
 	    }
 
 )
-
-)
-)	otherlv_4='seconds:' 
-    {
-    	newLeafNode(otherlv_4, grammarAccess.getTimerAccess().getSecondsKeyword_4());
-    }
+)(
 (
-(
-		lv_timerSecs_5_0=RULE_INT
+		lv_secs_4_0=RULE_INT
 		{
-			newLeafNode(lv_timerSecs_5_0, grammarAccess.getTimerAccess().getTimerSecsINTTerminalRuleCall_5_0()); 
+			newLeafNode(lv_secs_4_0, grammarAccess.getTimerAccess().getSecsINTTerminalRuleCall_3_0_1_0()); 
 		}
 		{
 	        if ($current==null) {
@@ -754,13 +735,465 @@ ruleTimer returns [EObject current=null]
 	        }
        		setWithLastConsumed(
        			$current, 
-       			"timerSecs",
-        		lv_timerSecs_5_0, 
+       			"secs",
+        		lv_secs_4_0, 
+        		"INT");
+	    }
+
+)
+)	otherlv_5='seconds' 
+    {
+    	newLeafNode(otherlv_5, grammarAccess.getTimerAccess().getSecondsKeyword_3_0_2());
+    }
+)
+    |((
+(
+		lv_repeattype_6_0=	'EVERY DAY at' 
+    {
+        newLeafNode(lv_repeattype_6_0, grammarAccess.getTimerAccess().getRepeattypeEVERYDAYAtKeyword_3_1_0_0());
+    }
+ 
+	    {
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getTimerRule());
+	        }
+       		setWithLastConsumed($current, "repeattype", lv_repeattype_6_0, "EVERY DAY at");
+	    }
+
+)
+)(
+(
+		lv_hours_7_0=RULE_INT
+		{
+			newLeafNode(lv_hours_7_0, grammarAccess.getTimerAccess().getHoursINTTerminalRuleCall_3_1_1_0()); 
+		}
+		{
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getTimerRule());
+	        }
+       		setWithLastConsumed(
+       			$current, 
+       			"hours",
+        		lv_hours_7_0, 
+        		"INT");
+	    }
+
+)
+)	otherlv_8=':' 
+    {
+    	newLeafNode(otherlv_8, grammarAccess.getTimerAccess().getColonKeyword_3_1_2());
+    }
+(
+(
+		lv_minutes_9_0=RULE_INT
+		{
+			newLeafNode(lv_minutes_9_0, grammarAccess.getTimerAccess().getMinutesINTTerminalRuleCall_3_1_3_0()); 
+		}
+		{
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getTimerRule());
+	        }
+       		setWithLastConsumed(
+       			$current, 
+       			"minutes",
+        		lv_minutes_9_0, 
         		"INT");
 	    }
 
 )
 ))
+    |((
+(
+		lv_repeattype_10_0=	'EVERY MONDAY at' 
+    {
+        newLeafNode(lv_repeattype_10_0, grammarAccess.getTimerAccess().getRepeattypeEVERYMONDAYAtKeyword_3_2_0_0());
+    }
+ 
+	    {
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getTimerRule());
+	        }
+       		setWithLastConsumed($current, "repeattype", lv_repeattype_10_0, "EVERY MONDAY at");
+	    }
+
+)
+)(
+(
+		lv_hours_11_0=RULE_INT
+		{
+			newLeafNode(lv_hours_11_0, grammarAccess.getTimerAccess().getHoursINTTerminalRuleCall_3_2_1_0()); 
+		}
+		{
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getTimerRule());
+	        }
+       		setWithLastConsumed(
+       			$current, 
+       			"hours",
+        		lv_hours_11_0, 
+        		"INT");
+	    }
+
+)
+)	otherlv_12=':' 
+    {
+    	newLeafNode(otherlv_12, grammarAccess.getTimerAccess().getColonKeyword_3_2_2());
+    }
+(
+(
+		lv_minutes_13_0=RULE_INT
+		{
+			newLeafNode(lv_minutes_13_0, grammarAccess.getTimerAccess().getMinutesINTTerminalRuleCall_3_2_3_0()); 
+		}
+		{
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getTimerRule());
+	        }
+       		setWithLastConsumed(
+       			$current, 
+       			"minutes",
+        		lv_minutes_13_0, 
+        		"INT");
+	    }
+
+)
+))
+    |((
+(
+		lv_repeattype_14_0=	'EVERY TUESDAY at' 
+    {
+        newLeafNode(lv_repeattype_14_0, grammarAccess.getTimerAccess().getRepeattypeEVERYTUESDAYAtKeyword_3_3_0_0());
+    }
+ 
+	    {
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getTimerRule());
+	        }
+       		setWithLastConsumed($current, "repeattype", lv_repeattype_14_0, "EVERY TUESDAY at");
+	    }
+
+)
+)(
+(
+		lv_hours_15_0=RULE_INT
+		{
+			newLeafNode(lv_hours_15_0, grammarAccess.getTimerAccess().getHoursINTTerminalRuleCall_3_3_1_0()); 
+		}
+		{
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getTimerRule());
+	        }
+       		setWithLastConsumed(
+       			$current, 
+       			"hours",
+        		lv_hours_15_0, 
+        		"INT");
+	    }
+
+)
+)	otherlv_16=':' 
+    {
+    	newLeafNode(otherlv_16, grammarAccess.getTimerAccess().getColonKeyword_3_3_2());
+    }
+(
+(
+		lv_minutes_17_0=RULE_INT
+		{
+			newLeafNode(lv_minutes_17_0, grammarAccess.getTimerAccess().getMinutesINTTerminalRuleCall_3_3_3_0()); 
+		}
+		{
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getTimerRule());
+	        }
+       		setWithLastConsumed(
+       			$current, 
+       			"minutes",
+        		lv_minutes_17_0, 
+        		"INT");
+	    }
+
+)
+))
+    |((
+(
+		lv_repeattype_18_0=	'EVERY WEDNESDAY at' 
+    {
+        newLeafNode(lv_repeattype_18_0, grammarAccess.getTimerAccess().getRepeattypeEVERYWEDNESDAYAtKeyword_3_4_0_0());
+    }
+ 
+	    {
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getTimerRule());
+	        }
+       		setWithLastConsumed($current, "repeattype", lv_repeattype_18_0, "EVERY WEDNESDAY at");
+	    }
+
+)
+)(
+(
+		lv_hours_19_0=RULE_INT
+		{
+			newLeafNode(lv_hours_19_0, grammarAccess.getTimerAccess().getHoursINTTerminalRuleCall_3_4_1_0()); 
+		}
+		{
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getTimerRule());
+	        }
+       		setWithLastConsumed(
+       			$current, 
+       			"hours",
+        		lv_hours_19_0, 
+        		"INT");
+	    }
+
+)
+)	otherlv_20=':' 
+    {
+    	newLeafNode(otherlv_20, grammarAccess.getTimerAccess().getColonKeyword_3_4_2());
+    }
+(
+(
+		lv_minutes_21_0=RULE_INT
+		{
+			newLeafNode(lv_minutes_21_0, grammarAccess.getTimerAccess().getMinutesINTTerminalRuleCall_3_4_3_0()); 
+		}
+		{
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getTimerRule());
+	        }
+       		setWithLastConsumed(
+       			$current, 
+       			"minutes",
+        		lv_minutes_21_0, 
+        		"INT");
+	    }
+
+)
+))
+    |((
+(
+		lv_repeattype_22_0=	'EVERY THURSDAY at' 
+    {
+        newLeafNode(lv_repeattype_22_0, grammarAccess.getTimerAccess().getRepeattypeEVERYTHURSDAYAtKeyword_3_5_0_0());
+    }
+ 
+	    {
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getTimerRule());
+	        }
+       		setWithLastConsumed($current, "repeattype", lv_repeattype_22_0, "EVERY THURSDAY at");
+	    }
+
+)
+)(
+(
+		lv_hours_23_0=RULE_INT
+		{
+			newLeafNode(lv_hours_23_0, grammarAccess.getTimerAccess().getHoursINTTerminalRuleCall_3_5_1_0()); 
+		}
+		{
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getTimerRule());
+	        }
+       		setWithLastConsumed(
+       			$current, 
+       			"hours",
+        		lv_hours_23_0, 
+        		"INT");
+	    }
+
+)
+)	otherlv_24=':' 
+    {
+    	newLeafNode(otherlv_24, grammarAccess.getTimerAccess().getColonKeyword_3_5_2());
+    }
+(
+(
+		lv_minutes_25_0=RULE_INT
+		{
+			newLeafNode(lv_minutes_25_0, grammarAccess.getTimerAccess().getMinutesINTTerminalRuleCall_3_5_3_0()); 
+		}
+		{
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getTimerRule());
+	        }
+       		setWithLastConsumed(
+       			$current, 
+       			"minutes",
+        		lv_minutes_25_0, 
+        		"INT");
+	    }
+
+)
+))
+    |((
+(
+		lv_repeattype_26_0=	'EVERY FRIDAY at' 
+    {
+        newLeafNode(lv_repeattype_26_0, grammarAccess.getTimerAccess().getRepeattypeEVERYFRIDAYAtKeyword_3_6_0_0());
+    }
+ 
+	    {
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getTimerRule());
+	        }
+       		setWithLastConsumed($current, "repeattype", lv_repeattype_26_0, "EVERY FRIDAY at");
+	    }
+
+)
+)(
+(
+		lv_hours_27_0=RULE_INT
+		{
+			newLeafNode(lv_hours_27_0, grammarAccess.getTimerAccess().getHoursINTTerminalRuleCall_3_6_1_0()); 
+		}
+		{
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getTimerRule());
+	        }
+       		setWithLastConsumed(
+       			$current, 
+       			"hours",
+        		lv_hours_27_0, 
+        		"INT");
+	    }
+
+)
+)	otherlv_28=':' 
+    {
+    	newLeafNode(otherlv_28, grammarAccess.getTimerAccess().getColonKeyword_3_6_2());
+    }
+(
+(
+		lv_minutes_29_0=RULE_INT
+		{
+			newLeafNode(lv_minutes_29_0, grammarAccess.getTimerAccess().getMinutesINTTerminalRuleCall_3_6_3_0()); 
+		}
+		{
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getTimerRule());
+	        }
+       		setWithLastConsumed(
+       			$current, 
+       			"minutes",
+        		lv_minutes_29_0, 
+        		"INT");
+	    }
+
+)
+))
+    |((
+(
+		lv_repeattype_30_0=	'EVERY SATURDAY at' 
+    {
+        newLeafNode(lv_repeattype_30_0, grammarAccess.getTimerAccess().getRepeattypeEVERYSATURDAYAtKeyword_3_7_0_0());
+    }
+ 
+	    {
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getTimerRule());
+	        }
+       		setWithLastConsumed($current, "repeattype", lv_repeattype_30_0, "EVERY SATURDAY at");
+	    }
+
+)
+)(
+(
+		lv_hours_31_0=RULE_INT
+		{
+			newLeafNode(lv_hours_31_0, grammarAccess.getTimerAccess().getHoursINTTerminalRuleCall_3_7_1_0()); 
+		}
+		{
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getTimerRule());
+	        }
+       		setWithLastConsumed(
+       			$current, 
+       			"hours",
+        		lv_hours_31_0, 
+        		"INT");
+	    }
+
+)
+)	otherlv_32=':' 
+    {
+    	newLeafNode(otherlv_32, grammarAccess.getTimerAccess().getColonKeyword_3_7_2());
+    }
+(
+(
+		lv_minutes_33_0=RULE_INT
+		{
+			newLeafNode(lv_minutes_33_0, grammarAccess.getTimerAccess().getMinutesINTTerminalRuleCall_3_7_3_0()); 
+		}
+		{
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getTimerRule());
+	        }
+       		setWithLastConsumed(
+       			$current, 
+       			"minutes",
+        		lv_minutes_33_0, 
+        		"INT");
+	    }
+
+)
+))
+    |((
+(
+		lv_repeattype_34_0=	'EVERY SUNDAY at' 
+    {
+        newLeafNode(lv_repeattype_34_0, grammarAccess.getTimerAccess().getRepeattypeEVERYSUNDAYAtKeyword_3_8_0_0());
+    }
+ 
+	    {
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getTimerRule());
+	        }
+       		setWithLastConsumed($current, "repeattype", lv_repeattype_34_0, "EVERY SUNDAY at");
+	    }
+
+)
+)(
+(
+		lv_hours_35_0=RULE_INT
+		{
+			newLeafNode(lv_hours_35_0, grammarAccess.getTimerAccess().getHoursINTTerminalRuleCall_3_8_1_0()); 
+		}
+		{
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getTimerRule());
+	        }
+       		setWithLastConsumed(
+       			$current, 
+       			"hours",
+        		lv_hours_35_0, 
+        		"INT");
+	    }
+
+)
+)	otherlv_36=':' 
+    {
+    	newLeafNode(otherlv_36, grammarAccess.getTimerAccess().getColonKeyword_3_8_2());
+    }
+(
+(
+		lv_minutes_37_0=RULE_INT
+		{
+			newLeafNode(lv_minutes_37_0, grammarAccess.getTimerAccess().getMinutesINTTerminalRuleCall_3_8_3_0()); 
+		}
+		{
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getTimerRule());
+	        }
+       		setWithLastConsumed(
+       			$current, 
+       			"minutes",
+        		lv_minutes_37_0, 
+        		"INT");
+	    }
+
+)
+))))
 ;
 
 

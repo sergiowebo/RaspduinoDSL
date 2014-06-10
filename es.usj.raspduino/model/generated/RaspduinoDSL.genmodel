@@ -39,7 +39,9 @@
     <genClasses ecoreClass="RaspduinoDSL.ecore#//Timer">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference RaspduinoDSL.ecore#//Timer/eventHandler"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RaspduinoDSL.ecore#//Timer/repeattype"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RaspduinoDSL.ecore#//Timer/timerSecs"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RaspduinoDSL.ecore#//Timer/secs"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RaspduinoDSL.ecore#//Timer/hours"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RaspduinoDSL.ecore#//Timer/minutes"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>
