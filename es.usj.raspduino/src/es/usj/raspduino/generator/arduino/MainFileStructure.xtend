@@ -44,7 +44,7 @@ class MainFileStructure {
 			
 		code = 	codeInclude + codeVarDeclarations + codeSetupFunction + codeLoopFunction + codeEventHandlers;
 		// Generamos el archivo	
-		util.genFile(model.name,"h",code);
+		util.genFile(model.name,"ino",code);
 	}
 	
 
@@ -253,7 +253,7 @@ class MainFileStructure {
 				if (changeAct.actuatorState.equals("On")){
 					code = code + ".on();\n";
 				} else if (changeAct.actuatorState.equals("Off")){
-					code = code + ".Off();\n";
+					code = code + ".off();\n";
 				} else if(changeAct.actuatorState.equals("Toggle")){
 					code = code + ".toggle();\n";
 				}

@@ -23,7 +23,7 @@ public class MainFileStructure {
     String codeEventHandlers = this.eventHandlers(model);
     code = ((((codeInclude + codeVarDeclarations) + codeSetupFunction) + codeLoopFunction) + codeEventHandlers);
     String _name = model.getName();
-    util.genFile(_name, "h", code);
+    util.genFile(_name, "ino", code);
   }
   
   public String includes(final Model model) {
@@ -388,7 +388,7 @@ public class MainFileStructure {
               String _actuatorState_1 = changeAct.getActuatorState();
               boolean _equals_1 = _actuatorState_1.equals("Off");
               if (_equals_1) {
-                code = (code + ".Off();\n");
+                code = (code + ".off();\n");
               } else {
                 String _actuatorState_2 = changeAct.getActuatorState();
                 boolean _equals_2 = _actuatorState_2.equals("Toggle");
