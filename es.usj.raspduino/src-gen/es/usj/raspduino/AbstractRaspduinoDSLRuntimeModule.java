@@ -89,11 +89,6 @@ public abstract class AbstractRaspduinoDSLRuntimeModule extends DefaultRuntimeMo
 		return org.eclipse.xtext.parser.antlr.AntlrTokenDefProvider.class;
 	}
 
-	// contributed by org.eclipse.xtext.generator.validation.ValidatorFragment
-	@org.eclipse.xtext.service.SingletonBinding(eager=true)	public Class<? extends es.usj.raspduino.validation.RaspduinoDSLValidator> bindRaspduinoDSLValidator() {
-		return es.usj.raspduino.validation.RaspduinoDSLValidator.class;
-	}
-
 	// contributed by org.eclipse.xtext.generator.scoping.AbstractScopingFragment
 	public Class<? extends org.eclipse.xtext.scoping.IScopeProvider> bindIScopeProvider() {
 		return es.usj.raspduino.scoping.RaspduinoDSLScopeProvider.class;
@@ -167,6 +162,11 @@ public abstract class AbstractRaspduinoDSLRuntimeModule extends DefaultRuntimeMo
 	// contributed by org.eclipse.xtext.generator.types.TypesGeneratorFragment
 	public Class<? extends org.eclipse.xtext.scoping.IGlobalScopeProvider> bindIGlobalScopeProvider() {
 		return org.eclipse.xtext.common.types.xtext.TypesAwareDefaultGlobalScopeProvider.class;
+	}
+
+	// contributed by org.eclipse.xtext.generator.validation.ValidatorFragment
+	@org.eclipse.xtext.service.SingletonBinding(eager=true)	public Class<? extends es.usj.raspduino.validation.RaspduinoDSLValidator> bindRaspduinoDSLValidator() {
+		return es.usj.raspduino.validation.RaspduinoDSLValidator.class;
 	}
 
 }

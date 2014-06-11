@@ -124,6 +124,11 @@ Workflow {
     
     		// provides a compare view
     		fragment = compare.CompareFragment auto-inject {}
+    		
+    		// Comprueba que los identificadores de sensores, actuadores y eventHandlers son unicos
+    		fragment = validation.ValidatorFragment auto-inject {
+				composedCheck = "org.eclipse.xtext.validation.NamesAreUniqueValidator"
+			}
     	}
     }
 }

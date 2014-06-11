@@ -393,4 +393,27 @@
     </provider>
   </extension>
 
+	<!-- marker definitions for es.usj.raspduino.RaspduinoDSL -->
+	<extension
+	        id="raspduinodsl.check.fast"
+	        name="RaspduinoDSL Problem"
+	        point="org.eclipse.core.resources.markers">
+	    <super type="org.eclipse.xtext.ui.check.fast"/>
+	    <persistent value="true"/>
+	</extension>
+	<extension
+	        id="raspduinodsl.check.normal"
+	        name="RaspduinoDSL Problem"
+	        point="org.eclipse.core.resources.markers">
+	    <super type="org.eclipse.xtext.ui.check.normal"/>
+	    <persistent value="true"/>
+	</extension>
+	<extension
+	        id="raspduinodsl.check.expensive"
+	        name="RaspduinoDSL Problem"
+	        point="org.eclipse.core.resources.markers">
+	    <super type="org.eclipse.xtext.ui.check.expensive"/>
+	    <persistent value="true"/>
+	</extension>
+
 </plugin>
